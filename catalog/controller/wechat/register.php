@@ -212,7 +212,7 @@ class ControllerWechatRegister extends Controller
                 $data['isnotright'] = '1';
             } else {
                 $data['isnotright'] = '0';
-                $customer_id = $this->model_account_customer->addCustomer($postdata);
+                //$customer_id = $this->model_account_customer->addCustomer($postdata);
                 $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
                 //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
