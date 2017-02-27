@@ -44,7 +44,7 @@ class ControllerWechatOrdercenter extends Controller
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -163,7 +163,7 @@ class ControllerWechatOrdercenter extends Controller
         $data['column_price'] = "单品价格";
         $data['column_total'] = "单品小计";
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $this->load->model('wechat/ordercenter');
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
@@ -270,7 +270,7 @@ class ControllerWechatOrdercenter extends Controller
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -384,7 +384,7 @@ class ControllerWechatOrdercenter extends Controller
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
