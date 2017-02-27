@@ -127,8 +127,8 @@ class ControllerWechatRegister extends Controller
 
         $this->load->model('account/customer');
 
-        $realname = $this->request->json('realname', '0');
-        $data['telephone'] = $this->request->json('telephone', '0');
+        $data['realname'] = $this->request->json('realname', '');
+        $data['telephone'] = $this->request->json('telephone', '');
         $data['smscode'] = $this->request->json('smscode', 0);
         $data['barcode'] = $this->request->json('barcode', '');
         $data['birthday'] = $this->request->json('birthday', '');
@@ -136,7 +136,7 @@ class ControllerWechatRegister extends Controller
         $data['pregnantstatus'] =  $this->request->json('pregnantstatus', '');
         $data['height'] = $this->request->json('height', 1);
         $data['weight'] = $this->request->json('weight', '');
-        $lastmenstrualdate = $this->request->json('lastmenstrualdate', '');
+        $data['lastmenstrualdate'] = $this->request->json('lastmenstrualdate', '');
         $data['gravidity'] = $this->request->json('gravidity', '');
         $data['parity'] = $this->request->json('parity', '');
         $data['vaginaldelivery'] = $this->request->json('vaginaldelivery', '');
@@ -150,12 +150,10 @@ class ControllerWechatRegister extends Controller
         $data['address_1'] = $this->request->json('address_1','');
         $data['agree'] = $this->request->json('agree', '');
 
-        $log->write("realname=" . $realname."weight=". $data['weight']);
-
 
         $postdata  = array(
             'telephone' => $data['telephone'],
-            'realname'  => $realname,
+            'realname'  => $data['realname'] ,
             'smscode'  => $data['smscode'],
             'barcode'  => $data['barcode'],
             'birthday' => $data['birthday'],
@@ -163,7 +161,7 @@ class ControllerWechatRegister extends Controller
             'height'   => $data['height'],
             'weight'   => $data['weight'],
             'pregnantstatus' => $data['pregnantstatus'],
-            'lastmenstrualdate' => $lastmenstrualdate,
+            'lastmenstrualdate' => $data['lastmenstrualdate'],
             'gravidity' => $data['gravidity'],
             'parity' => $data['parity'],
             'vaginaldelivery' => $data['vaginaldelivery'],
