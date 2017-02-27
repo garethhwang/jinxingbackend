@@ -1,0 +1,114 @@
+.mbody {
+    min-width: 30rem;
+    font-family: Helvetica;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+}
+
+.global {
+    background: url("../image/indexbg.jpg") repeat;
+    min-width: 30rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.secondNavDiv {
+    background: white;
+    margin: 1rem 0;
+}
+
+.secondNavTable {
+    margin: auto;
+    width: 95%;
+    text-align: center;
+}
+
+.secondNavTable .secondNavImg {
+    width: 98%;
+    height: auto;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.secondNavTable .navMenuList {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+    margin: 0.8rem auto;
+}
+
+.secondNavTable p {
+    color: #bbbbbb;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.carousel-indicators li{
+    background: white;;
+}
+
+.carousel-indicators li.active{
+    background: #FD810D;
+}
+
+/*productlist*/
+.productlistCon{
+    background: #efefef;
+}
+.productlist {
+    background: white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    vertical-align: middle;
+    margin-bottom: 0.2rem;
+}
+
+.productlist table{
+    width: 100%;
+}
+
+.productlist .rmbicon{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+}
+
+.productlist .producttitle {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    padding:0.3rem auto;
+}
+
+.productlist .money{
+    color: #F27863;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-top: 1.5rem;
+}
+
+.productlist .brefcontent{
+    font-size: 1rem;
+    color: #636363;
+    padding: 1rem auto;
+}
+.productlist .favoriteicon{
+    height: 2rem;
+    margin-right: 1rem;
+}
+.productlist .time{
+    color: #aaa;
+    font-size: 0.6rem;
+}

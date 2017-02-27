@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>用户注册</title>
+    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#jqueryBtn").click(function(){
+
+            });
+
+            $("#jqueryBtn1").click(function(){
+                if($("#test888").hasClass("divClass")){
+                    alert("true");
+                }
+            });
+
+        });
+        function jqueryBtn(){
+
+        }
+
+        var testfunction=function(){
+            this.info="test";
+
+        };
+
+        function insertHTML(){
+            alert($("select").find("option:selected").text());
+        }
+    </script>
+    <style>
+        #tableid{
+        }
+
+        #tableid tr{
+            height: 5rem;
+        }
+
+        #tableid tr td{
+            text-align: right;
+        }
+
+        .tableclass{
+            border: 2px solid red;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+        table{
+
+        }
+
+        .divClass{
+            background: purple;
+            height: 80px;
+            margin: 40px auto;
+            padding: 0;
+            font-size: 40px;
+            color: white;
+            font-weight: bolder;
+            vertical-align: middle;
+            line-height: 80px;
+        }
+        .divOuter{
+            margin: 0;
+            padding: 0;
+            background: green;
+            font-size: 0;
+            -webkit-text-size-adjust:none;
+        }
+
+        .divCol{
+            height: 40px;
+            width: 400px;
+            display: inline-block;
+            margin: 0 !important;
+            padding: 0;
+            font-size: 20px;
+        }
+        .divCol1{
+            background: rebeccapurple;
+        }
+        .divCol2{
+            background: red;
+        }
+
+        .divCol3{
+            background: yellow;
+        }
+        p{
+            text-indent: 2em;
+        }
+
+        .divAbsolute{
+            z-index: 9;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 400px;
+            height: 400px;
+            background: palevioletred;
+        }
+
+        .divAbsolute2{
+            z-index: 19;
+            position: absolute;
+            left: 180px;
+            top: 180px;
+            width: 400px;
+            height: 400px;
+            background: greenyellow;
+        }
+
+    </style>
+</head>
+<body onload="">
+<input id="testinput" value="" /><br />
+<select>
+    <option value="0">男</option>
+    <option value="1">女</option>
+</select>
+<br /><br /><br /><br /><br />
+<input type="button" id="jqueryBtn" data-info="test" value="jquery" />
+<input type="button" id="jqueryBtn1" value="jquery" />
+<div id="insert"></div>
+<table id="tableid" class="tableclass" >
+    <tr>
+        <td >Month</td>
+        <td >Savings</td>
+    </tr>
+    <tr>
+        <td>$100</td>
+        <td>
+            <table border="1">
+                <tr>
+                    <td>
+                        1111
+                    </td>
+                    <td>
+                        2222
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<input type="number" value="4" max="3" min="0" />
+<table class="tableclass">
+    <tr>
+        <td>
+            1111
+        </td>
+        <td>
+            2222
+        </td>
+    </tr>
+</table>
+<div id="test888">
+    8888
+</div>
+<div class="divOuter">
+    <div class="divCol divCol1">测试</div>
+    <div class="divCol divCol2">测试</div>
+    <div class="divCol divCol3">测试</div>
+</div>
+<span>444</span><span>55555</span>
+<p>注意：一般来说，可以为所有块级元素应用 text-indent，但无法将该属性应用于行内元素，图像之类的替换元素上也无法应用 text-indent 属性。不过，如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。注意：一般来说，可以为所有块级元素应用 text-indent，但无法将该属性应用于行内元素，图像之类的替换元素上也无法应用 text-indent 属性。不过，如果一个块级元素（比如段落）的首行中有一个图像，它会随该行的其余文本移动。</p>
+
+</body>
+</html>

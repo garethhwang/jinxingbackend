@@ -1,0 +1,230 @@
+2017-02-26 17:18:19 - product_id
+2017-02-26 17:18:19 - 50
+2017-02-26 17:18:19 - product_info price
+2017-02-26 17:18:19 - 499.0000
+2017-02-26 17:18:19 - 1
+2017-02-26 17:18:19 - 499.0000
+2017-02-26 17:18:19 - 499
+2017-02-26 17:18:19 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://opencart.meluo.net/', customer_id = '334', customer_group_id = '1', realname = 'renxiaopeng', email = 'sallyxie@meluo.net', telephone = '12312341234', fax = '', custom_field = '', payment_realname = 'renxiaopeng', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'renxiaopeng', shipping_address_1 = 'aaaaaaaaaaaa', shipping_address_2 = '1111111', shipping_city = '北京', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4 14:00:00'
+2017-02-26 17:18:19 - enter products
+2017-02-26 17:18:19 - INSERT INTO ph_order_product SET order_id = '292', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-02-26 17:18:19 - 499
+2017-02-26 17:18:19 - 499
+2017-02-26 17:18:19 - INSERT INTO ph_order_total SET order_id = '292', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-02-26 17:18:19 - 0
+2017-02-26 17:18:19 - 0
+2017-02-26 17:18:19 - INSERT INTO ph_order_total SET order_id = '292', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-02-26 17:18:19 - 499
+2017-02-26 17:18:19 - 499
+2017-02-26 17:18:19 - INSERT INTO ph_order_total SET order_id = '292', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-02-26 17:28:06 - product_id
+2017-02-26 17:28:06 - 50
+2017-02-26 17:28:06 - product_info price
+2017-02-26 17:28:06 - 499.0000
+2017-02-26 17:28:06 - 1
+2017-02-26 17:28:06 - 499.0000
+2017-02-26 17:28:06 - 499
+2017-02-26 17:28:06 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://opencart.meluo.net/', customer_id = '334', customer_group_id = '1', realname = 'renxiaopeng', email = 'sallyxie@meluo.net', telephone = '12312341234', fax = '', custom_field = '', payment_realname = 'renxiaopeng', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'renxiaopeng', shipping_address_1 = 'aaaaaaaaaaaa', shipping_address_2 = '1111111', shipping_city = '北京', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4 14:00:00'
+2017-02-26 17:28:06 - enter products
+2017-02-26 17:28:06 - INSERT INTO ph_order_product SET order_id = '293', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-02-26 17:28:06 - 499
+2017-02-26 17:28:06 - 499
+2017-02-26 17:28:06 - INSERT INTO ph_order_total SET order_id = '293', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-02-26 17:28:06 - 0
+2017-02-26 17:28:06 - 0
+2017-02-26 17:28:06 - INSERT INTO ph_order_total SET order_id = '293', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-02-26 17:28:06 - 499
+2017-02-26 17:28:06 - 499
+2017-02-26 17:28:06 - INSERT INTO ph_order_total SET order_id = '293', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-02-26 17:41:07 - 334
+2017-02-26 17:41:07 - 293
+2017-02-26 17:41:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '293'
+2017-02-26 17:41:07 - 292
+2017-02-26 17:41:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '292'
+2017-02-26 17:41:25 - 334
+2017-02-26 17:41:25 - 293
+2017-02-26 17:41:25 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '293'
+2017-02-26 17:41:25 - 292
+2017-02-26 17:41:25 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '292'
+2017-02-26 17:44:26 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '0'
+2017-02-26 17:47:04 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '0'
+2017-02-26 17:54:50 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '284'
+2017-02-26 18:05:39 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '284'
+2017-02-27 5:49:37 - 334
+2017-02-27 5:49:37 - 293
+2017-02-27 5:49:37 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '293'
+2017-02-27 5:49:37 - 292
+2017-02-27 5:49:37 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '292'
+2017-02-27 6:04:23 - 0
+2017-02-27 6:06:35 - 0
+2017-02-27 6:06:35 - 190
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '190'
+2017-02-27 6:06:35 - 183
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '183'
+2017-02-27 6:06:35 - 174
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '174'
+2017-02-27 6:06:35 - 178
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '178'
+2017-02-27 6:06:35 - 172
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '172'
+2017-02-27 6:06:35 - 186
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '186'
+2017-02-27 6:06:35 - 170
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '170'
+2017-02-27 6:06:35 - 184
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '184'
+2017-02-27 6:06:35 - 168
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '168'
+2017-02-27 6:06:35 - 175
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '175'
+2017-02-27 6:06:35 - 37
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '37'
+2017-02-27 6:06:35 - 38
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '38'
+2017-02-27 6:06:35 - 39
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '39'
+2017-02-27 6:06:35 - 40
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '40'
+2017-02-27 6:06:35 - 41
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '41'
+2017-02-27 6:06:35 - 108
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '108'
+2017-02-27 6:06:35 - 114
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '114'
+2017-02-27 6:06:35 - 45
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '45'
+2017-02-27 6:06:35 - 47
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '47'
+2017-02-27 6:06:35 - 53
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '53'
+2017-02-27 6:06:35 - 203
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '203'
+2017-02-27 6:06:35 - 62
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '62'
+2017-02-27 6:06:35 - 63
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '63'
+2017-02-27 6:06:35 - 64
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '64'
+2017-02-27 6:06:35 - 65
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '65'
+2017-02-27 6:06:35 - 66
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '66'
+2017-02-27 6:06:35 - 67
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '67'
+2017-02-27 6:06:35 - 68
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '68'
+2017-02-27 6:06:35 - 71
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '71'
+2017-02-27 6:06:35 - 78
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '78'
+2017-02-27 6:06:35 - 80
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '80'
+2017-02-27 6:06:35 - 81
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '81'
+2017-02-27 6:06:35 - 82
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '82'
+2017-02-27 6:06:35 - 198
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '198'
+2017-02-27 6:06:35 - 84
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '84'
+2017-02-27 6:06:35 - 85
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '85'
+2017-02-27 6:06:35 - 86
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '86'
+2017-02-27 6:06:35 - 132
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '132'
+2017-02-27 6:06:35 - 88
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '88'
+2017-02-27 6:06:35 - 89
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '89'
+2017-02-27 6:06:35 - 90
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '90'
+2017-02-27 6:06:35 - 93
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '93'
+2017-02-27 6:06:35 - 107
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '107'
+2017-02-27 6:06:35 - 106
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '106'
+2017-02-27 6:06:35 - 128
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '128'
+2017-02-27 6:06:35 - 126
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '126'
+2017-02-27 6:06:35 - 127
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '127'
+2017-02-27 6:06:35 - 124
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '124'
+2017-02-27 6:06:35 - 104
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '104'
+2017-02-27 6:06:35 - 105
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '105'
+2017-02-27 6:06:35 - 103
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '103'
+2017-02-27 6:06:35 - 137
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '137'
+2017-02-27 6:06:35 - 116
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '116'
+2017-02-27 6:06:35 - 122
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '122'
+2017-02-27 6:06:35 - 123
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '123'
+2017-02-27 6:06:35 - 230
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '230'
+2017-02-27 6:06:35 - 232
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '232'
+2017-02-27 6:06:35 - 235
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '235'
+2017-02-27 6:06:35 - 239
+2017-02-27 6:06:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '239'
+2017-02-27 6:13:44 - 0
+2017-02-27 6:14:28 - 334
+2017-02-27 6:18:34 - 334
+2017-02-27 6:22:31 - 334
+2017-02-27 6:22:31 - 293
+2017-02-27 6:22:31 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '293'
+2017-02-27 6:22:31 - 292
+2017-02-27 6:22:31 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '292'
+2017-02-27 6:38:09 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '283'
+2017-02-27 6:38:50 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '284'
+2017-02-27 7:01:25 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '284'
+2017-02-27 7:41:34 - product_id
+2017-02-27 7:41:34 - 50
+2017-02-27 7:41:34 - product_info price
+2017-02-27 7:41:34 - 499.0000
+2017-02-27 7:41:34 - 1
+2017-02-27 7:41:34 - 499.0000
+2017-02-27 7:41:34 - 499
+2017-02-27 7:41:34 - coupon50YDISCNT
+2017-02-27 7:41:34 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://opencart.meluo.net/', customer_id = '334', customer_group_id = '1', realname = 'huangxinyu', email = 'sallyxie@meluo.net', telephone = '13662112168', fax = '', custom_field = '', payment_realname = 'huangxinyu', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'huangxinyu', shipping_address_1 = 'wangjingSOHO', shipping_address_2 = '1111111', shipping_city = 'wangjingguojishangyezhongxin', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '449', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-2-14'
+2017-02-27 7:41:34 - enter products
+2017-02-27 7:41:34 - INSERT INTO ph_order_product SET order_id = '294', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-02-27 7:41:34 - 499
+2017-02-27 7:41:34 - 499
+2017-02-27 7:41:34 - INSERT INTO ph_order_total SET order_id = '294', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-02-27 7:41:34 - 0
+2017-02-27 7:41:34 - 0
+2017-02-27 7:41:34 - INSERT INTO ph_order_total SET order_id = '294', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-02-27 7:41:34 - 499
+2017-02-27 7:41:34 - 499
+2017-02-27 7:41:34 - INSERT INTO ph_order_total SET order_id = '294', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-02-27 7:41:34 - -50
+2017-02-27 7:41:34 - -50
+2017-02-27 7:41:34 - INSERT INTO ph_order_total SET order_id = '294', code = 'coupon', title = '折扣券 (50YDISCNT)', `value` = '-50', sort_order = '4'
+2017-02-27 7:42:00 - product_id
+2017-02-27 7:42:00 - 50
+2017-02-27 7:42:00 - product_info price
+2017-02-27 7:42:00 - 499.0000
+2017-02-27 7:42:00 - 2
+2017-02-27 7:42:00 - 499.0000
+2017-02-27 7:42:00 - 998
+2017-02-27 7:42:00 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://opencart.meluo.net/', customer_id = '334', customer_group_id = '1', realname = 'huangxinyu', email = 'sallyxie@meluo.net', telephone = '13662112168', fax = '', custom_field = '', payment_realname = 'huangxinyu', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'huangxinyu', shipping_address_1 = 'wangjingSOHO', shipping_address_2 = '1111111', shipping_city = 'wangjingguojishangyezhongxin', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-2-14'
+2017-02-27 7:42:00 - enter products
+2017-02-27 7:42:00 - INSERT INTO ph_order_product SET order_id = '295', product_id = '50', name = '产后开奶', model = '1', quantity = '2', price = '499', total = '499', tax = '0', reward = '0'
+2017-02-27 7:42:00 - 998
+2017-02-27 7:42:00 - 998
+2017-02-27 7:42:00 - INSERT INTO ph_order_total SET order_id = '295', code = 'sub_total', title = '小计', `value` = '998', sort_order = '1'
+2017-02-27 7:42:00 - 0
+2017-02-27 7:42:00 - 0
+2017-02-27 7:42:00 - INSERT INTO ph_order_total SET order_id = '295', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-02-27 7:42:00 - 998
+2017-02-27 7:42:00 - 998
+2017-02-27 7:42:00 - INSERT INTO ph_order_total SET order_id = '295', code = 'total', title = '总计', `value` = '998', sort_order = '9'

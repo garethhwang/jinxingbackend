@@ -1,0 +1,283 @@
+2017-02-16 10:51:12 - Enter in ControllerProductProduct
+2017-02-20 7:20:21 - Enter in ControllerProductProduct
+2017-02-20 10:40:26 - Enter in ControllerProductProduct %d
+2017-02-20 10:43:03 - Enter in ControllerProductProduct 1
+2017-02-20 10:43:11 - Enter in ControllerProductProduct 1
+2017-02-20 10:45:27 - Enter in ControllerProductProduct 1
+2017-02-20 10:51:04 - Enter in ControllerProductProduct 1
+2017-02-20 10:55:51 - Enter in ControllerProductProduct 1
+2017-02-20 10:55:56 - Enter in ControllerProductProduct 1
+2017-02-20 10:56:05 - Enter in ControllerProductProduct 1
+2017-02-20 11:33:58 - Enter in ControllerProductProduct 1
+2017-02-20 11:49:11 - Enter in ControllerProductProduct 1
+2017-02-20 11:54:37 - Enter in ControllerProductProduct 1
+2017-02-20 11:55:05 - Enter in ControllerProductProduct 1
+2017-02-20 11:55:27 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:01 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:18 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:34 - Enter in ControllerProductProduct 6
+2017-02-20 11:59:10 - Enter in ControllerProductProduct 1
+2017-02-20 11:59:30 - Enter in ControllerProductProduct 1
+2017-02-20 11:59:30 - WxPayApi unifiedOrderREMOTE_ADDR 61.48.32.31
+2017-02-20 11:59:30 - WxPayResults Init return_code:FAIL
+2017-02-20 11:59:30 - WxPayApi unifiedOrderreturn_msg: JSAPI支付必须传openid
+2017-02-20 11:59:30 - JsApiPay GetJsApiParameters 参数错误
+2017-02-20 11:59:30 - JsApiPay GetJsApiParameters PaySign:863F77E96A9EB34E9DE87B41DF9DF5EE
+2017-02-20 12:18:56 - Enter in ControllerProductProduct 1
+2017-02-20 12:32:12 - Enter in ControllerProductProduct 1
+2017-02-20 12:37:02 - Enter in ControllerProductProduct 1
+2017-02-21 7:16:16 - Enter in ControllerProductProduct 1
+2017-02-21 7:16:33 - Enter in ControllerProductProduct 1
+2017-02-23 5:27:20 - Enter in ControllerProductProduct 1
+2017-02-23 5:28:24 - Enter in ControllerProductProduct 1
+2017-02-23 5:34:02 - Enter in ControllerProductProduct 1
+2017-02-23 5:34:12 - Enter in ControllerProductProduct 1
+2017-02-23 6:40:50 - Enter in ControllerProductProduct 1
+2017-02-23 6:42:17 - Enter in ControllerProductProduct 1
+2017-02-23 6:44:11 - Enter in ControllerProductProduct 1
+2017-02-23 6:44:25 - Enter in ControllerProductProduct 1
+2017-02-23 7:08:14 - Enter in ControllerProductProduct 1
+2017-02-23 7:11:21 - Enter in ControllerProductProduct 1
+2017-02-23 7:11:41 - Enter in ControllerProductProduct 1
+2017-02-23 7:14:25 - Enter in ControllerProductProduct 1
+2017-02-23 7:18:00 - Enter in ControllerProductProduct 1
+2017-02-23 7:19:51 - Enter in ControllerProductProduct 1
+2017-02-23 7:22:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:58:56 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:06 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:07 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:08 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:19 - Enter in ControllerProductProduct 1
+2017-02-23 8:00:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:00:02 - Enter in ControllerProductProduct 1
+2017-02-23 8:39:11 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:57 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:57:15 - Enter in ControllerProductProduct 1
+2017-02-23 8:57:15 - product_info 0
+2017-02-23 9:01:37 - Enter in ControllerProductProduct 1
+2017-02-23 9:01:37 - product_info 50
+2017-02-23 9:02:02 - Enter in ControllerProductProduct 1
+2017-02-23 9:02:02 - product_info 50
+2017-02-23 9:02:43 - Enter in ControllerProductProduct 1
+2017-02-23 9:02:43 - product_info 50
+2017-02-23 9:05:16 - Enter in ControllerProductProduct 1
+2017-02-23 9:05:16 - product_info 50
+2017-02-23 9:06:22 - Enter in ControllerProductProduct 1
+2017-02-23 9:06:22 - product_info 50
+2017-02-23 9:10:12 - Enter in ControllerProductProduct 1
+2017-02-23 9:10:12 - product_info 0
+2017-02-23 10:07:13 - Enter in ControllerProductProduct 1
+2017-02-23 10:07:13 - product_info 50
+2017-02-23 10:08:59 - Enter in ControllerProductProduct 1
+2017-02-23 10:08:59 - product_info 50
+2017-02-23 10:31:14 - Enter in ControllerProductProduct 1
+2017-02-23 10:31:14 - product_info 50
+2017-02-23 10:51:02 - Enter in ControllerProductProduct 1
+2017-02-23 10:51:02 - product_info 50
+2017-02-23 12:53:59 - Enter in ControllerProductProduct 1
+2017-02-23 12:53:59 - product_info 50
+2017-02-23 12:54:16 - Enter in ControllerProductProduct 1
+2017-02-23 12:54:16 - product_info 50
+2017-02-23 13:03:48 - Enter in ControllerProductProduct 1
+2017-02-23 13:03:48 - product_info 50
+2017-02-23 13:06:12 - Enter in ControllerProductProduct 1
+2017-02-23 13:06:12 - product_info 50
+2017-02-23 13:08:38 - Enter in ControllerProductProduct 1
+2017-02-23 13:08:38 - product_info 50
+2017-02-23 13:08:41 - Enter in ControllerProductProduct 1
+2017-02-23 13:08:41 - product_info 50
+2017-02-24 6:03:27 - Enter in ControllerProductProduct 1
+2017-02-24 6:03:27 - product_info 50
+2017-02-24 7:40:17 - 微信信息没有获取到！
+2017-02-24 7:41:24 - 微信信息没有获取到！
+2017-02-24 9:29:29 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 9:29:29 - department=北京市朝阳区东坝保健科
+2017-02-24 9:29:41 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 9:29:41 - department=北京市朝阳区东坝保健科
+2017-02-24 11:51:38 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 11:51:38 - department=北京市朝阳区东坝保健科
+2017-02-24 12:45:47 - 微信信息没有获取到！
+2017-02-24 12:46:03 - 微信信息没有获取到！
+2017-02-24 12:47:03 - 微信信息没有获取到！
+2017-02-24 12:47:19 - 微信信息没有获取到！
+2017-02-24 12:47:43 - 微信信息没有获取到！
+2017-02-24 12:47:52 - 微信信息没有获取到！
+2017-02-24 12:53:19 - 微信信息没有获取到！
+2017-02-24 12:58:08 - 微信信息没有获取到！
+2017-02-24 12:59:07 - 微信信息没有获取到！
+2017-02-24 12:59:11 - 微信信息没有获取到！
+2017-02-24 13:18:11 - 微信信息没有获取到！
+2017-02-24 13:21:29 - 微信信息没有获取到！
+2017-02-24 13:35:04 - 微信信息没有获取到！
+2017-02-24 13:52:05 - 微信信息没有获取到！
+2017-02-24 14:24:44 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:24:44 - department=北京市朝阳区东坝保健科
+2017-02-24 14:39:44 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:39:44 - register wechat_id:197
+2017-02-24 14:40:00 - 微信信息没有获取到！
+2017-02-24 14:40:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:40:42 - register wechat_id:197
+2017-02-24 14:40:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:40:42 - register wechat_id:197
+2017-02-24 14:41:02 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:41:02 - register wechat_id:197
+2017-02-24 14:41:02 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:41:02 - register wechat_id:197
+2017-02-24 15:30:53 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 15:30:53 - department=北京市朝阳区东坝保健科
+2017-02-24 15:33:32 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 15:33:32 - department=北京市朝阳区东坝保健科
+2017-02-26 1:25:05 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 1:25:05 - department=北京市朝阳区东坝保健科
+2017-02-26 3:19:57 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 3:19:57 - department=北京市朝阳区东坝保健科
+2017-02-26 3:23:29 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 3:23:29 - department=北京市朝阳区东坝保健科
+2017-02-26 4:35:13 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 4:35:13 - register wechat_id:197
+2017-02-26 5:38:36 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 5:38:36 - register wechat_id:197
+2017-02-26 6:49:37 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 6:49:38 - register wechat_id:199
+2017-02-26 6:55:07 - 微信信息没有获取到！
+2017-02-26 6:59:23 - 微信信息没有获取到！
+2017-02-26 7:02:00 - 微信信息没有获取到！
+2017-02-26 7:25:30 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 7:25:31 - register wechat_id:199
+2017-02-26 7:28:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 7:28:42 - register wechat_id:199
+2017-02-26 8:33:19 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 9:59:19 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:00:40 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:02:37 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:03:30 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:27:00 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:15:03 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:19:18 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:27:24 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:32:48 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:36:38 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:37:04 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:38:47 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:53:16 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 13:56:57 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:24:42 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:24:42 - customer_id=
+2017-02-26 14:24:42 - realname=
+2017-02-26 14:24:42 - realname=生小孩
+2017-02-26 14:33:40 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:33:40 - customer_id=
+2017-02-26 14:33:40 - realname=
+2017-02-26 14:33:40 - realname=
+2017-02-26 14:38:43 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:38:43 - customer_id=
+2017-02-26 14:38:43 - realname=
+2017-02-26 14:38:43 - realname=黄行啊
+2017-02-26 14:39:07 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:39:07 - customer_id=
+2017-02-26 14:39:07 - realname=
+2017-02-26 14:39:07 - realname=
+2017-02-26 14:55:04 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:56:48 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:57:16 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:07:08 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:07:08 - physical_id=205
+2017-02-26 15:07:08 - postdata[realname]=
+2017-02-26 15:07:08 - info=黄回的家
+2017-02-26 15:07:08 - realname=黄回的家
+2017-02-26 15:24:59 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:28:32 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 17:18:19 - wechat/orderDetail        1111111111
+2017-02-26 17:18:19 - wechat/orderDetail        orderCount = 1
+2017-02-26 17:18:19 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:18:19 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:18:19 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:18:19 - JsApiPay GetJsApiParameters PaySign:B2D19D374AD9E7755A4967A98C7F6968
+2017-02-26 17:28:06 - wechat/orderDetail        1111111111
+2017-02-26 17:28:06 - wechat/orderDetail        orderCount = 1
+2017-02-26 17:28:06 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:28:07 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:28:07 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:28:07 - JsApiPay GetJsApiParameters PaySign:1AD61C386C53427E3CF82095D0121F65
+2017-02-26 17:44:26 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:44:26 - WxPayResults Init return_code:FAIL
+2017-02-26 17:44:26 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-26 17:44:26 - JsApiPay GetJsApiParameters 参数错误
+2017-02-26 17:44:26 - JsApiPay GetJsApiParameters PaySign:8567919BF7F8AB7B7B691BD3CB34DB8B
+2017-02-26 17:47:04 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:47:04 - WxPayResults Init return_code:FAIL
+2017-02-26 17:47:04 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-26 17:47:04 - JsApiPay GetJsApiParameters 参数错误
+2017-02-26 17:47:04 - JsApiPay GetJsApiParameters PaySign:96A58BFEF92FCC7F7FA4819AC346A0DD
+2017-02-26 17:54:50 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:54:51 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:54:51 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:54:51 - JsApiPay GetJsApiParameters PaySign:413DFB7AD035AF408FD5FCDA702C3623
+2017-02-26 18:05:39 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 18:05:40 - WxPayResults Init return_code:SUCCESS
+2017-02-26 18:05:40 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 18:05:40 - JsApiPay GetJsApiParameters PaySign:31B898E266AA782B1D66E3855CD034FB
+2017-02-27 6:38:09 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 6:38:09 - WxPayResults Init return_code:FAIL
+2017-02-27 6:38:09 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-27 6:38:09 - JsApiPay GetJsApiParameters 参数错误
+2017-02-27 6:38:09 - JsApiPay GetJsApiParameters PaySign:D7A06990C74DABBA5FAF3BD83B35CAEB
+2017-02-27 6:38:50 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 6:38:51 - WxPayResults Init return_code:SUCCESS
+2017-02-27 6:38:51 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 6:38:51 - JsApiPay GetJsApiParameters PaySign:71FFB723AC47016F911E21D53D26AABB
+2017-02-27 7:01:25 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:01:25 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:01:25 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:01:25 - JsApiPay GetJsApiParameters PaySign:5D40B5615AEC40088369AA8E25C59BA6
+2017-02-27 7:41:34 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:41:34 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:41:34 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:41:34 - JsApiPay GetJsApiParameters PaySign:9317D9D00BF4C2AE0D2D50E4BA038B89
+2017-02-27 7:42:00 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:42:01 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:42:01 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:42:01 - JsApiPay GetJsApiParameters PaySign:0A8CCBFB97AAB0ED0A0F364E8FA1B80C
+2017-02-27 7:56:28 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-27 7:56:28 - department=北京市朝阳区东坝保健科
+2017-02-27 9:40:14 - realname=lastmenstrualdate=
+2017-02-27 9:48:18 - realname=lastmenstrualdate=
+2017-02-27 9:51:26 - realname=lastmenstrualdate=
+2017-02-27 9:57:05 - realname=weight=
+2017-02-27 9:57:05 - realname=lastmenstrualdate=
