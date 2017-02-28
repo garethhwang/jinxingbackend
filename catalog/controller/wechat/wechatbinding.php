@@ -143,11 +143,11 @@ class ControllerWechatWechatbinding extends Controller
                              $data['isnotright'] = '1';
             }else{
                 $data['isnotright'] = '0';
-                $this->model_account_customer->addNonpregnant($postdata);
+                //$this->model_account_customer->addNonpregnant($postdata);
                 $this->customer->nonpregnantlogin($data["openid"]);
                 unset($this->session->data['guest']);
                 //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
-                $this->response->redirect($this->url->link('wechat/registersuccess', '', true));
+                //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
             }
 
             //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
