@@ -4,6 +4,29 @@ class ControllerWechatPhysicalReceipt extends Controller
 {
     private $error = array();
 
+
+    public function submit(){
+
+        //$log = new Log("wechat.log");
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        if (isset($this->session->data['openid'])) {
+            //$log->write("PersonalCenter openid:" . $this->session->data['openid']);
+            $data['openid'] = $this->session->data['openid'];
+            $this->error['warning'] = "";
+        } else {
+            $data['openid'] = "";
+            $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
+            //$log->write($this->error['warning']);
+        }
+
+
+
+
+
+
+    }
+
+
     public function index()
     {
         $log = new log('wechat.log');
@@ -31,7 +54,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
-       $log->write("openid is ".$data['openid']);
+        //$log->write("openid is ".$data['openid']);
 
         $this->load->model('wechat/userinfo');
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
@@ -194,7 +217,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
 
-        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+        /*if ($this->request->server['REQUEST_METHOD'] == 'POST') {
 
             $switch = array();
             foreach($this->request->post['switch'] as $key){
@@ -229,7 +252,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 "第五个：".$switch['4'].
                 "第六个：".$switch['5'].
                 "第七个：".$switch['6'].
-                "第八个：".$switch['7']);*/
+                "第八个：".$switch['7']);
 
 
 
@@ -416,7 +439,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->cache->set($success, "1");
             //$this->session->data['success'] = $this->language->get('text_add');
             $this->response->redirect($this->url->link('wechat/physicalreceipt', '', true));
-        }
+        }*/
 
 
         $this->load->model('wechat/physicalreceipt');
@@ -430,12 +453,58 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->cache->delete($success);
         }
 
-        $log->write("success=".$data["success"]);
+           $log->write("success=".$data["success"]);
 
             $this->document->setTitle("回访调查");
             $data['footer'] = $this->load->controller('common/wechatfooter');
             $data['header'] = $this->load->controller('common/wechatheader');
-            $this->response->setOutput($this->load->view('wechat/physicalreceipt', $data));
+
+        $result  = array(
+            'isnotregist' => $data['isnotregist'],
+            'ispregnant' =>$data['ispregnant'],
+            'pregnant' =>$data["pregnant"],
+            'ishighrisk' =>$data["ishighrisk"],
+            'success' =>$data["success"],
+            'receipt' =>$data['receipt'],
+            'receiptdate' =>$data['receiptdate'],
+            'isnottime' =>$data['isnottime'],
+            'last' =>$data['last'],
+            'historyrecord' =>$data["historyrecord"],
+            'customer_id' =>  $data['customer_id'],
+            'realname' =>  $data['realname'],
+            'department' =>  $data['department'],
+            'pregnantstatus' =>  $data['pregnantstatus'],
+            'birthday' =>  $data['birthday'],
+            'height' =>  $data['height'],
+            'weight' =>  $data['weight'],
+            'bmitype' =>  $data['bmitype'],
+            'bmiindex' =>  $data['bmiindex'],
+            'lastmenstrualdate' =>  $data['lastmenstrualdate'],
+            'gravidity' =>  $data['gravidity'],
+            'parity' =>  $data['parity'],
+            'edc' =>  $data['edc'],
+            'vaginaldelivery' =>  $data['vaginaldelivery'],
+            'aesarean' =>  $data['aesarean'],
+            'spontaneousabortion' =>  $data['spontaneousabortion'],
+            'drug_inducedabortion' =>  $data['drug_inducedabortion'],
+            'highriskfactor' =>  $data['highriskfactor'],
+            'highrisk' =>  $data['highrisk'],
+            'district' =>  $data['district'],
+            'address_1' =>  $data['address_1'],
+            'householdregister'   =>  $data['householdregister'],
+            'footer' => $data['footer'],
+            'header' => $data['header'],
+        );
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $result;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+            //$this->response->setOutput($this->load->view('wechat/physicalreceipt', $data));
     }
 
 

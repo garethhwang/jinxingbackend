@@ -653,8 +653,8 @@ class ControllerWechatEdituser extends Controller
             $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
             //$log->write($this->error['warning']);
         }
-        $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        //$this->customer->wechatlogin($data["openid"]);
+        //unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
