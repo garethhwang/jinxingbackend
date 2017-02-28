@@ -7,6 +7,8 @@ class ControllerWechatPhysicalReceipt extends Controller
 
     public function submit(){
 
+        $success = "";
+
         //$log = new Log("wechat.log");
         $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         if (isset($this->session->data['openid'])) {
@@ -19,11 +21,210 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
+        $switch = $this->request->json('switch', array());
+
+        foreach($switch as $key){
+            if($key == "heart"){
+                $switch['0'] = "1";
+            }elseif ($key == "hyper"){
+                $switch['1'] = "1";
+            }elseif ($key == "GI"){
+                $switch['2'] = "1";
+            }elseif ($key == "neph"){
+                $switch['3'] = "1";
+            }elseif ($key == "hepa"){
+                $switch['4'] = "1";
+            }elseif ($key == "thy"){
+                $switch['5'] = "1";
+            }elseif ($key == "bloods"){
+                $switch['6'] = "1";
+            }elseif ($key == "otherelse"){
+                $switch['7'] = "1";
+            }
+        }
+        for ($i = 0; $i <8; $i++){
+            if( $switch[$i] != "1" || !isset($switch[$i])){
+                $switch[$i] = "0";
+            }
+        }
+
+        /*$log->write("总数：".count($switch)."第一个：".$switch['0'].
+            "第二个：".$switch['1'].
+            "第三个：".$switch['2'].
+            "第四个：".$switch['3'].
+            "第五个：".$switch['4'].
+            "第六个：".$switch['5'].
+            "第七个：".$switch['6'].
+            "第八个：".$switch['7']);*/
+
+        $heartdisease = $this->request->json('heartdisease', array());
+        $nephropathy = $this->request->json('nephropathy', array());
+        $hepatopathy = $this->request->json('hepatopathy', array());
+        $thyroid = $this->request->json('thyroid', array());
+        $blood = $this->request->json('blood', array());
+        $others = $this->request->json('others', array());
 
 
+            $xzb = $this->request->json('xzb','无');
+            $gxy = $this->request->json('gxy','无');
+            $tnb = $this->request->json('tnb','无');
+            $cure = $this->request->json('cure','无');
+            $alt = $this->request->json('alt','无');
+            $ast = $this->request->json('ast','无');
+            $hgb = $this->request->json('hgb','无');
+            $xqb = $this->request->json('xqb','无');
+            $other = $this->request->json('other','无');
 
 
+                if ($switch['0'] == "1") {
+                    foreach ($heartdisease as $key) {
+                        for ($i = 0; $i < count($data['receipt'][0]['detail']); $i++) {
+                            if ($key == $data['receipt'][0]['detail'][$i]['key']) {
+                                $data['receipt'][0]['detail'][$i]['value'] = "是";
+                                if ($key == $data['receipt'][0]['detail'][2]['key']) {
+                                    $data['receipt'][0]['detail'][2]['value'] = $xzb;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    $data['receipt'][0]['flag'] = "0";
+                }
 
+                if ($switch['1'] == "1") {
+
+                    $data['receipt'][1]['detail']['value'] = $gxy;
+                } else {
+                    $data['receipt'][1]['flag'] = "0";
+                }
+
+
+                if ($switch['2'] == "1") {
+                    $data['receipt'][2]['detail'][0]['value'] = $tnb;
+                    $data['receipt'][2]['detail'][1]['value'] = $cure;
+
+                } else {
+                    $data['receipt'][2]['flag'] = "0";
+                }
+
+                if ($switch['3'] == "1") {
+                    foreach ($nephropathy as $key) {
+                        for ($i = 0; $i < count($data['receipt'][3]['detail']); $i++) {
+                            if ($key == $data['receipt'][3]['detail'][$i]['key']) {
+                                $data['receipt'][3]['detail'][$i]['value'] = "是";
+                            }
+                        }
+                    }
+                } else {
+                    $data['receipt'][3]['flag'] = "0";
+                }
+
+
+                if ($switch['4'] == "1") {
+
+                    $data['receipt'][4]['detail'][0]['value'] = $alt;
+                    $data['receipt'][4]['detail'][1]['value'] = $ast;
+
+                    foreach ($hepatopathy as $key) {
+                        for ($i = 2; $i < count($data['receipt'][4]['detail']); $i++) {
+                            if ($key == $data['receipt'][4]['detail'][$i]['key']) {
+                                $data['receipt'][4]['detail'][$i]['value'] = "是";
+                            }
+                        }
+                    }
+                } else {
+                    $data['receipt'][4]['flag'] = "0";
+                }
+
+                if ($switch['5'] == "1") {
+                    foreach ($thyroid as $key) {
+                        for ($i = 0; $i < count($data['receipt'][5]['detail']); $i++) {
+                            if ($key == $data['receipt'][5]['detail'][$i]['key']) {
+                                $data['receipt'][5]['detail'][$i]['value'] = "是";
+                            }
+                        }
+                    }
+                } else {
+                    $data['receipt'][5]['flag'] = "0";
+                }
+
+
+                if ($switch['6'] == "1") {
+                    foreach ($blood as $key) {
+
+                        if ($key == $data['receipt'][6]['detail'][0]['key']) {
+                            $data['receipt'][6]['detail'][0]['value'] = $hgb;
+                        } else if ($key == $data['receipt'][6]['detail'][1]['key']) {
+
+                            $data['receipt'][6]['detail'][1]['value'] = $xqb;
+
+                        } else if ($key == $data['receipt'][6]['detail'][2]['key']) {
+
+                            $data['receipt'][6]['detail'][2]['value'] = "是";
+                        }
+                    }
+                } else {
+                    $data['receipt'][6]['flag'] = "0";
+                }
+
+                if ($switch['7'] == "1") {
+                    foreach ($others as $key) {
+                        for ($i = 0; $i < count($data['receipt'][7]['detail']); $i++) {
+                            if ($key == $data['receipt'][7]['detail'][$i]['key']) {
+                                $data['receipt'][7]['detail'][$i]['value'] = "是";
+                                if ($key == $data['receipt'][7]['detail'][7]['key']) {
+                                    $data['receipt'][7]['detail'][7]['value'] = $other;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    $data['receipt'][7]['flag'] = "0";
+                }
+
+            $temp = array(
+                'receipt' => $data['receipt']
+            );
+
+
+            $result = array(
+
+                'receipt_id' => '1',
+                'customer_id' => $data['customer_id'],
+                'receipt_text' => json_encode($temp, JSON_UNESCAPED_UNICODE)
+            );
+
+            $this->load->model('wechat/physicalreceipt');
+            $this->model_wechat_physicalreceipt->addReceiptHistory($result);
+            $record = $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
+            $this->load->model('account/customer');
+            if ($record == '1') {
+                $this->model_account_customer->updateReceiptDate($data, '20');
+            }
+            if ($record == '2') {
+                $this->model_account_customer->updateReceiptDate($data, '34');
+            }
+            //$log->write("record=".$record);
+            $this->cache->set($success, "1");
+
+            $data =array(
+                'receipttext' => $result,
+                'success' => $this->cache->get($success)
+            );
+
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+
+        //$this->response->redirect($this->url->link('wechat/physicalreceipt', '', true));
     }
 
 
@@ -87,7 +288,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $data['ishighrisk'] = "1";
         }
 
-        $success = "";
+
 
         if (!isset($data['receiptdate'])) {
             $data['receiptdate'] = date("Y-m-d",strtotime("+10 week"));
