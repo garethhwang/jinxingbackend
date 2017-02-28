@@ -176,10 +176,6 @@ class ControllerWechatRegister extends Controller
             'agree' => $data['agree'],
             );
 
-
-
-        $log->write("realname=" . $postdata['realname']."lastmenstrualdate=".$postdata['lastmenstrualdate']);
-
             $this->load->model('wechat/userinfo');
             $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
             $postdata["wechat_id"] = $temp["wechat_id"];
@@ -210,7 +206,7 @@ class ControllerWechatRegister extends Controller
                 $data['isnotright'] = '1';
             } else {
                 $data['isnotright'] = '0';
-                //$customer_id = $this->model_account_customer->addCustomer($postdata);
+                $customer_id = $this->model_account_customer->addCustomer($postdata);
                 $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
                 //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
