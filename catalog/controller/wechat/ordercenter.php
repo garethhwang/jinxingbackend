@@ -121,8 +121,8 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->session->data["nav"]="order";
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data['pay_href'] = $this->url->link('wechat/orderDetail');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
@@ -240,8 +240,8 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->session->data["nav"]="order";
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+       // $data['footer'] = $this->load->controller('common/wechatfooter');
+       // $data['header'] = $this->load->controller('common/wechatheader');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
@@ -359,8 +359,8 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->session->data["nav"]="order";
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
@@ -545,8 +545,8 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->session->data["nav"]="order";
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data['pay_href'] = $this->url->link('wechat/orderDetail');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
