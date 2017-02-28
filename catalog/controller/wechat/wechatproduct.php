@@ -14,15 +14,15 @@ class ControllerWechatWechatproduct extends Controller
     {
         $this->document->setTitle("商品详情");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
 
         $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
 		);
-		$response["data"] = $data;
+		//$response["data"] = $data;
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($response));
