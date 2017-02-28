@@ -671,6 +671,7 @@ class ControllerWechatEdituser extends Controller
         $data['lastmenstrualdate'] = $this->request->json('lastmenstrualdate', '');
         $data['gravidity'] = $this->request->json('gravidity', '');
         $data['parity'] = $this->request->json('parity', '');
+        $data['fetal'] = $this->request->json('fetal', '');
         $data['vaginaldelivery'] = $this->request->json('vaginaldelivery', '');
         $data['aesarean'] = $this->request->json('aesarean', '');
         $data['spontaneousabortion'] = $this->request->json('spontaneousabortion', '');
@@ -692,6 +693,7 @@ class ControllerWechatEdituser extends Controller
             'weight'   => $data['weight'],
             'pregnantstatus' => $data['pregnantstatus'],
             'lastmenstrualdate' => $data['lastmenstrualdate'],
+            'fetal' => $data['fetal'],
             'gravidity' => $data['gravidity'],
             'parity' => $data['parity'],
             'vaginaldelivery' => $data['vaginaldelivery'],
