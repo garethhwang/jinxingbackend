@@ -171,7 +171,7 @@ class ControllerProductProduct extends Controller
 
         $this->load->model('catalog/product');
 
-        // $product_info = $this->model_catalog_product->getProduct($product_id);
+        $product_info = $this->model_catalog_product->getProduct($product_id);
 
         //$product_info['images'] = array();
 
