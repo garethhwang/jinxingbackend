@@ -221,7 +221,7 @@ class ControllerWechatWechatbinding extends Controller
         $data["citys_data"] = json_encode($this->getCity());
         $data["dists_data"] = json_encode($this->getDistrict());
 
-	$response = array(
+	  $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
