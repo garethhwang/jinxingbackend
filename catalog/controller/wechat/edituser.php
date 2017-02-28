@@ -597,7 +597,6 @@ class ControllerWechatEdituser extends Controller
 
 
         $result  = array(
-            'error_warning' =>  $data['error_warning'], 
             'headimgurl' =>  $data['headimgurl'],
             'realname' =>  $data['realname'],
             'telephone' =>  $data['telephone'],
