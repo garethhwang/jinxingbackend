@@ -620,6 +620,7 @@ class ControllerWechatEdituser extends Controller
             'highrisk' =>  $data['highrisk'],
             'district' =>  $data['district'],
             'address_1' =>  $data['address_1'],
+            'householdregister'   =>  $data['householdregister'],
             'footer' => $data['footer'],
             'header' => $data['header'],
             );
