@@ -62,8 +62,8 @@ class ControllerWechatPersonalinfo extends Controller
 
         $this->document->setTitle("个人信息");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+       // $data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"]="personal_center";
 
          $response = array(

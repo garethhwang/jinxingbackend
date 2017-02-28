@@ -213,8 +213,8 @@ class ControllerWechatWechatbinding extends Controller
 
 
         //$data['action'] = $this->url->link('wechat/wechatbinding', '', true);
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
 
 
         $data["provs_data"] = json_encode($this->getProvince());

@@ -102,8 +102,8 @@ class ControllerWechatOrderDetail extends Controller
             $data["wxpay"] = $jsApiParameters;
         }
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         $response = array(

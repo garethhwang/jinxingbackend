@@ -73,9 +73,9 @@ class ControllerWechatUserinfo extends Controller
             $data['error_warning'] = '';
         }
 
-        $data['footer'] = $this->load->controller('common/footer');
-        $data['header'] = $this->load->controller('common/header');
-        $data['edit'] = $this->url->link('account/edit', true);
+        //$data['footer'] = $this->load->controller('common/footer');
+        //$data['header'] = $this->load->controller('common/header');
+        //$data['edit'] = $this->url->link('account/edit', true);
         $this->response->setOutput($this->load->view('wechat/userinfo', $data));
 
 

@@ -131,8 +131,8 @@ class  ControllerWechatChecklist extends Controller
                 'end' => $data["tenchecks"],
                 'emptystomach' => '0',
                 ),
-            'footer' => $data['footer'],
-            'header' => $data['header'],
+            //'footer' => $data['footer'],
+            //'header' => $data['header'],
 
             );
 

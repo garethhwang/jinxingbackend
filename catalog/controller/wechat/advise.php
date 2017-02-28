@@ -43,8 +43,8 @@ class ControllerWechatAdvise extends Controller
         //$data['action'] = $this->url->link('wechat/advisesuccess', '', true);
         $this->document->setTitle("投诉建议");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"]="personal_center";
 
         $result  = array(

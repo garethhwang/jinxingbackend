@@ -14,8 +14,8 @@ class ControllerWechatVaccine extends Controller
     {
         $this->document->setTitle("疫苗接种表");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+       // $data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 	$response = array(
 				'code'  => 0,
@@ -34,15 +34,15 @@ class ControllerWechatVaccine extends Controller
     {
         $this->document->setTitle("疫苗接种表");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 	$response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
 		);
-		$response["data"] = $data;
+		//$response["data"] = $data;
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($response));

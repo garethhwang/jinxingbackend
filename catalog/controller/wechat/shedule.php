@@ -14,8 +14,8 @@ class ControllerWechatShedule extends Controller
     {
         $this->document->setTitle("产检计划");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 
 
@@ -26,7 +26,7 @@ class ControllerWechatShedule extends Controller
                 'message'  => "",
                 'data' =>array(),
         );
-        $response["data"] = $data;
+        //$response["data"] = $data;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

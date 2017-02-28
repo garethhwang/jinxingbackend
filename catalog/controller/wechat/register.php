@@ -229,7 +229,7 @@ class ControllerWechatRegister extends Controller
                 'href' => $this->url->link('account/register', '', true)
             );
 
-            $data['heading_title'] = $this->language->get('heading_title');
+            /*$data['heading_title'] = $this->language->get('heading_title');
 
             $data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', true));
             $data['text_your_details'] = $this->language->get('text_your_details');
@@ -279,7 +279,7 @@ class ControllerWechatRegister extends Controller
             $data['entry_drug_inducedabortion'] = $this->language->get('entry_drug_inducedabortion');
             $data['entry_fetal'] = $this->language->get('entry_fetal');
             $data['entry_highrisk'] = $this->language->get('entry_highrisk');
-            $data['entry_highriskfactor'] = $this->language->get('entry_highriskfactor');
+            $data['entry_highriskfactor'] = $this->language->get('entry_highriskfactor');*/
 
 
             //$data['button_continue'] = $this->language->get('button_continue');
@@ -697,13 +697,13 @@ class ControllerWechatRegister extends Controller
                 $data['register_custom_field'] = array();
             }
 
-            $data['column_left'] = $this->load->controller('common/column_left');
+            /*$data['column_left'] = $this->load->controller('common/column_left');
             $data['column_right'] = $this->load->controller('common/column_right');
             $data['content_top'] = $this->load->controller('common/content_top');
             $data['content_bottom'] = $this->load->controller('common/content_bottom');
             $this->session->data["nav"] = "user";
             $data['footer'] = $this->load->controller('common/wechatfooter');
-            $data['header'] = $this->load->controller('common/wechatheader');
+            $data['header'] = $this->load->controller('common/wechatheader');*/
 
             $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
             $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));

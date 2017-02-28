@@ -14,8 +14,8 @@ class ControllerWechatWechatwelcome extends Controller
     {
         $this->document->setTitle("金杏健康");
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data["appid"]=AppID;
 
         $response = array(

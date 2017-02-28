@@ -15,8 +15,8 @@ class ControllerWechatOrdercenter extends Controller
         $this->document->setTitle("订单中心");
 
         $this->session->data["nav"]="order";
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         $response = array(
@@ -127,6 +127,12 @@ class ControllerWechatOrdercenter extends Controller
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
+        if(!isset($data['orders'])){
+
+            $data['orders'] = array();
+
+        }
+
          $response = array(
                 'code'  => 0,
                 'message'  => "",
@@ -137,13 +143,11 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
 
-        if(isset($data['orders'])){
-            
-            //$this->response->setOutput($this->load->view('wechat/orderto', $data));
+        /*if(isset($data['orders'])){
+            $this->response->setOutput($this->load->view('wechat/orderto', $data));
         }else{
-
-            //$this->response->setOutput($this->load->view('wechat/noorder', $data));
-        }
+            $this->response->setOutput($this->load->view('wechat/noorder', $data));
+        }*/
     }
 
     public function getPaidList()
@@ -240,6 +244,12 @@ class ControllerWechatOrdercenter extends Controller
         $data['header'] = $this->load->controller('common/wechatheader');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
+
+        if(!isset($data['orders'])){
+
+            $data['orders'] = array();
+
+        }
 
 
              $response = array(
@@ -353,6 +363,12 @@ class ControllerWechatOrdercenter extends Controller
         $data['header'] = $this->load->controller('common/wechatheader');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
+
+        if(!isset($data['orders'])){
+
+            $data['orders'] = array();
+
+        }
 
 
         $response = array(
@@ -534,6 +550,12 @@ class ControllerWechatOrdercenter extends Controller
         $data['pay_href'] = $this->url->link('wechat/orderDetail');
         $data['detail_href'] = $this->url->link('wechat/orderDetail');
         $data['service_tel'] = WECHAT_SERVICE_TEL;
+
+        if(!isset($data['orders'])){
+
+            $data['orders'] = array();
+
+        }
 
             $response = array(
                 'code'  => 0,
