@@ -119,8 +119,9 @@ class Customer {
             $this->customer_id = $nonpregnant_query->row['customer_id'];
             $this->realname = $nonpregnant_query->row['realname'];
             $this->telephone = $nonpregnant_query->row['telephone'];
-            $this->address= $nonpregnant_query->row['address'];
+            $this->address_id = $nonpregnant_query->row['address_id'];
             $this->wechat_id = $nonpregnant_query->row['wechat_id'];
+            $this->pregnantstatus = $nonpregnant_query->row['pregnantstatus'];
 
             return true;
         } else {
