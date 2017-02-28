@@ -7,8 +7,6 @@ class ControllerWechatPhysicalReceipt extends Controller
 
     public function submit(){
 
-        $success = "";
-
         //$log = new Log("wechat.log");
         $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         if (isset($this->session->data['openid'])) {
@@ -205,7 +203,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 $this->model_account_customer->updateReceiptDate($data, '34');
             }
             //$log->write("record=".$record);
-            $this->cache->set($success, "1");
+             $this->session->data['success'] = "1";
 
             $data =array(
                 'receipttext' => $result,
@@ -647,11 +645,11 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data["historyrecord"]= $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
         $log->write("historyrecord=".$data["historyrecord"]);
 
-        if(!$this->cache->get($success)){
-            $data["success"] = "0";
-        }else if($this->cache->get($success) == "1" ){
+        if($this->session->data['success'] == "1"){
             $data["success"] = "1";
-            $this->cache->delete($success);
+            unset($this->session->data['success']);
+        }else {
+            $data["success"] = "0";
         }
 
            $log->write("success=".$data["success"]);
@@ -693,8 +691,8 @@ class ControllerWechatPhysicalReceipt extends Controller
             //'district' =>  $data['district'],
             //'address_1' =>  $data['address_1'],
             //'householdregister'   =>  $data['householdregister'],
-            'footer' => $data['footer'],
-            'header' => $data['header'],
+           // 'footer' => $data['footer'],
+            //'header' => $data['header'],
         );
         $response = array(
             'code'  => 0,
