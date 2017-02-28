@@ -129,7 +129,7 @@ class ControllerWechatRegister extends Controller
 
         $data['realname'] = $this->request->json('realname', '');
         $data['telephone'] = $this->request->json('telephone', '');
-        $data['smscode'] = $this->request->json('smscode', 0);
+        $data['smscode'] = $this->request->json('smscode', 1);
         $data['barcode'] = $this->request->json('barcode', '');
         $data['birthday'] = $this->request->json('birthday', '');
         $data['department'] = $this->request->json('department', '');
