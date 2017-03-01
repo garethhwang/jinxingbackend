@@ -19,6 +19,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
+        $success = "";
         $switch = $this->request->json('switch', array());
 
         foreach($switch as $key){
@@ -203,7 +204,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 $this->model_account_customer->updateReceiptDate($data, '34');
             }
             //$log->write("record=".$record);
-             $this->session->data['success'] = "1";
+             $this->cache->get($success,"1");
 
             $data =array(
                 'receipttext' => $result,
@@ -311,7 +312,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
 
-        $data['button_continue'] = $this->language->get('button_continue');
+        //$data['button_continue'] = $this->language->get('button_continue');
 
         //$this->load->model('wechat/physicalreceipt');
         //$test = $this->model_wechat_physicalreceipt->getReceipt(1);
@@ -645,14 +646,15 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data["historyrecord"]= $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
         $log->write("historyrecord=".$data["historyrecord"]);
 
-        if($this->session->data['success'] == "1"){
-            $data["success"] = "1";
-            unset($this->session->data['success']);
-        }else {
+        /*if(!isset($this->cache->get($success))){
             $data["success"] = "0";
-        }
 
-           $log->write("success=".$data["success"]);
+        }else if($this->cache->get($success) == "1"){
+            $data["success"] = "1";
+            $this->cache->delete($success);
+        }*/
+
+           //$log->write("success=".$data["success"]);
 
             $this->document->setTitle("回访调查");
             $data['footer'] = $this->load->controller('common/wechatfooter');

@@ -71,7 +71,15 @@ class  ControllerWechatChecklist extends Controller
 
         $temp = date_create($data["lastmenstrualdate"]);
         $data["tencheck"] = date_modify($temp,"+38 weeks");$data["tencheck"] = date_format($data["tencheck"],'Y-m-d');
-        $data["tenchecks"] = date_create($data["tencheck"]);$data["tenchecks"] = date_modify($data["tenchecks"],"+3 weeks");$data["tenchecks"] = date_format($data["tenchecks"],'Y-m-d');
+        $data["tenchecks"] = date_create($data["tencheck"]);$data["tenchecks"] = date_modify($data["tenchecks"],"+7 days");$data["tenchecks"] = date_format($data["tenchecks"],'Y-m-d');
+
+        $temp = date_create($data["lastmenstrualdate"]);
+        $data["tenseccheck"] = date_modify($temp,"+39 weeks");$data["tenseccheck"] = date_format($data["tenseccheck"],'Y-m-d');
+        $data["tensecchecks"] = date_create($data["tenseccheck"]);$data["tensecchecks"] = date_modify($data["tensecchecks"],"+7 days");$data["tensecchecks"] = date_format($data["tensecchecks"],'Y-m-d');
+
+        $temp = date_create($data["lastmenstrualdate"]);
+        $data["tenthicheck"] = date_modify($temp,"+40 weeks");$data["tenthicheck"] = date_format($data["tenthicheck"],'Y-m-d');
+        $data["tenthichecks"] = date_create($data["tenthicheck"]);$data["tenthichecks"] = date_modify($data["tenthichecks"],"+7 days");$data["tenthichecks"] = date_format($data["tenthichecks"],'Y-m-d');
 
 
 
@@ -81,58 +89,32 @@ class  ControllerWechatChecklist extends Controller
         $this->session->data["nav"]="personal_center";
 
         $result = array(
-            'first' => array(
-                'start' => $data["fircheck"],
-                'end' => $data["firchecks"],
-                'emptystomach' => '1',
-                ),
-            'second' => array(
-                'start' => $data["seccheck"],
-                'end' => $data["secchecks"],
-                'emptystomach' => '0',
-                ),
-            'third' => array(
-                'start' => $data["thicheck"],
-                'end' => $data["thichecks"],
-                'emptystomach' => '0',
-                ),
-            'fourth' => array(
-                'start' => $data["foucheck"],
-                'end' => $data["fouchecks"],
-                'emptystomach' => '0',
-                ),
-            'fifth' => array(
-                'start' => $data["fifcheck"],
-                'end' => $data["fifchecks"],
-                'emptystomach' => '1',
-                ),
-            'sixth' => array(
-                'start' => $data["sixcheck"],
-                'end' => $data["sixchecks"],
-                'emptystomach' => '0',
-                ),
-            'seventh' => array(
-                'start' => $data["sevcheck"],
-                'end' => $data["sevchecks"],
-                'emptystomach' => '0',
-                ),
-            'eighth' => array(
-                'start' => $data["eigcheck"],
-                'end' => $data["eigchecks"],
-                'emptystomach' => '0',
-                ),
-            'ninth' => array(
-                'start' => $data["nincheck"],
-                'end' => $data["ninchecks"],
-                'emptystomach' => '1',
-                ),
-            'tenth' => array(
-                'start' => $data["tencheck"],
-                'end' => $data["tenchecks"],
-                'emptystomach' => '0',
-                ),
-            //'footer' => $data['footer'],
-            //'header' => $data['header'],
+            'fircheck' => $data['fircheck'],
+            'firchecks' => $data['firchecks'],
+            'seccheck' => $data['seccheck'],
+            'secchecks' => $data['secchecks'],
+            'thicheck' => $data['thicheck'],
+            'thichecks' => $data['thichecks'],
+            'foucheck' => $data['foucheck'],
+            'fouchecks' => $data['fouchecks'],
+            'fifcheck' => $data['fifcheck'],
+            'fifchecks' => $data['fifchecks'],
+            'sixcheck' => $data['sixcheck'],
+            'sixchecks' => $data['sixchecks'],
+            'sevcheck' => $data['sevcheck'],
+            'sevchecks' => $data['sevchecks'],
+            'eigcheck' => $data['eigcheck'],
+            'eigchecks' => $data['eigchecks'],
+            'nincheck' => $data['nincheck'],
+            'ninchecks' => $data['ninchecks'],
+            'tencheck' => $data['tencheck'],
+            'tenchecks' => $data['tenthichecks'],
+            'firstart' => $data['tencheck'],
+            'firend' => $data['tenchecks'],
+            'secstart' => $data['tenseccheck'],
+            'secend' => $data['tensecchecks'],
+            'thistart' => $data['tenthicheck'],
+            'thiend' => $data['tenthichecks'],
 
             );
 
