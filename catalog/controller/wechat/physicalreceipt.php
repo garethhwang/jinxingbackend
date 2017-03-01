@@ -19,7 +19,6 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
-        $success = "";
         $switch = $this->request->json('switch', array());
 
         foreach($switch as $key){
@@ -204,7 +203,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 $this->model_account_customer->updateReceiptDate($data, '34');
             }
             //$log->write("record=".$record);
-             $this->cache->get($success,"1");
+            $this->session->data['success'] = "1";
 
             $data =array(
                 'receipttext' => $result,
@@ -649,7 +648,9 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         if(!isset($this->session->data['success'])){
             $data["success"] = "0";
-
+        }else if($this->session->data['success'] == "1"){
+            $data["success"] = "1";
+            unset($this->session->data['success']);
         }
 
         /*if(!isset($this->cache->get($success))){
