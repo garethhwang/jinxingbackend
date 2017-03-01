@@ -37,8 +37,21 @@ class ControllerWechatRegister extends Controller
 
             }
 
+        $data = array(
+            'msgid' => $msgid ,
+            'html' => $html
+        );
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode(array('msgid' => $msgid, 'html' => $html)));
+        $this->response->setOutput(json_encode($response));
     }
 
     public function index()

@@ -34,12 +34,23 @@ class ControllerWechatWechatbinding extends Controller
                  $msgid = 3;
                  $html = '无效手机号码';
 
-
             }
+
+        $data = array(
+            'msgid' => $msgid ,
+            'html' => $html
+        );
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
 
            
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode(array('msgid' => $msgid, 'html' => $html)));
+        $this->response->setOutput(json_encode($response));
 
     }
 
@@ -161,8 +172,8 @@ class ControllerWechatWechatbinding extends Controller
         $data['entry_address_1'] = $this->language->get('entry_address');
 
 
-        $data['button_continue'] = $this->language->get('button_continue');
-        $data['button_upload'] = $this->language->get('button_upload');
+        //$data['button_continue'] = $this->language->get('button_continue');
+        //$data['button_upload'] = $this->language->get('button_upload');
 
         if (isset($this->error['warning'])) {
             $data['error_warning'] = $this->error['warning'];
@@ -217,11 +228,11 @@ class ControllerWechatWechatbinding extends Controller
         //$data['header'] = $this->load->controller('common/wechatheader');
 
 
-        $data["provs_data"] = json_encode($this->getProvince());
-        $data["citys_data"] = json_encode($this->getCity());
-        $data["dists_data"] = json_encode($this->getDistrict());
+        //$data["provs_data"] = json_encode($this->getProvince());
+        //$data["citys_data"] = json_encode($this->getCity());
+        //$data["dists_data"] = json_encode($this->getDistrict());
 
-	  $response = array(
+	    $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),

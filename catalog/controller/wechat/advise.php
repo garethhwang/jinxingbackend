@@ -32,6 +32,7 @@ class ControllerWechatAdvise extends Controller
         $data['advisetext'] = $this->request->json('advisetext','');
 
         $this->model_wechat_userinfo->addAdvise($data,$data["customer_id"]);
+        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         
 
@@ -50,7 +51,8 @@ class ControllerWechatAdvise extends Controller
         $result  = array(
             'advisetext' => $data['advisetext'],
             'customer_id' => $data['customer_id'],
-            );
+            'service_tel' => $data['service_tel'],
+        );
 
         $response = array(
                 'code'  => 0,
