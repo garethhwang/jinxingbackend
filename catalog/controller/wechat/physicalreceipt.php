@@ -650,7 +650,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         if(!isset($this->session->data['success'])){
             $data["success"] = "0";
 
-        };
+        }
 
         /*if(!isset($this->cache->get($success))){
             $data["success"] = "0";
