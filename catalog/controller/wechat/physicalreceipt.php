@@ -81,6 +81,9 @@ class ControllerWechatPhysicalReceipt extends Controller
         $blood = $this->request->json('blood', array());
         $others = $this->request->json('others', array());
 
+        foreach ($others as $other){
+            $log->write("others" . $other);
+        }
 
             $xzb = $this->request->json('xzb','无');
             $gxy = $this->request->json('gxy','无');
@@ -91,6 +94,8 @@ class ControllerWechatPhysicalReceipt extends Controller
             $hgb = $this->request->json('hgb','无');
             $xqb = $this->request->json('xqb','无');
             $other = $this->request->json('other','无');
+
+        $log->write("qitajibing" . $other);
 
 
                 if ($switch['0'] == "1") {
