@@ -50,8 +50,6 @@ class ControllerWechatAdvise extends Controller
         $result  = array(
             'advisetext' => $data['advisetext'],
             'customer_id' => $data['customer_id'],
-            'footer' => $data['footer'],
-            'header' => $data['header'],
             );
 
         $response = array(
