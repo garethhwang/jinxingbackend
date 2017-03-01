@@ -71,7 +71,7 @@ class ControllerWechatOrder extends Controller
             $data['isnotregist'] = "0" ;
         }*/
 
-        $data['openid']='oKe2EwSwL33C78WRU-8j48zvjck0';
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
 
 

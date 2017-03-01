@@ -400,7 +400,7 @@ class ControllerWechatOrdercenter extends Controller
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $data['openid']='oKe2EwSwL33C78WRU-8j48zvjck0';
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
