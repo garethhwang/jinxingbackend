@@ -94,7 +94,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $xqb = $this->request->json('xqb','无');
             $other = $this->request->json('other','无');
 
-        $log->write("qitajibing" . $other);
+        //$log->write("qitajibing" . $other);
 
 
                 if ($switch['0'] == "1") {
