@@ -38,7 +38,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data['receipt'] = json_decode($test['receipt_text'], true)['receipt'];
 
 
-        $switch = $this->request->json('switch', array());
+        $switch = $this->request->json('switch');
 
         if (is_array($switch)){
             $log->write("shi");
