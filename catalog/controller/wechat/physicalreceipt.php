@@ -267,12 +267,15 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
 
+
         if (isset($get_return["openid"])) {
             $data["openid"] = $get_return["openid"];
         } else {
             $data["openid"] = "";
             $data["error_warning"] = "微信信息没有获取到！";
         }
+
+        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
