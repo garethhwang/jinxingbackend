@@ -30,7 +30,7 @@ class ModelWechatOrdercenter extends Model
             return;
         }
 
-        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id");
+        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id ORDER BY date_modified DESC");
 
         return $all_orderid_query->rows;
     }
@@ -44,7 +44,7 @@ class ModelWechatOrdercenter extends Model
             return;
         }
 
-        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id");
+        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id ORDER BY date_modified DESC");
 
         return $all_orderid_query->rows;
     }
@@ -64,7 +64,7 @@ class ModelWechatOrdercenter extends Model
             return;
         }
 
-        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id");
+        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id AND order_status_id = $order_status_id ORDER BY date_modified DESC");
 
         return $all_orderid_query->rows;
     }
