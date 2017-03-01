@@ -70,7 +70,7 @@ class ModelWechatOrdercenter extends Model
     }
 
     public function getAllOrderid($customer_id) {
-        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id ");
+        $all_orderid_query = $this->db->query("SELECT order_id FROM " . DB_PREFIX . "order WHERE customer_id = $customer_id ORDER BY date_modified DESC");
 
         return $all_orderid_query->rows;
     }

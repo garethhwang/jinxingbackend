@@ -413,7 +413,71 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log('api.log');
         $log->write($data['customer_id']);
 
-        $pendingorderids = $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
+        $allorderids = $this->model_wechat_ordercenter->getAllOrderid($data['customer_id']);
+
+        foreach ($allorderids as $order_id)
+        {
+            //$log->write($order_id['order_id']);
+            $this->load->model('wechat/ordercenter');
+            $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
+
+            $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
+            $product_info = array();
+
+            foreach ($products as $product) {
+                $option_data = array();
+
+                $options = $this->model_wechat_ordercenter->getOrderOptions($order_id['order_id'], $product['order_product_id']);
+
+                foreach ($options as $option) {
+                    if ($option['type'] != 'file') {
+                        $option_data[] = array(
+                            'name'  => $option['name'],
+                            'value' => $option['value'],
+                            'type'  => $option['type']
+                        );
+                    } else {
+                        $upload_info = $this->model_wechat_ordercenter->getUploadByCode($option['value']);
+
+                        if ($upload_info) {
+                            $option_data[] = array(
+                                'name'  => $option['name'],
+                                'value' => $upload_info['name'],
+                                'type'  => $option['type'],
+                                'href'  => $this->url->link('tool/upload/download', 'token=' . $this->session->data['token'] . '&code=' . $upload_info['code'], true)
+                            );
+                        }
+                    }
+                }
+
+                $product_info['products'][] = array(
+                    'order_product_id' => $product['order_product_id'],
+                    'product_id'       => $product['product_id'],
+                    'name'    	 	   => $product['name'],
+                    'model'    		   => $product['model'],
+                    'option'   		   => $option_data,
+                    'quantity'		   => $product['quantity'],
+                    'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
+                    'total'    		   => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+                    'href'     		   => $this->url->link('catalog/product/edit','product_id=' . $product['product_id'], true)
+                );
+            }
+
+            $order_totals = array();
+
+            $totals = $this->model_wechat_ordercenter->getOrderTotals($order_id['order_id']);
+
+            foreach ($totals as $total) {
+                $order_totals['totals'][] = array(
+                    'title' => $total['title'],
+                    'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])
+                );
+            }
+            $data['orders'][] = array_merge($order_info, $product_info, $order_totals);
+        }
+
+
+        /*$pendingorderids = $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
         foreach ($pendingorderids as $order_id)
         {
@@ -542,7 +606,7 @@ class ControllerWechatOrdercenter extends Controller
 
             $data['otherorders'][] = array_merge($order_info, $product_info, $order_totals);
 
-        }
+        }*/
 
         $this->session->data["nav"]="order";
         //$data['footer'] = $this->load->controller('common/wechatfooter');
