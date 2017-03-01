@@ -40,8 +40,10 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $switch = $this->request->json('switch', array());
 
-        foreach ($switch as $other){
-            $log->write("switch" . $other);
+        if (is_array($switch)){
+            $log->write("shi");
+        }else{
+            $log->write("fou");
         }
 
         foreach($switch as $key){
