@@ -73,17 +73,10 @@ class ControllerWechatOrder extends Controller
 
         $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-
-
-
         $data['customer'] = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
         $this->load->model('account/address');
         $data['address'] = $this->model_account_address->getAddress( $data['customer']["address_id"]);
-
-
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
 
 
         $product_id= $this->request->json('product_id', 0);
@@ -93,8 +86,8 @@ class ControllerWechatOrder extends Controller
         }*/
 
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+       // $data['header'] = $this->load->controller('common/wechatheader');
 
         $this->load->model('catalog/product');
         $data['product'] = $this->model_catalog_product->getProduct($product_id);
