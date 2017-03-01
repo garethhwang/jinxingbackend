@@ -19,6 +19,12 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
+        $this->load->model('wechat/userinfo');
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+
 
         $test['receipt_text'] = '{"receipt":[
 {"id":"1","name":"心脏病","flag":"1", "detail":[{"key":"心率失常","value":"无"},{"key":"心功能异常","value":"无"},{"key":"其它","value":"无"}]},
