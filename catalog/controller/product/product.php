@@ -177,6 +177,7 @@ class ControllerProductProduct extends Controller
         $product_info['images'] = $this->model_catalog_product->getProductImages($product_id);
         $product_info['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
         $product_info['service_notes'] = html_entity_decode($product_info['service_notes'], ENT_QUOTES, 'UTF-8');
+        $product_info['applicable_user'] = html_entity_decode($product_info['applicable_user'], ENT_QUOTES, 'UTF-8');
 
 		$data = array(
 			'code'  => 0,
