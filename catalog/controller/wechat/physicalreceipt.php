@@ -38,13 +38,8 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data['receipt'] = json_decode($test['receipt_text'], true)['receipt'];
 
 
-        $switch = $this->request->json('switch');
+        $switch = $this->request->json('switch',array());
 
-        if (is_array($switch)){
-            $log->write("shi");
-        }else{
-            $log->write("fou");
-        }
 
         foreach($switch as $key){
             if($key == "heart"){
@@ -71,14 +66,14 @@ class ControllerWechatPhysicalReceipt extends Controller
             }
         }
 
-        $log->write("总数：".count($switch)."第一个：".$switch['0'].
+        /*$log->write("总数：".count($switch)."第一个：".$switch['0'].
             "第二个：".$switch['1'].
             "第三个：".$switch['2'].
             "第四个：".$switch['3'].
             "第五个：".$switch['4'].
             "第六个：".$switch['5'].
             "第七个：".$switch['6'].
-            "第八个：".$switch['7']);
+            "第八个：".$switch['7']);*/
 
         $heartdisease = $this->request->json('heartdisease', array());
         $nephropathy = $this->request->json('nephropathy', array());
@@ -221,7 +216,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             );
 
             $this->load->model('wechat/physicalreceipt');
-            //$this->model_wechat_physicalreceipt->addReceiptHistory($result);
+            $this->model_wechat_physicalreceipt->addReceiptHistory($result);
             $record = $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
             $this->load->model('account/customer');
             if ($record == '1') {
