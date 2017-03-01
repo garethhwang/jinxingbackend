@@ -19,6 +19,19 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
+
+        $test['receipt_text'] = '{"receipt":[
+{"id":"1","name":"心脏病","flag":"1", "detail":[{"key":"心率失常","value":"无"},{"key":"心功能异常","value":"无"},{"key":"其它","value":"无"}]},
+{"id":"2","name":"高血压","flag":"1", "detail":{"key":"血压数值","value":"无"}}, 
+{"id":"3","name":"糖尿病","flag":"1", "detail":[{"key":"餐后2小时血糖值","value":"无"},{"key":"用药治疗","value":"无"}]} ,
+{"id":"4","name":"肾病","flag":"1", "detail": [{"key":"肾炎","value":"无"},{"key":"肾炎伴肾功能损害","value":"无"},{"key":"肾炎伴高血压，蛋白尿，肾功能不全","value":"无"}]},
+{"id":"5","name":"肝病","flag":"1", "detail": [{"key":" ALT数值","value":"无"},{"key":" ALT数值","value":"无"},{"key":"慢性肝炎病毒携带者","value":"无"},{"key":"肝硬化","value":"无"},{"key":"肝内胆汁淤积症","value":"无"}]},
+{"id":"6","name":"甲状腺功能异常","flag":"1", "detail": [{"key":"甲亢 ","value":"无"},{"key":"甲减或低下","value":"无"},{"key":"甲状腺疾病","value":"无"}]},
+{"id":"7","name":"血液系统疾病","flag":"1","detail": [{"key":"贫血HGB数值","value":"无"},{"key":"血小板异常数值","value":"无"},{"key":"再生障碍性贫血/白血病","value":"无"}]},
+{"id":"8","name":"其他","flag":"1","detail": [{"key":"精神疾病","value":"无"},{"key":"血型不合","value":"无"},{"key":"免疫系统疾病","value":"无"},{"key":"结核","value":"无"},{"key":"哮喘","value":"无"},{"key":"肿瘤","value":"无"},{"key":"性病","value":"无"},{"key":"其它","value":"无"}]}]}';
+        $data['receipt'] = json_decode($test['receipt_text'], true)['receipt'];
+
+
         $switch = $this->request->json('switch', array());
 
         foreach($switch as $key){
@@ -207,7 +220,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
             $data =array(
                 'receipttext' => $result,
-                'success' => $this->cache->get($success)
+                'success' => $this->session->data['success']
             );
 
 
