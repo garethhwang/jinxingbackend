@@ -646,6 +646,12 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data["historyrecord"]= $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
         $log->write("historyrecord=".$data["historyrecord"]);
 
+
+        if(!isset($this->session->data['success'])){
+            $data["success"] = "0";
+
+        };
+
         /*if(!isset($this->cache->get($success))){
             $data["success"] = "0";
 
