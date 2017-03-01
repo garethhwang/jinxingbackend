@@ -40,6 +40,10 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $switch = $this->request->json('switch', array());
 
+        foreach ($switch as $other){
+            $log->write("switch" . $other);
+        }
+
         foreach($switch as $key){
             if($key == "heart"){
                 $switch['0'] = "1";
@@ -81,9 +85,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         $blood = $this->request->json('blood', array());
         $others = $this->request->json('others', array());
 
-        foreach ($others as $other){
-            $log->write("others" . $other);
-        }
+
 
             $xzb = $this->request->json('xzb','无');
             $gxy = $this->request->json('gxy','无');
