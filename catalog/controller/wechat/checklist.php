@@ -89,7 +89,23 @@ class  ControllerWechatChecklist extends Controller
         $this->session->data["nav"]="personal_center";
 
         $result = array(
-            'fircheck' => $data['fircheck'],
+            array(
+                'orderid' => 0,
+                'start'=> $data['fircheck'],
+                'end' =>  $data['firchecks'],
+            ),
+            array(
+                'orderid' => 1,
+                'start'=> $data['seccheck'],
+                'end' =>  $data['secchecks'],
+            ),
+            array(
+                'orderid' => 2,
+                'start'=> $data['thicheck'],
+                'end' =>  $data['thichecks'],
+            ),
+        );
+            /*'fircheck' => $data['fircheck'],
             'firchecks' => $data['firchecks'],
             'seccheck' => $data['seccheck'],
             'secchecks' => $data['secchecks'],
@@ -116,7 +132,7 @@ class  ControllerWechatChecklist extends Controller
             'thistart' => $data['tenthicheck'],
             'thiend' => $data['tenthichecks'],
 
-            );
+            );*/
 
 	    $response = array(
 				'code'  => 0,
