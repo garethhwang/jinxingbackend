@@ -400,7 +400,7 @@ class ControllerWechatWechatbinding extends Controller
         }
     }
 
-    private function getAddress(){
+    public function getAddress(){
 
         $this->load->model('wechat/bind');
 
