@@ -89,21 +89,51 @@ class  ControllerWechatChecklist extends Controller
         $this->session->data["nav"]="personal_center";
 
         $result = array(
-            array(
-                'orderid' => 0,
+            'first'=> array(
                 'start'=> $data['fircheck'],
                 'end' =>  $data['firchecks'],
             ),
-            array(
-                'orderid' => 1,
+            'second'=> array(
                 'start'=> $data['seccheck'],
                 'end' =>  $data['secchecks'],
             ),
-            array(
-                'orderid' => 2,
+            'third' => array(
                 'start'=> $data['thicheck'],
                 'end' =>  $data['thichecks'],
             ),
+            'fourth' => array(
+                'start'=> $data['foucheck'],
+                'end' =>  $data['fouchecks'],
+            ),
+            'fifth' => array(
+                'start'=> $data['fifcheck'],
+                'end' =>  $data['fifchecks'],
+            ),
+            'sixth' => array(
+                'start'=> $data['sixcheck'],
+                'end' =>  $data['sixchecks'],
+            ),
+            'seventh' => array(
+                'start'=> $data['sevcheck'],
+                'end' =>  $data['sevchecks'],
+            ),
+            'eighth' => array(
+                'start'=> $data['eigcheck'],
+                'end' =>  $data['eigchecks'],
+            ),
+            'ninth' => array(
+                'start'=> $data['nincheck'],
+                'end' =>  $data['ninchecks'],
+            ),
+            'tenth' => array(
+                'start'=> $data['tencheck'],
+                'end' =>  $data['tenthichecks'],
+                'firend' => $data['tenchecks'],
+                'secstart' => $data['tenseccheck'],
+                'secend' => $data['tensecchecks'],
+                'thistart' => $data['tenthicheck'],
+            ),
+
         );
             /*'fircheck' => $data['fircheck'],
             'firchecks' => $data['firchecks'],
