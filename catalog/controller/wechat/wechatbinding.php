@@ -277,7 +277,16 @@ class ControllerWechatWechatbinding extends Controller
     {
         $this->load->model('wechat/bind');
         $returndata = $this->model_wechat_bind->getProvinces();
-        return $returndata;
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $returndata;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
     public function getCity()
@@ -288,14 +297,30 @@ class ControllerWechatWechatbinding extends Controller
             $city = $this->model_wechat_bind->getCities($province["id"]);
             $returndata[$province["id"]] =$city;
         }
-        return $returndata;
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $returndata;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
     public function getAllCity()
     {
         $this->load->model('wechat/bind');
         $returndata = $this->model_wechat_bind->getAllCities();
-        return $returndata;
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $returndata;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
 
@@ -307,7 +332,15 @@ class ControllerWechatWechatbinding extends Controller
             $district = $this->model_wechat_bind->getDistricts($city["id"]);
             $returndata[$city["id"]] = $district;
         }
-        return $returndata;
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $returndata;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
     public function getOffice(){
@@ -318,7 +351,15 @@ class ControllerWechatWechatbinding extends Controller
             $office = $this->model_clinic_clinic->getOffice($district["id"]);
             $returndata[$district["id"]] = $office;
         }
-        return $returndata;
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $returndata;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
     private function getUser($accesstoken, $openid)
