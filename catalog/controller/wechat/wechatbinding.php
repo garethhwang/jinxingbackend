@@ -400,6 +400,56 @@ class ControllerWechatWechatbinding extends Controller
         }
     }
 
+    private function getAddress(){
+
+        $this->load->model('wechat/bind');
+
+        $allprovince = $this->model_wechat_bind->getProvinces();
+        foreach ($allprovince as $province) {
+            $city = $this->model_wechat_bind->getCities($province["id"]);
+            $allcity[$province["id"]] =$city;
+        }
+
+
+        $allcities = $this->model_wechat_bind->getAllCities();
+        foreach ($allcities as $city) {
+            $district = $this->model_wechat_bind->getDistricts($city["id"]);
+            $alldistrict[$city["id"]] = $district;
+        }
+
+        $this->load->model('clinic/clinic');
+        $allDistricts = $this->model_wechat_bind->getAllDistricts();
+        foreach ($allDistricts as $district) {
+            $office = $this->model_clinic_clinic->getOffice($district["id"]);
+            $alloffice[$district["id"]] = $office;
+        }
+
+        $data =array(
+            'province' => $allprovince,
+            'city' =>  $allcity,
+            'district' => $alldistrict,
+            'office' => $alloffice
+        );
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+    }
+
+
+
+
+
+
+
+    }
+
 
 
 }
