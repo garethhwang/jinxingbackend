@@ -448,7 +448,7 @@ class ControllerWechatWechatbinding extends Controller
 
 
 
-    }
+
 
 
 
