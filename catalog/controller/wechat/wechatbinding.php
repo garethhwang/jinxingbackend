@@ -428,7 +428,8 @@ class ControllerWechatWechatbinding extends Controller
             'province' => $allprovince,
             'city' =>  $allcity,
             'district' => $alldistrict,
-            'office' => $alloffice
+            'office' => $alloffice,
+            'allcities' => $allcities
         );
 
         $response = array(
