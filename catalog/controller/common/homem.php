@@ -56,6 +56,9 @@ class ControllerCommonHomem extends Controller
 
         $this->load->model('design/banner');
         $data['banners'] = $this->model_design_banner->getBanner(7);
+        foreach($data['banners'] as $image){
+            $data['banners']['image'] = "image/".$image['image'];
+        }
 
 
 		$response = array(
