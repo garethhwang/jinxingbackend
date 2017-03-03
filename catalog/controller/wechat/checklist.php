@@ -13,6 +13,8 @@ class  ControllerWechatChecklist extends Controller
     public function index()
     {
 
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
          if (isset($this->session->data['openid'])) {
            // $log->write("PersonalCenter openid:" . $this->session->data['openid']);
             $data['openid'] = $this->session->data['openid'];
@@ -34,9 +36,9 @@ class  ControllerWechatChecklist extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
-    
 
-	    //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
+
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);

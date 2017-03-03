@@ -26,10 +26,10 @@ class ControllerWechatHelp extends Controller
             $data["error_warning"]="关注微信公众号后打开！";
         }
 
-        $data["openid"]=$get_return["openid"];
+        $data["openid"]=$get_return["openid"];*/
 
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g'; */
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
 
         if (isset($this->session->data['openid'])) {
