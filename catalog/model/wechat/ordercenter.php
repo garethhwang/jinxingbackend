@@ -228,6 +228,11 @@ class ModelWechatOrdercenter extends Model
     }
 
     public function getOrderProducts($order_id) {
+        $log =new Log("api.log");
+
+
+        $log->write("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
 
         return $query->rows;
