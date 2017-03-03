@@ -281,3 +281,21 @@
 2017-02-27 9:51:26 - realname=lastmenstrualdate=
 2017-02-27 9:57:05 - realname=weight=
 2017-02-27 9:57:05 - realname=lastmenstrualdate=
+2017-03-03 18:10:46 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-03 18:10:46 - department=北京市朝阳区东坝保健科
+2017-03-03 18:12:00 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:00 - product_info 50
+2017-03-03 18:12:19 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:19 - product_info 50
+2017-03-03 18:12:26 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:26 - product_info 51
+2017-03-03 18:12:30 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:30 - product_info 50
+2017-03-03 18:12:57 - WxPayApi unifiedOrderREMOTE_ADDR 123.112.86.211
+2017-03-03 18:12:57 - WxPayResults Init return_code:SUCCESS
+2017-03-03 18:12:57 - WxPayApi unifiedOrderreturn_msg: OK
+2017-03-03 18:12:57 - JsApiPay GetJsApiParameters PaySign:8A8323A14335185ACD4938D91E2DC9E9
+2017-03-03 18:13:04 - WxPayApi unifiedOrderREMOTE_ADDR 123.112.86.211
+2017-03-03 18:13:04 - WxPayResults Init return_code:SUCCESS
+2017-03-03 18:13:04 - WxPayApi unifiedOrderreturn_msg: OK
+2017-03-03 18:13:04 - JsApiPay GetJsApiParameters PaySign:C23D2C6E64958543161FBF2958669900

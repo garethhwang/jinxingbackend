@@ -7,7 +7,7 @@ class ControllerProductCategory extends Controller
     public function index()
     {
 
-        $log = new Log('wechat.log');
+        //$log = new Log('wechat.log');
 
 
         $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';

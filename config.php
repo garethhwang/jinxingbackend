@@ -1,23 +1,23 @@
 <?php
 
 // HTTP
-define('HTTP_SERVER', 'http://opencart.meluo.net/');
+define('HTTP_SERVER', 'http://be.jinxingjk.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://opencart.meluo.net/');
+define('HTTPS_SERVER', 'http://be.jinxingjk.com/');
 
 // DIR
-define('DIR_APPLICATION', '/home/work/www/test/www/catalog/');
-define('DIR_SYSTEM', '/home/work/www/test/www/system/');
-define('DIR_IMAGE', '/home/work/www/test/www/image/');
-define('DIR_LANGUAGE', '/home/work/www/test/www/catalog/language/');
-define('DIR_TEMPLATE', '/home/work/www/test/www/catalog/view/theme/');
-define('DIR_CONFIG', '/home/work/www/test/www/system/config/');
-define('DIR_CACHE', '/home/work/www/test/www/system/storage/cache/');
-define('DIR_DOWNLOAD', '/home/work/www/test/www/system/storage/download/');
-define('DIR_LOGS', '/home/work/www/test/www/system/storage/logs/');
-define('DIR_MODIFICATION', '/home/work/www/test/www/system/storage/modification/');
-define('DIR_UPLOAD', '/home/work/www/test/www/system/storage/upload/');
+define('DIR_APPLICATION', '/home/work/www/BeJinXingJK/www/catalog/');
+define('DIR_SYSTEM', '/home/work/www/BeJinXingJK/www/system/');
+define('DIR_IMAGE', '/home/work/www/BeJinXingJK/www/image/');
+define('DIR_LANGUAGE', '/home/work/www/BeJinXingJK/www/catalog/language/');
+define('DIR_TEMPLATE', '/home/work/www/BeJinXingJK/www/catalog/view/theme/');
+define('DIR_CONFIG', '/home/work/www/BeJinXingJK/www/system/config/');
+define('DIR_CACHE', '/home/work/www/BeJinXingJK/www/system/storage/cache/');
+define('DIR_DOWNLOAD', '/home/work/www/BeJinXingJK/www/system/storage/download/');
+define('DIR_LOGS', '/home/work/www/BeJinXingJK/www/system/storage/logs/');
+define('DIR_MODIFICATION', '/home/work/www/BeJinXingJK/www/system/storage/modification/');
+define('DIR_UPLOAD', '/home/work/www/BeJinXingJK/www/system/storage/upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
