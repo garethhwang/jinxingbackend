@@ -16,15 +16,20 @@ class ControllerCommonHomem extends Controller
         $data["error_warning"] = "";
         $get_return = array();
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        $code = isset($this->request->get["code"]);
+        $code = $this->request->get["code"];
+
+
+
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
+            $log->write("22222");
 
         } else {
             if (isset($this->session->data['openid'])) {
                 $get_return["openid"] = $this->session->data['openid'];
             } else {
                 $this->error['warning'] = "微信信息没有获取到！";
+                $log->write("111111");
             }
         }
 
