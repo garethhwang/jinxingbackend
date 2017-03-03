@@ -19,35 +19,32 @@ class ControllerWechatRegister extends Controller
                 $this->cache->set($telephone, $code);
 
                 if ($sms == 1) {
-                    $msgid = 1;
-                    $html = '验证码发送成功';
+                    $response = array(
+                        'code'  => 0,
+                        'message'  => "验证码发送成功",
+                        'data' =>array(),
+                    );
                 } else if ($sms == 2){
-                    $msgid = 2;
-                    $html = '验证码发送超过上限，亲，明天再试喔';
+                    $response = array(
+                        'code'  => 1020,
+                        'message'  => "验证码发送超过上限，亲，明天再试喔",
+                        'data' =>array(),
+                    );
                 }else {
-                    $msgid = 0;
-                    $html = '验证码发送失败，请稍后';
+                    $response = array(
+                        'code'  => 1021,
+                        'message'  => "验证码发送失败，请稍后",
+                        'data' =>array(),
+                    );
                 }
 
             }else{
-
-                 $msgid = 3;
-                 $html = '无效手机号码';
-
-
+                $response = array(
+                    'code'  => 1023,
+                    'message'  => "无效手机号",
+                    'data' =>array(),
+                );
             }
-
-        $data = array(
-            'msgid' => $msgid ,
-            'html' => $html
-        );
-
-        $response = array(
-            'code'  => 0,
-            'message'  => "",
-            'data' =>array(),
-        );
-        $response["data"] = $data;
 
 
         $this->response->addHeader('Content-Type: application/json');
