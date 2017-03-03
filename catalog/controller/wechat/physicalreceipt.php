@@ -350,7 +350,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
         $data['last'] = date_create($data['lastmenstrualdate']);
-        $data['last'] = date_format($data['last'] , "Y-m-d");
+        //$data['last'] = date_format($data['last'] , "Y-m-d");
 
         $data['firststart'] = date_modify($data['last'],"+10 weeks");$data['firststart'] = date_format($data['firststart'],"Y-m-d");
         $data['firstend'] = date_modify($data['last'],"+11 weeks");$data['firstend'] = date_format($data['firstend'],"Y-m-d");
@@ -738,7 +738,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             'receipt' =>$data['receipt'],
             'receiptdate' =>$data['receiptdate'],
             'isnottime' =>$data['isnottime'],
-            'last' =>$data['last'],
+            //'last' =>$data['last'],
             'firststart' => $data['firststart'],
             'firstend' => $data['firstend'],
             'secondstart' => $data['secondstart'] ,
