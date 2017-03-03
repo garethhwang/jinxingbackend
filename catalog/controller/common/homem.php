@@ -56,11 +56,11 @@ class ControllerCommonHomem extends Controller
 
         $this->load->model('design/banner');
         $data['banners'] = $this->model_design_banner->getBanner(7);
-        foreach($data['banners'] as $image){
-            for($i=0;$i<count($data['banners']);$i++)
-            $data['banners'][$i]['image'] = "image/".$image['image'];
-        )
+        foreach($data['banners'] as $image) {
+            for ($i = 0; $i < count($data['banners']); $i++)
+                $data['banners'][$i]['image'] = "image/" . $image['image'];
         }
+
 
 
 		$response = array(
