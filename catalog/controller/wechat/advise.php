@@ -20,7 +20,7 @@ class ControllerWechatAdvise extends Controller
             $log->write($this->error['warning']);
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
@@ -54,12 +54,20 @@ class ControllerWechatAdvise extends Controller
             'service_tel' => $data['service_tel'],
         );
 
-        $response = array(
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+        }else{
+            $response = array(
                 'code'  => 0,
                 'message'  => "",
                 'data' =>array(),
-        );
-        $response["data"] = $result;
+            );
+            $response["data"] = $result;
+        }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

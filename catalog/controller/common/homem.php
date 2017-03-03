@@ -35,7 +35,7 @@ class ControllerCommonHomem extends Controller
             $log->write($data["error_warning"]);
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if (isset($this->request->get['route'])) {
             $this->document->addLink($this->config->get('config_url'), 'canonical');
