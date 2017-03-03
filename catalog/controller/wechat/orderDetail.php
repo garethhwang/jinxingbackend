@@ -109,7 +109,6 @@ class ControllerWechatOrderDetail extends Controller
                 $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
                 $data['discount'] = $coupon_info['discount'];
                 $data['lastprice'] = floatval($coupon['total']);
-                $log->write("lastprice".$data['lastprice']);
                 unset($this->session->data['coupon']);
             }else{
                 $data["coupontype"] = "";
