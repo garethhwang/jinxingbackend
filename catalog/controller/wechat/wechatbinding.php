@@ -230,12 +230,20 @@ class ControllerWechatWechatbinding extends Controller
         //$data["citys_data"] = json_encode($this->getCity());
         //$data["dists_data"] = json_encode($this->getDistrict());
 
-	    $response = array(
-				'code'  => 0,
-				'message'  => "",
-				'data' =>array(),
-		);
-		$response["data"] = $data;
+        if($data['isnotright'] == '1'){
+            $response = array(
+                'code'  => 1030,
+                'message'  => "验证码不正确",
+                'data' =>array(),
+            );
+        }else{
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+        }
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($response));

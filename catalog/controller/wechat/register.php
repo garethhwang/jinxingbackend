@@ -479,7 +479,7 @@ class ControllerWechatRegister extends Controller
                 $data['error_agree'] = '';
             }*/
 
-            $data['action'] = $this->url->link('wechat/register', '', true);
+            //$data['action'] = $this->url->link('wechat/register', '', true);
 
             $data['customer_groups'] = array();
 
@@ -721,12 +721,21 @@ class ControllerWechatRegister extends Controller
             $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
             $data["deps_data"] = json_encode($this->load->controller('wechat/wechatbinding/getOffice'));
 
-            $response = array(
-                'code'  => 0,
-                'message'  => "",
-                'data' =>array(),
-        );
-        $response["data"] = $data;
+
+            if($data['isnotright'] == '1'){
+                    $response = array(
+                        'code'  => 1030,
+                        'message'  => "验证码不正确",
+                        'data' =>array(),
+                    );
+            }else{
+                    $response = array(
+                        'code'  => 0,
+                        'message'  => "",
+                        'data' =>array(),
+                    );
+                    $response["data"] = $data;
+            }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
