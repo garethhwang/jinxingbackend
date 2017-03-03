@@ -593,6 +593,9 @@ class ControllerWechatEdituser extends Controller
         //$this->load->model('clinic/clinic');
         //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
         $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
+        foreach($data["provs_data"] as $aa){
+            $log->write("provs=".$aa);
+        }
         $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
         $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
         $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
@@ -601,8 +604,8 @@ class ControllerWechatEdituser extends Controller
         $this->document->setTitle("个人信息");
 
 
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 
 
