@@ -37,14 +37,28 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("待支付订单");
 
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
+            $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -154,11 +168,27 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("已支付未完成订单");
 
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
+            $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
         }
 
         $data['column_product'] = "商品";
@@ -273,11 +303,27 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("已完成订单");
 
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
+            $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
         }
 
         $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
@@ -393,11 +439,27 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("所有订单");
 
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
+            $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
         }
 
         $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
