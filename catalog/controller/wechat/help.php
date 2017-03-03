@@ -42,6 +42,18 @@ class ControllerWechatHelp extends Controller
             //$log->write($this->error['warning']);
         }
 
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 

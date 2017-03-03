@@ -18,9 +18,6 @@ class ControllerWechatEdituser extends Controller
         $get_return = array();
 
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
-
-
         if (isset($this->session->data['openid'])) {
             $log->write("PersonalCenter openid:" . $this->session->data['openid']);
             $data['openid'] = $this->session->data['openid'];
@@ -29,6 +26,18 @@ class ControllerWechatEdituser extends Controller
             $data['openid'] = "";
             $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
             $log->write($this->error['warning']);
+        }
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
         }
 
         $this->customer->wechatlogin($data["openid"]);

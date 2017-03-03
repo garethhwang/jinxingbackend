@@ -30,16 +30,22 @@ class ControllerWechatOrder extends Controller
 
             //$log->write("validcoupon=".$validcoupon["code"]);
             if($validcoupon){
-                $msgid = 1;
-                $html = '折扣券成功启用';
+                $response = array(
+                    'code'  => 1,
+                    'message'  => "折扣券成功启用",
+                    'data' =>array(),
+                );
                 $this->session->data['coupon'] = $couponcode;
             } else{
-                $msgid = 0;
-                $html = '无效折扣券';
+                $response = array(
+                    'code'  => 0,
+                    'message'  => "无效折扣券",
+                    'data' =>array(),
+                );
             }
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput(json_encode(array('msgid' => $msgid, 'html' => $html)));
+        $this->response->setOutput(json_encode($response));
 
 
         }
@@ -71,7 +77,19 @@ class ControllerWechatOrder extends Controller
             $data['isnotregist'] = "0" ;
         }*/
 
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
+        //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $data['customer'] = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 

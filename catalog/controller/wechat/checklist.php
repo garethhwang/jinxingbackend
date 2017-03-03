@@ -22,9 +22,21 @@ class  ControllerWechatChecklist extends Controller
             $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
            // $log->write($this->error['warning']);
         }
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
     
 
-	    $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+	    //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
