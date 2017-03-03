@@ -786,7 +786,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'code'  => 1011,
                 'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务',\"去注册\"",
                 'data' =>array(
-                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://test.jinxingjk.com/wechat/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://test.jinxingjk.com/jxhealth/index.html#/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
                 ),
             );
 
