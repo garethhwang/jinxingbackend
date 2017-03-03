@@ -6,49 +6,45 @@ class ControllerWechatWechatbinding extends Controller
 
     public function validcode()
     {
-            $telephone = $this->request->json('telephone');
+        $telephone = $this->request->json('telephone');
 
-            if(isset($telephone)){
+        if(isset($telephone)){
 
-                $code = rand(100000 ,999999);
+            $code = rand(100000 ,999999);
 
-                $sms = $this->sendTemplateSMS($telephone, array($code, '5'), "151750");
+            $sms = $this->sendTemplateSMS($telephone, array($code, '5'), "151750");
 
-                //$log->write("smscode=".$code);
+            //$log->write("smscode=".$code);
 
-                $this->cache->set($telephone, $code);
+            $this->cache->set($telephone, $code);
 
-
-
-                if ($sms == 1) {
-                    $msgid = 1;
-                    $html = '验证码发送成功';
-                } else if ($sms == 2){
-                    $msgid = 2;
-                    $html = '验证码发送超过上限，亲，明天再试喔';
-                }else {
-                    $msgid = 0;
-                    $html = '验证码发送失败，请稍后';
-                }
-
-            }else{
-
-                 $msgid = 3;
-                 $html = '无效手机号码';
-
+            if ($sms == 1) {
+                $response = array(
+                    'code'  => 0,
+                    'message'  => "验证码发送成功",
+                    'data' =>array(),
+                );
+            } else if ($sms == 2){
+                $response = array(
+                    'code'  => 1020,
+                    'message'  => "验证码发送超过上限，亲，明天再试喔",
+                    'data' =>array(),
+                );
+            }else {
+                $response = array(
+                    'code'  => 1021,
+                    'message'  => "验证码发送失败，请稍后",
+                    'data' =>array(),
+                );
             }
 
-        $data = array(
-            'msgid' => $msgid ,
-            'html' => $html
-        );
-
-        $response = array(
-            'code'  => 0,
-            'message'  => "",
-            'data' =>array(),
-        );
-        $response["data"] = $data;
+        }else{
+            $response = array(
+                'code'  => 1023,
+                'message'  => "无效手机号",
+                'data' =>array(),
+            );
+        }
 
            
         $this->response->addHeader('Content-Type: application/json');
