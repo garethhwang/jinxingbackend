@@ -10,7 +10,7 @@ class Request {
 
 	public function __construct() {
 		$this->content = file_get_contents('php://input');
-		$this->get = $this->clean($_GET);
+		//$this->get = $this->clean($_GET);
 		$this->post = $this->clean($_POST);
 		$this->request = $this->clean($_REQUEST);
 		$this->cookie = $this->clean($_COOKIE);
