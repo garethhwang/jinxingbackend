@@ -293,6 +293,7 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+        return $returndata;
     }
 
     public function getCity()
@@ -312,6 +313,8 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+
+        return $returndata;
     }
 
     public function getAllCity()
@@ -327,6 +330,8 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+
+        return $returndata;
     }
 
 
@@ -347,6 +352,8 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+
+        return $returndata;
     }
 
     public function getOffice(){
@@ -366,6 +373,7 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+        return $returndata;
     }
 
     private function getUser($accesstoken, $openid)
