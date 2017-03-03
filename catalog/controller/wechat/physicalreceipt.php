@@ -8,7 +8,7 @@ class ControllerWechatPhysicalReceipt extends Controller
     public function submit(){
 
         //$log = new Log("wechat.log");
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $code = $this->request->json('code', 0);
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
@@ -279,7 +279,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $data["error_warning"] = "";
         $get_return = array();
-        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $code = $this->request->json('code', 0);
         if (isset($code)) {
@@ -786,7 +786,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'code'  => 1011,
                 'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务',\"去注册\"",
                 'data' =>array(
-                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://test.jinxingjk.com/wechat/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://be.jinxingjk.com/index.html#/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
                 ),
             );
 

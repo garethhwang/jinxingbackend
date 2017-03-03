@@ -16,7 +16,8 @@ class ControllerCommonHomem extends Controller
         $data["error_warning"] = "";
         $get_return = array();
         $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        $code = $this->request->json('code', 0);
+        //$code = $this->request->get["code"];
+
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
 

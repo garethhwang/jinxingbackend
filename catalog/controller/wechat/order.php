@@ -59,7 +59,7 @@ class ControllerWechatOrder extends Controller
     {
         $this->document->setTitle("下单支付");
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -170,7 +170,7 @@ class ControllerWechatOrder extends Controller
 
         $this->document->setTitle("金杏健康");
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->load->model('wechat/ordercenter');
 

@@ -10,7 +10,7 @@ class ControllerProductCategory extends Controller
         //$log = new Log('wechat.log');
 
 
-        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -289,7 +289,7 @@ class ControllerProductCategory extends Controller
                     'code'  => 1020,
                     'message'  => "下单前需要绑定手机',\"去绑定\"",
                     'data' =>array(
-                        'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://opencart.meluo.net/index.php?route=wechat/wechatbinding&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                        'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://be.jinxingjk.com/index.html#/wechatbinding&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
                     ),
                 );
 

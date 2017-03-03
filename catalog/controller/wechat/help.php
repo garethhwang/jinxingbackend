@@ -29,7 +29,7 @@ class ControllerWechatHelp extends Controller
         $data["openid"]=$get_return["openid"];*/
 
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
 
         if (isset($this->session->data['openid'])) {

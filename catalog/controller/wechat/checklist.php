@@ -13,7 +13,7 @@ class  ControllerWechatChecklist extends Controller
     public function index()
     {
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
          if (isset($this->session->data['openid'])) {
            // $log->write("PersonalCenter openid:" . $this->session->data['openid']);

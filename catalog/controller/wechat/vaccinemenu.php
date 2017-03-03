@@ -13,7 +13,7 @@ class ControllerWechatVaccinemenu extends Controller
     public function index()
     {
         $get_return = array();
-        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+       // $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
