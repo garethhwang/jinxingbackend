@@ -352,12 +352,12 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data['last'] = date_create($data['lastmenstrualdate']);
         //$data['last'] = date_format($data['last'] , "Y-m-d");
 
-        $data['firststart'] = date_modify($data['last'],"+10 weeks");$data['firststart'] = date_format($data['firststart'],"Y-m-d");
-        $data['firstend'] = date_modify($data['last'],"+11 weeks");$data['firstend'] = date_format($data['firstend'],"Y-m-d");
-        $data['secondstart'] = date_modify($data['last'],"+20 weeks");$data['secondstart'] = date_format($data['secondstart'],"Y-m-d");
-        $data['secondend'] = date_modify($data['last'],"+21 weeks");$data['secondend'] = date_format($data['secondend'],"Y-m-d");
-        $data['thirdstart'] = date_modify($data['last'],"+34 weeks");$data['thirdstart'] = date_format($data['thirdstart'],"Y-m-d");
-        $data['thirdend'] = date_modify($data['last'],"+35 weeks");$data['thirdend'] = date_format($data['thirdend'],"Y-m-d");
+        $data['firststart'] = date_modify($data['last'],"+10 weeks");$data['firststart'] = date_format($data['firststart'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
+        $data['firstend'] = date_modify($data['last'],"+11 weeks");$data['firstend'] = date_format($data['firstend'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
+        $data['secondstart'] = date_modify($data['last'],"+20 weeks");$data['secondstart'] = date_format($data['secondstart'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
+        $data['secondend'] = date_modify($data['last'],"+21 weeks");$data['secondend'] = date_format($data['secondend'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
+        $data['thirdstart'] = date_modify($data['last'],"+34 weeks");$data['thirdstart'] = date_format($data['thirdstart'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
+        $data['thirdend'] = date_modify($data['last'],"+35 weeks");$data['thirdend'] = date_format($data['thirdend'],"Y-m-d");$data['last'] = date_create($data['lastmenstrualdate']);
 
 
 
