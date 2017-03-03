@@ -593,9 +593,9 @@ class ControllerWechatEdituser extends Controller
         //$this->load->model('clinic/clinic');
         //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
         $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
-        foreach($data["provs_data"] as $aa){
+        /*foreach($data["provs_data"] as $aa){
             $log->write("provs=".$aa);
-        }
+        }*/
         $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
         $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
         $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
