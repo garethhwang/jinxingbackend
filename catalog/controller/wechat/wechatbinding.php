@@ -18,6 +18,8 @@ class ControllerWechatWechatbinding extends Controller
 
                 $this->cache->set($telephone, $code);
 
+
+
                 if ($sms == 1) {
                     $msgid = 1;
                     $html = '验证码发送成功';

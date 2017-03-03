@@ -77,6 +77,9 @@ class ControllerWechatOrder extends Controller
 
         $this->load->model('account/address');
         $data['address'] = $this->model_account_address->getAddress( $data['customer']["address_id"]);
+        if(!isset($data['address'])){
+            $data['address'] = array();
+        }
 
 
         $product_id= $this->request->json('product_id', 0);
@@ -108,18 +111,30 @@ class ControllerWechatOrder extends Controller
         if(isset($data['product']['price'])){
             $data['product']['price'] = floatval($data['product']['price']);
         }
+        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
-        $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
-        $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
-        $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
-        $data['action'] = $this->url->link('wechat/order/addOrder', '&product_id=' . $product_id, true);
+        //$data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
+        //$data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
+       //$data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
+        //$data['action'] = $this->url->link('wechat/order/addOrder', '&product_id=' . $product_id, true);
+
+        $result = array(
+            'name' => $data['product']['name'],
+            'price' =>  $data['product']['price'],
+            'realname' => $data['customer']['realname'],
+            'telephone' => $data['customer']['telephone'],
+            'city'  =>  $data['address']['city'],
+            'addres_1' => $data['address']['address_1'],
+            'service_tel' => $data['service_tel']
+
+        );
 
           $response = array(
                 'code'  => 0,
                 'message'  => "",
                 'data' =>array(),
         );
-        $response["data"] = $data;
+        $response["data"] = $result;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

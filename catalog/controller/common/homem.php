@@ -16,7 +16,7 @@ class ControllerCommonHomem extends Controller
         $data["error_warning"] = "";
         $get_return = array();
         $code = $this->request->json('code', 0);
-        /*if (isset($code)) {
+        if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
 
         } else {
@@ -33,7 +33,7 @@ class ControllerCommonHomem extends Controller
             $data["openid"] = "";
             $data["error_warning"] = "微信信息没有获取到！";
             $log->write($data["error_warning"]);
-        }*/
+        }
 
         $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
