@@ -11,13 +11,25 @@ class ControllerWechatAdvise extends Controller
         $this->load->model('wechat/userinfo');
 
         if (isset($this->session->data['openid'])) {
-            $log->write("PersonalCenter openid:".$this->session->data['openid']);
-            $data['openid']=$this->session->data['openid'];
+            $log->write("PersonalCenter openid:" . $this->session->data['openid']);
+            $data['openid'] = $this->session->data['openid'];
             $this->error['warning'] = "";
         } else {
             $data['openid'] = "";
             $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
             $log->write($this->error['warning']);
+        }
+
+        if (!isset($this->session->data['openid'])) {
+            $response = array(
+                'code' => 1001,
+                'message' => "微信信息没有获取到！",
+                'data' => array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
         }
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
@@ -26,19 +38,14 @@ class ControllerWechatAdvise extends Controller
         unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        $data= $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
-
-        if(isset($data['çustomer_id'])){
-            $data['çustomer_id'] = "";
-        }
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
 
 
-        $data['advisetext'] = $this->request->json('advisetext','');
+        $data['advisetext'] = $this->request->json('advisetext', '');
 
-        $this->model_wechat_userinfo->addAdvise($data,$data["customer_id"]);
+        $this->model_wechat_userinfo->addAdvise($data, $data["customer_id"]);
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
-        
 
         /*if ($this->request->server['REQUEST_METHOD'] == 'POST') {
 
@@ -50,28 +57,20 @@ class ControllerWechatAdvise extends Controller
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
-        $this->session->data["nav"]="personal_center";
+        $this->session->data["nav"] = "personal_center";
 
-        $result  = array(
+        $result = array(
             'advisetext' => $data['advisetext'],
             'customer_id' => $data['customer_id'],
             'service_tel' => $data['service_tel'],
         );
 
-        if(!isset($this->session->data['openid'])){
-            $response = array(
-                'code'  => 1001,
-                'message'  => "微信信息没有获取到！",
-                'data' =>array(),
-            );
-        }else{
-            $response = array(
-                'code'  => 0,
-                'message'  => "",
-                'data' =>array(),
-            );
-            $response["data"] = $result;
-        }
+        $response = array(
+            'code' => 0,
+            'message' => "",
+            'data' => array(),
+        );
+        $response["data"] = $result;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
