@@ -18,6 +18,8 @@ class ControllerCommonHomem extends Controller
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
         $code = $this->request->get["code"];
 
+        $log->write("code=".$code);
+
 
 
         if (isset($code)) {
