@@ -73,6 +73,7 @@ class ControllerWechatOrderDetail extends Controller
                         }
                     }
                 }
+                $product_info['products']= array();
 
                 $product_info['products'][] = array(
                     'order_product_id' => $product['order_product_id'],
