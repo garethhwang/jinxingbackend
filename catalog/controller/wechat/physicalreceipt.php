@@ -351,6 +351,16 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $data['last'] = date_create($data['lastmenstrualdate']);
         $data['last'] = date_format($data['last'] , "Y-m-d");
+
+        $data['firststart'] = date_modify($data['last'],"+10 weeks");$data['firststart'] = date_format($data['firststart'],"Y-m-d");
+        $data['firstend'] = date_modify($data['last'],"+11 weeks");$data['firstend'] = date_format($data['firstend'],"Y-m-d");
+        $data['secondstart'] = date_modify($data['last'],"+20 weeks");$data['secondstart'] = date_format($data['secondstart'],"Y-m-d");
+        $data['secondend'] = date_modify($data['last'],"+21 weeks");$data['secondend'] = date_format($data['secondend'],"Y-m-d");
+        $data['thirdstart'] = date_modify($data['last'],"+34 weeks");$data['thirdstart'] = date_format($data['thirdstart'],"Y-m-d");
+        $data['thirdend'] = date_modify($data['last'],"+35 weeks");$data['thirdend'] = date_format($data['thirdend'],"Y-m-d");
+
+
+
         $log->write("last=".$data['last']);
 
         if (date("Y-m-d") < $data['receiptdate']) {
@@ -729,6 +739,12 @@ class ControllerWechatPhysicalReceipt extends Controller
             'receiptdate' =>$data['receiptdate'],
             'isnottime' =>$data['isnottime'],
             'last' =>$data['last'],
+            'firststart' => $data['firststart'],
+            'firstend' => $data['firstend'],
+            'secondstart' => $data['secondstart'] ,
+            'secondend' => $data['secondend'] ,
+            'thirdstart' => $data['thirdstart'] ,
+            'thirdend' => $data['thirdend'] ,
             'historyrecord' =>$data["historyrecord"],
             'customer_id' =>  $data['customer_id'],
             'realname' =>  $data['realname'],
@@ -792,7 +808,7 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'data' =>array(),
             );
 
-        }elseif ( $data["isnottime"] == "21"){
+        }elseif ( $data["isnottime"] == "2"){
             $response = array(
                 'code'  => 1016,
                 'message'  => "您的回访调查已结束！",
@@ -805,8 +821,9 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'message'  => "",
                 'data' =>array(),
             );
-            $response["data"] = $data;
+
         }
+        $response["data"] = $result;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
