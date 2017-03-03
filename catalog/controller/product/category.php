@@ -10,7 +10,7 @@ class ControllerProductCategory extends Controller
         $log = new Log('wechat.log');
 
 
-        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];

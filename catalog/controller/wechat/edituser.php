@@ -17,7 +17,7 @@ class ControllerWechatEdituser extends Controller
         $data["error_warning"] = "";
         $get_return = array();
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if (isset($this->session->data['openid'])) {
             $log->write("PersonalCenter openid:" . $this->session->data['openid']);
@@ -660,7 +660,7 @@ class ControllerWechatEdituser extends Controller
 
         //$log = new Log("wechat.log");
 
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         if (isset($this->session->data['openid'])) {
             //$log->write("PersonalCenter openid:" . $this->session->data['openid']);
             $data['openid'] = $this->session->data['openid'];

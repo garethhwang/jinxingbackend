@@ -16,7 +16,7 @@ class ControllerWechatPersonalinfo extends Controller
         $data["error_warning"] = "";
         $log = new Log('wechat.log');
         $get_return = array();
-        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $code = $this->request->json('code', 0);
         if (isset($code)) {
