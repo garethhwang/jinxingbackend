@@ -59,10 +59,13 @@ class ControllerWechatOrder extends Controller
     {
         $this->document->setTitle("下单支付");
 
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
+            $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
@@ -167,11 +170,30 @@ class ControllerWechatOrder extends Controller
 
         $this->document->setTitle("金杏健康");
 
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
         $this->load->model('wechat/ordercenter');
 
         if(isset($this->session->data['openid'])) {
             $data['openid'] = $this->session->data['openid'];
         }
+        else{
+            $data["openid"] = "";
+            $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
 
         if(isset($this->session->data['customer_id'])) {
             $data['customer_id'] = $this->session->data['customer_id'];
