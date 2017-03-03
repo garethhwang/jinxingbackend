@@ -99,6 +99,26 @@ class ControllerWechatOrderDetail extends Controller
             }
             $data = array_merge($order_info, $product_info, $order_totals);
 
+            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
+            if($coupon_info){
+                if($coupon_info['type'] == 'F'){
+                    $data["coupontype"] = "F";
+                }
+                if($coupon_info['type'] == 'P'){
+                    $data["coupontype"] = "P";
+                }
+                $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
+                $data['discount'] = $coupon_info['discount'];
+                $data['lastprice'] = floatval($coupon['total']);
+                $log->write("lastprice".$data['lastprice']);
+                unset($this->session->data['coupon']);
+            }else{
+                $data["coupontype"] = "";
+                $data['discount'] = "0";
+                $data['lastprice'] = $product_info['products'][0]['price'];
+            }
+
+
             /**  pay for product */
             ini_set('date.timezone', 'Asia/Shanghai');
             //获取用户openid
