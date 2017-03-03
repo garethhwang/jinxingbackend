@@ -12,6 +12,7 @@ class ControllerWechatOrderDetail extends Controller
 
     public function index()
     {
+
         $this->document->setTitle("金杏健康");
 
         $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
@@ -42,9 +43,8 @@ class ControllerWechatOrderDetail extends Controller
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
-
-            $data['order_id']= $order_id;
-            $order_info = $this->model_wechat_ordercenter->getOrder( $order_id);
+            $data['order_id']=$order_id;
+            $order_info = $this->model_wechat_ordercenter->getOrder($order_id);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id);
 
@@ -56,36 +56,35 @@ class ControllerWechatOrderDetail extends Controller
                 foreach ($options as $option) {
                     if ($option['type'] != 'file') {
                         $option_data[] = array(
-                            'name'  => $option['name'],
+                            'name' => $option['name'],
                             'value' => $option['value'],
-                            'type'  => $option['type']
+                            'type' => $option['type']
                         );
                     } else {
                         $upload_info = $this->model_wechat_ordercenter->getUploadByCode($option['value']);
 
                         if ($upload_info) {
                             $option_data[] = array(
-                                'name'  => $option['name'],
+                                'name' => $option['name'],
                                 'value' => $upload_info['name'],
-                                'type'  => $option['type'],
-                                'href'  => $this->url->link('tool/upload/download', 'token=' . $this->session->data['token'] . '&code=' . $upload_info['code'], true)
+                                'type' => $option['type'],
+                                'href' => $this->url->link('tool/upload/download', 'token=' . $this->session->data['token'] . '&code=' . $upload_info['code'], true)
                             );
                         }
                     }
-                }
-                $product_info['products']= array();
 
-                $product_info['products'][] = array(
-                    'order_product_id' => $product['order_product_id'],
-                    'product_id'       => $product['product_id'],
-                    'name'    	 	   => $product['name'],
-                    'model'    		   => $product['model'],
-                    'option'   		   => $option_data,
-                    'quantity'		   => $product['quantity'],
-                    'price'    		   => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
-                    'total'    		   => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
-                    'href'     		   => $this->url->link('catalog/product/edit','product_id=' . $product['product_id'], true)
-                );
+                    $product_info['products'][] = array(
+                        'order_product_id' => $product['order_product_id'],
+                        'product_id' => $product['product_id'],
+                        'name' => $product['name'],
+                        'model' => $product['model'],
+                        'option' => $option_data,
+                        'quantity' => $product['quantity'],
+                        'price' => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
+                        'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+                        'href' => $this->url->link('catalog/product/edit', 'product_id=' . $product['product_id'], true)
+                    );
+                }
             }
 
             $order_totals = array();
@@ -98,28 +97,7 @@ class ControllerWechatOrderDetail extends Controller
                     'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])
                 );
             }
-
-
             $data = array_merge($order_info, $product_info, $order_totals);
-
-            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
-            if($coupon_info){
-                if($coupon_info['type'] == 'F'){
-                    $data["coupontype"] = "F";
-                }
-                if($coupon_info['type'] == 'P'){
-                    $data["coupontype"] = "P";
-                }
-                $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
-                $data['discount'] = $coupon_info['discount'];
-                $data['lastprice'] = floatval($coupon['total']);
-                unset($this->session->data['coupon']);
-            }else{
-                $data["coupontype"] = "";
-                $data['discount'] = "0";
-                $data['lastprice'] = $product_info['products'][0]['price'];
-            }
-
 
             /**  pay for product */
             ini_set('date.timezone', 'Asia/Shanghai');
