@@ -42,8 +42,9 @@ class ControllerWechatOrderDetail extends Controller
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
-            $data['order_id']=$order_id;
-            $order_info = $this->model_wechat_ordercenter->getOrder($order_id);
+            $order_id=$this->request->get['order_id'];
+            $data['order_id']=$this->request->get['order_id'];
+            $order_info = $this->model_wechat_ordercenter->getOrder($this->request->get['order_id']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id);
 
@@ -96,7 +97,9 @@ class ControllerWechatOrderDetail extends Controller
                     'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])
                 );
             }
-            $data = array_merge($order_info,$product_info, $order_totals);
+
+
+            $data = array_merge($order_info, $product_info, $order_totals);
 
             $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
             if($coupon_info){
