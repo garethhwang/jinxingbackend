@@ -14,6 +14,29 @@ class ControllerWechatOrderDetail extends Controller
     {
         $this->document->setTitle("金杏健康");
 
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
+        }
+        else{
+            $data["openid"] = "";
+            $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
         $order_id = $this->request->json('order_id', 0);
 
 

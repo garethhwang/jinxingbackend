@@ -16,7 +16,10 @@ class ControllerWechatPersonalinfo extends Controller
         $data["error_warning"] = "";
         $log = new Log('wechat.log');
         $get_return = array();
-        if (isset($_GET['code'])) {
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        $code = $this->request->json('code', 0);
+        if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {
             if (isset($this->session->data['openid'])) {
@@ -26,7 +29,6 @@ class ControllerWechatPersonalinfo extends Controller
             }
         }
 
-
         if (isset($get_return["openid"])) {
             $data["openid"] = $get_return["openid"];
         } else {
@@ -34,7 +36,18 @@ class ControllerWechatPersonalinfo extends Controller
             $data["error_warning"] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
@@ -66,12 +79,32 @@ class ControllerWechatPersonalinfo extends Controller
        // $data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"]="personal_center";
 
-         $response = array(
+        if($data['isnotregist'] == "1"){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务',\"去注册\"",
+                'data' =>array(
+                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://opencart.meluo.net/index.php?route=wechat/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                ),
+            );
+
+        }elseif ( $data["pregnant"] == "0"){
+            $response = array(
+                'code'  => 1012,
+                'message'  => "此功能仅面向孕/产妇开放，如果您是孕/产妇用户，请完善资料后进入；如果您是非孕/产妇用户，请您移步其他功能区',\"完善资料\"",
+                'data' =>array(
+                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://opencart.meluo.net/index.php?route=wechat/edituser&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                ),
+            );
+
+        }else{
+            $response = array(
                 'code'  => 0,
                 'message'  => "",
                 'data' =>array(),
-        );
-        $response["data"] = $data;
+            );
+            $response["data"] = $data;
+        }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
