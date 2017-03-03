@@ -37,7 +37,7 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("待支付订单");
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -168,7 +168,7 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("已支付未完成订单");
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -303,7 +303,7 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("已完成订单");
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -439,7 +439,7 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("所有订单");
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
