@@ -8,6 +8,30 @@ class ControllerProductCategory extends Controller
     {
 
         $log = new Log('wechat.log');
+
+
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
+        }
+        else{
+            $data["openid"] = "";
+            $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
         //if(isset($this->session->data['openid'])){
         //    $data["openid"] = $this->session->data['openid'];
         //}
@@ -20,16 +44,16 @@ class ControllerProductCategory extends Controller
 
 
 
-        //$this->load->model('wechat/userinfo');
-        //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $this->load->model('wechat/userinfo');
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
-        //if (!isset($data['customer_id'])) {
-        //    $data['isnotregist'] = "1";
-        //    $data['customer_id'] = "";
-        //}
-        //else{
-        //    $data['isnotregist'] = "0" ;
-        //}
+        if (!isset($data['customer_id'])) {
+            $data['isnotregist'] = "1";
+            $data['customer_id'] = "";
+        }
+        else{
+           $data['isnotregist'] = "0" ;
+        }
 
         $this->load->language('product/category');
 
@@ -260,14 +284,26 @@ class ControllerProductCategory extends Controller
             }
 
 
-			$response = array(
-				'code'  => 0,
-				'message'  => "",
-				'data' =>array(),
-			);
-			$response["data"] = $data;
-	
-			$this->response->addHeader('Content-Type: application/json');
+            if($data['isnotregist'] == "1"){
+                $response = array(
+                    'code'  => 1020,
+                    'message'  => "下单前需要绑定手机',\"去绑定\"",
+                    'data' =>array(
+                        'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://opencart.meluo.net/index.php?route=wechat/wechatbinding&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                    ),
+                );
+
+            }else{
+                $response = array(
+                    'code'  => 0,
+                    'message'  => "",
+                    'data' =>array(),
+                );
+                $response["data"] = $data;
+            }
+
+
+            $this->response->addHeader('Content-Type: application/json');
 			$this->response->setOutput(json_encode($response));
 	
 			return;
