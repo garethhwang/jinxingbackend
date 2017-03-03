@@ -19,6 +19,19 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$log->write($this->error['warning']);
         }
 
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
+
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
@@ -255,8 +268,10 @@ class ControllerWechatPhysicalReceipt extends Controller
         $log = new log('wechat.log');
 
         $data["error_warning"] = "";
-        $code = $this->request->json('code');
         $get_return = array();
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        $code = $this->request->json('code', 0);
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {
@@ -267,8 +282,6 @@ class ControllerWechatPhysicalReceipt extends Controller
             }
         }
 
-
-
         if (isset($get_return["openid"])) {
             $data["openid"] = $get_return["openid"];
         } else {
@@ -276,7 +289,18 @@ class ControllerWechatPhysicalReceipt extends Controller
             $data["error_warning"] = "微信信息没有获取到！";
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
@@ -731,12 +755,58 @@ class ControllerWechatPhysicalReceipt extends Controller
            // 'footer' => $data['footer'],
             //'header' => $data['header'],
         );
-        $response = array(
-            'code'  => 0,
-            'message'  => "",
-            'data' =>array(),
-        );
-        $response["data"] = $result;
+        if($data['isnotregist'] == "1"){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务',\"去注册\"",
+                'data' =>array(
+                    'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http://test.jinxingjk.com/wechat/register&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+                ),
+            );
+
+        }elseif ( $data["pregnant"] == "0"){
+            $response = array(
+                'code'  => 1012,
+                'message'  => "您不是孕妇，不需要进行回访调查喔",
+                'data' =>array(),
+            );
+
+        } elseif ( $data["ishighrisk"] == "0"){
+            $response = array(
+                'code'  => 1013,
+                'message'  => "您不是高危孕妇，不需要进行回访调查喔",
+                'data' =>array(),
+            );
+
+        }elseif ( $data["success"] == "1"){
+            $response = array(
+                'code'  => 1014,
+                'message'  => "本次回访调查已成功提交！",
+                'data' =>array(),
+            );
+
+        }elseif ( $data["isnottime"] == "1"){
+            $response = array(
+                'code'  => 1015,
+                'message'  => "您未到下次回访时间，请耐心等待哦",
+                'data' =>array(),
+            );
+
+        }elseif ( $data["isnottime"] == "21"){
+            $response = array(
+                'code'  => 1016,
+                'message'  => "您的回访调查已结束！",
+                'data' =>array(),
+            );
+
+        }else{
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+        }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

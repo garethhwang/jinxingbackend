@@ -31,14 +31,14 @@ class ControllerWechatOrder extends Controller
             //$log->write("validcoupon=".$validcoupon["code"]);
             if($validcoupon){
                 $response = array(
-                    'code'  => 1,
+                    'code'  => 0,
                     'message'  => "折扣券成功启用",
                     'data' =>array(),
                 );
                 $this->session->data['coupon'] = $couponcode;
             } else{
                 $response = array(
-                    'code'  => 0,
+                    'code'  => 1,
                     'message'  => "无效折扣券",
                     'data' =>array(),
                 );
