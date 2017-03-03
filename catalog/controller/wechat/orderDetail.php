@@ -72,6 +72,7 @@ class ControllerWechatOrderDetail extends Controller
                             );
                         }
                     }
+                    }
 
                     $product_info['products'][] = array(
                         'order_product_id' => $product['order_product_id'],
@@ -84,7 +85,7 @@ class ControllerWechatOrderDetail extends Controller
                         'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
                         'href' => $this->url->link('catalog/product/edit', 'product_id=' . $product['product_id'], true)
                     );
-                }
+
             }
 
             $order_totals = array();
@@ -97,8 +98,10 @@ class ControllerWechatOrderDetail extends Controller
                     'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])
                 );
             }
+
             $data = array_merge($order_info, $product_info, $order_totals);
 
+            $this->load->model('extension/total/coupon');
             $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
             if($coupon_info){
                 if($coupon_info['type'] == 'F'){
@@ -110,7 +113,7 @@ class ControllerWechatOrderDetail extends Controller
                 $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
                 $data['discount'] = $coupon_info['discount'];
                 $data['lastprice'] = floatval($coupon['total']);
-                $log->write("lastprice".$data['lastprice']);
+                //$log->write("lastprice".$data['lastprice']);
                 unset($this->session->data['coupon']);
             }else{
                 $data["coupontype"] = "";
