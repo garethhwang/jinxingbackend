@@ -13,27 +13,28 @@ class ControllerWechatVaccinemenu extends Controller
     public function index()
     {
         $get_return = array();
-        if (isset($this->request->get["code"])) {
-            $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        } else {
-            if(isset($this->session->data['openid'])){
-                $get_return["openid"] = $this->session->data['openid'];
-            }
-            else{
-                $this->error['warning'] = "微信信息没有获取到！";
-            }
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
         }
-
-        if (isset($get_return["openid"])) {
-            $data["openid"] = $get_return["openid"];
-        } else {
+        else{
             $data["openid"] = "";
             $this->error['warning'] = "微信信息没有获取到！";
-
         }
-	
-	$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);

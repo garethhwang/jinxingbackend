@@ -10,21 +10,32 @@ class ControllerWechatAdvise extends Controller
 
         $this->load->model('wechat/userinfo');
 
-        if (isset($this->session->data['openid'])) {
-            $log->write("PersonalCenter openid:" . $this->session->data['openid']);
-            $data['openid'] = $this->session->data['openid'];
-            $this->error['warning'] = "";
+
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        $code = $this->request->json('code', 0);
+        if (isset($code)) {
+            $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {
-            $data['openid'] = "";
-            $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
-            $log->write($this->error['warning']);
+            if (isset($this->session->data['openid'])) {
+                $get_return["openid"] = $this->session->data['openid'];
+            } else {
+                $this->error['warning'] = "微信信息没有获取到！";
+            }
         }
 
-        if (!isset($this->session->data['openid'])) {
+        if (isset($get_return["openid"])) {
+            $data["openid"] = $get_return["openid"];
+        } else {
+            $data["openid"] = "";
+            $data["error_warning"] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
             $response = array(
-                'code' => 1001,
-                'message' => "微信信息没有获取到！",
-                'data' => array(),
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
             );
 
             $this->response->addHeader('Content-Type: application/json');
