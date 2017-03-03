@@ -103,7 +103,7 @@ class ControllerWechatPersonalinfo extends Controller
                 'message'  => "",
                 'data' =>array(),
             );
-            $response["data"] = $data;
+           // $response["data"] = $data;
         }
 
         $this->response->addHeader('Content-Type: application/json');
