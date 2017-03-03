@@ -361,7 +361,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
 
-        $log->write("last=".$data['last']);
+        //$log->write("last=".$data['last']);
 
         if (date("Y-m-d") < $data['receiptdate']) {
             $data['isnottime'] = "1" ;
