@@ -8,7 +8,7 @@ class ControllerWechatPhysicalReceipt extends Controller
     public function submit(){
 
         //$log = new Log("wechat.log");
-        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
         $code = $this->request->json('code', 0);
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
@@ -28,7 +28,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
 
-        if(!isset($this->session->data['openid'])){
+        /*if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -38,7 +38,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
 
 
