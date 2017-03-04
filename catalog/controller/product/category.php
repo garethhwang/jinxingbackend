@@ -21,7 +21,7 @@ class ControllerProductCategory extends Controller
         }
 
 
-        if(!isset($this->session->data['openid'])){
+        /*if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -31,7 +31,7 @@ class ControllerProductCategory extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
         //if(isset($this->session->data['openid'])){
         //    $data["openid"] = $this->session->data['openid'];
         //}
