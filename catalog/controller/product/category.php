@@ -284,7 +284,7 @@ class ControllerProductCategory extends Controller
             }
 
 
-            if($data['isnotregist'] == "1"){
+            if($data['isnotregist'] == "1" && isset($this->session->data['openid'])){
                 $response = array(
                     'code'  => 1020,
                     'message'  => "下单前需要绑定手机',\"去绑定\"",
