@@ -17,7 +17,7 @@ class ControllerProductCategory extends Controller
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
+            //$this->error['warning'] = "微信信息没有获取到！";
         }
 
 
