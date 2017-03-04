@@ -91,7 +91,7 @@ class ControllerWechatRegister extends Controller
             $data['wechat_id'] = '';
         }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->load->model('wechat/userinfo');
         /*$info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
