@@ -8,7 +8,7 @@ class ControllerWechatPhysicalReceipt extends Controller
     public function submit(){
 
         //$log = new Log("wechat.log");
-        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $code = $this->request->json('code', 0);
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
