@@ -536,6 +536,7 @@ class ControllerWechatOrdercenter extends Controller
                 );
             }
             $data['orders'][] = array_merge($order_info, $product_info, $order_totals);
+
         }
 
 
