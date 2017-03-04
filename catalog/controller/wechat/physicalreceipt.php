@@ -239,7 +239,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             );
 
             $this->load->model('wechat/physicalreceipt');
-            //$this->model_wechat_physicalreceipt->addReceiptHistory($result);
+            $this->model_wechat_physicalreceipt->addReceiptHistory($result);
             $record = $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
             $this->load->model('account/customer');
             if ($record == '1') {
