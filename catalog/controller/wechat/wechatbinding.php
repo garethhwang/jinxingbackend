@@ -57,7 +57,7 @@ class ControllerWechatWechatbinding extends Controller
         $log = new Log("wechat.log");
 
         $data["openid"] = "";
-	    $code = $this->request->json('code');
+	    $code = $this->request->json('code',"");
         //wechat
         if (isset($code)) {
             try {
