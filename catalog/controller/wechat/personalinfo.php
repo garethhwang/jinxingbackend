@@ -20,7 +20,7 @@ class ControllerWechatPersonalinfo extends Controller
 
         $code = $this->request->json("code","");
 
-        $log = new Log('wechat.log');
+        $log->write("code=" . $code);
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {
