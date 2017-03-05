@@ -131,6 +131,9 @@ class ControllerWechatWechatbinding extends Controller
         $data['district'] = $this->request->json('district', '');
         $data['address_1'] = $this->request->json('address_1','');
 
+
+
+
         $postdata  = array(
             'telephone' => $data['telephone'],
             'realname'  => $data['realname'],
@@ -139,6 +142,8 @@ class ControllerWechatWechatbinding extends Controller
             'district' => $data['district'],
             'address_1' => $data['address_1'],
             );
+
+        $log->write("telephone=".$postdata["telephone"]."address_1=".$postdata["address_1"]."realname=".$postdata["realname"]);
 
         $this->load->language('wechat/register');
         $this->document->setTitle("金杏健康");
