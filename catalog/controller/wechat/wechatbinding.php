@@ -4,6 +4,7 @@ class ControllerWechatWechatbinding extends Controller
 {
     private $error = array();
 
+
     public function validcode()
     {
         $telephone = $this->request->json('telephone');

@@ -13,6 +13,12 @@ class ModelAccountCustomer extends Model
 
         $customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
+
+
+
+
+
+
         $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', store_id = '" . (int)$this->config->get('config_store_id') . "', language_id = '" . (int)$this->config->get('config_language_id') . "', realname = '" . $this->db->escape($data['realname']) . "', email = '". $this->db->escape("aa@126.com") . "', telephone = '" . $this->db->escape($data['telephone']) . "', barcode = '" . $this->db->escape($data['barcode']) . "', birthday = '" . $this->db->escape($data['birthday']) . "', department = '" . $this->db->escape($data['department']) . "', pregnantstatus = '1 ', wechat_id = '" . $this->db->escape($data['wechat_id']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['account']) ? json_encode($data['custom_field']['account']) : '') . "', salt = '" . $this->db->escape($salt = token(9)) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', status = '1', approved = '" . (int)!$customer_group_info['approval'] . "', receiptdate = DATE_ADD( '".$this->db->escape($data['lastmenstrualdate'])."',INTERVAL 10 WEEK),ispregnant = '1', date_added = NOW()");
 
         $customer_id = $this->db->getLastId();
