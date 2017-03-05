@@ -732,8 +732,8 @@ class ControllerWechatPhysicalReceipt extends Controller
            //$log->write("success=".$data["success"]);
 
             $this->document->setTitle("回访调查");
-            $data['footer'] = $this->load->controller('common/wechatfooter');
-            $data['header'] = $this->load->controller('common/wechatheader');
+            //$data['footer'] = $this->load->controller('common/wechatfooter');
+            //$data['header'] = $this->load->controller('common/wechatheader');
 
         $result  = array(
             'isnotregist' => $data['isnotregist'],
@@ -753,7 +753,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             'thirdend' => $data['thirdend'] ,
             'historyrecord' =>$data["historyrecord"],
             'customer_id' =>  $data['customer_id'],
-            'realname' =>  $data['realname'],
+            /*'realname' =>  $data['realname'],
             'department' =>  $data['department'],
             'pregnantstatus' =>  $data['pregnantstatus'],
             'birthday' =>  $data['birthday'],
@@ -775,7 +775,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             //'address_1' =>  $data['address_1'],
             //'householdregister'   =>  $data['householdregister'],
            // 'footer' => $data['footer'],
-            //'header' => $data['header'],
+            //'header' => $data['header'],*/
         );
         if($data['isnotregist'] == "1"){
             $response = array(
