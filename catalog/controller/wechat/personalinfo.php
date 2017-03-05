@@ -39,6 +39,7 @@ class ControllerWechatPersonalinfo extends Controller
         }
 
 
+        $log->write("openid=".$data["openid"]);
         /*if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
