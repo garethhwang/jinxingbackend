@@ -108,24 +108,18 @@ class ControllerWechatUserinfo extends Controller
         $this->document->setTitle("个人信息");
 
         $code = $this->request->json('code', 0);
-        $log = new Log('wechat.log');
-
-
         //$this->session->data['shipping_method']['cost'];
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
         $get_return = file_get_contents($get_url);
         $get_return = (array)json_decode($get_return);
         if (isset($get_return["openid"])) {
             $this->session->data['openid'] = $get_return["openid"];
-
-            $log->write("openid=" . $get_return["openid"]);
         } else {
             if(isset($this->session->data['openid'])){
                 $get_return["openid"] = $this->session->data['openid'];
             }
             else{
                 $this->error['warning'] = "微信信息没有获取到！";
-                $log->write("12232323423543" );
             }
         }
         return $get_return;
