@@ -9,23 +9,14 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $log = new Log("wechat.log");
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        $code = $this->request->json("code","");
-        $log->write("code=" . $code);
-        if (isset($code)) {
-            $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
+        if (isset($this->session->data['openid'])) {
+            // $log->write("PersonalCenter openid:" . $this->session->data['openid']);
+            $data['openid'] = $this->session->data['openid'];
+            $this->error['warning'] = "";
         } else {
-            if (isset($this->session->data['openid'])) {
-                $get_return["openid"] = $this->session->data['openid'];
-            } else {
-                $this->error['warning'] = "微信信息没有获取到！";
-            }
-        }
-
-        if (isset($get_return["openid"])) {
-            $data["openid"] = $get_return["openid"];
-        } else {
-            $data["openid"] = "";
-            $data["error_warning"] = "微信信息没有获取到！";
+            $data['openid'] = "";
+            $this->error['warning'] = "PersonalCenter： 微信信息没有获取到！";
+            // $log->write($this->error['warning']);
         }
 
 
@@ -305,7 +296,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
 
-        if(!isset($this->session->data['openid'])){
+        /*if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -315,7 +306,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
