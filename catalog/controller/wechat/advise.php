@@ -98,6 +98,7 @@ class ControllerWechatAdvise extends Controller
             $data["openid"] = "";
             $data["error_warning"] = "微信信息没有获取到！";
         }
+        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
 
         if(!isset($this->session->data['openid'])){
