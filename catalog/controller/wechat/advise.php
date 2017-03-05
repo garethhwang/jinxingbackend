@@ -86,6 +86,7 @@ class ControllerWechatAdvise extends Controller
         $log->write("code=" . $code);
 
         if (isset($code)) {
+            $this->
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {
             if (isset($this->session->data['openid'])) {

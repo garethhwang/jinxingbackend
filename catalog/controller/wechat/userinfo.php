@@ -108,6 +108,10 @@ class ControllerWechatUserinfo extends Controller
         $this->document->setTitle("个人信息");
 
         $code = $this->request->json('code', 0);
+        $log = new Log('wechat.log');
+        $log->write("code=" . $code);
+
+        //$this->session->data['shipping_method']['cost'];
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
         $get_return = file_get_contents($get_url);
         $get_return = (array)json_decode($get_return);
