@@ -80,11 +80,12 @@ class ControllerWechatAdvise extends Controller
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        $log = new Log("wechat.log");
-        $code = $this->request->get["code"];
-        $log->write("code=".$code);
-        $codes = $_GET["code"];
-        $log->write("code=".$codes);
+        if(isset($this->request->get["code"])) {
+
+            $log = new Log("wechat.log");
+            $code = $this->request->get["code"];
+            $log->write("code=" . $this->request->get["code"]);
+        }
 
 
         if (isset($code)) {
