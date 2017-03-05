@@ -122,11 +122,12 @@ class ControllerWechatAdvise extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
-        /*$this->load->model('wechat/userinfo');
+        $this->load->model('wechat/userinfo');
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
+        $this->model_wechat_userinfo->insertinto();
 
 
-        $data['advisetext'] = $this->request->json('advisetext', '');
+        /*$data['advisetext'] = $this->request->json('advisetext', '');
 
         $this->model_wechat_userinfo->addAdvise($data, $data["customer_id"]);
         $data['service_tel'] = WECHAT_SERVICE_TEL;*/
