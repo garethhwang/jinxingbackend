@@ -57,7 +57,7 @@ class ControllerWechatRegister extends Controller
 
         $data["openid"] = "";
         //wechat
-        $code = $this->request->json('code',"");
+        $code = $this->request->json("code","");
         $log->write("code=" . $code);
 
         if (isset($code)) {
@@ -90,13 +90,13 @@ class ControllerWechatRegister extends Controller
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->load->model('wechat/userinfo');
-        /*$info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         if (isset($info['customer_id'])) {
             $this->response->redirect($this->url->link('wechat/personalinfo', '', true));
         }
 
         //SMS
-        if (isset($_POST['telephone']) && !isset($this->request->post["smscode"])) {
+        /*if (isset($_POST['telephone']) && !isset($this->request->post["smscode"])) {
             $telephone = $_POST['telephone'];
 
             $code = rand(100000, 999999);
@@ -212,6 +212,7 @@ class ControllerWechatRegister extends Controller
                 $data['isnotright'] = '1';
             } else {
                 $data['isnotright'] = '0';
+
                 $customer_id = $this->model_account_customer->addCustomer($postdata);
                 $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
