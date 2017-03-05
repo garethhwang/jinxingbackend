@@ -94,7 +94,7 @@ class ControllerWechatWechatbinding extends Controller
             $data['wechat_id'] = '';
         }
 
-	$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+	     $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         //SMS
         /*if(isset($telephone) && !isset($smscode )) {
@@ -152,7 +152,7 @@ class ControllerWechatWechatbinding extends Controller
                              $data['isnotright'] = '1';
             }else{
                 $data['isnotright'] = '0';
-                $this->model_account_customer->addNonpregnant($postdata);
+                //$this->model_account_customer->addNonpregnant($postdata);
                 $this->customer->nonpregnantlogin($data["openid"]);
                 unset($this->session->data['guest']);
                 //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
