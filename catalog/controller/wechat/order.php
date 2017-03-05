@@ -125,20 +125,13 @@ class ControllerWechatOrder extends Controller
             if ($validcoupon) {
                 $this->session->data['coupon'] = $couponcode;
             } else {
-                if/*($this->session->data['couponerror_usetotal'] = "1" ){
+                if( $this->session->data['couponerror_product'] = "1" ){
                     $response = array(
                         'code' => 1040,
-                        'message' => "折扣券活动已结束",
+                        'message' => "该商品无法使用该折扣券",
                         'data' => array(),
                     );
-                    unset($this->session->data['couponerror_usetotal']);
-                }elseif*/ ($this->session->data['couponerror_log'] = "1" ){
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "您需要登录使用折扣券",
-                        'data' => array(),
-                    );
-                    unset($this->session->data['couponerror_log']);
+                    unset($this->session->data['couponerror_product']);
                 }elseif ( $this->session->data['couponerror_customer'] = "1" ){
                     $response = array(
                         'code' => 1040,
@@ -146,13 +139,20 @@ class ControllerWechatOrder extends Controller
                         'data' => array(),
                     );
                     unset($this->session->data['couponerror_customer']);
-                }elseif ( $this->session->data['couponerror_product'] = "1" ){
+                }elseif($this->session->data['couponerror_usetotal'] = "1" ){
                     $response = array(
                         'code' => 1040,
-                        'message' => "该商品无法使用该折扣券",
+                        'message' => "折扣券活动已结束",
                         'data' => array(),
                     );
-                    unset($this->session->data['couponerror_product']);
+                    unset($this->session->data['couponerror_usetotal']);
+                } elseif ($this->session->data['couponerror_log'] = "1" ){
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "您需要登录使用折扣券",
+                        'data' => array(),
+                    );
+                    unset($this->session->data['couponerror_log']);
                 }else{
                     $response = array(
                         'code' => 1040,
