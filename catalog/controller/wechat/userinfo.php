@@ -13,7 +13,9 @@ class ControllerWechatUserinfo extends Controller
     public function index()
     {
         $get_return = array();
-        if (isset($this->request->get["code"])) {
+        $code = $this->request->json('code', '');
+
+        if ( $code != "" ) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
 
         } else {
@@ -109,19 +111,27 @@ class ControllerWechatUserinfo extends Controller
         $log = new Log("wechat.log");
 
         $code = $this->request->json('code', 0);
+
+        $log = new Log("wechat.log");
+        $log->write("getUsertoken code=" . $code);
+
+        //$this->session->data['shipping_method']['cost'];
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
         $get_return = file_get_contents($get_url);
         $get_return = (array)json_decode($get_return);
         $log->write("openiddddd=".$get_return["openid"]);
 
         if (isset($get_return["openid"])) {
+            $log->write("getUsertoken openid = " . $get_return["openid"]);
             $this->session->data['openid'] = $get_return["openid"];
         } else {
             if(isset($this->session->data['openid'])){
                 $get_return["openid"] = $this->session->data['openid'];
+                $log->write("getUsertoken isset openid openid = " . $get_return["openid"]);
             }
             else{
                 $this->error['warning'] = "微信信息没有获取到！";
+                $log->write("getUsertoken no wechat openid");
             }
         }
         return $get_return;

@@ -1,0 +1,1250 @@
+2017-02-16 10:51:12 - Enter in ControllerProductProduct
+2017-02-20 7:20:21 - Enter in ControllerProductProduct
+2017-02-20 10:40:26 - Enter in ControllerProductProduct %d
+2017-02-20 10:43:03 - Enter in ControllerProductProduct 1
+2017-02-20 10:43:11 - Enter in ControllerProductProduct 1
+2017-02-20 10:45:27 - Enter in ControllerProductProduct 1
+2017-02-20 10:51:04 - Enter in ControllerProductProduct 1
+2017-02-20 10:55:51 - Enter in ControllerProductProduct 1
+2017-02-20 10:55:56 - Enter in ControllerProductProduct 1
+2017-02-20 10:56:05 - Enter in ControllerProductProduct 1
+2017-02-20 11:33:58 - Enter in ControllerProductProduct 1
+2017-02-20 11:49:11 - Enter in ControllerProductProduct 1
+2017-02-20 11:54:37 - Enter in ControllerProductProduct 1
+2017-02-20 11:55:05 - Enter in ControllerProductProduct 1
+2017-02-20 11:55:27 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:01 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:18 - Enter in ControllerProductProduct 1
+2017-02-20 11:56:34 - Enter in ControllerProductProduct 6
+2017-02-20 11:59:10 - Enter in ControllerProductProduct 1
+2017-02-20 11:59:30 - Enter in ControllerProductProduct 1
+2017-02-20 11:59:30 - WxPayApi unifiedOrderREMOTE_ADDR 61.48.32.31
+2017-02-20 11:59:30 - WxPayResults Init return_code:FAIL
+2017-02-20 11:59:30 - WxPayApi unifiedOrderreturn_msg: JSAPI支付必须传openid
+2017-02-20 11:59:30 - JsApiPay GetJsApiParameters 参数错误
+2017-02-20 11:59:30 - JsApiPay GetJsApiParameters PaySign:863F77E96A9EB34E9DE87B41DF9DF5EE
+2017-02-20 12:18:56 - Enter in ControllerProductProduct 1
+2017-02-20 12:32:12 - Enter in ControllerProductProduct 1
+2017-02-20 12:37:02 - Enter in ControllerProductProduct 1
+2017-02-21 7:16:16 - Enter in ControllerProductProduct 1
+2017-02-21 7:16:33 - Enter in ControllerProductProduct 1
+2017-02-23 5:27:20 - Enter in ControllerProductProduct 1
+2017-02-23 5:28:24 - Enter in ControllerProductProduct 1
+2017-02-23 5:34:02 - Enter in ControllerProductProduct 1
+2017-02-23 5:34:12 - Enter in ControllerProductProduct 1
+2017-02-23 6:40:50 - Enter in ControllerProductProduct 1
+2017-02-23 6:42:17 - Enter in ControllerProductProduct 1
+2017-02-23 6:44:11 - Enter in ControllerProductProduct 1
+2017-02-23 6:44:25 - Enter in ControllerProductProduct 1
+2017-02-23 7:08:14 - Enter in ControllerProductProduct 1
+2017-02-23 7:11:21 - Enter in ControllerProductProduct 1
+2017-02-23 7:11:41 - Enter in ControllerProductProduct 1
+2017-02-23 7:14:25 - Enter in ControllerProductProduct 1
+2017-02-23 7:18:00 - Enter in ControllerProductProduct 1
+2017-02-23 7:19:51 - Enter in ControllerProductProduct 1
+2017-02-23 7:22:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:58:56 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:06 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:07 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:08 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:09 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:10 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:11 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:12 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:13 - Enter in ControllerProductProduct 1
+2017-02-23 7:59:19 - Enter in ControllerProductProduct 1
+2017-02-23 8:00:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:00:02 - Enter in ControllerProductProduct 1
+2017-02-23 8:39:11 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:57 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:58 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:41:59 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:42:00 - Enter in ControllerProductProduct 1
+2017-02-23 8:57:15 - Enter in ControllerProductProduct 1
+2017-02-23 8:57:15 - product_info 0
+2017-02-23 9:01:37 - Enter in ControllerProductProduct 1
+2017-02-23 9:01:37 - product_info 50
+2017-02-23 9:02:02 - Enter in ControllerProductProduct 1
+2017-02-23 9:02:02 - product_info 50
+2017-02-23 9:02:43 - Enter in ControllerProductProduct 1
+2017-02-23 9:02:43 - product_info 50
+2017-02-23 9:05:16 - Enter in ControllerProductProduct 1
+2017-02-23 9:05:16 - product_info 50
+2017-02-23 9:06:22 - Enter in ControllerProductProduct 1
+2017-02-23 9:06:22 - product_info 50
+2017-02-23 9:10:12 - Enter in ControllerProductProduct 1
+2017-02-23 9:10:12 - product_info 0
+2017-02-23 10:07:13 - Enter in ControllerProductProduct 1
+2017-02-23 10:07:13 - product_info 50
+2017-02-23 10:08:59 - Enter in ControllerProductProduct 1
+2017-02-23 10:08:59 - product_info 50
+2017-02-23 10:31:14 - Enter in ControllerProductProduct 1
+2017-02-23 10:31:14 - product_info 50
+2017-02-23 10:51:02 - Enter in ControllerProductProduct 1
+2017-02-23 10:51:02 - product_info 50
+2017-02-23 12:53:59 - Enter in ControllerProductProduct 1
+2017-02-23 12:53:59 - product_info 50
+2017-02-23 12:54:16 - Enter in ControllerProductProduct 1
+2017-02-23 12:54:16 - product_info 50
+2017-02-23 13:03:48 - Enter in ControllerProductProduct 1
+2017-02-23 13:03:48 - product_info 50
+2017-02-23 13:06:12 - Enter in ControllerProductProduct 1
+2017-02-23 13:06:12 - product_info 50
+2017-02-23 13:08:38 - Enter in ControllerProductProduct 1
+2017-02-23 13:08:38 - product_info 50
+2017-02-23 13:08:41 - Enter in ControllerProductProduct 1
+2017-02-23 13:08:41 - product_info 50
+2017-02-24 6:03:27 - Enter in ControllerProductProduct 1
+2017-02-24 6:03:27 - product_info 50
+2017-02-24 7:40:17 - 微信信息没有获取到！
+2017-02-24 7:41:24 - 微信信息没有获取到！
+2017-02-24 9:29:29 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 9:29:29 - department=北京市朝阳区东坝保健科
+2017-02-24 9:29:41 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 9:29:41 - department=北京市朝阳区东坝保健科
+2017-02-24 11:51:38 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 11:51:38 - department=北京市朝阳区东坝保健科
+2017-02-24 12:45:47 - 微信信息没有获取到！
+2017-02-24 12:46:03 - 微信信息没有获取到！
+2017-02-24 12:47:03 - 微信信息没有获取到！
+2017-02-24 12:47:19 - 微信信息没有获取到！
+2017-02-24 12:47:43 - 微信信息没有获取到！
+2017-02-24 12:47:52 - 微信信息没有获取到！
+2017-02-24 12:53:19 - 微信信息没有获取到！
+2017-02-24 12:58:08 - 微信信息没有获取到！
+2017-02-24 12:59:07 - 微信信息没有获取到！
+2017-02-24 12:59:11 - 微信信息没有获取到！
+2017-02-24 13:18:11 - 微信信息没有获取到！
+2017-02-24 13:21:29 - 微信信息没有获取到！
+2017-02-24 13:35:04 - 微信信息没有获取到！
+2017-02-24 13:52:05 - 微信信息没有获取到！
+2017-02-24 14:24:44 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:24:44 - department=北京市朝阳区东坝保健科
+2017-02-24 14:39:44 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:39:44 - register wechat_id:197
+2017-02-24 14:40:00 - 微信信息没有获取到！
+2017-02-24 14:40:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:40:42 - register wechat_id:197
+2017-02-24 14:40:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:40:42 - register wechat_id:197
+2017-02-24 14:41:02 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:41:02 - register wechat_id:197
+2017-02-24 14:41:02 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 14:41:02 - register wechat_id:197
+2017-02-24 15:30:53 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 15:30:53 - department=北京市朝阳区东坝保健科
+2017-02-24 15:33:32 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-24 15:33:32 - department=北京市朝阳区东坝保健科
+2017-02-26 1:25:05 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 1:25:05 - department=北京市朝阳区东坝保健科
+2017-02-26 3:19:57 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 3:19:57 - department=北京市朝阳区东坝保健科
+2017-02-26 3:23:29 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 3:23:29 - department=北京市朝阳区东坝保健科
+2017-02-26 4:35:13 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 4:35:13 - register wechat_id:197
+2017-02-26 5:38:36 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 5:38:36 - register wechat_id:197
+2017-02-26 6:49:37 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 6:49:38 - register wechat_id:199
+2017-02-26 6:55:07 - 微信信息没有获取到！
+2017-02-26 6:59:23 - 微信信息没有获取到！
+2017-02-26 7:02:00 - 微信信息没有获取到！
+2017-02-26 7:25:30 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 7:25:31 - register wechat_id:199
+2017-02-26 7:28:42 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 7:28:42 - register wechat_id:199
+2017-02-26 8:33:19 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 9:59:19 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:00:40 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:02:37 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:03:30 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 10:27:00 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:15:03 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:19:18 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:27:24 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:32:48 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:36:38 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:37:04 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:38:47 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 12:53:16 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 13:56:57 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:24:42 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:24:42 - customer_id=
+2017-02-26 14:24:42 - realname=
+2017-02-26 14:24:42 - realname=生小孩
+2017-02-26 14:33:40 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:33:40 - customer_id=
+2017-02-26 14:33:40 - realname=
+2017-02-26 14:33:40 - realname=
+2017-02-26 14:38:43 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:38:43 - customer_id=
+2017-02-26 14:38:43 - realname=
+2017-02-26 14:38:43 - realname=黄行啊
+2017-02-26 14:39:07 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:39:07 - customer_id=
+2017-02-26 14:39:07 - realname=
+2017-02-26 14:39:07 - realname=
+2017-02-26 14:55:04 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:56:48 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 14:57:16 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:07:08 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:07:08 - physical_id=205
+2017-02-26 15:07:08 - postdata[realname]=
+2017-02-26 15:07:08 - info=黄回的家
+2017-02-26 15:07:08 - realname=黄回的家
+2017-02-26 15:24:59 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 15:28:32 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-26 17:18:19 - wechat/orderDetail        1111111111
+2017-02-26 17:18:19 - wechat/orderDetail        orderCount = 1
+2017-02-26 17:18:19 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:18:19 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:18:19 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:18:19 - JsApiPay GetJsApiParameters PaySign:B2D19D374AD9E7755A4967A98C7F6968
+2017-02-26 17:28:06 - wechat/orderDetail        1111111111
+2017-02-26 17:28:06 - wechat/orderDetail        orderCount = 1
+2017-02-26 17:28:06 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:28:07 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:28:07 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:28:07 - JsApiPay GetJsApiParameters PaySign:1AD61C386C53427E3CF82095D0121F65
+2017-02-26 17:44:26 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:44:26 - WxPayResults Init return_code:FAIL
+2017-02-26 17:44:26 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-26 17:44:26 - JsApiPay GetJsApiParameters 参数错误
+2017-02-26 17:44:26 - JsApiPay GetJsApiParameters PaySign:8567919BF7F8AB7B7B691BD3CB34DB8B
+2017-02-26 17:47:04 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:47:04 - WxPayResults Init return_code:FAIL
+2017-02-26 17:47:04 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-26 17:47:04 - JsApiPay GetJsApiParameters 参数错误
+2017-02-26 17:47:04 - JsApiPay GetJsApiParameters PaySign:96A58BFEF92FCC7F7FA4819AC346A0DD
+2017-02-26 17:54:50 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 17:54:51 - WxPayResults Init return_code:SUCCESS
+2017-02-26 17:54:51 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 17:54:51 - JsApiPay GetJsApiParameters PaySign:413DFB7AD035AF408FD5FCDA702C3623
+2017-02-26 18:05:39 - WxPayApi unifiedOrderREMOTE_ADDR 45.77.12.27
+2017-02-26 18:05:40 - WxPayResults Init return_code:SUCCESS
+2017-02-26 18:05:40 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-26 18:05:40 - JsApiPay GetJsApiParameters PaySign:31B898E266AA782B1D66E3855CD034FB
+2017-02-27 6:38:09 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 6:38:09 - WxPayResults Init return_code:FAIL
+2017-02-27 6:38:09 - WxPayApi unifiedOrderreturn_msg: 签名错误
+2017-02-27 6:38:09 - JsApiPay GetJsApiParameters 参数错误
+2017-02-27 6:38:09 - JsApiPay GetJsApiParameters PaySign:D7A06990C74DABBA5FAF3BD83B35CAEB
+2017-02-27 6:38:50 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 6:38:51 - WxPayResults Init return_code:SUCCESS
+2017-02-27 6:38:51 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 6:38:51 - JsApiPay GetJsApiParameters PaySign:71FFB723AC47016F911E21D53D26AABB
+2017-02-27 7:01:25 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:01:25 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:01:25 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:01:25 - JsApiPay GetJsApiParameters PaySign:5D40B5615AEC40088369AA8E25C59BA6
+2017-02-27 7:41:34 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:41:34 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:41:34 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:41:34 - JsApiPay GetJsApiParameters PaySign:9317D9D00BF4C2AE0D2D50E4BA038B89
+2017-02-27 7:42:00 - WxPayApi unifiedOrderREMOTE_ADDR 108.61.187.246
+2017-02-27 7:42:01 - WxPayResults Init return_code:SUCCESS
+2017-02-27 7:42:01 - WxPayApi unifiedOrderreturn_msg: OK
+2017-02-27 7:42:01 - JsApiPay GetJsApiParameters PaySign:0A8CCBFB97AAB0ED0A0F364E8FA1B80C
+2017-02-27 7:56:28 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-02-27 7:56:28 - department=北京市朝阳区东坝保健科
+2017-02-27 9:40:14 - realname=lastmenstrualdate=
+2017-02-27 9:48:18 - realname=lastmenstrualdate=
+2017-02-27 9:51:26 - realname=lastmenstrualdate=
+2017-02-27 9:57:05 - realname=weight=
+2017-02-27 9:57:05 - realname=lastmenstrualdate=
+2017-03-03 18:10:46 - PersonalCenter openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-03 18:10:46 - department=北京市朝阳区东坝保健科
+2017-03-03 18:12:00 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:00 - product_info 50
+2017-03-03 18:12:19 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:19 - product_info 50
+2017-03-03 18:12:26 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:26 - product_info 51
+2017-03-03 18:12:30 - Enter in ControllerProductProduct 1
+2017-03-03 18:12:30 - product_info 50
+2017-03-03 18:12:57 - WxPayApi unifiedOrderREMOTE_ADDR 123.112.86.211
+2017-03-03 18:12:57 - WxPayResults Init return_code:SUCCESS
+2017-03-03 18:12:57 - WxPayApi unifiedOrderreturn_msg: OK
+2017-03-03 18:12:57 - JsApiPay GetJsApiParameters PaySign:8A8323A14335185ACD4938D91E2DC9E9
+2017-03-03 18:13:04 - WxPayApi unifiedOrderREMOTE_ADDR 123.112.86.211
+2017-03-03 18:13:04 - WxPayResults Init return_code:SUCCESS
+2017-03-03 18:13:04 - WxPayApi unifiedOrderreturn_msg: OK
+2017-03-03 18:13:04 - JsApiPay GetJsApiParameters PaySign:C23D2C6E64958543161FBF2958669900
+2017-03-03 18:20:39 - PersonalCenter： 微信信息没有获取到！
+2017-03-03 18:20:39 - PersonalCenter： userinfo 为空
+2017-03-04 14:39:07 - Enter in ControllerProductProduct 1
+2017-03-04 14:39:07 - product_info 50
+2017-03-04 15:18:30 - 微信信息没有获取到！
+2017-03-04 15:18:31 - 微信信息没有获取到！
+2017-03-04 15:18:32 - 微信信息没有获取到！
+2017-03-04 15:18:56 - 微信信息没有获取到！
+2017-03-04 15:19:17 - 微信信息没有获取到！
+2017-03-04 15:31:34 - 微信信息没有获取到！
+2017-03-04 15:31:44 - 微信信息没有获取到！
+2017-03-04 15:31:46 - 微信信息没有获取到！
+2017-03-04 15:43:36 - 微信信息没有获取到！
+2017-03-04 15:44:00 - 微信信息没有获取到！
+2017-03-04 15:59:49 - historyrecord=2
+2017-03-04 16:00:04 - historyrecord=2
+2017-03-04 16:01:05 - historyrecord=2
+2017-03-04 16:14:07 - historyrecord=2
+2017-03-04 16:17:20 - historyrecord=2
+2017-03-04 16:18:43 - historyrecord=2
+2017-03-04 16:23:14 - historyrecord=2
+2017-03-04 16:31:43 - historyrecord=2
+2017-03-04 16:34:37 - historyrecord=2
+2017-03-04 16:35:21 - historyrecord=3
+2017-03-04 16:41:00 - historyrecord=3
+2017-03-04 16:47:09 - 微信信息没有获取到！
+2017-03-04 16:51:13 - historyrecord=4
+2017-03-04 16:51:27 - historyrecord=4
+2017-03-04 16:51:28 - historyrecord=4
+2017-03-04 16:51:29 - historyrecord=4
+2017-03-04 16:53:47 - historyrecord=4
+2017-03-05 2:59:53 - telephone=13662112169address_1=wangjingSOHOrealname=huangixnyu
+2017-03-05 3:00:29 - telephone=address_1=realname=
+2017-03-05 3:00:42 - telephone=13662112169address_1=wangjingSOHOrealname=huangixnyu
+2017-03-05 3:18:52 - historyrecord=2
+2017-03-05 3:22:38 - 微信信息没有获取到！
+2017-03-05 3:22:43 - 微信信息没有获取到！
+2017-03-05 3:26:22 - 微信信息没有获取到！
+2017-03-05 3:32:33 - 微信信息没有获取到！
+2017-03-05 3:34:37 - 微信信息没有获取到！
+2017-03-05 4:14:28 - 微信信息没有获取到！
+2017-03-05 4:14:38 - 微信信息没有获取到！
+2017-03-05 4:22:44 - 微信信息没有获取到！
+2017-03-05 4:27:50 - 微信信息没有获取到！
+2017-03-05 10:07:04 - 微信信息没有获取到！
+2017-03-05 11:49:09 - 微信信息没有获取到！
+2017-03-05 12:06:07 - 微信信息没有获取到！
+2017-03-05 12:06:30 - 微信信息没有获取到！
+2017-03-05 12:08:15 - 微信信息没有获取到！
+2017-03-05 12:09:09 - 微信信息没有获取到！
+2017-03-05 12:11:37 - 微信信息没有获取到！
+2017-03-05 12:18:41 - 微信信息没有获取到！
+2017-03-05 12:45:53 - 微信信息没有获取到！
+2017-03-05 12:50:38 - 微信信息没有获取到！
+2017-03-05 12:52:10 - 微信信息没有获取到！
+2017-03-05 13:59:25 - 微信信息没有获取到！
+2017-03-05 14:08:38 - 微信信息没有获取到！
+2017-03-05 14:15:51 - 微信信息没有获取到！
+2017-03-05 14:16:04 - 微信信息没有获取到！
+2017-03-05 14:17:21 - 微信信息没有获取到！
+2017-03-05 14:18:51 - 微信信息没有获取到！
+2017-03-05 14:19:13 - 微信信息没有获取到！
+2017-03-05 14:19:13 - 微信信息没有获取到！
+2017-03-05 14:19:53 - 微信信息没有获取到！
+2017-03-05 14:19:56 - 微信信息没有获取到！
+2017-03-05 14:20:18 - 微信信息没有获取到！
+2017-03-05 14:20:24 - Enter in ControllerProductProduct 1
+2017-03-05 14:20:24 - product_info 50
+2017-03-05 14:24:48 - 微信信息没有获取到！
+2017-03-05 14:28:55 - Enter in ControllerProductProduct 1
+2017-03-05 14:28:55 - product_info 50
+2017-03-05 14:28:58 - 微信信息没有获取到！
+2017-03-05 14:29:16 - Enter in ControllerProductProduct 1
+2017-03-05 14:29:16 - product_info 50
+2017-03-05 14:29:50 - Enter in ControllerProductProduct 1
+2017-03-05 14:29:50 - product_info 50
+2017-03-05 14:30:07 - 微信信息没有获取到！
+2017-03-05 15:01:11 - 微信信息没有获取到！
+2017-03-05 15:02:14 - 微信信息没有获取到！
+2017-03-05 15:02:33 - 微信信息没有获取到！
+2017-03-05 15:05:53 - 微信信息没有获取到！
+2017-03-05 15:06:27 - 微信信息没有获取到！
+2017-03-05 15:06:39 - Enter in ControllerProductProduct 1
+2017-03-05 15:06:39 - product_info 50
+2017-03-05 15:06:45 - 微信信息没有获取到！
+2017-03-05 15:06:46 - 微信信息没有获取到！
+2017-03-05 15:06:47 - 微信信息没有获取到！
+2017-03-05 15:06:51 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 15:06:51 - PersonalCenter： userinfo 为空
+2017-03-05 15:07:01 - 微信信息没有获取到！
+2017-03-05 15:07:02 - 微信信息没有获取到！
+2017-03-05 15:07:07 - 微信信息没有获取到！
+2017-03-05 15:07:07 - 微信信息没有获取到！
+2017-03-05 15:07:08 - 微信信息没有获取到！
+2017-03-05 15:07:14 - Enter in ControllerProductProduct 1
+2017-03-05 15:07:14 - product_info 50
+2017-03-05 15:07:45 - 微信信息没有获取到！
+2017-03-05 15:07:46 - 微信信息没有获取到！
+2017-03-05 15:07:47 - 微信信息没有获取到！
+2017-03-05 15:08:17 - 微信信息没有获取到！
+2017-03-05 15:08:24 - Enter in ControllerProductProduct 1
+2017-03-05 15:08:24 - product_info 50
+2017-03-05 15:08:24 - 微信信息没有获取到！
+2017-03-05 15:08:25 - 微信信息没有获取到！
+2017-03-05 15:08:29 - Enter in ControllerProductProduct 1
+2017-03-05 15:08:29 - product_info 50
+2017-03-05 15:08:44 - Enter in ControllerProductProduct 1
+2017-03-05 15:08:44 - product_info 50
+2017-03-05 15:08:48 - 微信信息没有获取到！
+2017-03-05 15:08:49 - 微信信息没有获取到！
+2017-03-05 15:09:02 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 15:09:02 - PersonalCenter： userinfo 为空
+2017-03-05 15:09:02 - 微信信息没有获取到！
+2017-03-05 15:09:03 - 微信信息没有获取到！
+2017-03-05 15:09:33 - 微信信息没有获取到！
+2017-03-05 15:09:39 - 微信信息没有获取到！
+2017-03-05 15:09:52 - 微信信息没有获取到！
+2017-03-05 15:10:12 - 微信信息没有获取到！
+2017-03-05 15:10:16 - 微信信息没有获取到！
+2017-03-05 15:10:22 - 微信信息没有获取到！
+2017-03-05 15:10:22 - 微信信息没有获取到！
+2017-03-05 15:10:55 - 微信信息没有获取到！
+2017-03-05 15:10:55 - 微信信息没有获取到！
+2017-03-05 15:11:19 - 微信信息没有获取到！
+2017-03-05 15:11:19 - 微信信息没有获取到！
+2017-03-05 15:13:07 - 微信信息没有获取到！
+2017-03-05 15:13:49 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 15:13:49 - PersonalCenter： userinfo 为空
+2017-03-05 15:13:52 - 微信信息没有获取到！
+2017-03-05 15:14:33 - 微信信息没有获取到！
+2017-03-05 15:14:33 - 微信信息没有获取到！
+2017-03-05 15:15:38 - code=
+2017-03-05 15:15:38 - 微信信息没有获取到！
+2017-03-05 15:15:38 - code=
+2017-03-05 15:15:38 - 微信信息没有获取到！
+2017-03-05 15:15:48 - code=
+2017-03-05 15:15:48 - 微信信息没有获取到！
+2017-03-05 15:15:48 - code=
+2017-03-05 15:15:48 - 微信信息没有获取到！
+2017-03-05 15:16:03 - code=
+2017-03-05 15:16:03 - 微信信息没有获取到！
+2017-03-05 15:16:09 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 15:16:09 - PersonalCenter： userinfo 为空
+2017-03-05 15:16:10 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 15:16:10 - PersonalCenter： userinfo 为空
+2017-03-05 15:16:13 - code=
+2017-03-05 15:16:13 - 微信信息没有获取到！
+2017-03-05 15:16:56 - code=
+2017-03-05 15:16:56 - 微信信息没有获取到！
+2017-03-05 15:18:27 - code=
+2017-03-05 15:18:27 - 微信信息没有获取到！
+2017-03-05 15:18:28 - code=
+2017-03-05 15:18:28 - 微信信息没有获取到！
+2017-03-05 15:18:32 - code=
+2017-03-05 15:18:32 - 微信信息没有获取到！
+2017-03-05 15:18:39 - code=
+2017-03-05 15:18:39 - 微信信息没有获取到！
+2017-03-05 15:18:39 - code=
+2017-03-05 15:18:39 - 微信信息没有获取到！
+2017-03-05 15:18:43 - code=
+2017-03-05 15:18:43 - 微信信息没有获取到！
+2017-03-05 15:20:33 - code=
+2017-03-05 15:20:33 - code=
+2017-03-05 15:20:33 - 微信信息没有获取到！
+2017-03-05 15:22:00 - code=
+2017-03-05 15:22:00 - code=
+2017-03-05 15:22:00 - 微信信息没有获取到！
+2017-03-05 15:22:15 - code=
+2017-03-05 15:22:15 - code=
+2017-03-05 15:22:15 - 微信信息没有获取到！
+2017-03-05 15:22:19 - code=
+2017-03-05 15:22:19 - code=
+2017-03-05 15:23:16 - code=
+2017-03-05 15:23:16 - code=
+2017-03-05 15:23:20 - code=
+2017-03-05 15:23:20 - code=
+2017-03-05 15:28:20 - code=
+2017-03-05 15:28:20 - code=
+2017-03-05 15:28:20 - 微信信息没有获取到！
+2017-03-05 15:28:22 - code=
+2017-03-05 15:28:22 - code=
+2017-03-05 15:28:22 - 微信信息没有获取到！
+2017-03-05 15:28:51 - code=
+2017-03-05 15:28:51 - code=
+2017-03-05 15:28:51 - 微信信息没有获取到！
+2017-03-05 15:28:51 - code=
+2017-03-05 15:28:51 - code=
+2017-03-05 15:28:51 - 微信信息没有获取到！
+2017-03-05 15:29:24 - code=
+2017-03-05 15:29:24 - code=
+2017-03-05 15:29:24 - 微信信息没有获取到！
+2017-03-05 15:29:24 - code=
+2017-03-05 15:29:24 - code=
+2017-03-05 15:29:24 - 微信信息没有获取到！
+2017-03-05 15:29:59 - code=
+2017-03-05 15:29:59 - code=
+2017-03-05 15:29:59 - 微信信息没有获取到！
+2017-03-05 15:30:00 - code=
+2017-03-05 15:30:00 - code=
+2017-03-05 15:30:00 - 微信信息没有获取到！
+2017-03-05 15:30:05 - code=
+2017-03-05 15:30:05 - code=
+2017-03-05 15:30:05 - 微信信息没有获取到！
+2017-03-05 15:30:05 - code=
+2017-03-05 15:30:05 - code=
+2017-03-05 15:30:05 - 微信信息没有获取到！
+2017-03-05 15:30:31 - code=
+2017-03-05 15:30:31 - code=
+2017-03-05 15:30:31 - 微信信息没有获取到！
+2017-03-05 15:30:31 - code=
+2017-03-05 15:30:31 - code=
+2017-03-05 15:30:31 - 微信信息没有获取到！
+2017-03-05 15:32:58 - code=
+2017-03-05 15:32:58 - code=
+2017-03-05 15:32:58 - 微信信息没有获取到！
+2017-03-05 15:34:14 - code=
+2017-03-05 15:34:14 - code=
+2017-03-05 15:34:28 - code=
+2017-03-05 15:34:28 - code=
+2017-03-05 15:34:52 - code=
+2017-03-05 15:34:52 - code=
+2017-03-05 15:51:42 - code=
+2017-03-05 15:51:42 - code=
+2017-03-05 15:55:24 - code=
+2017-03-05 15:55:24 - code=
+2017-03-05 15:55:24 - 微信信息没有获取到！
+2017-03-05 15:55:25 - code=
+2017-03-05 15:55:25 - code=
+2017-03-05 15:55:25 - 微信信息没有获取到！
+2017-03-05 15:55:32 - code=
+2017-03-05 15:55:32 - code=
+2017-03-05 15:55:32 - 微信信息没有获取到！
+2017-03-05 15:55:32 - code=
+2017-03-05 15:55:32 - code=
+2017-03-05 15:55:32 - 微信信息没有获取到！
+2017-03-05 15:56:04 - code=
+2017-03-05 15:56:04 - code=
+2017-03-05 15:56:04 - 微信信息没有获取到！
+2017-03-05 15:56:05 - code=
+2017-03-05 15:56:05 - code=
+2017-03-05 15:56:05 - 微信信息没有获取到！
+2017-03-05 15:56:12 - code=
+2017-03-05 15:56:12 - code=
+2017-03-05 15:56:12 - 微信信息没有获取到！
+2017-03-05 15:56:12 - code=
+2017-03-05 15:56:12 - code=
+2017-03-05 15:56:12 - 微信信息没有获取到！
+2017-03-05 15:56:20 - code=
+2017-03-05 15:56:20 - code=
+2017-03-05 15:56:20 - 微信信息没有获取到！
+2017-03-05 15:56:20 - code=
+2017-03-05 15:56:20 - code=
+2017-03-05 15:56:20 - 微信信息没有获取到！
+2017-03-05 15:57:38 - code=
+2017-03-05 15:57:38 - code=
+2017-03-05 15:57:38 - 微信信息没有获取到！
+2017-03-05 15:57:38 - code=
+2017-03-05 15:57:38 - code=
+2017-03-05 15:57:38 - 微信信息没有获取到！
+2017-03-05 15:57:42 - code=
+2017-03-05 15:57:42 - code=
+2017-03-05 15:57:42 - 微信信息没有获取到！
+2017-03-05 15:57:50 - code=
+2017-03-05 15:57:50 - code=
+2017-03-05 15:57:50 - 微信信息没有获取到！
+2017-03-05 15:57:56 - code=
+2017-03-05 15:57:56 - code=
+2017-03-05 15:58:04 - code=
+2017-03-05 15:58:04 - code=
+2017-03-05 15:58:04 - 微信信息没有获取到！
+2017-03-05 15:58:08 - code=
+2017-03-05 15:58:08 - code=
+2017-03-05 15:58:08 - 微信信息没有获取到！
+2017-03-05 15:58:10 - code=
+2017-03-05 15:58:10 - code=
+2017-03-05 15:58:10 - 微信信息没有获取到！
+2017-03-05 15:58:26 - code=
+2017-03-05 15:58:26 - code=
+2017-03-05 15:58:26 - 微信信息没有获取到！
+2017-03-05 15:59:52 - code=
+2017-03-05 15:59:52 - code=
+2017-03-05 15:59:52 - 微信信息没有获取到！
+2017-03-05 15:59:52 - code=
+2017-03-05 15:59:52 - code=
+2017-03-05 15:59:52 - 微信信息没有获取到！
+2017-03-05 16:00:17 - code=
+2017-03-05 16:00:17 - code=
+2017-03-05 16:00:17 - 微信信息没有获取到！
+2017-03-05 16:01:15 - code=
+2017-03-05 16:01:15 - code=
+2017-03-05 16:01:15 - 微信信息没有获取到！
+2017-03-05 16:01:34 - code=
+2017-03-05 16:01:34 - code=
+2017-03-05 16:01:34 - 微信信息没有获取到！
+2017-03-05 16:02:23 - code=
+2017-03-05 16:02:23 - code=
+2017-03-05 16:02:23 - 微信信息没有获取到！
+2017-03-05 16:02:23 - code=
+2017-03-05 16:02:23 - code=
+2017-03-05 16:02:23 - 微信信息没有获取到！
+2017-03-05 16:03:31 - Enter in ControllerProductProduct 1
+2017-03-05 16:03:31 - product_info 50
+2017-03-05 16:04:17 - code=
+2017-03-05 16:04:17 - code=
+2017-03-05 16:05:55 - 微信信息没有获取到！
+2017-03-05 16:06:27 - Enter in ControllerProductProduct 1
+2017-03-05 16:06:28 - product_info 50
+2017-03-05 16:07:05 - 微信信息没有获取到！
+2017-03-05 16:07:36 - 微信信息没有获取到！
+2017-03-05 16:08:34 - 微信信息没有获取到！
+2017-03-05 16:09:31 - 微信信息没有获取到！
+2017-03-05 16:09:37 - 微信信息没有获取到！
+2017-03-05 16:10:30 - 微信信息没有获取到！
+2017-03-05 16:10:35 - code=
+2017-03-05 16:10:35 - code=
+2017-03-05 16:10:56 - Enter in ControllerProductProduct 1
+2017-03-05 16:10:56 - product_info 0
+2017-03-05 16:10:56 - Enter in ControllerProductProduct 1
+2017-03-05 16:10:56 - product_info 50
+2017-03-05 16:11:09 - 微信信息没有获取到！
+2017-03-05 16:11:09 - 微信信息没有获取到！
+2017-03-05 16:11:16 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:16 - product_info 0
+2017-03-05 16:11:16 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:16 - product_info 50
+2017-03-05 16:11:22 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:22 - product_info 0
+2017-03-05 16:11:22 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:22 - product_info 50
+2017-03-05 16:11:55 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:55 - product_info 0
+2017-03-05 16:11:56 - Enter in ControllerProductProduct 1
+2017-03-05 16:11:56 - product_info 50
+2017-03-05 16:12:08 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 16:12:08 - PersonalCenter： userinfo 为空
+2017-03-05 16:12:08 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 16:12:08 - PersonalCenter： userinfo 为空
+2017-03-05 16:12:15 - code=
+2017-03-05 16:12:15 - code=
+2017-03-05 16:12:15 - code=
+2017-03-05 16:12:15 - code=
+2017-03-05 16:12:15 - 微信信息没有获取到！
+2017-03-05 16:12:17 - 微信信息没有获取到！
+2017-03-05 16:12:17 - 微信信息没有获取到！
+2017-03-05 16:12:27 - 微信信息没有获取到！
+2017-03-05 16:12:55 - 微信信息没有获取到！
+2017-03-05 16:13:08 - 微信信息没有获取到！
+2017-03-05 16:13:09 - 微信信息没有获取到！
+2017-03-05 16:13:24 - 微信信息没有获取到！
+2017-03-05 16:13:32 - 微信信息没有获取到！
+2017-03-05 16:14:19 - 微信信息没有获取到！
+2017-03-05 16:14:40 - 微信信息没有获取到！
+2017-03-05 16:14:51 - 微信信息没有获取到！
+2017-03-05 16:15:04 - 微信信息没有获取到！
+2017-03-05 16:15:22 - 微信信息没有获取到！
+2017-03-05 16:15:28 - Enter in ControllerProductProduct 1
+2017-03-05 16:15:28 - product_info 50
+2017-03-05 16:16:28 - 微信信息没有获取到！
+2017-03-05 16:16:38 - 微信信息没有获取到！
+2017-03-05 16:17:11 - 微信信息没有获取到！
+2017-03-05 16:18:12 - 微信信息没有获取到！
+2017-03-05 16:22:15 - 微信信息没有获取到！
+2017-03-05 16:22:34 - 微信信息没有获取到！
+2017-03-05 16:24:16 - 微信信息没有获取到！
+2017-03-05 16:27:25 - 微信信息没有获取到！
+2017-03-05 16:29:02 - 微信信息没有获取到！
+2017-03-05 16:32:26 - 微信信息没有获取到！
+2017-03-05 16:32:42 - 微信信息没有获取到！
+2017-03-05 16:32:49 - 微信信息没有获取到！
+2017-03-05 16:33:08 - 微信信息没有获取到！
+2017-03-05 16:33:31 - 微信信息没有获取到！
+2017-03-05 16:39:34 - 微信信息没有获取到！
+2017-03-05 16:39:40 - 微信信息没有获取到！
+2017-03-05 16:51:46 - 微信信息没有获取到！
+2017-03-05 16:52:54 - 微信信息没有获取到！
+2017-03-05 16:53:55 - 微信信息没有获取到！
+2017-03-05 16:54:18 - 微信信息没有获取到！
+2017-03-05 16:56:02 - 微信信息没有获取到！
+2017-03-05 16:56:15 - 微信信息没有获取到！
+2017-03-05 16:56:26 - 微信信息没有获取到！
+2017-03-05 16:56:48 - 微信信息没有获取到！
+2017-03-05 16:57:28 - 微信信息没有获取到！
+2017-03-05 16:58:56 - 微信信息没有获取到！
+2017-03-05 17:00:14 - 微信信息没有获取到！
+2017-03-05 17:00:15 - 微信信息没有获取到！
+2017-03-05 17:00:24 - 微信信息没有获取到！
+2017-03-05 17:00:59 - 微信信息没有获取到！
+2017-03-05 17:02:54 - code=031uo8Pt1ioyw90tYMOt12j2Pt1uo8PK
+2017-03-05 17:07:04 - code=0015VqeO0zJxh82t5BbO0Z82eO05VqeC
+2017-03-05 17:07:09 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 17:07:09 - PersonalCenter： userinfo 为空
+2017-03-05 17:07:21 - code=021VoU9u1BacTa0ayt9u1V21au1VoU9Q
+2017-03-05 17:09:44 - code=001C70gS0nCrDb2mM9eS0ig1gS0C70gq
+2017-03-05 17:09:55 - historyrecord=25
+2017-03-05 17:12:30 - code=001yIuhV0JfSgX1JEhhV0hkqhV0yIuhw
+2017-03-05 17:12:34 - Enter in ControllerProductProduct 1
+2017-03-05 17:12:34 - product_info 50
+2017-03-05 17:18:15 - code=021m5LxY1YxDgW0kxswY1wUIxY1m5Lx-
+2017-03-05 17:18:25 - code=011BEn7C0NgKAd2X8p9C0UZc7C0BEn7Y
+2017-03-05 17:18:46 - code=021udoLy1NGJlf0hX1Jy159jLy1udoLg
+2017-03-05 17:18:46 - historyrecord=25
+2017-03-05 17:18:58 - code=051e3KTN1FYy441CdeSN1RHtTN1e3KTD
+2017-03-05 17:19:12 - code=031aTKIJ1plNf70tM2GJ1mIlIJ1aTKIJ
+2017-03-05 17:19:28 - code=021XuXXv1StQUb0EIY0w1zFhYv1XuXXw
+2017-03-05 17:19:29 - historyrecord=25
+2017-03-05 17:21:42 - code=041aQIQA0foG8d2WhjQA0fZQQA0aQIQf
+2017-03-05 17:21:42 - historyrecord=0
+2017-03-05 17:22:22 - code=011HF4eP0MmUy92jF2bP0Q46eP0HF4eM
+2017-03-05 17:22:55 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 17:22:55 - PersonalCenter： userinfo 为空
+2017-03-05 17:22:58 - code=001CkPJT1reZA91e35KT1YvaKT1CkPJu
+2017-03-05 17:23:01 - Enter in ControllerProductProduct 1
+2017-03-05 17:23:01 - product_info 50
+2017-03-05 17:23:30 - code=001KEvpk2xBVTI0Jkatk22SKpk2KEvpw
+2017-03-05 17:23:40 - code=031Qk4l30yNQwE15ien30E1Qk30Qk4lc
+2017-03-05 17:26:54 - code=
+2017-03-05 17:26:54 - code=051WiwUc0W5mfx1eu0Sc0r7CUc0WiwUo
+2017-03-05 17:31:47 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 17:31:47 - PersonalCenter： userinfo 为空
+2017-03-05 17:34:12 - code=
+2017-03-05 17:34:12 - code=051eofDf0pFL2z1Aj3Gf0QhwDf0eofD-
+2017-03-05 17:36:12 - code=041x0LdT1Juz6a1NiMaT102BdT1x0LdU
+2017-03-05 17:36:57 - code=
+2017-03-05 17:36:58 - code=
+2017-03-05 17:37:51 - code=
+2017-03-05 17:37:51 - 微信信息没有获取到！
+2017-03-05 17:37:59 - code=
+2017-03-05 17:38:01 - 微信信息没有获取到！
+2017-03-05 17:38:10 - code=
+2017-03-05 17:38:41 - code=
+2017-03-05 17:38:41 - code=041FzD7D19TNT103Z49D1YMW7D1FzD7-
+2017-03-05 17:40:55 - code=001gqj7m19mMbl0sqI9m1p9f7m1gqj7m
+2017-03-05 17:44:52 - code=
+2017-03-05 17:46:07 - code=
+2017-03-05 17:46:07 - code=041FzD7D19TNT103Z49D1YMW7D1FzD7-
+2017-03-05 17:46:12 - code=001Y2mzB0vaM8e256iAB0StfzB0Y2mz4
+2017-03-05 17:46:46 - code=
+2017-03-05 17:46:46 - code=0016F1yY15YUgW0JUFuY1mFZxY16F1yV
+2017-03-05 17:46:47 - historyrecord=0
+2017-03-05 17:46:49 - code=
+2017-03-05 17:46:49 - code=0016F1yY15YUgW0JUFuY1mFZxY16F1yV
+2017-03-05 17:46:57 - code=
+2017-03-05 17:46:57 - code=0513btCS1ZOgr81de6ES1t8qCS13btCF
+2017-03-05 17:48:52 - code=011OtfsO19wFN51oBLrO1ApYrO1Otfsz
+2017-03-05 17:50:05 - code=
+2017-03-05 17:50:05 - code=
+2017-03-05 17:50:18 - code=
+2017-03-05 17:50:20 - 微信信息没有获取到！
+2017-03-05 17:50:46 - code=
+2017-03-05 17:51:46 - code=
+2017-03-05 17:54:08 - code=
+2017-03-05 17:54:08 - historyrecord=2
+2017-03-05 17:54:42 - code=
+2017-03-05 17:54:42 - historyrecord=2
+2017-03-05 17:56:15 - code=
+2017-03-05 17:56:16 - 微信信息没有获取到！
+2017-03-05 18:01:42 - code=
+2017-03-05 18:01:42 - 微信信息没有获取到！
+2017-03-05 18:01:56 - code=
+2017-03-05 18:01:58 - 微信信息没有获取到！
+2017-03-05 18:03:36 - code=
+2017-03-05 18:03:38 - 微信信息没有获取到！
+2017-03-05 18:04:53 - code=
+2017-03-05 18:04:54 - 微信信息没有获取到！
+2017-03-05 18:08:06 - code=
+2017-03-05 18:08:07 - code=031VXXXW1TED0V03ItWW1KGYXW1VXXX5
+2017-03-05 18:08:13 - code=
+2017-03-05 18:08:13 - code=041U5qQh1uYz7z0Cl5Sh1GmiQh1U5qQ0
+2017-03-05 18:08:51 - code=
+2017-03-05 18:08:51 - 微信信息没有获取到！
+2017-03-05 18:11:00 - code=011utTx820rOXN0OeXv820WRx82utTx9
+2017-03-05 18:19:11 - code=
+2017-03-05 18:19:12 - 微信信息没有获取到！
+2017-03-05 18:21:26 - code=
+2017-03-05 18:21:26 - 微信信息没有获取到！
+2017-03-05 18:21:39 - code=
+2017-03-05 18:21:40 - 微信信息没有获取到！
+2017-03-05 18:22:06 - code=
+2017-03-05 18:22:07 - 微信信息没有获取到！
+2017-03-05 18:23:03 - code=
+2017-03-05 18:23:05 - 微信信息没有获取到！
+2017-03-05 18:25:47 - code=
+2017-03-05 18:25:48 - 微信信息没有获取到！
+2017-03-05 18:26:10 - code=
+2017-03-05 18:26:12 - 微信信息没有获取到！
+2017-03-05 18:27:23 - code=
+2017-03-05 18:27:24 - 微信信息没有获取到！
+2017-03-05 18:27:42 - code=
+2017-03-05 18:27:44 - 微信信息没有获取到！
+2017-03-05 18:28:10 - code=
+2017-03-05 18:28:12 - 微信信息没有获取到！
+2017-03-05 18:28:52 - code=
+2017-03-05 18:28:54 - 微信信息没有获取到！
+2017-03-05 18:45:25 - code=
+2017-03-05 18:45:25 - 微信信息没有获取到！
+2017-03-05 18:51:31 - code=
+2017-03-05 18:51:31 - code=011xLrcs1Fov1r0F7Tds12cmcs1xLrcq
+2017-03-05 18:57:21 - code=
+2017-03-05 18:57:22 - 微信信息没有获取到！
+2017-03-05 19:02:30 - code=
+2017-03-05 19:02:30 - code=0115KHxU0ogwIV10ZwxU0dHzxU05KHxs
+2017-03-05 19:04:33 - code=
+2017-03-05 19:04:34 - 微信信息没有获取到！
+2017-03-05 19:04:54 - code=
+2017-03-05 19:04:54 - code=0112TywF1I2i340gkRtF12LjwF12TywU
+2017-03-05 19:05:08 - code=
+2017-03-05 19:05:19 - code=
+2017-03-05 19:05:19 - code=021i3jKb06Gn7w1mmLIb0xVlKb0i3jKM
+2017-03-05 19:05:42 - code=
+2017-03-05 19:05:42 - code=021i3jKb06Gn7w1mmLIb0xVlKb0i3jKM
+2017-03-05 19:07:23 - code=
+2017-03-05 19:07:24 - code=0411qtDQ0bml0b28pZBQ01mfDQ01qtDZ
+2017-03-05 19:10:04 - code=001qbdOi1pyZPz0xbdMi1F3pOi1qbdOc
+2017-03-05 19:10:04 - code=001GE4t92ZfpjP0qDRr92o08t92GE4tz
+2017-03-05 19:10:08 - Enter in ControllerProductProduct 1
+2017-03-05 19:10:08 - product_info 50
+2017-03-05 19:10:26 - Enter in ControllerProductProduct 1
+2017-03-05 19:10:26 - product_info 50
+2017-03-05 19:10:28 - code=001qbdOi1pyZPz0xbdMi1F3pOi1qbdOc
+2017-03-05 19:10:28 - 微信信息没有获取到！
+2017-03-05 19:10:49 - code=
+2017-03-05 19:10:49 - 微信信息没有获取到！
+2017-03-05 19:11:01 - code=021rsBG81mb5WS1agGJ81tOiG81rsBGh
+2017-03-05 19:12:26 - code=
+2017-03-05 19:13:08 - code=
+2017-03-05 19:13:08 - 微信信息没有获取到！
+2017-03-05 19:13:17 - Enter in ControllerProductProduct 1
+2017-03-05 19:13:17 - product_info 50
+2017-03-05 19:14:14 - code=
+2017-03-05 19:14:15 - code=
+2017-03-05 19:14:15 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 19:14:58 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 19:14:58 - PersonalCenter： userinfo 为空
+2017-03-05 19:14:58 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 19:14:58 - PersonalCenter： userinfo 为空
+2017-03-05 19:15:52 - code=
+2017-03-05 19:18:14 - code=
+2017-03-05 19:18:15 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 19:18:35 - code=
+2017-03-05 19:18:35 - code=011ZuU1P1N5Hc514Ub1P1TdQ1P1ZuU1j
+2017-03-05 19:18:35 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 19:18:39 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 19:23:34 - code=
+2017-03-05 19:23:39 - code=
+2017-03-05 19:24:06 - code=
+2017-03-05 19:25:37 - code=
+2017-03-05 19:28:12 - code=
+2017-03-05 19:29:41 - code=
+2017-03-05 19:30:53 - code=
+2017-03-05 19:30:57 - code=
+2017-03-05 19:32:35 - code=
+2017-03-05 19:32:40 - code=
+2017-03-05 19:32:55 - code=
+2017-03-05 19:34:43 - code=
+2017-03-05 19:34:49 - code=
+2017-03-05 19:34:53 - code=
+2017-03-05 19:35:59 - code=
+2017-03-05 19:36:15 - code=
+2017-03-05 19:36:50 - code=
+2017-03-05 19:38:31 - code=
+2017-03-05 19:39:57 - code=
+2017-03-05 19:40:19 - code=
+2017-03-05 19:40:24 - code=
+2017-03-05 19:42:14 - code=
+2017-03-05 19:42:14 - 微信信息没有获取到！
+2017-03-05 19:42:35 - code=
+2017-03-05 19:42:35 - 微信信息没有获取到！
+2017-03-05 19:50:17 - code=
+2017-03-05 19:55:51 - code=
+2017-03-05 20:04:12 - code=
+2017-03-05 20:04:28 - code=
+2017-03-05 20:05:33 - code=
+2017-03-05 20:07:33 - code=031qSDSj1mgOSi0gLHQj1C8BSj1qSDSW
+2017-03-05 20:07:35 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 20:07:35 - PersonalCenter： userinfo 为空
+2017-03-05 20:07:37 - code=031qSDSj1mgOSi0gLHQj1C8BSj1qSDSW
+2017-03-05 20:07:45 - code=031qSDSj1mgOSi0gLHQj1C8BSj1qSDSW
+2017-03-05 20:07:57 - code=0213ymSl0zW7go1mKeVl0VaDSl03ymSE
+2017-03-05 20:07:59 - code=0213ymSl0zW7go1mKeVl0VaDSl03ymSE
+2017-03-05 20:08:31 - code=031u9BSZ1zVXUY0annTZ1J8FSZ1u9BS6
+2017-03-05 20:08:37 - code=031u9BSZ1zVXUY0annTZ1J8FSZ1u9BS6
+2017-03-05 20:13:07 - code=0119ro1z0kccVh15VW0z0TKl1z09ro1v
+2017-03-05 20:13:25 - code=
+2017-03-05 20:13:39 - code=031u9BSZ1zVXUY0annTZ1J8FSZ1u9BS6
+2017-03-05 20:13:53 - code=
+2017-03-05 20:13:53 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 20:13:57 - code=001wsMlC0I9NVd2JQNkC0PxYlC0wsMlE
+2017-03-05 20:14:02 - code=
+2017-03-05 20:14:02 - code=05110hSi11CgNz04phPi1DDcSi110hSk
+2017-03-05 20:14:20 - code=
+2017-03-05 20:14:20 - code=05110hSi11CgNz04phPi1DDcSi110hSk
+2017-03-05 20:14:24 - code=001OTMDe1hBdVu0zoQEe1YHIDe1OTMDt
+2017-03-05 20:14:25 - code=
+2017-03-05 20:14:26 - code=0011M0CF0decUg21MiAF02f5CF01M0Cd
+2017-03-05 20:14:26 - historyrecord=0
+2017-03-05 20:14:28 - code=
+2017-03-05 20:14:28 - code=
+2017-03-05 20:14:29 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 20:14:29 - PersonalCenter： userinfo 为空
+2017-03-05 20:14:31 - code=001OTMDe1hBdVu0zoQEe1YHIDe1OTMDt
+2017-03-05 20:14:32 - code=
+2017-03-05 20:14:32 - code=0412cqQu0hgXJe1vTzNu0WlEQu02cqQM
+2017-03-05 20:14:36 - code=0412cqQu0hgXJe1vTzNu0WlEQu02cqQM
+2017-03-05 20:14:39 - code=
+2017-03-05 20:14:39 - code=041Ql7jf0pSBoz1QN5jf05pSif0Ql7ju
+2017-03-05 20:14:41 - code=051rJoZC1V8yl00y5P2D1rxxZC1rJoZj
+2017-03-05 20:14:44 - code=041Ql7jf0pSBoz1QN5jf05pSif0Ql7ju
+2017-03-05 20:15:02 - code=
+2017-03-05 20:15:02 - 微信信息没有获取到！
+2017-03-05 20:15:02 - code=021PChup0Z0Gtr1Lu7up0Cdtup0PChuc
+2017-03-05 20:15:12 - Enter in ControllerProductProduct 1
+2017-03-05 20:15:12 - product_info 0
+2017-03-05 20:15:13 - Enter in ControllerProductProduct 1
+2017-03-05 20:15:13 - product_info 51
+2017-03-05 20:15:17 - Enter in ControllerProductProduct 1
+2017-03-05 20:15:17 - product_info 51
+2017-03-05 20:15:19 - code=031u9BSZ1zVXUY0annTZ1J8FSZ1u9BS6
+2017-03-05 20:15:34 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:15:39 - Enter in ControllerProductProduct 1
+2017-03-05 20:15:39 - product_info 0
+2017-03-05 20:15:39 - Enter in ControllerProductProduct 1
+2017-03-05 20:15:39 - product_info 51
+2017-03-05 20:15:42 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:15:42 - code=
+2017-03-05 20:15:42 - code=031ExgfB1mTmYh0phzfB10qtfB1Exgf9
+2017-03-05 20:15:48 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 20:15:48 - PersonalCenter： userinfo 为空
+2017-03-05 20:15:50 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:15:54 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:15:56 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:16:02 - code=00123IOU0CKcaX1wEdOU08PLOU023IOF
+2017-03-05 20:16:07 - code=001MVFm72mZ0TM0Rjjn7259Em72MVFmv
+2017-03-05 20:17:00 - code=
+2017-03-05 20:17:00 - 微信信息没有获取到！
+2017-03-05 20:17:00 - code=051cBOrs1paVcq0LSOps1ceyrs1cBOrO
+2017-03-05 20:17:05 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:05 - product_info 0
+2017-03-05 20:17:05 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:05 - product_info 50
+2017-03-05 20:17:19 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:19 - product_info 0
+2017-03-05 20:17:19 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:19 - product_info 50
+2017-03-05 20:17:28 - code=
+2017-03-05 20:17:29 - code=001C50s80sObMK1Oblt8088Wr80C50s9
+2017-03-05 20:17:31 - code=001C50s80sObMK1Oblt8088Wr80C50s9
+2017-03-05 20:17:35 - code=
+2017-03-05 20:17:35 - 微信信息没有获取到！
+2017-03-05 20:17:35 - code=011glI680u9txK1kM8880MVF680glI6N
+2017-03-05 20:17:39 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:39 - product_info 0
+2017-03-05 20:17:39 - Enter in ControllerProductProduct 1
+2017-03-05 20:17:39 - product_info 50
+2017-03-05 20:18:07 - Enter in ControllerProductProduct 1
+2017-03-05 20:18:07 - product_info 0
+2017-03-05 20:18:07 - Enter in ControllerProductProduct 1
+2017-03-05 20:18:07 - product_info 50
+2017-03-05 20:18:56 - code=001Fp2YI0MePmk23C8VI0U0dYI0Fp2YW
+2017-03-05 20:20:43 - code=031dECad2ZXqQA0Ticad2A9sad2dECao
+2017-03-05 20:20:43 - code=051rokaQ00bAb92AOWcQ0a13aQ0roka8
+2017-03-05 20:20:43 - historyrecord=0
+2017-03-05 20:25:12 - code=
+2017-03-05 20:26:23 - code=
+2017-03-05 20:26:24 - historyrecord=0
+2017-03-05 20:26:32 - code=0211eIvc2OeTVA0k7Hsc26RHvc21eIvJ
+2017-03-05 20:26:37 - code=011Pp9qj0y7VCl17cUpj0ulcqj0Pp9qo
+2017-03-05 20:29:46 - register 没有取到openid
+2017-03-05 20:29:49 - register 没有取到openid
+2017-03-05 20:29:50 - register 没有取到openid
+2017-03-05 20:29:51 - register 没有取到openid
+2017-03-05 20:29:51 - register 没有取到openid
+2017-03-05 20:29:51 - register 没有取到openid
+2017-03-05 20:29:51 - register 没有取到openid
+2017-03-05 20:29:52 - register 没有取到openid
+2017-03-05 20:29:52 - register 没有取到openid
+2017-03-05 20:29:52 - register 没有取到openid
+2017-03-05 20:29:52 - register 没有取到openid
+2017-03-05 20:29:53 - register 没有取到openid
+2017-03-05 20:29:53 - register 没有取到openid
+2017-03-05 20:29:53 - register 没有取到openid
+2017-03-05 20:29:53 - register 没有取到openid
+2017-03-05 20:29:53 - register 没有取到openid
+2017-03-05 20:29:54 - register 没有取到openid
+2017-03-05 20:29:54 - register 没有取到openid
+2017-03-05 20:29:54 - register 没有取到openid
+2017-03-05 20:29:54 - register 没有取到openid
+2017-03-05 20:29:55 - register 没有取到openid
+2017-03-05 20:29:55 - register 没有取到openid
+2017-03-05 20:29:55 - register 没有取到openid
+2017-03-05 20:29:55 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:56 - register 没有取到openid
+2017-03-05 20:29:57 - register 没有取到openid
+2017-03-05 20:29:57 - register 没有取到openid
+2017-03-05 20:29:57 - register 没有取到openid
+2017-03-05 20:29:58 - register 没有取到openid
+2017-03-05 20:29:58 - register 没有取到openid
+2017-03-05 20:29:58 - register 没有取到openid
+2017-03-05 20:29:58 - register 没有取到openid
+2017-03-05 20:29:58 - register 没有取到openid
+2017-03-05 20:29:59 - register 没有取到openid
+2017-03-05 20:29:59 - register 没有取到openid
+2017-03-05 20:29:59 - register 没有取到openid
+2017-03-05 20:29:59 - register 没有取到openid
+2017-03-05 20:29:59 - register 没有取到openid
+2017-03-05 20:30:00 - register 没有取到openid
+2017-03-05 20:30:00 - register 没有取到openid
+2017-03-05 20:30:00 - register 没有取到openid
+2017-03-05 20:30:00 - register 没有取到openid
+2017-03-05 20:30:00 - register 没有取到openid
+2017-03-05 20:30:01 - register 没有取到openid
+2017-03-05 20:30:01 - register 没有取到openid
+2017-03-05 20:30:01 - register 没有取到openid
+2017-03-05 20:30:01 - register 没有取到openid
+2017-03-05 20:30:01 - register 没有取到openid
+2017-03-05 20:30:02 - register 没有取到openid
+2017-03-05 20:30:02 - register 没有取到openid
+2017-03-05 20:30:02 - register 没有取到openid
+2017-03-05 20:30:02 - register 没有取到openid
+2017-03-05 20:30:02 - register 没有取到openid
+2017-03-05 20:30:03 - register 没有取到openid
+2017-03-05 20:30:03 - register 没有取到openid
+2017-03-05 20:30:03 - register 没有取到openid
+2017-03-05 20:30:03 - register 没有取到openid
+2017-03-05 20:30:40 - code=
+2017-03-05 20:30:40 - historyrecord=0
+2017-03-05 20:31:40 - code=001z67F31SrmBM1sSCF31itbF31z67FA
+2017-03-05 20:31:40 - historyrecord=0
+2017-03-05 20:31:51 - code=0012D8SP0a6HV82tsEPP0qy3SP02D8Sq
+2017-03-05 20:32:07 - register 没有取到openid
+2017-03-05 20:34:21 - register 没有取到openid
+2017-03-05 20:34:21 - register 没有取到openid
+2017-03-05 20:34:22 - register 没有取到openid
+2017-03-05 20:34:22 - register 没有取到openid
+2017-03-05 20:34:22 - register 没有取到openid
+2017-03-05 20:34:22 - register 没有取到openid
+2017-03-05 20:34:23 - register 没有取到openid
+2017-03-05 20:34:23 - register 没有取到openid
+2017-03-05 20:34:23 - register 没有取到openid
+2017-03-05 20:34:23 - register 没有取到openid
+2017-03-05 20:34:23 - register 没有取到openid
+2017-03-05 20:34:24 - register 没有取到openid
+2017-03-05 20:34:24 - register 没有取到openid
+2017-03-05 20:34:25 - register 没有取到openid
+2017-03-05 20:34:25 - register 没有取到openid
+2017-03-05 20:34:25 - register 没有取到openid
+2017-03-05 20:34:25 - register 没有取到openid
+2017-03-05 20:34:26 - register 没有取到openid
+2017-03-05 20:34:26 - register 没有取到openid
+2017-03-05 20:34:26 - register 没有取到openid
+2017-03-05 20:34:26 - register 没有取到openid
+2017-03-05 20:34:27 - register 没有取到openid
+2017-03-05 20:34:27 - register 没有取到openid
+2017-03-05 20:34:27 - register 没有取到openid
+2017-03-05 20:34:27 - register 没有取到openid
+2017-03-05 20:34:27 - register 没有取到openid
+2017-03-05 20:34:28 - register 没有取到openid
+2017-03-05 20:34:28 - register 没有取到openid
+2017-03-05 20:34:28 - register 没有取到openid
+2017-03-05 20:34:28 - register 没有取到openid
+2017-03-05 20:35:08 - code=
+2017-03-05 20:36:09 - code=0511ft9C1jOIB00VCI9C1Hlo9C11ft9M
+2017-03-05 20:36:15 - code=021UKg1I0jcaBj2YQF1I0XNr1I0UKg1D
+2017-03-05 20:37:27 - code=0312aujH0WBiKj2K7qiH0lJMjH02auj3
+2017-03-05 20:38:15 - register 没有取到openid
+2017-03-05 20:38:20 - register 没有取到openid
+2017-03-05 20:39:29 - code=
+2017-03-05 20:39:29 - 微信信息没有获取到！
+2017-03-05 20:39:29 - code=051VKuTJ0kdA742GmFQJ0rb7TJ0VKuTC
+2017-03-05 20:39:33 - Enter in ControllerProductProduct 1
+2017-03-05 20:39:33 - product_info 0
+2017-03-05 20:39:33 - Enter in ControllerProductProduct 1
+2017-03-05 20:39:33 - product_info 50
+2017-03-05 20:39:39 - code=
+2017-03-05 20:39:40 - 微信信息没有获取到！
+2017-03-05 20:39:40 - code=011gP7fj2xO6OH0t22dj2BG7fj2gP7fE
+2017-03-05 20:39:42 - code=
+2017-03-05 20:39:42 - code=001YPzse1mPxHv0cQUre1I1vse1YPzsh
+2017-03-05 20:39:45 - code=001YPzse1mPxHv0cQUre1I1vse1YPzsh
+2017-03-05 20:39:50 - code=
+2017-03-05 20:39:50 - 微信信息没有获取到！
+2017-03-05 20:39:50 - code=041N338z0dyOOh1gn08z0Ghk8z0N338J
+2017-03-05 20:39:53 - Enter in ControllerProductProduct 1
+2017-03-05 20:39:53 - product_info 0
+2017-03-05 20:39:53 - Enter in ControllerProductProduct 1
+2017-03-05 20:39:53 - product_info 50
+2017-03-05 20:47:03 - code=041jVsJq0qPCWr11BgKq03odJq0jVsJd
+2017-03-05 20:47:55 - register 没有取到openid
+2017-03-05 20:48:18 - register 没有取到openid
+2017-03-05 20:48:28 - code=041z01U30bZbeG1xArW30Zw7U30z01Uq
+2017-03-05 20:50:38 - code=041RWstw1SZ56d0Sl5uw1PTdtw1RWstX
+2017-03-05 20:50:42 - Enter in ControllerProductProduct 1
+2017-03-05 20:50:42 - product_info 50
+2017-03-05 20:51:09 - Enter in ControllerProductProduct 1
+2017-03-05 20:51:09 - product_info 51
+2017-03-05 20:51:15 - code=011k888t0QfiTb13LU9t0hLp8t0k888x
+2017-03-05 20:51:15 - code=011k888t0QfiTb13LU9t0hLp8t0k888x
+2017-03-05 20:51:19 - code=041RWstw1SZ56d0Sl5uw1PTdtw1RWstX
+2017-03-05 20:51:19 - code=041RWstw1SZ56d0Sl5uw1PTdtw1RWstX
+2017-03-05 20:51:19 - 微信信息没有获取到！
+2017-03-05 20:51:28 - code=011g9sH91XO7DT1IQ8I911juH91g9sHE
+2017-03-05 20:51:28 - code=011g9sH91XO7DT1IQ8I911juH91g9sHE
+2017-03-05 20:53:21 - code=021ihRqS0iPmsb2aBOtS0JYRqS0ihRqY
+2017-03-05 20:53:21 - openid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 20:55:05 - code=
+2017-03-05 20:55:05 - 微信信息没有获取到！
+2017-03-05 20:55:07 - code=
+2017-03-05 20:55:07 - historyrecord=0
+2017-03-05 20:55:07 - code=
+2017-03-05 20:55:08 - historyrecord=0
+2017-03-05 20:55:08 - code=001e6lQ0142T232xRAQ010mfQ01e6lQV
+2017-03-05 20:55:08 - openid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 20:55:13 - code=
+2017-03-05 20:55:14 - 微信信息没有获取到！
+2017-03-05 20:55:14 - code=
+2017-03-05 20:55:14 - 微信信息没有获取到！
+2017-03-05 20:55:15 - code=
+2017-03-05 20:55:16 - 微信信息没有获取到！
+2017-03-05 20:55:16 - code=
+2017-03-05 20:55:16 - code=
+2017-03-05 20:55:16 - 微信信息没有获取到！
+2017-03-05 20:55:16 - 微信信息没有获取到！
+2017-03-05 20:55:16 - code=
+2017-03-05 20:55:16 - 微信信息没有获取到！
+2017-03-05 20:55:28 - code=001AJ63K0X5do320tc0K0Nyk3K0AJ63F
+2017-03-05 20:55:28 - openid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 20:57:00 - code=031KHEQ00DkDVB1IQeQ00ILMQ00KHEQk
+2017-03-05 20:57:59 - code=051XUgDC1isb800KWXCC13CeDC1XUgDx
+2017-03-05 20:58:19 - code=
+2017-03-05 20:58:19 - code=0011pzha2MdBkR0SgYja2q0Nha21pzhD
+2017-03-05 20:58:28 - code=
+2017-03-05 20:58:29 - code=02146ZgH1QiOy40z4afH1Ux5hH146ZgZ
+2017-03-05 20:59:20 - code=0312PA921PeDgL1LqB921VuO9212PA9p
+2017-03-05 20:59:35 - code=011g9sH91XO7DT1IQ8I911juH91g9sHE
+2017-03-05 20:59:35 - 微信信息没有获取到！
+2017-03-05 20:59:35 - code=
+2017-03-05 20:59:36 - code=0011kLY81LWQ5S1HtjY81pfGY811kLYg
+2017-03-05 20:59:40 - code=0011kLY81LWQ5S1HtjY81pfGY811kLYg
+2017-03-05 20:59:46 - code=051EBHQ11M5fzL1DfuQ11oWLQ11EBHQ1
+2017-03-05 21:02:07 - code=011g9sH91XO7DT1IQ8I911juH91g9sHE
+2017-03-05 21:02:08 - 微信信息没有获取到！
+2017-03-05 21:12:59 - code=001ljpBX1vJJDW02AGCX12ijBX1ljpBT
+2017-03-05 21:12:59 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 21:13:13 - code=031ztiRc2VqtzA0V79Sc2DZiRc2ztiR1
+2017-03-05 21:13:32 - code=021VcKH00yCx4C1kTxH00XKxH00VcKHt
+2017-03-05 21:13:32 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 21:15:31 - code=011IasFj09SxWl1kybGj0n7MFj0IasFS
+2017-03-05 21:25:44 - code=001MKoOh0FRUPA17bMQh0diwOh0MKoOH
+2017-03-05 21:25:44 - register openid:oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 21:25:59 - code=041JkXjg2UWAVD0aqrlg2KJ7kg2JkXjS
+2017-03-05 21:26:06 - code=00176d7b0PQIuu1XHV7b0Boj7b076d76
+2017-03-05 21:26:17 - code=041y2UVk2LNJoI0lYvUk2Q9ZVk2y2UVS
+2017-03-05 21:26:17 - historyrecord=0
+2017-03-05 21:27:01 - code=001ekmE90FqoHt1xgXA90DagE90ekmEq
+2017-03-05 21:27:01 - register openid:oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 21:42:29 - code=001yp1Ka0A5JRu13DqJa00sjKa0yp1KJ
+2017-03-05 21:42:37 - code=0410rETT0bFPOV1Zd5UT0DUQTT00rETP
+2017-03-05 21:42:37 - register openid:oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 21:42:54 - code=0410rETT0bFPOV1Zd5UT0DUQTT00rETP
+2017-03-05 21:42:54 - register openid:
+2017-03-05 21:42:54 - 微信信息没有获取到！
+2017-03-05 21:43:03 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:43:03 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 21:43:08 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:43:08 - register openid:
+2017-03-05 21:43:08 - 微信信息没有获取到！
+2017-03-05 21:43:16 - code=031POrux1j8Cme0B0Usx1muzux1POruQ
+2017-03-05 21:43:16 - register openid:oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 21:43:22 - code=031POrux1j8Cme0B0Usx1muzux1POruQ
+2017-03-05 21:43:22 - register openid:
+2017-03-05 21:43:22 - 微信信息没有获取到！
+2017-03-05 21:43:41 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:43:42 - register openid:
+2017-03-05 21:43:42 - 微信信息没有获取到！
+2017-03-05 21:44:23 - code=
+2017-03-05 21:44:23 - register openid:
+2017-03-05 21:44:23 - 微信信息没有获取到！
+2017-03-05 21:44:23 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:44:23 - register openid:
+2017-03-05 21:44:23 - 微信信息没有获取到！
+2017-03-05 21:45:47 - code=0119j09115Ybb22ao1811YlG8119j09L
+2017-03-05 21:45:48 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 21:45:50 - code=
+2017-03-05 21:45:50 - register openid:
+2017-03-05 21:45:50 - 微信信息没有获取到！
+2017-03-05 21:45:51 - code=
+2017-03-05 21:45:51 - register openid:
+2017-03-05 21:45:51 - 微信信息没有获取到！
+2017-03-05 21:45:51 - code=0119j09115Ybb22ao1811YlG8119j09L
+2017-03-05 21:45:51 - register openid:
+2017-03-05 21:45:51 - 微信信息没有获取到！
+2017-03-05 21:46:05 - code=
+2017-03-05 21:46:05 - register openid:
+2017-03-05 21:46:05 - 微信信息没有获取到！
+2017-03-05 21:46:05 - code=021ewEZy0hv6Yh1UgEZy03DYZy0ewEZp
+2017-03-05 21:46:06 - register openid:oKe2EwVNWJZA_KzUHULhS1gX6tZQ
+2017-03-05 21:46:15 - code=
+2017-03-05 21:46:15 - register openid:
+2017-03-05 21:46:15 - 微信信息没有获取到！
+2017-03-05 21:46:15 - code=0515aQUQ0XWy9a2CUSRQ0152VQ05aQUP
+2017-03-05 21:46:15 - register openid:oKe2EwVNWJZA_KzUHULhS1gX6tZQ
+2017-03-05 21:46:27 - code=
+2017-03-05 21:46:28 - register openid:
+2017-03-05 21:46:28 - 微信信息没有获取到！
+2017-03-05 21:46:41 - code=
+2017-03-05 21:46:41 - code=
+2017-03-05 21:48:21 - code=041boNo41LRE9O1hsBm4149uo41boNod
+2017-03-05 21:49:27 - code=001bjrrT1NbZsa1T6soT1SMorT1bjrr9
+2017-03-05 21:50:26 - code=001bjrrT1NbZsa1T6soT1SMorT1bjrr9
+2017-03-05 21:50:30 - code=001bjrrT1NbZsa1T6soT1SMorT1bjrr9
+2017-03-05 21:50:37 - code=0311fAat0h5sRb1tcvct07hDat01fAa2
+2017-03-05 21:51:21 - code=0311fAat0h5sRb1tcvct07hDat01fAa2
+2017-03-05 21:54:58 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:54:58 - register openid:
+2017-03-05 21:54:58 - 微信信息没有获取到！
+2017-03-05 21:56:14 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:56:14 - register openid:
+2017-03-05 21:56:14 - 微信信息没有获取到！
+2017-03-05 21:59:37 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:59:37 - getUsertoken code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 21:59:37 - register openid:
+2017-03-05 21:59:37 - 微信信息没有获取到！
+2017-03-05 22:00:18 - code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 22:00:18 - getUsertoken code=011pMGd00TUExC1rS1g00xotd00pMGdm
+2017-03-05 22:00:18 - register openid:
+2017-03-05 22:00:18 - 微信信息没有获取到！
+2017-03-05 22:02:04 - code=011JaOCs171jBq0ajEGs13qYCs1JaOCu
+2017-03-05 22:02:04 - getUsertoken code=011JaOCs171jBq0ajEGs13qYCs1JaOCu
+2017-03-05 22:02:04 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:04:21 - code=011PNFz90ZmwLt1xo4y90jSuz90PNFzR
+2017-03-05 22:04:21 - getUsertoken code=011PNFz90ZmwLt1xo4y90jSuz90PNFzR
+2017-03-05 22:04:21 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:07:13 - code=
+2017-03-05 22:07:13 - getUsertoken code=0
+2017-03-05 22:07:13 - getUsertoken no wechat openid
+2017-03-05 22:07:13 - register openid:
+2017-03-05 22:07:13 - 微信信息没有获取到！
+2017-03-05 22:07:13 - code=001W605B1pw4ai0pYF6B1jfO4B1W605y
+2017-03-05 22:07:13 - getUsertoken code=001W605B1pw4ai0pYF6B1jfO4B1W605y
+2017-03-05 22:07:13 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:07:13 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:07:27 - Enter in ControllerProductProduct 1
+2017-03-05 22:07:27 - product_info 0
+2017-03-05 22:07:27 - Enter in ControllerProductProduct 1
+2017-03-05 22:07:27 - product_info 50
