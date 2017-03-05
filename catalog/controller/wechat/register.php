@@ -65,7 +65,7 @@ class ControllerWechatRegister extends Controller
                 $this->load->model('wechat/userinfo');
                 if (isset($get_return["openid"])) {
                     $data["openid"] = $get_return["openid"];
-                    //$log->write("register openid:" . $get_return["openid"]);
+                    $log->write("register openid:" . $get_return["openid"]);
                     $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
                     if (isset($wechatid)) {
                         $data["wechat_id"] = $wechatid;
@@ -79,9 +79,7 @@ class ControllerWechatRegister extends Controller
                     $this->error["error_warning"] = $get_return["errmsg"];
                     $data["wechat_id"] = "";
                 }
-        } else if (isset($this->session->data['openid'])) {
-            $data["openid"] = $this->session->data['openid'];
-        } else if (isset($this->request->post['wechat_id'])) {
+        }  else if (isset($this->request->post['wechat_id'])) {
             $data['wechat_id'] = $this->request->post['wechat_id'];
         } else {
             $data['wechat_id'] = '';
