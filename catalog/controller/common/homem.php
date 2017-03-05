@@ -19,11 +19,11 @@ class ControllerCommonHomem extends Controller
          if(isset($this->request->get["code"])) {
              $log->write("code=" . $this->request->get["code"]);
          }
-        if($_GET["code"]) {
+        /*if($_GET["code"]) {
 
             $log->write("codes=" . $_GET["code"]);
 
-        }
+        }*/
 
 
         if (isset($_GET["code"])) {
