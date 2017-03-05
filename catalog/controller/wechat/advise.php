@@ -82,7 +82,7 @@ class ControllerWechatAdvise extends Controller
 
         if(isset($this->request->get["code"])) {
 
-            $log = new Log("wechat.log");
+
             $code = $this->request->get["code"];
             $log->write("code=" . $this->request->get["code"]);
         }
