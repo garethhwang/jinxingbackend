@@ -18,7 +18,7 @@ class ControllerWechatPersonalinfo extends Controller
         $get_return = array();
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        $code = $this->request->get["code"];
+        $code = $this->request->json("code","");
         if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
         } else {

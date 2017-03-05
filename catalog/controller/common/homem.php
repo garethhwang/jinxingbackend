@@ -15,13 +15,7 @@ class ControllerCommonHomem extends Controller
         $log = new Log("wechat.log");
         $data["error_warning"] = "";
         $get_return = array();
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        if(isset($this->request->get["code"])) {
-
-
-            $code = $this->request->get["code"];
-            $log->write("code=" . $this->request->get["code"]);
-        }
+        $code = $this->request->json("code","");
 
 
         if (isset($code))  {
