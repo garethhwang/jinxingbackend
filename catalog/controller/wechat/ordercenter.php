@@ -197,7 +197,7 @@ class ControllerWechatOrdercenter extends Controller
         $data['column_price'] = "单品价格";
         $data['column_total'] = "单品小计";
 
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $this->load->model('wechat/ordercenter');
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);

@@ -257,6 +257,10 @@ class ModelExtensionTotalCoupon extends Model {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "'");
 	}
 
+    public function deleteOrderCoupon($order_id) {
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "'AND customer_id = '" . (int)$this->customer->getId() . "'");
+    }
+
 
     public function getCouponInfo($order_id) {
 
