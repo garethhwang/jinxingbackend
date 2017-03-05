@@ -119,7 +119,7 @@ class ControllerWechatUserinfo extends Controller
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
         $get_return = file_get_contents($get_url);
         $get_return = (array)json_decode($get_return);
-        $log->write("openiddddd=".$get_return["openid"]);
+        $log->write("openidopenid=".$get_return["openid"]);
 
         if (isset($get_return["openid"])) {
             $log->write("getUsertoken openid = " . $get_return["openid"]);
