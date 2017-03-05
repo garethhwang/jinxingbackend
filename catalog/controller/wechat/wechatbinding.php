@@ -94,7 +94,7 @@ class ControllerWechatWechatbinding extends Controller
             $data['wechat_id'] = '';
         }
 
-	     $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+	     //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         //SMS
         /*if(isset($telephone) && !isset($smscode )) {
