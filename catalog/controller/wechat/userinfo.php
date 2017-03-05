@@ -109,7 +109,7 @@ class ControllerWechatUserinfo extends Controller
 
         $code = $this->request->json('code', 0);
         $log = new Log('wechat.log');
-        $log->write("code=" . $code);
+
 
         //$this->session->data['shipping_method']['cost'];
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
@@ -117,12 +117,15 @@ class ControllerWechatUserinfo extends Controller
         $get_return = (array)json_decode($get_return);
         if (isset($get_return["openid"])) {
             $this->session->data['openid'] = $get_return["openid"];
+
+            $log->write("openid=" . $get_return["openid"]);
         } else {
             if(isset($this->session->data['openid'])){
                 $get_return["openid"] = $this->session->data['openid'];
             }
             else{
                 $this->error['warning'] = "微信信息没有获取到！";
+                $log->write("12232323423543" );
             }
         }
         return $get_return;
