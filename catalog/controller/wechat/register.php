@@ -64,6 +64,7 @@ class ControllerWechatRegister extends Controller
                 $this->load->model('wechat/userinfo');
                 if (isset($get_return["openid"])) {
                     $data["openid"] = $get_return["openid"];
+                    $log->write("openid=" . $get_return["openid"]);
                     $log->write("register openid:" . $get_return["openid"]);
                     $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
                     if (isset($wechatid)) {
