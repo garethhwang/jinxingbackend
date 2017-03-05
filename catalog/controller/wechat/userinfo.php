@@ -106,11 +106,14 @@ class ControllerWechatUserinfo extends Controller
     public function getUsertoken()
     {
         $this->document->setTitle("个人信息");
+        $log = new Log("wechat.log");
 
         $code = $this->request->json('code', 0);
         $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
         $get_return = file_get_contents($get_url);
         $get_return = (array)json_decode($get_return);
+        $log->write("openiddddd=".$get_return["openid"]);
+
         if (isset($get_return["openid"])) {
             $this->session->data['openid'] = $get_return["openid"];
         } else {
