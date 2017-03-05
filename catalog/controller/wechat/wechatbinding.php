@@ -143,7 +143,7 @@ class ControllerWechatWechatbinding extends Controller
             'address_1' => $data['address_1'],
             );
 
-        $log->write("telephone=".$postdata["telephone"]."address_1=".$postdata["address_1"]."realname=".$postdata["realname"]);
+        //$log->write("telephone=".$postdata["telephone"]."address_1=".$postdata["address_1"]."realname=".$postdata["realname"]);
 
         $this->load->language('wechat/register');
         $this->document->setTitle("金杏健康");
@@ -157,7 +157,7 @@ class ControllerWechatWechatbinding extends Controller
                              $data['isnotright'] = '1';
             }else{
                 $data['isnotright'] = '0';
-                //$this->model_account_customer->addNonpregnant($postdata);
+                $this->model_account_customer->addNonpregnant($postdata);
                 $this->customer->nonpregnantlogin($data["openid"]);
                 unset($this->session->data['guest']);
                 //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
