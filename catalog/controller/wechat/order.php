@@ -11,7 +11,7 @@ class ControllerWechatOrder extends Controller
     private $error = array();
 
 
-     public function validcoupon()
+     /*public function validcoupon()
     {
 
 
@@ -52,7 +52,7 @@ class ControllerWechatOrder extends Controller
 
 
        
-    } 
+    }*/
 
 
     public function index()
@@ -103,11 +103,64 @@ class ControllerWechatOrder extends Controller
         }
 
 
-        $product_id= $this->request->json('product_id', 0);
+        $product_id = $this->request->json('product_id', 0);
 
-        /*if(isset($this->request->get['product_id'])) {
-            $data['product_id'] = $this->request->get['product_id'];
-        }*/
+        //$data['product_id'] = $product_id;
+        $this->session->data['coupon_product_id'] = $product_id;
+
+        $couponcode =  $this->request->json('couponcode', 0);
+
+        if(isset($couponcode)) {
+            $this->load->model('extension/total/coupon');
+
+            //$log->write("couponcode=".$couponcode);
+            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode);
+
+            //$log->write("validcoupon=".$validcoupon["code"]);
+            if ($validcoupon) {
+                $this->session->data['coupon'] = $couponcode;
+            } else {
+                if($this->session->data['couponerror_usetotal'] = "1" ){
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "折扣券活动已结束",
+                        'data' => array(),
+                    );
+                    unset($this->session->data['couponerror_usetotal']);
+                }elseif ($this->session->data['couponerror_log'] = "1" ){
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "您需要登录使用折扣券",
+                        'data' => array(),
+                    );
+                    unset($this->session->data['couponerror_log']);
+                }elseif ( $this->session->data['couponerror_customer'] = "1" ){
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "您的个人折扣券使用已达到最大数量",
+                        'data' => array(),
+                    );
+                    unset($this->session->data['couponerror_customer']);
+                }elseif ( $this->session->data['couponerror_product'] = "1" ){
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "该商品无法使用折扣券",
+                        'data' => array(),
+                    );
+                    unset($this->session->data['couponerror_product']);
+                }else{
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "无效折扣券",
+                        'data' => array(),
+                    );
+                }
+
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+            }
+        }
 
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
