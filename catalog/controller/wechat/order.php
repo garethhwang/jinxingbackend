@@ -80,7 +80,7 @@ class ControllerWechatOrder extends Controller
             $data['isnotregist'] = "0" ;
         }*/
 
-        /*if(!isset($this->session->data['openid'])){
+        if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -90,7 +90,7 @@ class ControllerWechatOrder extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
         //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
