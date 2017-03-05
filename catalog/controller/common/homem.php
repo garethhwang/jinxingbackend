@@ -28,7 +28,7 @@ class ControllerCommonHomem extends Controller
         }*/
 
 
-        if ($code) {
+        if (isset($code)) {
             $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
 
         } else {
