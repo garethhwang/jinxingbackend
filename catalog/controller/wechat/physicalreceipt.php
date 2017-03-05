@@ -296,7 +296,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
 
-        /*if(!isset($this->session->data['openid'])){
+        if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -306,7 +306,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
