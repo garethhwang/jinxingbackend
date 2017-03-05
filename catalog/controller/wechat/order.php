@@ -96,6 +96,11 @@ class ControllerWechatOrder extends Controller
 
         $data['customer'] = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
+        if(!isset($data['customer'])){
+            $data['customer'] = array();
+        }
+
+
         $this->load->model('account/address');
         $data['address'] = $this->model_account_address->getAddress( $data['customer']["address_id"]);
         if(!isset($data['address'])){
