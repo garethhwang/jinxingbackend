@@ -287,7 +287,7 @@ class ControllerProductCategory extends Controller
             if($data['isnotregist'] == "1" && isset($this->session->data['openid'])){
                 $response = array(
                     'code'  => 1020,
-                    'message'  => "下单前需要绑定手机',\"去绑定\"",
+                    'message'  => "下单前需要绑定手机'",
                     'data' =>array(
                         'url' => "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5ce715491b2cf046&redirect_uri=http:/wechat.jinxingjk.com/index.html#/binding&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
                     ),
