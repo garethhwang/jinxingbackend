@@ -35,27 +35,27 @@ class ControllerPressPress extends Controller {
 		if ($press_info) {
 			$url = '';
 
-			if (isset($this->request->get['tag'])) {
-				$url .= '&tag=' . $this->request->get['tag'];
-			}
+			//if (isset($this->request->get['tag'])) {
+			//	$url .= '&tag=' . $this->request->get['tag'];
+			//}
 
-			if (isset($this->request->get['page'])) {
-				$url .= '&page=' . $this->request->get['page'];
-			}
+			//if (isset($this->request->get['page'])) {
+			//	$url .= '&page=' . $this->request->get['page'];
+			//}
 
-			if (isset($this->request->get['limit'])) {
-				$url .= '&limit=' . $this->request->get['limit'];
-			}
+			//if (isset($this->request->get['limit'])) {
+			//	$url .= '&limit=' . $this->request->get['limit'];
+			//}
 
 			//$data['breadcrumbs'][] = array(
 			//	'text' => $press_info['title'],
 			//	'href' => $this->url->link('press/press', $url . '&press_id=' . $press_id)
 			//);
 
-			$this->document->setTitle($press_info['meta_title']);
-			$this->document->setDescription($press_info['meta_description']);
-			$this->document->setKeywords($press_info['meta_keyword']);
-			$this->document->addLink($this->url->link('press/press', 'press_id=' . $press_id), 'canonical');
+			//$this->document->setTitle($press_info['meta_title']);
+			//$this->document->setDescription($press_info['meta_description']);
+			//$this->document->setKeywords($press_info['meta_keyword']);
+			//$this->document->addLink($this->url->link('press/press', 'press_id=' . $press_id), 'canonical');
 			//$data['heading_title'] = $press_info['title'];
 			
 			//$data['text_empty'] = $this->language->get('text_empty');
@@ -79,55 +79,55 @@ class ControllerPressPress extends Controller {
 			
 			//$data['products'] = array();
 
-			$results = $this->model_press_press->getPressProductRelated($press_id);
+			//$results = $this->model_press_press->getPressProductRelated($press_id);
 
-			foreach ($results as $result) {
-				
-				$product_info = $this->model_catalog_product->getProduct($result['related_id']);
-				
-				if ($product_info['image']) {
-					$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
-				} else {
-					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
-				}
+			//foreach ($results as $result) {
+			//	
+			//	$product_info = $this->model_catalog_product->getProduct($result['related_id']);
+			//	
+			//	if ($product_info['image']) {
+			//		$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+			//	} else {
+			//		$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_related_width'), $this->config->get($this->config->get('config_theme') . '_image_related_height'));
+			//	}
 
-				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				} else {
-					$price = false;
-				}
+			//	if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+			//		$price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+			//	} else {
+			//		$price = false;
+			//	}
 
-				if ((float)$product_info['special']) {
-					$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				} else {
-					$special = false;
-				}
+			//	if ((float)$product_info['special']) {
+			//		$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+			//	} else {
+			//		$special = false;
+			//	}
 
-				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
-				} else {
-					$tax = false;
-				}
+			//	if ($this->config->get('config_tax')) {
+			//		$tax = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+			//	} else {
+			//		$tax = false;
+			//	}
 
-				if ($this->config->get('config_review_status')) {
-					$rating = (int)$product_info['rating'];
-				} else {
-					$rating = false;
-				}
+			//	if ($this->config->get('config_review_status')) {
+			//		$rating = (int)$product_info['rating'];
+			//	} else {
+			//		$rating = false;
+			//	}
 
-				//$data['products'][] = array(
-				//	'product_id'  => $product_info['product_id'],
-				//	'thumb'       => $image,
-				//	'name'	=> $product_info['name'],
-				//	'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
-				//	'price'       => $price,
-				//	'special'     => $special,
-				//	'tax'	 => $tax,
-				//	'minimum'     => $product_info['minimum'] > 0 ? $product_info['minimum'] : 1,
-				//	'rating'      => $rating,
-				//	'href'	=> $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
-				//);
-			}
+			//	//$data['products'][] = array(
+			//	//	'product_id'  => $product_info['product_id'],
+			//	//	'thumb'       => $image,
+			//	//	'name'	=> $product_info['name'],
+			//	//	'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
+			//	//	'price'       => $price,
+			//	//	'special'     => $special,
+			//	//	'tax'	 => $tax,
+			//	//	'minimum'     => $product_info['minimum'] > 0 ? $product_info['minimum'] : 1,
+			//	//	'rating'      => $rating,
+			//	//	'href'	=> $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+			//	//);
+			//}
 
 		$response = array(
 			'code'  => 0,
@@ -182,6 +182,21 @@ class ControllerPressPress extends Controller {
 			$this->response->setOutput($this->load->view('press/wechatpress', $data));
 			
 		} else {
+
+			$response = array(
+				'code'  => 0,
+				'message'  => "",
+				'data' =>array(),
+			);
+			$data = array();
+			$response["data"] = $data;
+	
+			$this->response->addHeader('Content-Type: application/json');
+			$this->response->setOutput(json_encode($response));													   
+																						  
+			return;
+
+
 			$url = '';
 
 			if (isset($this->request->get['page'])) {
