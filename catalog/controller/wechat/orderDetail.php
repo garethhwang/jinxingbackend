@@ -139,14 +139,14 @@ class ControllerWechatOrderDetail extends Controller
             $openId = $temp['openid'];
             $title=$data['products'][0]['name'];
             $price=(int)$data['lastprice']*100;
-            $price=1;
 
             //②、统一下单
             $input = new WxPayUnifiedOrder();
             $input->SetBody($title);
             $input->SetAttach($title);
             $input->SetOut_trade_no(WxPayConfig::MCHID . date("YmdHis"));
-            $input->SetTotal_fee((int)$price);
+            //$input->SetTotal_fee((int)$price);
+            $input->SetTotal_fee(1);
             $input->SetTime_start(date("YmdHis"));
             $input->SetGoods_tag("test");
             $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
