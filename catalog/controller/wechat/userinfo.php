@@ -139,7 +139,7 @@ class ControllerWechatUserinfo extends Controller
                  $this->cache->set($code,json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
                  $this->session->data['openid'] = $get_return["openid"];
                  $log->write("register wechat_id:" . $data["wechat_id"]);
-                 $log->write("openidopenid=".$this->session->data['openid'])
+                 $log->write("openidopenid=".$this->session->data['openid']);
                  } else {
                      $this->error["error_warning"] = $get_return["errmsg"];
                      $data["wechat_id"] = "";
