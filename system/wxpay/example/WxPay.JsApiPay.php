@@ -79,7 +79,7 @@ class JsApiPay
 		$timeStamp = time();
 		$jsapi->SetTimeStamp("$timeStamp");
 		$jsapi->SetNonceStr(WxPayApi::getNonceStr());
-		$jsapi->SetPackage("prepay_id=" . $UnifiedOrderResult['prepay_id']);
+		//$jsapi->SetPackage("prepay_id=" . $UnifiedOrderResult['prepay_id']);
 		$jsapi->SetSignType("MD5");
 		$log->write(__CLASS__." ".__FUNCTION__." PaySign:".$jsapi->MakeSign());
 		$jsapi->SetPaySign($jsapi->MakeSign());
