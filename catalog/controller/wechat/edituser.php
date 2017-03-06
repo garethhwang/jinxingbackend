@@ -608,6 +608,8 @@ class ControllerWechatEdituser extends Controller
         //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 
+        $log->write( "info=".$data['department'].$data['realname']. $data['bmitype']);
+
 
         $result  = array(
             'headimgurl' =>  $data['headimgurl'],
