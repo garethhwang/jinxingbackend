@@ -19,8 +19,6 @@ class ControllerWechatPersonalinfo extends Controller
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $code = $this->request->json("code","");
-
-        $code = $this->request->json("code","");
         $this->cache->set("wechatcode", $code);
         if($this->cache->get($code)){
             $data["openid"] = $this->cache->get($code);
