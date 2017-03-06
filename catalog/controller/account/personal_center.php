@@ -196,6 +196,8 @@ class ControllerAccountPersonalCenter extends Controller
         //$this->load->model('clinic/clinic');
         //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
 
+        $log->write( $data['barcode']. $data['height'].$data['lastmenstrualdate'].$data['aesarean']);
+
         $result  = array(
             'error_warning' =>  $data['error_warning'], 
             'headimgurl' =>  $data['headimgurl'],
@@ -223,6 +225,8 @@ class ControllerAccountPersonalCenter extends Controller
             'address_1' =>  $data['address_1'],
             'householdregister' =>  $data['householdregister'],
             );
+
+
 
 	    $response = array(
 				'code'  => 0,
