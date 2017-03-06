@@ -141,7 +141,7 @@ class ControllerWechatUserinfo extends Controller
                  $log->write("register wechat_id:" . $data["wechat_id"]);
                  $log->write("openidopenid=".$this->session->data['openid']);
                  } elseif(isset($this->session->data['openid'])){
-                     $wechatid = $this->model_wechat_userinfo->isUserValid(isset($this->session->data['openid']);
+                     $wechatid = $this->model_wechat_userinfo->isUserValid(isset($this->session->data['openid']));
                      if (isset($wechatid)) {
                          $data["wechat_id"] = $wechatid;
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
