@@ -117,6 +117,8 @@ class ControllerWechatUserinfo extends Controller
          //$this->cache->set('wechatcode', $code);
          if ($code != ""){
 
+             
+
              $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
              $get_return = file_get_contents($get_url);
              $get_return = (array)json_decode($get_return);
@@ -148,7 +150,7 @@ class ControllerWechatUserinfo extends Controller
 
        } elseif(isset($this->session->data['openid'])){
 
-          $openid = $this->session->data['openid'];
+          //$openid = $this->session->data['openid'];
           $log->write("session data openidopenid = ".$this->session->data['openid']);
 
        } else {

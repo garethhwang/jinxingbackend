@@ -21,7 +21,7 @@ class ControllerProductCategory extends Controller
         $code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
-            $codeinfo = $this->cache->get($code,true);
+            $codeinfo = $this->cache->get($code);
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
