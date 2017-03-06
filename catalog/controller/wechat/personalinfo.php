@@ -88,7 +88,7 @@ class ControllerWechatPersonalinfo extends Controller
         }else{
             $data["pregnant"] = "1";
         }
-        $log->write($data['isnotregist']);
+
 
 
         $this->document->setTitle("个人信息");
