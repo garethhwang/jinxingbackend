@@ -14,6 +14,7 @@ class  ControllerWechatChecklist extends Controller
     {
 
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $log = new Log("wechat.log");
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -102,9 +103,12 @@ class  ControllerWechatChecklist extends Controller
 
 
         $this->document->setTitle("产检计划");
-        $data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"]="personal_center";
+
+
+        $log->write(  $data['fircheck']. $data['foucheck'].$data['sevcheck'].$data['tencheck'].$data['tenthicheck']);
 
         $result = array(
             'first'=> array(
