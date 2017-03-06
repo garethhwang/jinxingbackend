@@ -132,8 +132,8 @@ class ControllerWechatOrderDetail extends Controller
             //获取用户openid
             $tools = new JsApiPay();
 
-            $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            $openId = $this->session->data['openid'];
+            //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+            $openId = $data['openid'];
             $title=$data['products'][0]['name'];
             $price=(int)$data['lastprice']*100;
 

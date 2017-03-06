@@ -279,7 +279,7 @@ class ControllerWechatOrder extends Controller
         if(isset($this->session->data['customer_id'])) {
             $data['customer_id'] = $this->session->data['customer_id'];
         }else{
-            $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($this->session->data['openid']);
+            $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data['openid']);
         }
 
 
@@ -481,7 +481,7 @@ class ControllerWechatOrder extends Controller
         ini_set('date.timezone', 'Asia/Shanghai');
         //获取用户openid
         $tools = new JsApiPay();
-        $openId = $this->session->data['openid'];
+        $openId = $data['openid'];
         $title=$data['products'][0]['name'];
         $price=(int) $data['lastprice']*100;
 
