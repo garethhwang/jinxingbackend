@@ -58,8 +58,36 @@ class ControllerWechatRegister extends Controller
         $data["openid"] = "";
         //wechat
         $code = $this->request->json("code","");
-        $log->write("code=" . $code);
+        $this->cache->set("wechatcode", $code);
+        if($this->cache->get($code)){
+            $data["openid"] = $this->cache->get($code);
+        }else {
+            $this->load->controller('wechat/userinfo/getUsertoken');
+        }
 
+
+
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
+            $data["wechat_id"]= $this->cache->get($this->session->data['openid']);
+        }
+        else{
+            $data["openid"] = "";
+            $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+        /*$log->write("code=" . $code);
         if (isset($code)) {
                 $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
                 $this->load->model('wechat/userinfo');
@@ -83,7 +111,7 @@ class ControllerWechatRegister extends Controller
             $data['wechat_id'] = $this->request->post['wechat_id'];
         } else {
             $data['wechat_id'] = '';
-        }
+        }*/
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
@@ -946,15 +974,6 @@ class ControllerWechatRegister extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($json));
-    }
-
-
-    private function getUser($accesstoken, $openid)
-    {
-        $get_url = sprintf(WECHAT_GETUSERINFO, $accesstoken, $openid);
-        $get_return = file_get_contents($get_url);
-        $get_return = (array)json_decode($get_return);
-        return $get_return;
     }
 
     public function getAllOffice()

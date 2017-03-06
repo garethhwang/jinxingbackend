@@ -107,34 +107,62 @@ class ControllerWechatUserinfo extends Controller
 
     public function getUsertoken()
     {
-        $this->document->setTitle("个人信息");
-        $log = new Log("wechat.log");
 
-        $code = $this->request->json('code', 0);
+         $this->document->setTitle("个人信息");
 
-        $log = new Log("wechat.log");
-        $log->write("getUsertoken code=" . $code);
+         $log = new Log("wechat.log");
 
-        //$this->session->data['shipping_method']['cost'];
-        $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
-        $get_return = file_get_contents($get_url);
-        $get_return = (array)json_decode($get_return);
-        $log->write("openidopenid=".$get_return["openid"]);
+         //$code = $this->request->json("code","");
+         //$this->cache->set('wechatcode', $code);
+         if ($this->cache->get("wechatcode")){
 
-        if (isset($get_return["openid"])) {
-            $log->write("getUsertoken openid = " . $get_return["openid"]);
-            $this->session->data['openid'] = $get_return["openid"];
-        } else {
-            if(isset($this->session->data['openid'])){
-                $get_return["openid"] = $this->session->data['openid'];
-                $log->write("getUsertoken isset openid openid = " . $get_return["openid"]);
-            }
-            else{
-                $this->error['warning'] = "微信信息没有获取到！";
-                $log->write("getUsertoken no wechat openid");
-            }
-        }
-        return $get_return;
+             $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $this->cache->get("wechatcode"));
+             $get_return = file_get_contents($get_url);
+             $get_return = (array)json_decode($get_return);
+             $log->write("openidopenid=".$get_return["openid"]);
+             $this->cache->set($this->cache->get("wechatcode"), $get_return["openid"]);
+             $this->load->model('wechat/userinfo');
+             if (isset($get_return["openid"])) {
+                 $log->write("getUsertoken openid = " . $get_return["openid"]);
+                 $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
+                     if (isset($wechatid)) {
+                         $data["wechat_id"] = $wechatid;
+                         $this->cache->set($get_return["openid"], $data["wechat_id"]);
+                     } else {
+                         $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
+                         $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
+                         $this->cache->set($get_return["openid"], $data["wechat_id"]);
+                     }
+                     $log->write("register wechat_id:" . $data["wechat_id"]);
+                 } else {
+
+                     $this->error["error_warning"] = $get_return["errmsg"];
+                     $data["wechat_id"] = "";
+                 }
+
+                 $this->session->data['openid'] = $get_return["openid"];
+
+             }  else {
+                 $this->error['warning'] = "微信信息没有获取到！";
+                 $log->write("getUsertoken no wechat openid");
+             }
+
     }
+
+
+
+
+
+        private function getUser($accesstoken, $openid)
+        {
+            $get_url = sprintf(WECHAT_GETUSERINFO, $accesstoken, $openid);
+            $get_return = file_get_contents($get_url);
+            $get_return = (array)json_decode($get_return);
+            return $get_return;
+        }
+
+
+
+
 
 }
