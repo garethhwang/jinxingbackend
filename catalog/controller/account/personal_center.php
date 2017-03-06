@@ -41,7 +41,7 @@ class ControllerAccountPersonalCenter extends Controller
         unset($this->session->data['guest']);
 
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
-        //$log->write("怀孕否=" . $data["ispregnant"]);
+        $log->write("用户号码=" . $data["customer_id"]);
 
         if (!isset($data['address_id'])){
             $data['address_id'] = "";
@@ -180,8 +180,8 @@ class ControllerAccountPersonalCenter extends Controller
 
         $this->document->setTitle("基本信息");
         $this->session->data["nav"] = "personal_center";
-        $data['header'] = $this->load->controller('common/wechatheader');
-        $data['footer'] = $this->load->controller('common/wechatfooter');
+        //$data['header'] = $this->load->controller('common/wechatheader');
+        //$data['footer'] = $this->load->controller('common/wechatfooter');
         $data['userinfo_url'] = $this->url->link('wechat/userinfo', '', true);
 
         if (isset($this->error['warning'])) {
