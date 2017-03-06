@@ -146,7 +146,7 @@ class ControllerWechatUserinfo extends Controller
                          $data["wechat_id"] = $wechatid;
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
                      } else {
-                         $wechatinfo = $this->getUser($get_return["access_token"], isset($this->session->data['openid']);
+                         $wechatinfo = $this->getUser($get_return["access_token"], isset($this->session->data['openid']));
                          $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
                      }
