@@ -21,7 +21,7 @@ class ControllerWechatEdituser extends Controller
             $data["openid"] = "";
         }
         //wechat
-        /*$code = $this->request->json("code","");
+        $code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -38,10 +38,8 @@ class ControllerWechatEdituser extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
-
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
