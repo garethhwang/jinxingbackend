@@ -17,7 +17,7 @@ class ControllerAccountPersonalCenter extends Controller
         }
         else{
             $data["openid"] = "";
-            $log->write("654321=" . $this->session->data['openid']);
+            //$log->write("654321=" . $this->session->data['openid']);
         }
         //wechat
         $code = $this->request->json("code","");
