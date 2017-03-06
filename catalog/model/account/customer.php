@@ -191,9 +191,9 @@ class ModelAccountCustomer extends Model
 
 
 
-    public function editCustomer($data)
+    public function editCustomer($data, $customer_id)
     {
-        $customer_id = $this->customer->getId();
+        //$customer_id = $this->customer->getId();
 
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', barcode = '" . $this->db->escape($data['barcode']) . "', birthday = '" . $this->db->escape($data['birthday']) . "', department = '" . $this->db->escape($data['department']) . "', pregnantstatus = '1 ', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "',receiptdate = DATE_ADD( '".$this->db->escape($data['lastmenstrualdate'])."',INTERVAL 10 WEEK),ispregnant = '1' WHERE customer_id = '" . (int)$customer_id . "'");
 

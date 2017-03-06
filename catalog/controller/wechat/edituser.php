@@ -767,9 +767,9 @@ class ControllerWechatEdituser extends Controller
         $edc = date_modify($edc, "+280 days");
         $postdata["edc"] = date_format($edc, "Y/m/d");
 
-        $this->model_account_customer->editCustomer($postdata);
+        $this->model_account_customer->editCustomer($postdata, $data["customer_id"]);
         $this->load->model('account/physical');
-        $this->model_account_physical->editPhysical($data["physical_id"], $postdata);
+        $this->model_account_physical->editPhysical($data["physical_id"], $postdata,$data["customer_id"]);
         $this->load->model('account/address');
         $this->model_account_address->editAddress($data["address_id"], $postdata);
 
