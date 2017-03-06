@@ -141,16 +141,16 @@ class ControllerWechatUserinfo extends Controller
                  $log->write("register wechat_id:" . $data["wechat_id"]);
                  $log->write("openidopenid=".$this->session->data['openid']);
                  } elseif(isset($this->session->data['openid'])){
-                     $wechatid = $this->model_wechat_userinfo->isUserValid(isset($this->session->data['openid']));
+                     $wechatid = $this->model_wechat_userinfo->isUserValid($this->session->data['openid']);
                      if (isset($wechatid)) {
                          $data["wechat_id"] = $wechatid;
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
                      } else {
-                         $wechatinfo = $this->getUser($get_return["access_token"], isset($this->session->data['openid']));
+                         $wechatinfo = $this->getUser($get_return["access_token"], $this->session->data['openid']);
                          $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
                      }
-                 $this->cache->set($code,json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
+                 $this->cache->set($code,json_encode(array('openid' => $this->session->data['openid'], 'wechat_id' => $data["wechat_id"])));
                  }else{
                      $this->error["error_warning"] = $get_return["errmsg"];
                      $data["wechat_id"] = "";
