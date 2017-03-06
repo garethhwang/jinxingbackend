@@ -33,7 +33,7 @@ class ControllerWechatOrderDetail extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-            $log->write("openid=".$data["openid"]);
+            $log->write("78687y898989openid=".$data["openid"]);
         }else{
             $response = array(
                 'code'  => 1001,
