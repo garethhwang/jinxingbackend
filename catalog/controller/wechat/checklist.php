@@ -13,7 +13,7 @@ class  ControllerWechatChecklist extends Controller
     public function index()
     {
 
-        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $log = new Log("wechat.log");
 
         if(isset($this->session->data['openid'])){
@@ -108,7 +108,7 @@ class  ControllerWechatChecklist extends Controller
         $this->session->data["nav"]="personal_center";
 
 
-        $log->write(  $data['fircheck']. $data['foucheck'].$data['sevcheck'].$data['tencheck'].$data['tenthicheck']);
+        $log->write( $data['fircheck']. $data['foucheck'].$data['sevcheck'].$data['tencheck'].$data['tenthicheck']);
 
         $result = array(
             'first'=> array(
