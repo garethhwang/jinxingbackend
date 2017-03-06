@@ -44,11 +44,16 @@ class ControllerWechatOrdercenter extends Controller
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -173,17 +178,21 @@ class ControllerWechatOrdercenter extends Controller
         $this->document->setTitle("已支付未完成订单");
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -317,11 +326,16 @@ class ControllerWechatOrdercenter extends Controller
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -333,7 +347,6 @@ class ControllerWechatOrdercenter extends Controller
             return;
         }
 
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -450,17 +463,21 @@ class ControllerWechatOrdercenter extends Controller
         $this->document->setTitle("所有订单");
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -471,9 +488,6 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
-
-        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
         $data['column_quantity'] = "数量";
@@ -731,11 +745,16 @@ class ControllerWechatOrdercenter extends Controller
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",

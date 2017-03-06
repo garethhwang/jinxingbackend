@@ -13,32 +13,31 @@ class ControllerCommonHomem extends Controller
     public function index()
     {
         $log = new Log("wechat.log");
-        $data["error_warning"] = "";
-        $get_return = array();
-        $code = $this->request->json("code","");
-        $log->write("code=" . $code);
-        if (isset($code))  {
-            $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
-            $log->write("register openid:" . $get_return["openid"]);
-
-        } else {
-            if (isset($this->session->data['openid'])) {
-                $get_return["openid"] = $this->session->data['openid'];
-            } else {
-                $this->error['warning'] = "微信信息没有获取到！";
-            }
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
         }
-
-        if (isset($get_return["openid"])) {
-            $data["openid"] = $get_return["openid"];
-        } else {
+        else{
             $data["openid"] = "";
-            $data["error_warning"] = "微信信息没有获取到！";
-            $log->write($data["error_warning"]);
         }
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }/*else{
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
 
-        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
-
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }*/
         if (isset($this->request->get['route'])) {
             $this->document->addLink($this->config->get('config_url'), 'canonical');
         }

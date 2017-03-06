@@ -57,7 +57,6 @@ class ControllerWechatRegister extends Controller
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
-            $log->write("33333=".$data["openid"]."44444=".$data["wechat_id"]);
         }
         else{
             $data["openid"] = "";
@@ -74,8 +73,8 @@ class ControllerWechatRegister extends Controller
         //$this->cache->set("wechatcode", $code);
         //$data = $this->load->controller('wechat/userinfo/getUsertoken');
         //$data=json_decode($codeinfo,true);
-        $log->write("111111=".$data["openid"]);
-        $log->write("22eeeee2=".$data["wechat_id"]);
+        //$log->write("111111=".$data["openid"]);
+        //$log->write("22eeeee2=".$data["wechat_id"]);
 
         /*if(!isset($this->session->data['openid'])){
             $response = array(

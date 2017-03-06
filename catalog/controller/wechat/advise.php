@@ -82,30 +82,21 @@ class ControllerWechatAdvise extends Controller
 
         $log = new Log('wechat.log');
 
-        $code = $this->request->json("code","");
-        $log->write("code=" . $code);
-
-        if (isset($code)) {
-            $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
-
-        } else {
-            if (isset($this->session->data['openid'])) {
-                $get_return["openid"] = $this->session->data['openid'];
-            } else {
-                $this->error['warning'] = "微信信息没有获取到！";
-            }
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
         }
-
-        if (isset($get_return["openid"])) {
-            $data["openid"] = $get_return["openid"];
-        } else {
+        else{
             $data["openid"] = "";
-            $data["error_warning"] = "微信信息没有获取到！";
         }
-        $data['service_tel'] = WECHAT_SERVICE_TEL;
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }/*else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -115,9 +106,10 @@ class ControllerWechatAdvise extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
 
+        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
 
         $this->customer->wechatlogin($data["openid"]);

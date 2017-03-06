@@ -18,11 +18,31 @@ class ControllerWechatPersonalinfo extends Controller
         $get_return = array();
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        $codeinfo = $this->load->controller('wechat/userinfo/getUsertoken');
-        $data=json_decode($codeinfo,true);
-        $log->write("111111=".$data["openid"]);
-        $log->write("22eeeee2=".$data["wechat_id"]);
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
+        }
+        else{
+            $data["openid"] = "";
+        }
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
 
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
 
 
         /*if(isset($this->session->data['openid'])){

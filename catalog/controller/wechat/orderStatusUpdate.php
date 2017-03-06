@@ -20,11 +20,16 @@ class ControllerWechatOrderStatusUpdate extends Controller
         }
         else{
             $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
         }
-
-
-        if(!isset($this->session->data['openid'])){
+        //wechat
+        $code = $this->request->json("code","");
+        if($code){
+            $this->load->controller('wechat/userinfo/getUsertoken');
+            $codeinfo = $this->cache->get($code,true);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -35,7 +40,6 @@ class ControllerWechatOrderStatusUpdate extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
-
         $order_id = $this->request->json('order_id');
 
         if (isset($order_id)) {
