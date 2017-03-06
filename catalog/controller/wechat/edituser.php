@@ -695,6 +695,7 @@ class ControllerWechatEdituser extends Controller
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
 
+        $data['wechatcode'] = $code;
         $data['realname'] = $this->request->json('realname', '');
         $data['telephone'] = $this->request->json('telephone', '');
         $data['barcode'] = $this->request->json('barcode', '');
