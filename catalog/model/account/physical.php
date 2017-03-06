@@ -12,11 +12,16 @@ class ModelAccountPhysical extends Model {
 
     public function editPhysical($physical_id, $data) {
 
+        $log = new Log("wechat.log");
+
         $this->db->query("UPDATE " . DB_PREFIX . "physical SET realname = '" . $this->db->escape($data['realname']) . "', height = '" . $this->db->escape($data['height']) . "', weight = '" . $this->db->escape($data['weight']) . "', bmiindex = '" . $this->db->escape($data['bmiindex']) . "', bmitype = '" . $this->db->escape($data['bmitype']) . "', lastmenstrualdate = '" . $this->db->escape($data['lastmenstrualdate']) . "', edc = '" . $this->db->escape($data['edc']) . "', gravidity = '" . $this->db->escape($data['gravidity']) . "', parity = '" . $this->db->escape($data['parity']) . "', vaginaldelivery = '" . $this->db->escape($data['vaginaldelivery']) . "', aesarean = '" . $this->db->escape($data['aesarean']) . "', spontaneousabortion = '" . $this->db->escape($data['spontaneousabortion']) . "', drug_inducedabortion = '" . $this->db->escape($data['drug_inducedabortion']) . "', fetal = '" . $this->db->escape($data['fetal']) . "', highrisk = '" . $this->db->escape($data['highrisk']) . "', highriskfactor = '" . $this->db->escape($data['highriskfactor']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "' WHERE physical_id  = '" . (int)$physical_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
 
         $lastmenstrual = $this->db->query("SELECT lastmenstrualdate FROM " . DB_PREFIX . "physical  WHERE customer_id = '" . (int)$this->customer->getId() . "'");
 
         $lastmenstrualdate = $lastmenstrual->row['lastmenstrualdate'];
+
+        $log->write("lastmenstrualdate=".$lastmenstrualdate);
+
 
         $temp = date_create($lastmenstrualdate);
         $fircheck = date_modify($temp,"+12 weeks");$fircheck = date_format($fircheck,'Y-m-d');$firchecks = date_create($fircheck);$firchecks = date_modify($firchecks,"+7 days");$firchecks = date_format($firchecks,'Y-m-d');$temp = date_create($lastmenstrualdate);
