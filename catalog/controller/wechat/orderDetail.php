@@ -13,6 +13,7 @@ class ControllerWechatOrderDetail extends Controller
     public function index()
     {
 
+        $log = new Log("wechat.log");
         $this->document->setTitle("金杏健康");
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
@@ -31,6 +32,7 @@ class ControllerWechatOrderDetail extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
+            $log->write("openid=".$data["openid"]);
         }else{
             $response = array(
                 'code'  => 1001,
