@@ -14,7 +14,6 @@ class ControllerAccountPersonalCenter extends Controller
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->load->controller('wechat/userinfo/getUsertoken');
             $log->write("123456=" . $this->session->data['openid']);
-
         }
         else{
             $data["openid"] = "";

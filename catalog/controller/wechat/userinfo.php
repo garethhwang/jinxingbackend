@@ -128,34 +128,35 @@ class ControllerWechatUserinfo extends Controller
              if (isset($get_return["openid"])) {
                  //$log->write("getUsertoken openid = " . $get_return["openid"]);
                  $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
-                     if (isset($wechatid)) {
-                         $data["wechat_id"] = $wechatid;
-                         //$this->cache->set($get_return["openid"], $data["wechat_id"]);
-                     } else {
-                         $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
-                         $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
-                         //$this->cache->set($get_return["openid"], $data["wechat_id"]);
-                     }
+                 if (isset($wechatid)) {
+                     $data["wechat_id"] = $wechatid;
+                     //$this->cache->set($get_return["openid"], $data["wechat_id"]);
+                 } else {
+                     $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
+                     $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
+                     //$this->cache->set($get_return["openid"], $data["wechat_id"]);
+                 }
                  $this->cache->set($code,json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
                  $this->session->data['openid'] = $get_return["openid"];
                  $log->write("register wechat_id:" . $data["wechat_id"]);
-                 $log->write("openidopenid=".$this->session->data['openid']);
-                 }else{
-                     $this->error["error_warning"] = $get_return["errmsg"];
-                     $data["wechat_id"] = "";
-                 }
+                 $log->write("write session data is ".$this->session->data['openid']);
+             } else {
+                 $this->error["error_warning"] = $get_return["errmsg"];
+                 $data["wechat_id"] = "";
+             }
              //$log->write("openidopenid=".$this->session->data['openid']);
 
-             } elseif(isset($this->session->data['openid'])){
+       } elseif(isset($this->session->data['openid'])){
 
-                $openid = $this->session->data['openid'];
+          $openid = $this->session->data['openid'];
+          $log->write("session data openidopenid = ".$this->session->data['openid']);
 
-             } else {
-                 $this->error['warning'] = "微信信息没有获取到！";
-                 $log->write("getUsertoken no wechat openid");
-             }
+       } else {
+           $this->error['warning'] = "微信信息没有获取到！";
+           $log->write("getUsertoken no wechat openid");
+       }
 
-             return $openid;
+       return $openid;
              //$codeinfo = json_decode($this->cache->get($code),true);
 
              //$log->write("code====".$codeinfo['openid'].$codeinfo['wechat_id']);

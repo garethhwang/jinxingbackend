@@ -1248,3 +1248,641 @@
 2017-03-05 22:07:27 - product_info 0
 2017-03-05 22:07:27 - Enter in ControllerProductProduct 1
 2017-03-05 22:07:27 - product_info 50
+2017-03-05 22:10:31 - code=
+2017-03-05 22:11:23 - code=051NGxrg2PdwND0Bymrg2BOdrg2NGxrm
+2017-03-05 22:11:23 - getUsertoken code=051NGxrg2PdwND0Bymrg2BOdrg2NGxrm
+2017-03-05 22:11:23 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:11:36 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:11:36 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:11:36 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:12:26 - code=051NGxrg2PdwND0Bymrg2BOdrg2NGxrm
+2017-03-05 22:12:26 - getUsertoken code=051NGxrg2PdwND0Bymrg2BOdrg2NGxrm
+2017-03-05 22:12:26 - getUsertoken no wechat openid
+2017-03-05 22:12:26 - register 没有取到openid
+2017-03-05 22:12:43 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:12:43 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:12:43 - getUsertoken no wechat openid
+2017-03-05 22:12:43 - register 没有取到openid
+2017-03-05 22:15:49 - code=041aa5Ek1AjYGi0fvnCk1644Ek1aa5EJ
+2017-03-05 22:15:49 - getUsertoken code=041aa5Ek1AjYGi0fvnCk1644Ek1aa5EJ
+2017-03-05 22:15:49 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:16:42 - code=041aa5Ek1AjYGi0fvnCk1644Ek1aa5EJ
+2017-03-05 22:16:42 - getUsertoken code=041aa5Ek1AjYGi0fvnCk1644Ek1aa5EJ
+2017-03-05 22:16:42 - getUsertoken no wechat openid
+2017-03-05 22:16:42 - register 没有取到openid
+2017-03-05 22:17:36 - code=001S0JJ517tIuO1oj2L513UXJ51S0JJy
+2017-03-05 22:17:36 - getUsertoken code=001S0JJ517tIuO1oj2L513UXJ51S0JJy  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:17:36 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:18:31 - code=001S0JJ517tIuO1oj2L513UXJ51S0JJy
+2017-03-05 22:18:31 - getUsertoken code=001S0JJ517tIuO1oj2L513UXJ51S0JJy  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:18:31 - getUsertoken no wechat openid
+2017-03-05 22:18:31 - register 没有取到openid
+2017-03-05 22:19:56 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:19:56 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:19:56 - getUsertoken no wechat openid
+2017-03-05 22:19:56 - register 没有取到openid
+2017-03-05 22:20:02 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:20:02 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:20:02 - getUsertoken no wechat openid
+2017-03-05 22:20:02 - register 没有取到openid
+2017-03-05 22:20:28 - code=001S0JJ517tIuO1oj2L513UXJ51S0JJy
+2017-03-05 22:20:28 - getUsertoken code=001S0JJ517tIuO1oj2L513UXJ51S0JJy  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:20:28 - error is code been used, hints: [ req_id: r4yOea0428ns82 ] code is 40163
+2017-03-05 22:20:28 - getUsertoken no wechat openid
+2017-03-05 22:20:28 - register 没有取到openid
+2017-03-05 22:25:42 - code=011GjiMd1jREwt0qSzKd1884Md1GjiMv
+2017-03-05 22:25:42 - getUsertoken code=011GjiMd1jREwt0qSzKd1884Md1GjiMv  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:25:42 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:25:42 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:27:58 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:27:58 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:27:58 - error is code been used, hints: [ req_id: 61e36a0878s105 ] code is 40163
+2017-03-05 22:27:58 - getUsertoken no wechat openid
+2017-03-05 22:27:58 - register 没有取到openid
+2017-03-05 22:31:10 - code=021drTrM1LYIP31xXArM1LRIrM1drTry
+2017-03-05 22:31:10 - getUsertoken code=021drTrM1LYIP31xXArM1LRIrM1drTry  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:31:10 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:31:10 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:31:15 - code=011oxEeH0V2hOj2dR5gH07SzeH0oxEeF
+2017-03-05 22:31:15 - getUsertoken code=011oxEeH0V2hOj2dR5gH07SzeH0oxEeF  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:31:15 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:31:15 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:31:15 - historyrecord=0
+2017-03-05 22:34:49 - code=
+2017-03-05 22:34:49 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:34:49 - error is invalid code, hints: [ req_id: vBm8Wa0289ns83 ] code is 40029
+2017-03-05 22:34:49 - getUsertoken no wechat openid
+2017-03-05 22:34:49 - historyrecord=0
+2017-03-05 22:35:56 - code=
+2017-03-05 22:35:56 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:35:56 - error is invalid code, hints: [ req_id: 3eorfA0356ns87 ] code is 40029
+2017-03-05 22:35:56 - getUsertoken no wechat openid
+2017-03-05 22:35:56 - historyrecord=0
+2017-03-05 22:35:56 - code=0315eeJW1zIENV0Pu3MW1VW9JW15eeJy
+2017-03-05 22:35:56 - getUsertoken code=0315eeJW1zIENV0Pu3MW1VW9JW15eeJy  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:35:56 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:35:56 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:35:56 - historyrecord=0
+2017-03-05 22:36:56 - code=051Zj5oj2DGseI0quNnj2tNYnj2Zj5oe
+2017-03-05 22:36:56 - getUsertoken code=051Zj5oj2DGseI0quNnj2tNYnj2Zj5oe  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:36:57 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:36:57 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:37:52 - code=
+2017-03-05 22:37:52 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:37:53 - error is invalid code, hints: [ req_id: SYVCxa0473ns87 ] code is 40029
+2017-03-05 22:37:53 - getUsertoken no wechat openid
+2017-03-05 22:37:53 - register openid:
+2017-03-05 22:37:53 - 微信信息没有获取到！
+2017-03-05 22:37:53 - code=001Pq9nd2lPLCA0KQOld2KA2nd2Pq9nT
+2017-03-05 22:37:53 - getUsertoken code=001Pq9nd2lPLCA0KQOld2KA2nd2Pq9nT  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:37:53 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:37:53 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:37:53 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:37:57 - code=001Pq9nd2lPLCA0KQOld2KA2nd2Pq9nT
+2017-03-05 22:37:57 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:38:00 - code=
+2017-03-05 22:38:00 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:38:00 - error is invalid code, hints: [ req_id: zGcgaa0480ns82 ] code is 40029
+2017-03-05 22:38:00 - getUsertoken no wechat openid
+2017-03-05 22:38:00 - code=051KJ0UT0bQYMV1oG6RT0HyfUT0KJ0UL
+2017-03-05 22:38:00 - getUsertoken code=051KJ0UT0bQYMV1oG6RT0HyfUT0KJ0UL  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:38:00 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:38:00 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:38:37 - code=051Zj5oj2DGseI0quNnj2tNYnj2Zj5oe
+2017-03-05 22:40:08 - code=001x78ax1ouiYc0yvbbx1I1nax1x78ac
+2017-03-05 22:40:08 - getUsertoken code=001x78ax1ouiYc0yvbbx1I1nax1x78ac  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:40:08 - error is invalid code, hints: [ req_id: oQr6VA0608s104 ] code is 40029
+2017-03-05 22:40:08 - getUsertoken no wechat openid
+2017-03-05 22:40:08 - register 没有取到openid
+2017-03-05 22:41:03 - code=051Zj5oj2DGseI0quNnj2tNYnj2Zj5oe
+2017-03-05 22:43:41 - code=
+2017-03-05 22:43:41 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:43:41 - error is invalid code, hints: [ req_id: jTROQA0821ns81 ] code is 40029
+2017-03-05 22:43:41 - getUsertoken no wechat openid
+2017-03-05 22:43:41 - code=051KJ0UT0bQYMV1oG6RT0HyfUT0KJ0UL
+2017-03-05 22:44:47 - code=021SZmXW1g1h0V0UY1ZW1gruXW1SZmXI
+2017-03-05 22:44:47 - getUsertoken code=021SZmXW1g1h0V0UY1ZW1gruXW1SZmXI  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:44:47 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:44:47 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:44:47 - historyrecord=0
+2017-03-05 22:48:58 - code=021tnCZT1vwWU91L2YXT1xTBZT1tnCZz
+2017-03-05 22:48:58 - getUsertoken code=021tnCZT1vwWU91L2YXT1xTBZT1tnCZz  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:48:58 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:48:58 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:49:16 - code=051goybY0BByB02oRTbY0gwybY0goybK
+2017-03-05 22:49:16 - getUsertoken code=051goybY0BByB02oRTbY0gwybY0goybK  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:49:16 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:49:16 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:50:33 - code=051goybY0BByB02oRTbY0gwybY0goybK
+2017-03-05 22:52:27 - code=051goybY0BByB02oRTbY0gwybY0goybK
+2017-03-05 22:53:31 - code=011nsOU70dSZ1J1vjRV706FPU70nsOUm
+2017-03-05 22:53:31 - getUsertoken code=011nsOU70dSZ1J1vjRV706FPU70nsOUm  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:53:31 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:53:31 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:54:57 - code=
+2017-03-05 22:54:57 - code=031x90rg2Ac9PD0HiSqg29TOqg2x90rf
+2017-03-05 22:54:57 - getUsertoken code=031x90rg2Ac9PD0HiSqg29TOqg2x90rf  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:54:57 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:54:57 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:08 - code=
+2017-03-05 22:55:08 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:55:08 - error is invalid code, hints: [ req_id: iJ7iHa0508s112 ] code is 40029
+2017-03-05 22:55:08 - getUsertoken no wechat openid
+2017-03-05 22:55:08 - register openid:
+2017-03-05 22:55:08 - 微信信息没有获取到！
+2017-03-05 22:55:08 - code=021sMnlc1aDAgt0oJllc157slc1sMnlg
+2017-03-05 22:55:08 - getUsertoken code=021sMnlc1aDAgt0oJllc157slc1sMnlg  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:55:08 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:08 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:08 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:10 - code=021sMnlc1aDAgt0oJllc157slc1sMnlg
+2017-03-05 22:55:10 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:44 - code=
+2017-03-05 22:55:44 - code=031GIBcb1dMN7s0wWgab16hJcb1GIBcn
+2017-03-05 22:55:44 - getUsertoken code=031GIBcb1dMN7s0wWgab16hJcb1GIBcn  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:55:44 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:44 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 22:55:46 - code=011nsOU70dSZ1J1vjRV706FPU70nsOUm
+2017-03-05 22:55:46 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 22:55:46 - PersonalCenter： 微信信息没有获取到！
+2017-03-05 22:55:49 - code=
+2017-03-05 22:55:49 - code=031GIBcb1dMN7s0wWgab16hJcb1GIBcn
+2017-03-05 22:55:57 - code=0117LB9O0FCJl82QNq9O0JFM9O07LB9O
+2017-03-05 22:55:57 - getUsertoken code=0117LB9O0FCJl82QNq9O0JFM9O07LB9O  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:55:57 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:55:57 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:57:08 - code=011UlAGr1LpAgp09oGDr1eEqGr1UlAG6
+2017-03-05 22:57:08 - getUsertoken code=011UlAGr1LpAgp09oGDr1eEqGr1UlAG6  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:57:09 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:57:09 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 22:57:11 - code=0216UIgH1aEKA40vRVeH1DaWgH16UIgt
+2017-03-05 22:57:11 - getUsertoken code=0216UIgH1aEKA40vRVeH1DaWgH16UIgt  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:57:11 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:57:11 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:57:37 - code=021pM57V19W5SS08N49V1uW17V1pM57b
+2017-03-05 22:57:37 - getUsertoken code=021pM57V19W5SS08N49V1uW17V1pM57b  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:57:37 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:57:37 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:57:41 - code=021pM57V19W5SS08N49V1uW17V1pM57b
+2017-03-05 22:57:43 - code=021pM57V19W5SS08N49V1uW17V1pM57b
+2017-03-05 22:57:50 - code=021x6Bkp1FSA5n0iPIip1lDTkp1x6BkP
+2017-03-05 22:57:50 - getUsertoken code=021x6Bkp1FSA5n0iPIip1lDTkp1x6BkP  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:57:50 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:57:50 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-05 22:57:56 - code=021hVqxh1IMAQy0B3Tuh1OFnxh1hVqxx
+2017-03-05 22:57:56 - getUsertoken code=021hVqxh1IMAQy0B3Tuh1OFnxh1hVqxx  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:57:56 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:57:56 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:57:56 - historyrecord=0
+2017-03-05 22:57:57 - code=021x6Bkp1FSA5n0iPIip1lDTkp1x6BkP
+2017-03-05 22:58:06 - code=021x6Bkp1FSA5n0iPIip1lDTkp1x6BkP
+2017-03-05 22:58:07 - code=031LzyI62L2lwN0rJZL62yOMI62LzyIb
+2017-03-05 22:58:07 - getUsertoken code=031LzyI62L2lwN0rJZL62yOMI62LzyIb  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:58:07 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:58:07 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:58:07 - register openid:oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 22:58:09 - code=021x6Bkp1FSA5n0iPIip1lDTkp1x6BkP
+2017-03-05 22:58:23 - code=011UlAGr1LpAgp09oGDr1eEqGr1UlAG6
+2017-03-05 22:58:25 - code=
+2017-03-05 22:58:25 - getUsertoken code=  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:58:25 - error is missing code, hints: [ req_id: c6XT5a0705s102 ] code is 41008
+2017-03-05 22:58:25 - getUsertoken no wechat openid
+2017-03-05 22:58:25 - register openid:
+2017-03-05 22:58:25 - 微信信息没有获取到！
+2017-03-05 22:58:41 - code=
+2017-03-05 22:58:41 - getUsertoken code=  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 22:58:41 - error is missing code, hints: [ req_id: O7NNRa0721ns82 ] code is 41008
+2017-03-05 22:58:41 - getUsertoken no wechat openid
+2017-03-05 22:58:41 - register openid:
+2017-03-05 22:58:41 - 微信信息没有获取到！
+2017-03-05 23:01:01 - code=021TdVla1jcmYS1avRka1ftxla1TdVld
+2017-03-05 23:01:01 - getUsertoken code=021TdVla1jcmYS1avRka1ftxla1TdVld  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 23:01:01 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:01 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:01 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:03 - Enter in ControllerProductProduct 1
+2017-03-05 23:01:03 - product_info 50
+2017-03-05 23:01:24 - code=011E7PrT05U6yU15ZfrT0zeprT0E7Prd
+2017-03-05 23:01:24 - getUsertoken code=011E7PrT05U6yU15ZfrT0zeprT0E7Prd  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 23:01:24 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:24 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:24 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-05 23:01:39 - code=0414JRow1qXaad0lFhqw1cRJow14JRoT
+2017-03-05 23:01:39 - getUsertoken code=0414JRow1qXaad0lFhqw1cRJow14JRoT  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 23:01:39 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 23:01:39 - getUsertoken session openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-05 23:02:11 - Enter in ControllerProductProduct 1
+2017-03-05 23:02:11 - product_info 50
+2017-03-05 23:03:05 - code=
+2017-03-05 23:03:05 - 微信信息没有获取到！
+2017-03-05 23:03:17 - code=
+2017-03-05 23:03:18 - code=041Un65E1fqLv10omX5E1EQ65E1Un65v
+2017-03-05 23:03:18 - getUsertoken code=041Un65E1fqLv10omX5E1EQ65E1Un65v  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-05 23:03:18 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 23:03:18 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-05 23:11:01 - code=
+2017-03-05 23:11:01 - code=041Un65E1fqLv10omX5E1EQ65E1Un65v
+2017-03-06 0:12:53 - code=
+2017-03-06 0:12:53 - 微信信息没有获取到！
+2017-03-06 0:12:53 - code=
+2017-03-06 0:12:53 - 微信信息没有获取到！
+2017-03-06 0:13:01 - code=
+2017-03-06 0:13:01 - 微信信息没有获取到！
+2017-03-06 0:13:01 - code=
+2017-03-06 0:13:01 - 微信信息没有获取到！
+2017-03-06 0:13:03 - code=
+2017-03-06 0:13:03 - 微信信息没有获取到！
+2017-03-06 0:13:09 - Enter in ControllerProductProduct 1
+2017-03-06 0:13:09 - product_info 0
+2017-03-06 0:13:09 - Enter in ControllerProductProduct 1
+2017-03-06 0:13:09 - product_info 50
+2017-03-06 0:13:20 - code=
+2017-03-06 0:13:20 - 微信信息没有获取到！
+2017-03-06 0:13:20 - code=
+2017-03-06 0:13:20 - 微信信息没有获取到！
+2017-03-06 0:13:38 - code=
+2017-03-06 0:13:38 - 微信信息没有获取到！
+2017-03-06 0:13:38 - code=
+2017-03-06 0:13:38 - 微信信息没有获取到！
+2017-03-06 0:17:18 - code=
+2017-03-06 0:17:18 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 0:17:18 - error is invalid code, hints: [ req_id: UOHw3a0438ns80 ] code is 40029
+2017-03-06 0:17:18 - getUsertoken no wechat openid
+2017-03-06 0:17:18 - historyrecord=0
+2017-03-06 0:17:18 - code=
+2017-03-06 0:17:18 - getUsertoken code=0  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 0:17:18 - error is invalid code, hints: [ req_id: g.i2Aa0438ns85 ] code is 40029
+2017-03-06 0:17:18 - getUsertoken no wechat openid
+2017-03-06 0:17:18 - historyrecord=0
+2017-03-06 0:55:03 - code=0119j09115Ybb22ao1811YlG8119j09L
+2017-03-06 0:55:03 - getUsertoken code=0119j09115Ybb22ao1811YlG8119j09L  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 0:55:06 - error is invalid code, hints: [ req_id: fp1GIA0706ns90 ] code is 40029
+2017-03-06 0:55:06 - getUsertoken no wechat openid
+2017-03-06 0:55:06 - register openid:
+2017-03-06 0:55:06 - 微信信息没有获取到！
+2017-03-06 13:28:08 - code=
+2017-03-06 13:28:08 - 微信信息没有获取到！
+2017-03-06 14:31:34 - code=021uPWsT1fm0qa15h1tT1fZUsT1uPWsJ
+2017-03-06 14:31:34 - getUsertoken code=021uPWsT1fm0qa15h1tT1fZUsT1uPWsJ  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 14:31:35 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 14:31:35 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 14:31:35 - register openid:oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 14:31:43 - code=051BLsT31b1m4O19goT31j2uT31BLsTg
+2017-03-06 14:31:43 - getUsertoken code=051BLsT31b1m4O19goT31j2uT31BLsTg  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 14:31:43 - getUsertoken openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:43 - getUsertoken session openid = oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:43 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:47 - code=051BLsT31b1m4O19goT31j2uT31BLsTg
+2017-03-06 14:31:47 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:47 - code=041B8pcE121s730pnPeE16RxcE1B8pcT
+2017-03-06 14:31:47 - getUsertoken code=041B8pcE121s730pnPeE16RxcE1B8pcT  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 14:31:47 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 14:31:47 - getUsertoken session openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 14:31:49 - code=051BLsT31b1m4O19goT31j2uT31BLsTg
+2017-03-06 14:31:49 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:51 - code=051BLsT31b1m4O19goT31j2uT31BLsTg
+2017-03-06 14:31:51 - register openid:oKe2EwWSgQbKWvPyXvvpW9po6FXk
+2017-03-06 14:31:51 - code=041B8pcE121s730pnPeE16RxcE1B8pcT
+2017-03-06 14:31:53 - code=
+2017-03-06 14:31:53 - 微信信息没有获取到！
+2017-03-06 14:31:53 - code=011IVyIc0mR6Sw1ecIIc0ybBIc0IVyIa
+2017-03-06 14:31:53 - getUsertoken code=011IVyIc0mR6Sw1ecIIc0ybBIc0IVyIa  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 14:31:53 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:31:53 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:31:53 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:32:01 - code=
+2017-03-06 14:32:01 - 微信信息没有获取到！
+2017-03-06 14:32:01 - code=011IVyIc0mR6Sw1ecIIc0ybBIc0IVyIa
+2017-03-06 14:32:01 - register openid:oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:32:05 - code=
+2017-03-06 14:32:06 - code=021GTcdf1pCRCw0pZ5ef1Wdfdf1GTcdo
+2017-03-06 14:32:06 - getUsertoken code=021GTcdf1pCRCw0pZ5ef1Wdfdf1GTcdo  https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code    wx5ce715491b2cf046   64d8329728c7f15c39f5ed77e77a33c7
+2017-03-06 14:32:06 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:32:06 - getUsertoken session openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 14:32:29 - code=041B8pcE121s730pnPeE16RxcE1B8pcT
+2017-03-06 14:44:36 - code=
+2017-03-06 14:44:36 - 微信信息没有获取到！
+2017-03-06 14:44:46 - code=
+2017-03-06 14:44:46 - 微信信息没有获取到！
+2017-03-06 14:44:46 - code=
+2017-03-06 14:44:46 - 微信信息没有获取到！
+2017-03-06 15:05:08 - code=031eksRD0nGvog29KDOD0zxkRD0eksR0
+2017-03-06 15:05:08 - getUsertoken no wechat openid
+2017-03-06 15:05:08 - register openid:
+2017-03-06 15:05:08 - 微信信息没有获取到！
+2017-03-06 15:05:19 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:05:19 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:05:19 - register wechat_id:267
+2017-03-06 15:18:26 - 11111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:21:29 - 11111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:21:58 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:22:09 - code=041LZ1cS1Dver91zJ1bS1iFncS1LZ1c9
+2017-03-06 15:22:09 - openid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:22:09 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:22:09 - register wechat_id:267
+2017-03-06 15:22:09 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:22:15 - code=021sdQ9C1YCrC00p6v8C13JR9C1sdQ9O
+2017-03-06 15:22:15 - code=041LZ1cS1Dver91zJ1bS1iFncS1LZ1c9
+2017-03-06 15:22:15 - openid=
+2017-03-06 15:22:15 - openidopenid=
+2017-03-06 15:22:15 - historyrecord=0
+2017-03-06 15:25:48 - code=041V0FWm1vTiVk06tHWm1p9GWm1V0FWU
+2017-03-06 15:25:49 - openid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:25:49 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:25:49 - register wechat_id:268
+2017-03-06 15:25:49 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:27:16 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:30:20 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:30:57 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:36:50 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 15:36:50 - 22eeeee2=268
+2017-03-06 15:38:33 - code=001qRNBd26Zq6C0iE9Cd2JkDBd2qRNBf
+2017-03-06 15:38:33 - code=041V0FWm1vTiVk06tHWm1p9GWm1V0FWU
+2017-03-06 15:38:33 - openid=
+2017-03-06 15:38:33 - openidopenid=
+2017-03-06 15:38:33 - register openid:
+2017-03-06 15:38:33 - 微信信息没有获取到！
+2017-03-06 15:39:02 - code=031Wpf8O0QVto82Y3R8O0BNo8O0Wpf8X
+2017-03-06 15:39:02 - code=041V0FWm1vTiVk06tHWm1p9GWm1V0FWU
+2017-03-06 15:39:02 - code=0411v1bc0aqA7v1WRs9c0kO1bc01v1bH
+2017-03-06 15:39:02 - code=
+2017-03-06 15:39:02 - 微信信息没有获取到！
+2017-03-06 15:39:02 - code=041V0FWm1vTiVk06tHWm1p9GWm1V0FWU
+2017-03-06 15:39:02 - openid=
+2017-03-06 15:39:02 - openidopenid=
+2017-03-06 15:39:02 - register openid:
+2017-03-06 15:39:02 - 微信信息没有获取到！
+2017-03-06 15:39:02 - openid=
+2017-03-06 15:39:02 - openidopenid=
+2017-03-06 15:39:02 - register openid:
+2017-03-06 15:39:02 - 微信信息没有获取到！
+2017-03-06 15:39:04 - code=041rbOS21SeoOM1GyoS21CqUS21rbOSm
+2017-03-06 15:39:04 - code=041V0FWm1vTiVk06tHWm1p9GWm1V0FWU
+2017-03-06 15:39:04 - openid=
+2017-03-06 15:39:04 - openidopenid=
+2017-03-06 15:39:04 - register openid:
+2017-03-06 15:39:04 - 微信信息没有获取到！
+2017-03-06 15:50:11 - Enter in ControllerProductProduct 1
+2017-03-06 15:50:11 - product_info 50
+2017-03-06 16:07:54 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:07:54 - register wechat_id:268
+2017-03-06 16:07:54 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:09:51 - openidopenid=
+2017-03-06 16:09:51 - 111111=
+2017-03-06 16:09:51 - 22eeeee2=
+2017-03-06 16:10:05 - openidopenid=
+2017-03-06 16:10:05 - 111111=
+2017-03-06 16:10:05 - 22eeeee2=
+2017-03-06 16:14:38 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:14:38 - register wechat_id:268
+2017-03-06 16:14:38 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:14:38 - code====oKe2EwWLwAU7EQu7rNof5dfG1U8g268
+2017-03-06 16:14:38 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:14:38 - 22eeeee2=268
+2017-03-06 16:20:26 - openidopenid=
+2017-03-06 16:20:26 - code====
+2017-03-06 16:20:26 - 111111=
+2017-03-06 16:20:26 - 22eeeee2=
+2017-03-06 16:24:46 - openidopenid=
+2017-03-06 16:24:46 - 111111=
+2017-03-06 16:24:46 - 22eeeee2=
+2017-03-06 16:27:37 - PersonalCenter： 微信信息没有获取到！
+2017-03-06 16:27:37 - PersonalCenter： userinfo 为空
+2017-03-06 16:31:18 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:31:18 - register wechat_id:268
+2017-03-06 16:31:18 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:31:18 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:31:18 - 111111=
+2017-03-06 16:31:18 - 22eeeee2=
+2017-03-06 16:32:17 - openidopenid=
+2017-03-06 16:32:17 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:32:17 - 22eeeee2=268
+2017-03-06 16:32:38 - openidopenid=
+2017-03-06 16:32:38 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:32:38 - 22eeeee2=268
+2017-03-06 16:33:42 - 111111=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:33:42 - 22eeeee2=268
+2017-03-06 16:34:03 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:34:03 - register wechat_id:268
+2017-03-06 16:34:03 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:34:03 - 111111=
+2017-03-06 16:34:03 - 22eeeee2=
+2017-03-06 16:49:10 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:49:10 - register wechat_id:269
+2017-03-06 16:49:10 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:49:10 - 111111=
+2017-03-06 16:49:10 - 22eeeee2=
+2017-03-06 16:49:22 - code=001aGFgu1xHulb0njZgu1Y6sgu1aGFgV
+2017-03-06 16:49:22 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:49:22 - register wechat_id:269
+2017-03-06 16:49:22 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:49:22 - register openid:
+2017-03-06 16:49:22 - 微信信息没有获取到！
+2017-03-06 16:49:26 - Enter in ControllerProductProduct 1
+2017-03-06 16:49:26 - product_info 50
+2017-03-06 16:54:32 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:54:32 - register wechat_id:269
+2017-03-06 16:54:32 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:54:47 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:54:47 - register wechat_id:269
+2017-03-06 16:54:47 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:54:53 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:54:53 - register wechat_id:269
+2017-03-06 16:54:53 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:56:32 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:56:32 - register wechat_id:170
+2017-03-06 16:56:32 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:56:52 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:56:52 - register wechat_id:170
+2017-03-06 16:56:52 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:57:20 - getUsertoken openid = oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:57:20 - register wechat_id:170
+2017-03-06 16:57:20 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 16:57:47 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:57:47 - register wechat_id:269
+2017-03-06 16:57:47 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:57:53 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:57:53 - register wechat_id:269
+2017-03-06 16:57:53 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:58:05 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:58:05 - register wechat_id:269
+2017-03-06 16:58:05 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:58:05 - historyrecord=0
+2017-03-06 16:58:23 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:58:23 - register wechat_id:269
+2017-03-06 16:58:23 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:59:42 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:59:42 - register wechat_id:269
+2017-03-06 16:59:42 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:59:42 - historyrecord=0
+2017-03-06 16:59:48 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 16:59:48 - register wechat_id:269
+2017-03-06 16:59:48 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:02:04 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:02:04 - register wechat_id:269
+2017-03-06 17:02:04 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:02:04 - 0
+2017-03-06 17:04:47 - getUsertoken openid = oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 17:04:47 - register wechat_id:259
+2017-03-06 17:04:47 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 17:04:47 - 0
+2017-03-06 17:12:24 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:24 - register wechat_id:269
+2017-03-06 17:12:24 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:24 - 0
+2017-03-06 17:12:33 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:33 - register wechat_id:269
+2017-03-06 17:12:33 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:33 - historyrecord=0
+2017-03-06 17:12:37 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:37 - register wechat_id:269
+2017-03-06 17:12:37 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:43 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:43 - register wechat_id:269
+2017-03-06 17:12:43 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:12:47 - Enter in ControllerProductProduct 1
+2017-03-06 17:12:47 - product_info 50
+2017-03-06 17:16:27 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:16:27 - register wechat_id:269
+2017-03-06 17:16:27 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:16:27 - historyrecord=0
+2017-03-06 17:16:34 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:16:34 - register wechat_id:269
+2017-03-06 17:16:34 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:16:34 - 0
+2017-03-06 17:18:34 - 用户号码=
+2017-03-06 17:18:34 - PersonalCenter： userinfo 为空
+2017-03-06 17:19:11 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:19:11 - register wechat_id:269
+2017-03-06 17:19:11 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:19:11 - 0
+2017-03-06 17:19:21 - 用户号码=
+2017-03-06 17:19:21 - PersonalCenter： userinfo 为空
+2017-03-06 17:20:43 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:20:43 - register wechat_id:269
+2017-03-06 17:20:43 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:20:49 - code=
+2017-03-06 17:20:49 - 用户号码=
+2017-03-06 17:20:49 - PersonalCenter： userinfo 为空
+2017-03-06 17:21:27 - code=
+2017-03-06 17:21:27 - 用户号码=
+2017-03-06 17:21:27 - PersonalCenter： userinfo 为空
+2017-03-06 17:21:36 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:21:36 - register wechat_id:269
+2017-03-06 17:21:36 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:23:04 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:23:04 - register wechat_id:269
+2017-03-06 17:23:04 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:23:18 - code=
+2017-03-06 17:23:18 - 用户号码=
+2017-03-06 17:23:18 - PersonalCenter： userinfo 为空
+2017-03-06 17:25:23 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:25:23 - register wechat_id:269
+2017-03-06 17:25:23 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:25:23 - historyrecord=0
+2017-03-06 17:25:32 - historyrecord=0
+2017-03-06 17:25:50 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:25:50 - register wechat_id:269
+2017-03-06 17:25:50 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:26:46 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:26:46 - register wechat_id:269
+2017-03-06 17:26:46 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:26:46 - historyrecord=0
+2017-03-06 17:26:55 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:26:55 - register wechat_id:269
+2017-03-06 17:26:55 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:27:42 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:27:42 - register wechat_id:269
+2017-03-06 17:27:42 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:28:49 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:28:49 - register wechat_id:269
+2017-03-06 17:28:49 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:30:39 - getUsertoken openid = oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:30:39 - register wechat_id:269
+2017-03-06 17:30:39 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:30:43 - 654321=
+2017-03-06 17:30:43 - code=
+2017-03-06 17:30:43 - 用户号码=
+2017-03-06 17:30:43 - PersonalCenter： userinfo 为空
+2017-03-06 17:42:48 - 654321=
+2017-03-06 17:42:48 - code=
+2017-03-06 17:42:48 - 用户号码=
+2017-03-06 17:42:48 - PersonalCenter： userinfo 为空
+2017-03-06 17:44:49 - 654321=
+2017-03-06 17:44:49 - code=
+2017-03-06 17:44:49 - 用户号码=
+2017-03-06 17:44:49 - PersonalCenter： userinfo 为空
+2017-03-06 17:45:57 - register wechat_id:269
+2017-03-06 17:45:57 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:45:59 - 654321=
+2017-03-06 17:45:59 - code=
+2017-03-06 17:45:59 - 用户号码=
+2017-03-06 17:45:59 - PersonalCenter： userinfo 为空
+2017-03-06 17:48:37 - register wechat_id:269
+2017-03-06 17:48:37 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 17:48:41 - 654321=
+2017-03-06 17:48:41 - code=
+2017-03-06 17:48:41 - 用户号码=
+2017-03-06 17:48:41 - PersonalCenter： userinfo 为空
+2017-03-06 18:01:12 - register wechat_id:170
+2017-03-06 18:01:12 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 18:01:12 - register wechat_id:170
+2017-03-06 18:01:12 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 18:01:28 - register wechat_id:269
+2017-03-06 18:01:28 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:01:30 - 654321=
+2017-03-06 18:01:30 - code=
+2017-03-06 18:01:30 - 用户号码=
+2017-03-06 18:01:30 - PersonalCenter： userinfo 为空
+2017-03-06 18:01:43 - register wechat_id:170
+2017-03-06 18:01:43 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 18:01:52 - register wechat_id:259
+2017-03-06 18:01:52 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 18:02:04 - register wechat_id:259
+2017-03-06 18:02:04 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 18:02:07 - register wechat_id:259
+2017-03-06 18:02:07 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 18:02:07 - historyrecord=0
+2017-03-06 18:02:10 - register wechat_id:259
+2017-03-06 18:02:10 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 18:02:15 - register wechat_id:259
+2017-03-06 18:02:15 - openidopenid=oKe2EwS-FfXcDKjAQEOhf5RgNqKs
+2017-03-06 18:02:28 - register wechat_id:170
+2017-03-06 18:02:28 - openidopenid=oKe2Ewby3n50cbHHQQHfJ8ZvbEy8
+2017-03-06 18:05:35 - register wechat_id:269
+2017-03-06 18:05:35 - openidopenid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:05:41 - 654321=
+2017-03-06 18:05:41 - code=
+2017-03-06 18:05:41 - 用户号码=
+2017-03-06 18:05:41 - PersonalCenter： userinfo 为空
+2017-03-06 18:07:36 - register wechat_id:269
+2017-03-06 18:07:36 - write session data is oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:07:39 - 654321=
+2017-03-06 18:07:39 - code=
+2017-03-06 18:07:39 - 用户号码=
+2017-03-06 18:07:39 - PersonalCenter： userinfo 为空
+2017-03-06 18:11:13 - 654321=
+2017-03-06 18:11:13 - code=
+2017-03-06 18:11:13 - 用户号码=
+2017-03-06 18:11:13 - PersonalCenter： userinfo 为空
+2017-03-06 18:17:57 - 654321=
+2017-03-06 18:17:57 - code=undefined
+2017-03-06 18:17:57 - openidid=
+2017-03-06 18:17:57 - 用户号码=
+2017-03-06 18:17:57 - PersonalCenter： userinfo 为空
+2017-03-06 18:21:00 - 654321=
+2017-03-06 18:21:00 - code=051IrxU72IJYBO0T2zR72AxBU72IrxUU
+2017-03-06 18:21:00 - openidid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:21:00 - 用户号码=517
+2017-03-06 18:21:15 - register wechat_id:269
+2017-03-06 18:21:15 - write session data is oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:21:16 - 654321=
+2017-03-06 18:21:16 - code=041WaNfP0mwBw92uNthP0GB0gP0WaNfO
+2017-03-06 18:21:16 - openidid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:21:16 - 用户号码=517
+2017-03-06 18:21:28 - register wechat_id:269
+2017-03-06 18:21:28 - write session data is oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:21:29 - 654321=
+2017-03-06 18:21:29 - code=001KQCkB0hi1Fc25nCmB0GxxkB0KQCkf
+2017-03-06 18:21:29 - openidid=oKe2EwWLwAU7EQu7rNof5dfG1U8g
+2017-03-06 18:21:29 - 用户号码=517
