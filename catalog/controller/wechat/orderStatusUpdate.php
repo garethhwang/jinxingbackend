@@ -122,8 +122,8 @@ class ControllerWechatOrderStatusUpdate extends Controller
             }
 
 
-            $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            $openId = $this->session->data['openid'];
+            //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+            //$openId = $this->session->data['openid'];
             //$title=$data['products'][0]['name'];
             //$price=(int)$data['products'][0]['price']*100;
 
