@@ -101,35 +101,33 @@ class ControllerWechatOrderStatusUpdate extends Controller
             }
             $data = array_merge($order_info, $product_info, $order_totals);
 
-            /**  pay for product */
-            ini_set('date.timezone', 'Asia/Shanghai');
-            //获取用户openid
-            $tools = new JsApiPay();
+            $this->load->model('extension/total/coupon');
+            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
+            if($coupon_info){
+                if($coupon_info['type'] == 'F'){
+                    $data["coupontype"] = "F";
+                }
+                if($coupon_info['type'] == 'P'){
+                    $data["coupontype"] = "P";
+                }
+                $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
+                $data['discount'] = $coupon_info['discount'];
+                $data['lastprice'] = floatval($coupon['total']);
+                //$log->write("lastprice".$data['lastprice']);
+                unset($this->session->data['coupon']);
+            }else{
+                $data["coupontype"] = "";
+                $data['discount'] = "0";
+                $data['lastprice'] = $product_info['products'][0]['price'];
+            }
+
 
             $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
             $openId = $this->session->data['openid'];
-            $title=$data['products'][0]['name'];
-            $price=(int)$data['products'][0]['price']*100;
+            //$title=$data['products'][0]['name'];
+            //$price=(int)$data['products'][0]['price']*100;
 
-            //②、统一下单
-            $input = new WxPayUnifiedOrder();
-            $input->SetBody($title);
-            $input->SetAttach($title);
-            $input->SetOut_trade_no(WxPayConfig::MCHID . date("YmdHis"));
-            $input->SetTotal_fee((int)$price);
-            $input->SetTime_start(date("YmdHis"));
-            $input->SetGoods_tag("test");
-            $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
-            $input->SetTrade_type("JSAPI");
-            $input->SetOpenid($openId);
-            $order = WxPayApi::unifiedOrder($input);
-
-            $jsApiParameters = $tools->GetJsApiParameters($order);
-            $data["wxpay"] = $jsApiParameters;
         }
-
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-        //$data['header'] = $this->load->controller('common/wechatheader');
 
         $response = array(
                 'code'  => 0,
