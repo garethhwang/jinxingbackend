@@ -151,6 +151,7 @@ class ControllerWechatOrderDetail extends Controller
             $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
             $input->SetTrade_type("JSAPI");
             $input->SetOpenid($openId);
+            $input->SetAppid('wx5ce715491b2cf046');
             $order = WxPayApi::unifiedOrder($input);
 
             $jsApiParameters = $tools->GetJsApiParameters($order);
