@@ -138,7 +138,8 @@ class ControllerWechatOrderDetail extends Controller
             //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
             $openId = $temp['openid'];
             $title=$data['products'][0]['name'];
-            $price=(int)$data['lastprice']/10000;
+            $price=(int)$data['lastprice']*100;
+            $price=1;
 
             //②、统一下单
             $input = new WxPayUnifiedOrder();
