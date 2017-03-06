@@ -113,20 +113,12 @@ class ControllerWechatOrderStatusUpdate extends Controller
                 $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
                 $data['discount'] = $coupon_info['discount'];
                 $data['lastprice'] = floatval($coupon['total']);
-                //$log->write("lastprice".$data['lastprice']);
                 unset($this->session->data['coupon']);
             }else{
                 $data["coupontype"] = "";
                 $data['discount'] = "0";
                 $data['lastprice'] = $product_info['products'][0]['price'];
             }
-
-
-            //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            //$openId = $this->session->data['openid'];
-            //$title=$data['products'][0]['name'];
-            //$price=(int)$data['products'][0]['price']*100;
-
         }
 
         $response = array(
@@ -138,7 +130,6 @@ class ControllerWechatOrderStatusUpdate extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
-
 
         //$this->response->setOutput($this->load->view('wechat/orderDetail', $data));
     }
