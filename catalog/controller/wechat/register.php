@@ -61,7 +61,7 @@ class ControllerWechatRegister extends Controller
         $this->cache->set("wechatcode", $code);
         if($this->cache->get($code)){
             $data["openid"] = $this->cache->get($code);
-            $log->write("11111=".$data["openid"]);
+            $log->write("111111=".$data["openid"]);
         }else {
             $this->load->controller('wechat/userinfo/getUsertoken');
             $log->write("2222222=");
@@ -79,7 +79,7 @@ class ControllerWechatRegister extends Controller
             $this->error['warning'] = "微信信息没有获取到！";
         }
 
-        if(!isset($this->session->data['openid'])){
+        /*if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -89,7 +89,7 @@ class ControllerWechatRegister extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
         /*$log->write("code=" . $code);
         if (isset($code)) {
                 $get_return = $this->load->controller('wechat/userinfo/getUsertoken');
