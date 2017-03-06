@@ -26,6 +26,7 @@ class ControllerWechatOrderDetail extends Controller
         }
         //wechat
         $code = $this->request->json("code","");
+        $log->write("code=".$code);
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
