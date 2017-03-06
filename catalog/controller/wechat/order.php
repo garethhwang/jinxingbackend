@@ -293,55 +293,6 @@ class ControllerWechatOrder extends Controller
         $product_id = $data['product_id'];
 
 
-        /*if(isset($productCount)){
-            $data['productCount'] = $productCount;
-            $log->write("wechat/orderDetail        222222222");
-        } else {
-            $data['productCount'] = '1';
-            $log->write("wechat/orderDetail        1111111111");
-        }
-
-        $log->write("wechat/orderDetail        orderCount = ".$data['productCount']);
-
-        if(isset($telephone)){
-            $data['telephone'] = $telephone;
-        } else {
-            $data['telephone'] = '12312341234';
-        }
-
-        if(isset($realname)){
-            $data['realname'] = $realname;
-        }else{
-            $data['realname']='renxiaopeng';
-        }
-
-        if(isset($address)){
-            $data['address'] = $address;
-        }else {
-            $data['address'] = '北京';
-        }
-
-        if(isset($shipping_address_1)){
-            $data['shipping_address_1'] = $shipping_address_1;
-        }else{
-            $data['shipping_address_1'] = 'aaaaaaaaaaaa';
-        }
-
-        if(isset($shipping_date)){
-            $data['shipping_date'] = $shipping_date;
-        }else{
-            $data['shipping_date'] = '2017-1-4 14:00:00';
-        }
-
-        if(isset($product_id)) {
-            $data['product_id'] = $product_id;
-            $product_id = $product_id;
-        }else{
-            $data['product_id'] = '50';
-            $product_id = '50';
-        }*/
-
-
         $data['invoice_prefix']='INV-2013-00';
         $data['store_id'] = '0';
         $data['store_name'] = '金杏健康';
@@ -496,6 +447,7 @@ class ControllerWechatOrder extends Controller
         $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
         $input->SetTrade_type("JSAPI");
         $input->SetOpenid($openId);
+        $input->SetAppid('wx5ce715491b2cf046');
         $order = WxPayApi::unifiedOrder($input);
 
         $jsApiParameters = $tools->GetJsApiParameters($order);
