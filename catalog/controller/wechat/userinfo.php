@@ -136,14 +136,16 @@ class ControllerWechatUserinfo extends Controller
                          $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
                          //$this->cache->set($get_return["openid"], $data["wechat_id"]);
                      }
-                     $log->write("register wechat_id:" . $data["wechat_id"]);
+                 $this->cache->set($code,json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
+                 $this->session->data['openid'] = $get_return["openid"];
+                 $log->write("register wechat_id:" . $data["wechat_id"]);
+                 $log->write("openidopenid=".$this->session->data['openid'])
                  } else {
                      $this->error["error_warning"] = $get_return["errmsg"];
                      $data["wechat_id"] = "";
                  }
 
-                 $this->cache->set($code,json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
-                 $this->session->data['openid'] = $get_return["openid"];
+
                  $log->write("openidopenid=".$this->session->data['openid']);
 
              }  else {
