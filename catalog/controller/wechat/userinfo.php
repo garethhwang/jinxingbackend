@@ -153,8 +153,8 @@ class ControllerWechatUserinfo extends Controller
 
              $codeinfo = json_decode($this->cache->get($code),true);
 
-             $log->write("code====".$codeinfo['openid'].$codeinfo['wechat_id']);
-             return  $this->cache->get($code);
+              $log->write("code====".$codeinfo['openid'].$codeinfo['wechat_id']);
+             return  $codeinfo;
 
     }
 

@@ -65,8 +65,8 @@ class ControllerWechatRegister extends Controller
         //wechat
         $code = $this->request->json("code","");
         //$this->cache->set("wechatcode", $code);
-        $codeinfo = $this->load->controller('wechat/userinfo/getUsertoken');
-        $data=json_decode($codeinfo,true);
+        $data = $this->load->controller('wechat/userinfo/getUsertoken');
+        //$data=json_decode($codeinfo,true);
         $log->write("111111=".$data["openid"]);
         $log->write("22eeeee2=".$data["wechat_id"]);
 
