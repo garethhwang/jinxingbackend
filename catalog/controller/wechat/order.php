@@ -429,6 +429,7 @@ class ControllerWechatOrder extends Controller
 
 
         /**  pay for product */
+        /*
         ini_set('date.timezone', 'Asia/Shanghai');
         //获取用户openid
         $tools = new JsApiPay();
@@ -452,7 +453,7 @@ class ControllerWechatOrder extends Controller
 
         $jsApiParameters = $tools->GetJsApiParameters($order);
         $data["wxpay"] = $jsApiParameters;
-
+        */
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
 
