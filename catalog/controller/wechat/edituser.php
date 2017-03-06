@@ -21,7 +21,7 @@ class ControllerWechatEdituser extends Controller
             $data["openid"] = "";
         }
         //wechat
-        $code = $this->request->json("code","");
+        /*$code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -38,8 +38,10 @@ class ControllerWechatEdituser extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
+
+        $data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
@@ -591,14 +593,14 @@ class ControllerWechatEdituser extends Controller
 
         //$this->load->model('clinic/clinic');
         //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
-        $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
+        $data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
         /*foreach($data["provs_data"] as $aa){
             $log->write("provs=".$aa);
         }*/
-        $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
-        $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
-        $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
-        $data["deps_data"] = json_encode($this->load->controller('wechat/wechatbinding/getOffice'));
+        $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
+        $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
+        $data["allcitys_data"] = $this->load->controller('wechat/wechatbinding/getAllCity');
+        $data["deps_data"] = $this->load->controller('wechat/wechatbinding/getOffice');
 
         $this->document->setTitle("个人信息");
 
