@@ -117,7 +117,14 @@ class ControllerWechatUserinfo extends Controller
          //$this->cache->set('wechatcode', $code);
          if ($code != ""){
 
-             
+             if($this->cache->get($code)){
+
+                 $codeinfo = $this->cache->get($code);
+                 $codeinfo=json_decode($codeinfo,true);
+                 $data["openid"] = $codeinfo["openid"];
+                 $data["wechat_id"] = $codeinfo["wechat_id"];
+                 return ;
+             }
 
              $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
              $get_return = file_get_contents($get_url);
