@@ -156,7 +156,7 @@ class ControllerWechatUserinfo extends Controller
            $log->write("getUsertoken no wechat openid");
        }
 
-       return $openid;
+       //return $openid;
              //$codeinfo = json_decode($this->cache->get($code),true);
 
              //$log->write("code====".$codeinfo['openid'].$codeinfo['wechat_id']);
