@@ -60,7 +60,7 @@ class ModelWechatUserinfo extends Model
     }
 
 
-    /*public function insertinto(){
+    public function insertinto(){
 
         $result = $this->db->query("select a.customer_id,a.date_added,b.lastmenstrualdate from " . DB_PREFIX . "customer a , " . DB_PREFIX . "physical b where a.customer_id = b.customer_id ");
         $insertdata = $result->rows;
@@ -110,7 +110,7 @@ class ModelWechatUserinfo extends Model
 
         }
 
-    }*/
+    }
 
 
 
