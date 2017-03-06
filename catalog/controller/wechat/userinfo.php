@@ -146,7 +146,7 @@ class ControllerWechatUserinfo extends Controller
                  }
 
 
-                 $log->write("openidopenid=".$this->session->data['openid']);
+                 //$log->write("openidopenid=".$this->session->data['openid']);
 
              }  else {
                  $this->error['warning'] = "微信信息没有获取到！";
