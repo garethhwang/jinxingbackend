@@ -148,13 +148,14 @@ class ControllerWechatUserinfo extends Controller
 
              } elseif(isset($this->session->data['openid'])){
 
-                $data['openid']=$this->session->data['openid'];
+                $openid = $this->session->data['openid'];
 
              } else {
                  $this->error['warning'] = "微信信息没有获取到！";
                  $log->write("getUsertoken no wechat openid");
              }
 
+             return $openid;
              //$codeinfo = json_decode($this->cache->get($code),true);
 
              //$log->write("code====".$codeinfo['openid'].$codeinfo['wechat_id']);
