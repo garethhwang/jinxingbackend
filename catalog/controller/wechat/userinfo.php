@@ -111,6 +111,7 @@ class ControllerWechatUserinfo extends Controller
          $this->document->setTitle("个人信息");
 
          $log = new Log("wechat.log");
+        $log->write("code=".$this->cache->get("wechatcode"));
 
          //$code = $this->request->json("code","");
          //$this->cache->set('wechatcode', $code);
@@ -119,8 +120,10 @@ class ControllerWechatUserinfo extends Controller
              $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $this->cache->get("wechatcode"));
              $get_return = file_get_contents($get_url);
              $get_return = (array)json_decode($get_return);
-             $log->write("openidopenid=".$get_return["openid"]);
+
              $this->cache->set($this->cache->get("wechatcode"), $get_return["openid"]);
+             $log->write("openid=".$this->cache->get($this->cache->get("wechatcode")));
+
              $this->load->model('wechat/userinfo');
              if (isset($get_return["openid"])) {
                  $log->write("getUsertoken openid = " . $get_return["openid"]);
@@ -141,6 +144,7 @@ class ControllerWechatUserinfo extends Controller
                  }
 
                  $this->session->data['openid'] = $get_return["openid"];
+             $log->write("openidopenid=".$this->session->data['openid']);
 
              }  else {
                  $this->error['warning'] = "微信信息没有获取到！";
