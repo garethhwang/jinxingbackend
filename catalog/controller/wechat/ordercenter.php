@@ -70,6 +70,10 @@ class ControllerWechatOrdercenter extends Controller
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
         $log->write($data['customer_id']);
+        if(!isset($data['customer_id'])){
+            $data['customer_id'] = "0";
+        }
+
 
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
@@ -203,6 +207,9 @@ class ControllerWechatOrdercenter extends Controller
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
         $log->write($data['customer_id']);
+        if(!isset($data['customer_id'])){
+            $data['customer_id'] = "0";
+        }
 
         $allorderids= $this->model_wechat_ordercenter->getAllPaidOrderid($data['customer_id']);
 
@@ -338,6 +345,9 @@ class ControllerWechatOrdercenter extends Controller
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
         $log->write($data['customer_id']);
+        if(!isset($data['customer_id'])){
+            $data['customer_id'] = "0";
+        }
 
         $allorderids= $this->model_wechat_ordercenter->getAllCompletedOrderid($data['customer_id']);
 
@@ -474,6 +484,9 @@ class ControllerWechatOrdercenter extends Controller
         $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
         $log->write($data['customer_id']);
+        if(!isset($data['customer_id'])){
+            $data['customer_id'] = "0";
+        }
 
         $allorderids = $this->model_wechat_ordercenter->getAllOrderid($data['customer_id']);
 
@@ -705,4 +718,58 @@ class ControllerWechatOrdercenter extends Controller
 
     }
 
+    public function delete(){
+
+        $this->document->setTitle("删除订单");
+
+        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+
+
+        if(isset($this->session->data['openid'])){
+            $data["openid"] = $this->session->data['openid'];
+        }
+        else{
+            $data["openid"] = "";
+            $this->error['warning'] = "微信信息没有获取到！";
+        }
+
+
+        if(!isset($this->session->data['openid'])){
+            $response = array(
+                'code'  => 1001,
+                'message'  => "微信信息没有获取到！",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }
+
+        $order_id = $this->request->json('order_id', 0);
+
+        $this->load->model('wechat/ordercenter');
+
+        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
+        if(!isset($data['customer_id'])){
+            $data['customer_id'] = "0";
+        }
+
+        $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
+
+        $this->load->model('checkout/order');
+        $this->model_checkout_order->deleteOrder($order_id);
+
+        if (in_array( $order_id , $allorderids)) {
+
+            $this->load->model('extension/total/coupon');
+
+            $this->model_extension_total_coupon->unconfirm($order_id);
+
+        }
+
+
+
+    }
 }
