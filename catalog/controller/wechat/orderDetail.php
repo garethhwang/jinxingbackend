@@ -31,9 +31,9 @@ class ControllerWechatOrderDetail extends Controller
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
             $codeinfo=json_decode($codeinfo,true);
-            $data["openid"] = $codeinfo["openid"];
+            $temp["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-            $log->write("78687y898989openid=".$data["openid"]);
+            //$log->write("78687y898989openid=".$data["openid"]);
         }else{
             $response = array(
                 'code'  => 1001,
@@ -136,7 +136,7 @@ class ControllerWechatOrderDetail extends Controller
             $tools = new JsApiPay();
 
             //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            $openId = $data['openid'];
+            $openId = $temp['openid'];
             $title=$data['products'][0]['name'];
             $price=(int)$data['lastprice']*100;
 
