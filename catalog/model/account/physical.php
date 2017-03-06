@@ -18,6 +18,8 @@ class ModelAccountPhysical extends Model {
 
         $lastmenstrual = $this->db->query("SELECT lastmenstrualdate FROM " . DB_PREFIX . "physical  WHERE customer_id = '" . (int)$this->customer->getId() . "'");
 
+        var_dump($lastmenstrual );
+
         $lastmenstrualdate = $lastmenstrual->row['lastmenstrualdate'];
 
         $log->write("lastmenstrualdate=".$lastmenstrualdate);
