@@ -150,6 +150,7 @@ class ControllerWechatUserinfo extends Controller
 
                 $openid = $this->session->data['openid'];
 
+
              } else {
                  $this->error['warning'] = "微信信息没有获取到！";
                  $log->write("getUsertoken no wechat openid");
