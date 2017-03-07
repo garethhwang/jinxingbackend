@@ -55,7 +55,7 @@ class ControllerAccountPersonalCenter extends Controller
         }
 
         $this->load->model('account/address');
-        $temp = $this->model_account_address->getAddress($data['address_id']);
+        $temp = $this->model_account_address->getAddress($data['address_id'],$data['customer_id']);
         $data['householdregister'] = $temp['householdregister'];
         $data['district'] = $temp['city'];
         $data['address_1'] = $temp['address_1'];
