@@ -240,8 +240,12 @@ class ModelExtensionTotalCoupon extends Model {
 			$code = substr($order_total['title'], $start, $end - $start);
 		}
 
+		$query =  $this->db->query("SELECT product_id FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_info['order_id'] . "'");
+
+		$product_id = $query->row['product_id'];
+
 		if ($code) {
-			$coupon_info = $this->getCoupon($code,$order_info['product_id'],$order_info['customer_id']);
+			$coupon_info = $this->getCoupon($code,$product_id,$order_info['customer_id']);
 
 			if ($coupon_info) {
 				$this->db->query("INSERT INTO `" . DB_PREFIX . "coupon_history` SET coupon_id = '" . (int)$coupon_info['coupon_id'] . "', order_id = '" . (int)$order_info['order_id'] . "', customer_id = '" . (int)$order_info['customer_id'] . "', amount = '" . (float)$order_total['value'] . "', date_added = NOW()");
