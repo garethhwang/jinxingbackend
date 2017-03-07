@@ -44,8 +44,8 @@ class ControllerWechatEdituser extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
-        //$this->load->model('wechat/userinfo');
-        //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $this->load->model('wechat/userinfo');
+        $temp = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
 
         /*$realname = $this->request->json('realname');
@@ -95,7 +95,7 @@ class ControllerWechatEdituser extends Controller
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         $this->load->model('account/address');
-        $customer_address = $this->model_account_address->getAddress($data["address_id"]);
+        $customer_address = $this->model_account_address->getAddress($temp["address_id"]);
 
         if (!empty($customer_info)) {
             $data['headimgurl'] = $customer_info['headimgurl'];
@@ -107,6 +107,12 @@ class ControllerWechatEdituser extends Controller
             $data['realname'] = $customer_info['realname'];
         } else {
             $data['realname'] = '';
+        }
+
+        if (!empty($customer_info)) {
+            $data['pregnantstatus'] = $customer_info['pregnantstatus'];
+        } else {
+            $data['pregnantstatus'] = '';
         }
 
         if (!empty($customer_info)) {
