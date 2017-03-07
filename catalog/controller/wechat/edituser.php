@@ -777,7 +777,7 @@ class ControllerWechatEdituser extends Controller
         $this->load->model('account/physical');
         $this->model_account_physical->editPhysical($data["physical_id"], $postdata,$data["customer_id"]);
         $this->load->model('account/address');
-        $this->model_account_address->editAddress($data["address_id"], $postdata);
+        $this->model_account_address->editAddress($data["address_id"], $postdata,$data["customer_id"] );
 
         $custom_field = $this->request->json('custom_field');
 
