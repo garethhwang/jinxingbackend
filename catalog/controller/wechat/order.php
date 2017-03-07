@@ -220,7 +220,7 @@ class ControllerWechatOrder extends Controller
             'realname' => $data['customer']['realname'],
             'telephone' => $data['customer']['telephone'],
             'city'  =>  $data['address']['city'],
-            'addres_1' => $data['address']['address_1'],
+            'address_1' => $data['address']['address_1'],
             'service_tel' => $data['service_tel']
 
         );
