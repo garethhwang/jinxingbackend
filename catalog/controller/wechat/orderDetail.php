@@ -25,7 +25,7 @@ class ControllerWechatOrderDetail extends Controller
             $data["openid"] = "";
         }
         //wechat
-        $code = $this->request->json("code","");
+       /* $code = $this->request->json("code","");
         $log->write("code=".$code);
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
@@ -44,10 +44,11 @@ class ControllerWechatOrderDetail extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
         $order_id = $this->request->json('order_id', 0);
 
+        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
