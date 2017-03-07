@@ -431,8 +431,8 @@ class ControllerWechatOrder extends Controller
             $order_status_id = $order_status_id;
             $data['order_status_id'] = $order_status_id;
         } else {
-            $order_status_id = '1';
-            $data['order_status_id'] = '1';
+            $order_status_id = '5';
+            $data['order_status_id'] = '5';
         }
 
         $this->model_checkout_order->addOrderHistory($json['order_id'], $order_status_id);
