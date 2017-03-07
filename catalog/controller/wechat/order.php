@@ -227,7 +227,7 @@ class ControllerWechatOrder extends Controller
         $data['product_id'] = $this->request->json('product_id',50);
         $product_id = $data['product_id'];
 
-        if(!isset($couponcode)) {
+        if($couponcode != "") {
             $this->load->model('extension/total/coupon');
 
             //$log->write("couponcode=".$couponcode);
