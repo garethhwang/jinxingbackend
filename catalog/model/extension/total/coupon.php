@@ -240,7 +240,7 @@ class ModelExtensionTotalCoupon extends Model {
 			$code = substr($order_total['title'], $start, $end - $start);
 		}
 
-		$query =  $this->db->query("SELECT product_id FROM `" . DB_PREFIX . "order` WHERE order_id = '" . (int)$order_info['order_id'] . "'");
+		$query =  $this->db->query("SELECT product_id FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_info['order_id'] . "'");
 
 		$product_id = $query->row['product_id'];
 
