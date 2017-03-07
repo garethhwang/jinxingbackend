@@ -119,7 +119,7 @@ class ControllerWechatOrder extends Controller
 
 
         $this->load->model('account/address');
-        $data['address'] = $this->model_account_address->getAddress( $data['customer']["address_id"]);
+        $data['address'] = $this->model_account_address->getAddress( $data['customer']["address_id"],$data['customer']["customer_id"]);
         if(!isset($data['address'])){
             $data['address'] = array();
         }
