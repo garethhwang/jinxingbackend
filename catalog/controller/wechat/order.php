@@ -128,61 +128,7 @@ class ControllerWechatOrder extends Controller
         $product_id = $this->request->json('product_id', 0);
 
         //$data['product_id'] = $product_id;
-        $this->session->data['coupon_product_id'] = $product_id;
-
-        $couponcode =  $this->request->json('couponcode');
-
-        if(isset($couponcode)) {
-            $this->load->model('extension/total/coupon');
-
-            //$log->write("couponcode=".$couponcode);
-            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode);
-
-            //$log->write("validcoupon=".$validcoupon["code"]);
-            if ($validcoupon) {
-                $this->session->data['coupon'] = $couponcode;
-            } else {
-                if( $this->session->data['couponerror_product'] = "1" ){
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "该商品无法使用该折扣券",
-                        'data' => array(),
-                    );
-                    unset($this->session->data['couponerror_product']);
-                }elseif ( $this->session->data['couponerror_customer'] = "1" ){
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "您的个人折扣券使用已达到最大数量",
-                        'data' => array(),
-                    );
-                    unset($this->session->data['couponerror_customer']);
-                }elseif($this->session->data['couponerror_usetotal'] = "1" ){
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "折扣券活动已结束",
-                        'data' => array(),
-                    );
-                    unset($this->session->data['couponerror_usetotal']);
-                } elseif ($this->session->data['couponerror_log'] = "1" ){
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "您需要登录使用折扣券",
-                        'data' => array(),
-                    );
-                    unset($this->session->data['couponerror_log']);
-                }else{
-                    $response = array(
-                        'code' => 1040,
-                        'message' => "无效折扣券",
-                        'data' => array(),
-                    );
-                }
-
-                $this->response->addHeader('Content-Type: application/json');
-                $this->response->setOutput(json_encode($response));
-                return;
-            }
-        }
+        //$this->session->data['coupon_product_id'] = $product_id;
 
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
@@ -276,6 +222,62 @@ class ControllerWechatOrder extends Controller
         }
 
 
+
+        $couponcode =  $this->request->json('couponcode');
+        $data['product_id'] = $this->request->json('product_id',50);
+        $product_id = $data['product_id'];
+
+        if(!isset($couponcode)) {
+            $this->load->model('extension/total/coupon');
+
+            //$log->write("couponcode=".$couponcode);
+            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id);
+
+            //$log->write("validcoupon=".$validcoupon["code"]);
+                if(isset($validcoupon ) && is_array( $validcoupon )){
+
+                    $data['couponcode'] = $couponcode;
+
+                }elseif ($validcoupon = "1044") {
+                        $response = array(
+                            'code' => 1040,
+                            'message' => "该商品无法使用该折扣券",
+                            'data' => array(),
+                        );
+                } elseif ($validcoupon = "1043") {
+                        $response = array(
+                            'code' => 1040,
+                            'message' => "您的个人折扣券使用已达到最大数量",
+                            'data' => array(),
+                        );
+                } elseif ($validcoupon = "1041") {
+                        $response = array(
+                            'code' => 1040,
+                            'message' => "折扣券活动已结束",
+                            'data' => array(),
+                        );
+                } elseif ($validcoupon = "1042") {
+                        $response = array(
+                            'code' => 1040,
+                            'message' => "您需要登录使用折扣券",
+                            'data' => array(),
+                        );
+                } else {
+                        $response = array(
+                            'code' => 1040,
+                            'message' => "无效折扣券",
+                            'data' => array(),
+                        );
+                    }
+
+                    $this->response->addHeader('Content-Type: application/json');
+                    $this->response->setOutput(json_encode($response));
+                    return;
+                }
+
+
+
+
         if(isset($this->session->data['customer_id'])) {
             $data['customer_id'] = $this->session->data['customer_id'];
         }else{
@@ -289,8 +291,7 @@ class ControllerWechatOrder extends Controller
         $data['address'] = $this->request->json('address','北京');
         $data['shipping_address_1'] = $this->request->json('shipping_address_1','北京');
         $data['shipping_date'] = $this->request->json('shipping_date','2017-1-4');
-        $data['product_id'] = $this->request->json('product_id',50);
-        $product_id = $data['product_id'];
+
 
 
         $data['invoice_prefix']='INV-2013-00';
@@ -388,20 +389,20 @@ class ControllerWechatOrder extends Controller
        
 
          $this->load->model('extension/total/coupon');
-        if(isset($this->session->data['coupon'])){
+        if(isset( $data['couponcode'])){
             $log->write("coupon".$this->session->data['coupon']);
-            $coupon_info = $this->model_extension_total_coupon->getCoupon($this->session->data['coupon']);
+            $coupon_info = $this->model_extension_total_coupon->getCoupon( $data['couponcode'], $product_id);
             if($coupon_info['type'] == 'F'){
                 $data["coupontype"] = "F";
             }
             if($coupon_info['type'] == 'P'){
                 $data["coupontype"] = "P";
             }
-            $data = $this->model_extension_total_coupon-> getTotal($data);
+            $data = $this->model_extension_total_coupon-> getTotal($data,$data['couponcode'], $product_id);
             $data['discount'] = $coupon_info['discount'];
             $data['lastprice'] = floatval($data['total']);
             //$log->write("lastprice".$data['total']);
-            unset($this->session->data['coupon']);
+            //unset($this->session->data['coupon']);
         }else{
             $data["coupontype"] = "";
             $data['discount'] = "0";
