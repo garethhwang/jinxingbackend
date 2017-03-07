@@ -237,46 +237,49 @@ class ControllerWechatOrder extends Controller
             $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id);
 
             //$log->write("validcoupon=".$validcoupon["code"]);
-                if(isset($validcoupon ) && is_array( $validcoupon )){
+            if (isset($validcoupon) && is_array($validcoupon)) {
 
-                    $data['couponcode'] = $couponcode;
+                $data['couponcode'] = $couponcode;
 
-                }elseif ($validcoupon = "1044") {
-                        $response = array(
-                            'code' => 1040,
-                            'message' => "该商品无法使用该折扣券",
-                            'data' => array(),
-                        );
+            } else {
+                if ($validcoupon = "1044") {
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "该商品无法使用该折扣券",
+                        'data' => array(),
+                    );
                 } elseif ($validcoupon = "1043") {
-                        $response = array(
-                            'code' => 1040,
-                            'message' => "您的个人折扣券使用已达到最大数量",
-                            'data' => array(),
-                        );
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "您的个人折扣券使用已达到最大数量",
+                        'data' => array(),
+                    );
                 } elseif ($validcoupon = "1041") {
-                        $response = array(
-                            'code' => 1040,
-                            'message' => "折扣券活动已结束",
-                            'data' => array(),
-                        );
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "折扣券活动已结束",
+                        'data' => array(),
+                    );
                 } elseif ($validcoupon = "1042") {
-                        $response = array(
-                            'code' => 1040,
-                            'message' => "您需要登录使用折扣券",
-                            'data' => array(),
-                        );
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "您需要登录使用折扣券",
+                        'data' => array(),
+                    );
                 } else {
-                        $response = array(
-                            'code' => 1040,
-                            'message' => "无效折扣券",
-                            'data' => array(),
-                        );
-                    }
-
-                    $this->response->addHeader('Content-Type: application/json');
-                    $this->response->setOutput(json_encode($response));
-                    return;
+                    $response = array(
+                        'code' => 1040,
+                        'message' => "无效折扣券",
+                        'data' => array(),
+                    );
                 }
+
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+
+            }
+        }
 
 
 
