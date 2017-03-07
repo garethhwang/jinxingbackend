@@ -46,6 +46,7 @@ class ControllerWechatEdituser extends Controller
 
         $this->load->model('wechat/userinfo');
         $temp = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $log->write("customer_id=".$temp["customer_id"]);
 
 
         /*$realname = $this->request->json('realname');
