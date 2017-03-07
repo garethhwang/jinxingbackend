@@ -95,7 +95,7 @@ class ControllerWechatEdituser extends Controller
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         $this->load->model('account/address');
-        $customer_address = $this->model_account_address->getAddress($temp["address_id"]);
+        $customer_address = $this->model_account_address->getAddress($temp["address_id"],$temp["customer_id"]);
 
         if (!empty($customer_info)) {
             $data['headimgurl'] = $customer_info['headimgurl'];
