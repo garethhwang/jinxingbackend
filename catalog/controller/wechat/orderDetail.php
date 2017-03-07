@@ -110,7 +110,7 @@ class ControllerWechatOrderDetail extends Controller
             $data = array_merge($order_info, $product_info, $order_totals);
 
             $this->load->model('extension/total/coupon');
-            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
+            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id,$order_info['customer_id']);
             if($coupon_info){
                 if($coupon_info['type'] == 'F'){
                     $data["coupontype"] = "F";
