@@ -145,8 +145,7 @@ class ControllerWechatOrderDetail extends Controller
             $input->SetBody($title);
             $input->SetAttach($title);
             $input->SetOut_trade_no(WxPayConfig::MCHID . date("YmdHis"));
-            //$input->SetTotal_fee((int)$price);
-            $input->SetTotal_fee(1);
+            $input->SetTotal_fee((int)$price);
             $input->SetTime_start(date("YmdHis"));
             $input->SetGoods_tag("test");
             $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
