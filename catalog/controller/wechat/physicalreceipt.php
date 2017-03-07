@@ -69,30 +69,30 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data['receipt'] = json_decode($test['receipt_text'], true)['receipt'];
 
 
-        $switch = $this->request->json('switch',array(0,0,0,0,0,0,0,0,));
-
-
-
+        $switch = $this->request->json('switch',array());
+        $temparray = array(0,0,0,0,0,0,0,0);
 
         foreach($switch as $key){
             if($key == "heart"){
-                $switch['0'] = "1";
+                $temparray['0'] = "1";
             }elseif ($key == "hyper"){
-                $switch['1'] = "1";
+                $temparrayh['1'] = "1";
             }elseif ($key == "GI"){
-                $switch['2'] = "1";
+                $temparray['2'] = "1";
             }elseif ($key == "neph"){
-                $switch['3'] = "1";
+                $temparray['3'] = "1";
             }elseif ($key == "hepa"){
-                $switch['4'] = "1";
+                $temparray['4'] = "1";
             }elseif ($key == "thy"){
-                $switch['5'] = "1";
+                $temparray['5'] = "1";
             }elseif ($key == "bloods"){
-                $switch['6'] = "1";
+                $temparray['6'] = "1";
             }elseif ($key == "otherelse"){
-                $switch['7'] = "1";
+                $temparray['7'] = "1";
             }
         }
+        $switch = $temparray;
+
         /*for ($i = 0; $i <8; $i++){
             if( $switch[$i] != "1" || !isset($switch[$i])){
                 $switch[$i] = "0";
