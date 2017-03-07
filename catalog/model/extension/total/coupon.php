@@ -1,6 +1,6 @@
 <?php
 class ModelExtensionTotalCoupon extends Model {
-	public function getCoupon($code) {
+	public function getCoupon($code,$product_id) {
 
         $log = new Log("bbb.log");
 		$status = true;
@@ -19,13 +19,13 @@ class ModelExtensionTotalCoupon extends Model {
 
 			if ($coupon_query->row['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_total'])) {
 				$status = false;
-                $this->session->data['couponerror_usetotal'] = "1" ;
+                return "1041" ;
                 //$log->write( "222222222222");
 			}
 
 			if ($coupon_query->row['logged'] && !$this->customer->getId()) {
 				$status = false;
-                $this->session->data['couponerror_log'] = "1" ;
+                return "1042" ;
                 //$log->write( "33333333");
 			}
 
@@ -34,7 +34,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
 					$status = false;
-                    $this->session->data['couponerror_customer'] = "1" ;
+                    return "1043" ;
                     //$log->write( "44444444");
 				}
 			}
@@ -61,9 +61,8 @@ class ModelExtensionTotalCoupon extends Model {
 
             if ($coupon_product_data || $coupon_category_data) {
 
-                $couponproductid  =  $this->session->data['coupon_product_id'];
-                if (in_array( $couponproductid , $coupon_product_data)) {
-                    $product_data = $couponproductid;
+                if (in_array( $product_id , $coupon_product_data)) {
+                    $product_data = $product_id;
                     //$log->write( "44444444=====".$product_data);
 
                 }
@@ -88,7 +87,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if (!$product_data) {
 					$status = false;
-                    $this->session->data['couponerror_product'] = "1" ;
+                    return  "1044" ;
                     //$log->write( "555555555");
 				}
 			}
@@ -117,14 +116,14 @@ class ModelExtensionTotalCoupon extends Model {
 		}
 	}
 
-	public function getTotal($total)
+	public function getTotal($total,$code,$product_id)
     {
         $log = new Log("bbb.log");
-        if (isset($this->session->data['coupon'])) {
+        if (isset($code)) {
             $this->load->language('extension/total/coupon');
-            $log->write("coupon".$this->session->data['coupon'] );
+            $log->write("coupon".$code);
 
-            $coupon_info = $this->getCoupon($this->session->data['coupon']);
+            $coupon_info = $this->getCoupon($code,$product_id);
 
             if ($coupon_info) {
 
@@ -175,11 +174,10 @@ class ModelExtensionTotalCoupon extends Model {
 
                     $discount_total += $discount;
                 }*/
-                $couponproductid = $this->session->data['coupon_product_id'];
                 //$log->write("id-".$couponproductid );
                 //$log->write("productid-".$coupon_info['product'] );
                 //$log->write("total-".$total['total']);
-                if ($couponproductid == $coupon_info['product']) {
+                if ($product_id == $coupon_info['product']) {
                     if ($coupon_info['type'] == 'F') {
                         $discount = $coupon_info['discount'];
                     } elseif ($coupon_info['type'] == 'P') {
@@ -217,7 +215,7 @@ class ModelExtensionTotalCoupon extends Model {
 
                     $total['totals'][] = array(
                         'code' => 'coupon',
-                        'title' => sprintf($this->language->get('text_coupon'), $this->session->data['coupon']),
+                        'title' => sprintf($this->language->get('text_coupon'), $code),
                         'value' => -$discount_total,
                         'sort_order' => $this->config->get('coupon_sort_order')
                     );
@@ -262,9 +260,9 @@ class ModelExtensionTotalCoupon extends Model {
     }*/
 
 
-    public function getCouponInfo($order_id) {
+    public function getCouponInfo($order_id,$customer_id) {
 
-        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "' AND customer_id = '" . $customer_id . "'");
         $coupon_info = $query->row;
         if($coupon_info){
             $result = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE coupon_id = '" . (int)$coupon_info['coupon_id']."'");
