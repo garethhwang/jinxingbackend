@@ -202,7 +202,7 @@ class ControllerWechatOrder extends Controller
             $data["openid"] = "";
         }
         //wechat
-        /*$code = $this->request->json("code","");
+        $code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -219,10 +219,16 @@ class ControllerWechatOrder extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
+
+        if(isset($this->session->data['customer_id'])) {
+            $data['customer_id'] = $this->session->data['customer_id'];
+        }else{
+            $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data['openid']);
+        }
 
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $couponcode =  $this->request->json('couponcode',"");
 
@@ -234,7 +240,7 @@ class ControllerWechatOrder extends Controller
             $this->load->model('extension/total/coupon');
 
             //$log->write("couponcode=".$couponcode);
-            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id);
+            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id,$data['customer_id']);
 
             //$log->write("validcoupon=".$validcoupon["code"]);
             if (isset($validcoupon) && is_array($validcoupon)) {
@@ -284,11 +290,7 @@ class ControllerWechatOrder extends Controller
 
 
 
-        if(isset($this->session->data['customer_id'])) {
-            $data['customer_id'] = $this->session->data['customer_id'];
-        }else{
-            $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data['openid']);
-        }
+
 
 
         $data['productCount'] = $this->request->json('productCount',1);
@@ -397,7 +399,7 @@ class ControllerWechatOrder extends Controller
          $this->load->model('extension/total/coupon');
         if(isset( $data['couponcode'])){
 
-            $coupon_info = $this->model_extension_total_coupon->getCoupon( $data['couponcode'], $product_id);
+            $coupon_info = $this->model_extension_total_coupon->getCoupon( $data['couponcode'], $product_id,$data['customer_id']);
             if($coupon_info['type'] == 'F'){
                 $data["coupontype"] = "F";
             }

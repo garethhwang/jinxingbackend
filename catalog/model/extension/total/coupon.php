@@ -1,6 +1,6 @@
 <?php
 class ModelExtensionTotalCoupon extends Model {
-	public function getCoupon($code,$product_id) {
+	public function getCoupon($code,$product_id,$customer_id) {
 
         $log = new Log("bbb.log");
 		$status = true;
@@ -23,14 +23,14 @@ class ModelExtensionTotalCoupon extends Model {
                 //$log->write( "222222222222");
 			}
 
-			if ($coupon_query->row['logged'] && !$this->customer->getId()) {
+			if ($coupon_query->row['logged'] && !$customer_id) {
 				$status = false;
                 //return "1042" ;
                 //$log->write( "33333333");
 			}
 
-			if ($this->customer->getId()) {
-				$coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "' AND ch.customer_id = '" . (int)$this->customer->getId() . "'");
+			if ($customer_id) {
+				$coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon_query->row['coupon_id'] . "' AND ch.customer_id = '" . (int)$customer_id . "'");
 
 				if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
 					$status = false;
