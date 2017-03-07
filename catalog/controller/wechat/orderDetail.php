@@ -48,7 +48,7 @@ class ControllerWechatOrderDetail extends Controller
 
         $order_id = $this->request->json('order_id', 0);
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $temp['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
