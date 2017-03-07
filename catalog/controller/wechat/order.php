@@ -257,7 +257,7 @@ class ControllerWechatOrder extends Controller
                 } elseif ($validcoupon = "1043") {
                     $response = array(
                         'code' => 1040,
-                        'message' => "您的个人折扣券使用已达到最大数量",
+                        'message' => "您的个人折扣券使用已超过最大使用量",
                         'data' => array(),
                     );
                 } elseif ($validcoupon = "1041") {
