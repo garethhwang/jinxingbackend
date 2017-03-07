@@ -202,7 +202,7 @@ class ControllerWechatOrder extends Controller
             $data["openid"] = "";
         }
         //wechat
-        /*$code = $this->request->json("code","");
+        $code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -219,9 +219,9 @@ class ControllerWechatOrder extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if(isset($this->session->data['customer_id'])) {
             $data['customer_id'] = $this->session->data['customer_id'];
@@ -422,6 +422,7 @@ class ControllerWechatOrder extends Controller
         $json['order_id']=$this->model_checkout_order->addOrder($data);
         $data['order_id']=$json['order_id'];
 
+
         // Set the order history
 
          $order_status_id = $this->request->json('order_status_id');
@@ -435,6 +436,10 @@ class ControllerWechatOrder extends Controller
         }
 
         $this->model_checkout_order->addOrderHistory($json['order_id'], $order_status_id);
+
+
+        //$this->load->model('extension/total/coupon');
+        //$this->model_extension_total_coupon->confirm($order_info, $order_total);
 
 
         /**  pay for product */
