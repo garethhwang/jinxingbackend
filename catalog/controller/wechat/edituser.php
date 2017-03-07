@@ -660,7 +660,7 @@ class ControllerWechatEdituser extends Controller
 
     public function modify(){
 
-        //$log = new Log("wechat.log");
+        $log = new Log("wechat.log");
 
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         if(isset($this->session->data['openid'])){
@@ -717,6 +717,9 @@ class ControllerWechatEdituser extends Controller
         $data['householdregister'] = $this->request->json('householdregister', '');
         $data['district'] = $this->request->json('district', '');
         $data['address_1'] = $this->request->json('address_1','');
+
+
+        $log->write( 'aa='.$data['district'].'bb='.$data['department']);
 
 
         $postdata  = array(
