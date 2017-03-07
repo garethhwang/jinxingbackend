@@ -262,9 +262,9 @@ class ModelExtensionTotalCoupon extends Model {
     }*/
 
 
-    public function getCouponInfo($order_id) {
+    public function getCouponInfo($order_id,$customer_id) {
 
-        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon_history` WHERE order_id = '" . (int)$order_id . "' AND customer_id = '" . $customer_id . "'");
         $coupon_info = $query->row;
         if($coupon_info){
             $result = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE coupon_id = '" . (int)$coupon_info['coupon_id']."'");
