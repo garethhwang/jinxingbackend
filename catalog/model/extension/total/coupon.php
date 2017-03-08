@@ -127,7 +127,6 @@ class ModelExtensionTotalCoupon extends Model {
             $this->load->language('extension/total/coupon');
 
             $coupon_info = $this->getCoupon($code,$product_id,$customer_id);
-            //$log->write("coupon==".$coupon_info);
 
             if (is_array($coupon_info)) {
 
