@@ -736,7 +736,7 @@ class ControllerWechatOrdercenter extends Controller
 
         $this->document->setTitle("删除订单");
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        //$this->session->data['openid']=' oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
 
 
@@ -747,7 +747,7 @@ class ControllerWechatOrdercenter extends Controller
             $data["openid"] = "";
         }
         //wechat
-        $code = $this->request->json("code","");
+        /*$code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -764,8 +764,9 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
+        $data['openid']=' oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $order_id = $this->request->json('order_id', 0);
 
         $this->load->model('wechat/ordercenter');
@@ -787,6 +788,16 @@ class ControllerWechatOrdercenter extends Controller
             $this->model_extension_total_coupon->unconfirm($order_id);
 
         }
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "已成功删除该订单",
+            'data' =>array(),
+        );
+        //$response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
 
 
 
