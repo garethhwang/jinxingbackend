@@ -215,6 +215,7 @@ class ModelExtensionTotalCoupon extends Model {
                     $discount_total = $total;
                 }
 
+                $log->write("discount_total=".$discount_total);
 
                 if ($discount_total > 0) {
 
@@ -225,6 +226,7 @@ class ModelExtensionTotalCoupon extends Model {
                         'sort_order' => $this->config->get('coupon_sort_order')
                     );
 
+                    $log->write("_total=".$total['total']);
 
                     $total['total'] -= $discount_total;
 
