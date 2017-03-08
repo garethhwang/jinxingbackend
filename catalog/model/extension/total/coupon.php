@@ -184,7 +184,7 @@ class ModelExtensionTotalCoupon extends Model {
                 if ($product_id == $coupon_info['product']) {
                     if ($coupon_info['type'] == 'F') {
                         $discount = $coupon_info['discount'];
-                        $log->write("discount=".$coupon_info['discount']);
+
                     } elseif ($coupon_info['type'] == 'P') {
                         $discount = $total['total'] / 100 * $coupon_info['discount'];
                         if(is_float($discount)){
@@ -194,7 +194,7 @@ class ModelExtensionTotalCoupon extends Model {
 
                     $discount_total += $discount;
 
-                    //$log->write("discount_total" . $discount_total);
+                    $log->write("discount_total11111" . $discount_total);
                 }
 
                 if ($coupon_info['shipping'] && isset($this->session->data['shipping_method'])) {
@@ -215,6 +215,9 @@ class ModelExtensionTotalCoupon extends Model {
                 if ($discount_total > $total) {
                     $discount_total = $total;
                 }
+
+
+                $log->write("discount_tota22222" . $discount_total);
 
                 if ($discount_total > 0) {
 
