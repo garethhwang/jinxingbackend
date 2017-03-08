@@ -214,6 +214,7 @@ class ModelExtensionTotalCoupon extends Model {
                     $discount_total = $total;
                 }
 
+                $log->write("discount_total=".$discount_total);
 
                 if ($discount_total > 0) {
 
