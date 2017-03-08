@@ -194,7 +194,6 @@ class ModelExtensionTotalCoupon extends Model {
 
                     $discount_total += $discount;
 
-                    $log->write("discount_total11111" . $discount_total);
                 }
 
                 if ($coupon_info['shipping'] && isset($this->session->data['shipping_method'])) {
@@ -217,8 +216,6 @@ class ModelExtensionTotalCoupon extends Model {
                 }
 
 
-                $log->write("discount_tota22222" . $discount_total);
-
                 if ($discount_total > 0) {
 
                     $total['totals'][] = array(
@@ -228,7 +225,10 @@ class ModelExtensionTotalCoupon extends Model {
                         'sort_order' => $this->config->get('coupon_sort_order')
                     );
 
+                    $log->write("totaL11111" . $total['total']);
                     $total['total'] -= $discount_total;
+                    $log->write("totaL22222" . $total['total']);
+
 
                 }
 
