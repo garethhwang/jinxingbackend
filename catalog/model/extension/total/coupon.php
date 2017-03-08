@@ -129,7 +129,7 @@ class ModelExtensionTotalCoupon extends Model {
 
             $coupon_info = $this->getCoupon($code,$product_id,$customer_id);
 
-            if (is_array($coupon_info)) {
+            if ($coupon_info) {
 
                 $discount_total = 0;
 
