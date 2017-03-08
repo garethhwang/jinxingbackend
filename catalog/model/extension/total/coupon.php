@@ -225,9 +225,9 @@ class ModelExtensionTotalCoupon extends Model {
                         'sort_order' => $this->config->get('coupon_sort_order')
                     );
 
-                    $log->write("totaL11111" . $total['total']);
+
                     $total['total'] -= $discount_total;
-                    $log->write("totaL22222" . $total['total']);
+
 
 
                 }
