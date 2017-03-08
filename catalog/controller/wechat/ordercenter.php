@@ -778,9 +778,6 @@ class ControllerWechatOrdercenter extends Controller
 
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
-        $this->load->model('checkout/order');
-        $this->model_checkout_order->deleteOrder($order_id);
-
         if (in_array( $order_id , $allorderids)) {
 
             $this->load->model('extension/total/coupon');
@@ -788,6 +785,10 @@ class ControllerWechatOrdercenter extends Controller
             $this->model_extension_total_coupon->unconfirm($order_id);
 
         }
+
+        $this->load->model('checkout/order');
+        $this->model_checkout_order->deleteOrder($order_id);
+
 
         $response = array(
             'code'  => 0,
