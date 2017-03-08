@@ -93,8 +93,8 @@ class ControllerWechatOrderDetail extends Controller
                         'model' => $product['model'],
                         'option' => $option_data,
                         'quantity' => $product['quantity'],
-                        'price' => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
-                        'total' => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+                        'price' => $product['price'],
+                        'total' => $product['total'],
                         'href' => $this->url->link('catalog/product/edit', 'product_id=' . $product['product_id'], true)
                     );
 
