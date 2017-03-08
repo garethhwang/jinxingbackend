@@ -55,6 +55,9 @@ class ControllerWechatOrderDetail extends Controller
             $data['order_id']=$order_id;
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id);
 
+            $log->write("totaL44444" . $order_info['total']);
+
+
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id);
 
             foreach ($products as $product) {
