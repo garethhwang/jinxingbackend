@@ -242,7 +242,7 @@ class ControllerWechatOrder extends Controller
             //$log->write("couponcode=".$couponcode);
             $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id,$data['customer_id']);
 
-            $log->write("validcoupon=".$validcoupon);
+            //$log->write("validcoupon=".$validcoupon);
 
             //$log->write("validcoupon=".$validcoupon["code"]);
             if (isset($validcoupon) && is_array($validcoupon)) {
@@ -250,25 +250,25 @@ class ControllerWechatOrder extends Controller
                 $data['couponcode'] = $couponcode;
 
             } else {
-                if ($validcoupon = "1044") {
+                if ($validcoupon == "1044") {
                     $response = array(
                         'code' => 1040,
                         'message' => "该商品无法使用该折扣券",
                         'data' => array(),
                     );
-                } elseif ($validcoupon = "1043") {
+                } elseif ($validcoupon == "1043") {
                     $response = array(
                         'code' => 1040,
                         'message' => "您的个人折扣券使用已超过最大使用量",
                         'data' => array(),
                     );
-                } elseif ($validcoupon = "1041") {
+                } elseif ($validcoupon == "1041") {
                     $response = array(
                         'code' => 1040,
                         'message' => "折扣券活动已结束",
                         'data' => array(),
                     );
-                } elseif ($validcoupon = "1042") {
+                } elseif ($validcoupon == "1042") {
                     $response = array(
                         'code' => 1040,
                         'message' => "您需要登录使用折扣券",
