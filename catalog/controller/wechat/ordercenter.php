@@ -734,6 +734,9 @@ class ControllerWechatOrdercenter extends Controller
 
     public function delete(){
 
+        $log = new Log("wechat.log");
+
+
         $this->document->setTitle("删除订单");
 
         //$this->session->data['openid']=' oKe2EwWLwAU7EQu7rNof5dfG1U8g';
@@ -778,16 +781,19 @@ class ControllerWechatOrdercenter extends Controller
 
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
+        $log->write("orderid=".$allorderids[0]);
         if (in_array( $order_id , $allorderids)) {
 
             $this->load->model('extension/total/coupon');
+
+            $log->write("1111111=".$allorderids[0]);
 
             $this->model_extension_total_coupon->unconfirm($order_id);
 
         }
 
         $this->load->model('checkout/order');
-        $this->model_checkout_order->deleteOrder($order_id);
+       // $this->model_checkout_order->deleteOrder($order_id);
 
 
         $response = array(
