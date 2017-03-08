@@ -122,7 +122,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 	public function getTotal($total,$code,$product_id,$customer_id)
     {
-        $log = new Log("bbb.log");
+        $log = new Log("wechat.log");
         if (isset($code)) {
             $this->load->language('extension/total/coupon');
             $log->write("coupon".$code);
@@ -184,6 +184,7 @@ class ModelExtensionTotalCoupon extends Model {
                 if ($product_id == $coupon_info['product']) {
                     if ($coupon_info['type'] == 'F') {
                         $discount = $coupon_info['discount'];
+                        $log->write("discount=".$coupon_info['discount']);
                     } elseif ($coupon_info['type'] == 'P') {
                         $discount = $total['total'] / 100 * $coupon_info['discount'];
                         if(is_float($discount)){
