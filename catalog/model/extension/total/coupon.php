@@ -133,6 +133,8 @@ class ModelExtensionTotalCoupon extends Model {
 
                 $discount_total = 0;
 
+                $log->write("12312312");
+
                 /*if (!$coupon_info['product']) {
                     $sub_total = $this->cart->getSubTotal();
                 } else {
