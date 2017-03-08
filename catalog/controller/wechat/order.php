@@ -242,6 +242,8 @@ class ControllerWechatOrder extends Controller
             //$log->write("couponcode=".$couponcode);
             $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id,$data['customer_id']);
 
+            $log->write("validcoupon=".$validcoupon);
+
             //$log->write("validcoupon=".$validcoupon["code"]);
             if (isset($validcoupon) && is_array($validcoupon)) {
 
