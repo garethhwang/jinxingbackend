@@ -12,7 +12,7 @@ class ControllerWechatRegister extends Controller
 
                 $code = rand(100000 ,999999);
 
-                $sms = $this->sendTemplateSMS($telephone, array($code, '5'), "158167");
+                $sms = $this->sendTemplateSMS($telephone, array($code, '5'), "157827");
 
                 //$log->write("smscode=".$code);
 
