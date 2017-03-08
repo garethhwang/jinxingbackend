@@ -19,14 +19,14 @@ class ModelExtensionTotalCoupon extends Model {
 
 			if ($coupon_query->row['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_total'])) {
 				$status = false;
-                $log->write( "222222222222");
+                //$log->write( "222222222222");
                 return "1041" ;
 
 			}
 
 			if ($coupon_query->row['logged'] && !$customer_id) {
 				$status = false;
-                $log->write( "33333333");
+                //$log->write( "33333333");
                 return "1042" ;
 
 			}
@@ -36,7 +36,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
 					$status = false;
-                    $log->write( "44444444");
+                    //$log->write( "44444444");
                     return "1043" ;
 
 				}
@@ -90,7 +90,7 @@ class ModelExtensionTotalCoupon extends Model {
 
 				if (!$product_data) {
 					$status = false;
-                    $log->write( "555555555");
+                    //$log->write( "555555555");
                     return  "1044" ;
 
 				}
