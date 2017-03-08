@@ -125,9 +125,9 @@ class ModelExtensionTotalCoupon extends Model {
         $log = new Log("wechat.log");
         if (isset($code)) {
             $this->load->language('extension/total/coupon');
-            $log->write("coupon".$code);
 
             $coupon_info = $this->getCoupon($code,$product_id,$customer_id);
+            $log->write("coupon==".$coupon_info);
 
             if (is_array($coupon_info)) {
 
