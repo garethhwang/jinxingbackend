@@ -141,7 +141,7 @@ class ControllerWechatOrdercenter extends Controller
                 );
             }
             $data['orders'][] = array_merge($order_info, $product_info, $order_totals);
-            $data['orders'][]['total']=floatval( $data['orders'][]['total']);
+            //$data['orders'][]['total']=floatval( $data['orders'][]['total']);
         }
 
         $this->session->data["nav"]="order";
