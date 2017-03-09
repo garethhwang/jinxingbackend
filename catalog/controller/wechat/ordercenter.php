@@ -787,19 +787,25 @@ class ControllerWechatOrdercenter extends Controller
 
             if ($order_id == $id['order_id']) {
 
-                $log->write("11111111111111");
-
                 $this->load->model('extension/total/coupon');
 
                 $this->model_extension_total_coupon->unconfirm($order_id);
 
             }
         }
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_option` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_total` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_history` WHERE order_id = '" . (int)$order_id . "'");
+        $this->db->query("DELETE `or`, ort FROM `" . DB_PREFIX . "order_recurring` `or`, `" . DB_PREFIX . "order_recurring_transaction` `ort` WHERE order_id = '" . (int)$order_id . "' AND ort.order_recurring_id = `or`.order_recurring_id");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "affiliate_transaction` WHERE order_id = '" . (int)$order_id . "'");
 
+        // Gift Voucher
+        $this->load->model('extension/total/voucher');
 
-
-        $this->load->model('checkout/order');
-        $this->model_checkout_order->deleteOrder($order_id);
+        $this->model_extension_total_voucher->disableVoucher($order_id);
 
 
         $response = array(
