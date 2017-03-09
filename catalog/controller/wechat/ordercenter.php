@@ -789,6 +789,9 @@ class ControllerWechatOrdercenter extends Controller
 
         if (in_array( $order_id , $allorderids)) {
 
+
+            $log->write("11111111111111");
+
             $this->load->model('extension/total/coupon');
 
             $this->model_extension_total_coupon->unconfirm($order_id);
