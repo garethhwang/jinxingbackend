@@ -739,10 +739,6 @@ class ControllerWechatOrdercenter extends Controller
 
         $this->document->setTitle("删除订单");
 
-        //$this->session->data['openid']=' oKe2EwWLwAU7EQu7rNof5dfG1U8g';
-
-
-
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
@@ -750,7 +746,7 @@ class ControllerWechatOrdercenter extends Controller
             $data["openid"] = "";
         }
         //wechat
-        /*$code = $this->request->json("code","");
+        $code = $this->request->json("code","");
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -767,9 +763,9 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
-        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $order_id = $this->request->json('order_id', 0);
 
         $this->load->model('wechat/ordercenter');
@@ -779,7 +775,7 @@ class ControllerWechatOrdercenter extends Controller
             $data['customer_id'] = "0";
         }
 
-        $log->write("CUSTOMERid=". $data['customer_id']);
+       // $log->write("CUSTOMERid=". $data['customer_id']);
 
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
@@ -788,8 +784,6 @@ class ControllerWechatOrdercenter extends Controller
             if ($order_id == $id['order_id']) {
 
                 $this->load->model('extension/total/coupon');
-
-                $log->write("214324324");
 
                 $this->model_extension_total_coupon->unconfirm($order_id);
 
