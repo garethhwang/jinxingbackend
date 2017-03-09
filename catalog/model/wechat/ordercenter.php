@@ -11,6 +11,8 @@ class ModelWechatOrdercenter extends Model
     public function getCustomeridByOpenid($openid) {
         $wechat_query = $this->db->query("select *,  (SELECT customer_id FROM " . DB_PREFIX . "customer c WHERE c.wechat_id = o.wechat_id) AS customer_id from wechat_user o where o.openid='".$openid."' ");
 
+        $log=new Log('api.log');
+        $log->write("select *,  (SELECT customer_id FROM " . DB_PREFIX . "customer c WHERE c.wechat_id = o.wechat_id) AS customer_id from wechat_user o where o.openid='".$openid."'");
         if ($wechat_query->num_rows) {
             $this->session->data['customer_id'] = $wechat_query->row['customer_id'];
 
