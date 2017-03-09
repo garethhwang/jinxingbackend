@@ -779,6 +779,8 @@ class ControllerWechatOrdercenter extends Controller
             $data['customer_id'] = "0";
         }
 
+        $log->write("CUSTOMERid=". $data['customer_id']);
+
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
         foreach ($allorderids as $id){
