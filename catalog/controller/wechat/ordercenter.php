@@ -787,7 +787,7 @@ class ControllerWechatOrdercenter extends Controller
             $log->write("orderid=".$id['order_id']);
         }
 
-        if (in_array( $order_id , $allorderids['order_id'])) {
+        if (in_array( $order_id , $allorderids)) {
 
             $this->load->model('extension/total/coupon');
 
