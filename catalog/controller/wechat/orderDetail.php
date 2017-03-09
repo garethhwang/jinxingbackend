@@ -111,6 +111,10 @@ class ControllerWechatOrderDetail extends Controller
                 );
             }
 
+            $product_info['products'][0]['price']=floatval($product_info['products'][0]['price']);
+            $product_info['products'][0]['total']=floatval($product_info['products'][0]['total']);
+
+
             $data = array_merge($order_info, $product_info, $order_totals);
 
             $product_info['products'][0]['price']=floatval($product_info['products'][0]['price']);
