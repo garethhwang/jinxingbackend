@@ -769,7 +769,7 @@ class ControllerWechatOrdercenter extends Controller
             return;
         }*/
 
-        $data['openid']=' oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $order_id = $this->request->json('order_id', 0);
 
         $this->load->model('wechat/ordercenter');
