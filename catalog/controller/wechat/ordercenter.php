@@ -87,6 +87,7 @@ class ControllerWechatOrdercenter extends Controller
             $log->write($order_id['order_id']);
             $this->load->model('wechat/ordercenter');
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
+            $order_info['total']=floatval( $order_info['total']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
             $product_info = array();
@@ -141,7 +142,7 @@ class ControllerWechatOrdercenter extends Controller
                 );
             }
             $data['orders'][] = array_merge($order_info, $product_info, $order_totals);
-            //$data['orders'][]['total']=floatval( $data['orders'][]['total']);
+
         }
 
         $this->session->data["nav"]="order";
