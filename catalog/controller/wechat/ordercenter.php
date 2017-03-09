@@ -799,7 +799,7 @@ class ControllerWechatOrdercenter extends Controller
 
 
         $this->load->model('checkout/order');
-       // $this->model_checkout_order->deleteOrder($order_id);
+        $this->model_checkout_order->deleteOrder($order_id);
 
 
         $response = array(
