@@ -784,19 +784,19 @@ class ControllerWechatOrdercenter extends Controller
         $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
         foreach ($allorderids as $id){
-            $log->write("orderid=".$id['order_id']);
+
+            if ($order_id == $id['order_id']) {
+
+                $log->write("11111111111111");
+
+                $this->load->model('extension/total/coupon');
+
+                $this->model_extension_total_coupon->unconfirm($order_id);
+
+            }
         }
 
-        if (in_array( $order_id , $allorderids)) {
 
-
-            $log->write("11111111111111");
-
-            $this->load->model('extension/total/coupon');
-
-            $this->model_extension_total_coupon->unconfirm($order_id);
-
-        }
 
         $this->load->model('checkout/order');
        // $this->model_checkout_order->deleteOrder($order_id);
