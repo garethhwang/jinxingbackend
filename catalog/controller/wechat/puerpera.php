@@ -152,7 +152,7 @@ class ControllerWechatPuerpera extends Controller
             $data['isnotright'] = '1';
         } else {
             $data['isnotright'] = '0';
-            $this->model_account_customer->addPuerpera($postdata);
+            //$this->model_account_customer->addPuerpera($postdata);
             $this->customer->puerperatlogin($data["openid"]);
             unset($this->session->data['guest']);
             //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
