@@ -62,6 +62,7 @@ class ControllerWechatPuerpera extends Controller
     {
         $log = new Log("wechat.log");
 
+
         if (isset($this->session->data['openid'])) {
             $data["openid"] = $this->session->data['openid'];
         } else {
@@ -115,6 +116,9 @@ class ControllerWechatPuerpera extends Controller
              echo $output = json_encode(array('msgid' => $msgid, 'html' => $html));
             return  $output ;
         }*/
+
+
+        $data["openid"] = "oKe2EwWLwAU7EQu7rNof5dfG1U8g";
 
 
         $data['telephone'] = $this->request->json('telephone', '');
