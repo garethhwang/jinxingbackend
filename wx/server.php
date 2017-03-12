@@ -5,7 +5,7 @@
  * @author NetPuter <netputer@gmail.com>
  */
 
-require('../src/Wechat.php');
+require('/home/work/www/BeJinXingJK/www/wx/src/Wechat.php');
 $token = "weixin";
 $appid="wx5ce715491b2cf046";
 $redirect_uri="http://wechat.jinxingjk.com/";
