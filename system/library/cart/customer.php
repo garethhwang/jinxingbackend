@@ -141,10 +141,9 @@ class Customer {
             $this->telephone = $puerpera_query->row['telephone'];
             $this->babybirth = $puerpera_query->row['babybirth'];
             $this->telephone = $puerpera_query->row['telephone'];
-            $this->district = $puerpera_query->row['district'];
             $this->wechat_id = $puerpera_query->row['wechat_id'];
             $this->pregnantstatus = $puerpera_query->row['pregnantstatus'];
-            $this->address_1 = $puerpera_query->row['address_1'];
+
 
             return true;
         } else {
