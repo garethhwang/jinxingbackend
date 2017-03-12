@@ -118,7 +118,7 @@ class ControllerWechatPuerpera extends Controller
         }*/
 
 
-        $data["openid"] = "oKe2EwWLwAU7EQu7rNof5dfG1U8g";
+        //$data["openid"] = "oKe2EwWLwAU7EQu7rNof5dfG1U8g";
 
 
         $data['telephone'] = $this->request->json('telephone', '');
