@@ -99,10 +99,14 @@ class ControllerWechatOrderStatusUpdate extends Controller
                     'text'  => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])
                 );
             }
+
+            $product_info['products'][0]['price']=floatval($product_info['products'][0]['price']);
+            $product_info['products'][0]['total']=floatval($product_info['products'][0]['total']);
+
             $data = array_merge($order_info, $product_info, $order_totals);
 
             $this->load->model('extension/total/coupon');
-            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id);
+            $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id,$order_info['customer_id']);
             if($coupon_info){
                 if($coupon_info['type'] == 'F'){
                     $data["coupontype"] = "F";
@@ -110,10 +114,11 @@ class ControllerWechatOrderStatusUpdate extends Controller
                 if($coupon_info['type'] == 'P'){
                     $data["coupontype"] = "P";
                 }
-                $coupon = $this->model_extension_total_coupon-> getTotal($order_info);
-                $data['discount'] = $coupon_info['discount'];
-                $data['lastprice'] = floatval($coupon['total']);
-                unset($this->session->data['coupon']);
+                //$coupon = $this->model_extension_total_coupon-> getTotal($product_info['products'][0], $coupon_info['code'],$product_info['products'][0]['product_id'],$order_info['customer_id']);
+                $data['discount'] =  floatval($coupon_info['discount']);
+                $data['lastprice'] = floatval($order_info['total']);
+                //$log->write("lastprice".$data['lastprice']);
+                //unset($this->session->data['coupon']);
             }else{
                 $data["coupontype"] = "";
                 $data['discount'] = "0";
