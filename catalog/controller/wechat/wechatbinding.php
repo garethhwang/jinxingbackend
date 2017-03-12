@@ -117,6 +117,7 @@ class ControllerWechatWechatbinding extends Controller
         $data['smscode'] = $this->request->json('smscode', 0);
         $data['realname'] = $this->request->json('realname', '');
         $data['pregnantstatus'] =  $this->request->json('pregnantstatus', '');
+        $data['babybirth'] = $this->request->json('babybirth', '');
         $data['district'] = $this->request->json('district', '');
         $data['address_1'] = $this->request->json('address_1','');
 
@@ -128,6 +129,7 @@ class ControllerWechatWechatbinding extends Controller
             'realname'  => $data['realname'],
             'smscode'  => $data['smscode'],
             'pregnantstatus' => $data['pregnantstatus'],
+            'babybirth' => $data['babybirth'],
             'district' => $data['district'],
             'address_1' => $data['address_1'],
             );

@@ -111,23 +111,48 @@ class Customer {
 
     public function nonpregnantlogin($openid) {
 
-        $nonpregnant_query = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id AND status = '1'");
+    $nonpregnant_query = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id AND status = '1'");
 
-        if ($nonpregnant_query->num_rows) {
-            $this->session->data['customer_id'] = $nonpregnant_query->row['customer_id'];
+    if ($nonpregnant_query->num_rows) {
+        $this->session->data['customer_id'] = $nonpregnant_query->row['customer_id'];
 
-            $this->customer_id = $nonpregnant_query->row['customer_id'];
-            $this->realname = $nonpregnant_query->row['realname'];
-            $this->telephone = $nonpregnant_query->row['telephone'];
-            $this->address_id = $nonpregnant_query->row['address_id'];
-            $this->wechat_id = $nonpregnant_query->row['wechat_id'];
-            $this->pregnantstatus = $nonpregnant_query->row['pregnantstatus'];
+        $this->customer_id = $nonpregnant_query->row['customer_id'];
+        $this->realname = $nonpregnant_query->row['realname'];
+        $this->telephone = $nonpregnant_query->row['telephone'];
+        $this->address_id = $nonpregnant_query->row['address_id'];
+        $this->wechat_id = $nonpregnant_query->row['wechat_id'];
+        $this->pregnantstatus = $nonpregnant_query->row['pregnantstatus'];
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
+    public function puerperalogin($openid) {
+
+        $puerpera_query = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id AND status = '1'");
+
+        if ($puerpera_query->num_rows) {
+            $this->session->data['customer_id'] = $puerpera_query->row['customer_id'];
+
+            $this->customer_id = $puerpera_query->row['customer_id'];
+            $this->realname = $puerpera_query->row['realname'];
+            $this->telephone = $puerpera_query->row['telephone'];
+            $this->babybirth = $puerpera_query->row['babybirth'];
+            $this->telephone = $puerpera_query->row['telephone'];
+            $this->district = $puerpera_query->row['district'];
+            $this->wechat_id = $puerpera_query->row['wechat_id'];
+            $this->pregnantstatus = $puerpera_query->row['pregnantstatus'];
+            $this->address_1 = $puerpera_query->row['address_1'];
 
             return true;
         } else {
             return false;
         }
     }
+
+
 
 
 
