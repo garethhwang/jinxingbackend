@@ -125,12 +125,13 @@ class ControllerDoctorRegister extends Controller
 
             if(in_array($data['telephone'],$telephone_info)) {
 
+                $log->write("telephone=1111111");
                 $doctor_info = $this->model_doctor_doctor->getCustomerByTelephone($data['telephone']);
                 $data["doctor_id"] = $doctor_info["doctor_id"] ;
 
             } else {
 
-                $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
+                //$data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
 
             }
             //$this->customer->wechatlogin($data["openid"]);
