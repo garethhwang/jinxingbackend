@@ -54,7 +54,7 @@ class ModelDoctorDoctor extends Model
     {
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE telephone = '" . (int)$telephone . "'");
 
-        return $query->rows ;
+        return $query->row ;
     }
 
 
