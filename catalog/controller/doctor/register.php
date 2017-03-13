@@ -121,7 +121,7 @@ class ControllerDoctorRegister extends Controller
 
             $telephone_info = $this->model_doctor_doctor->getTelephone();
 
-            $log->write("telephone=". $telephone_info);
+            //$log->write("telephone=". $telephone_info);
 
             if(in_array($data['telephone'],$telephone_info)) {
 
