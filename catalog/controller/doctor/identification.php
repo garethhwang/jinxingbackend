@@ -129,10 +129,10 @@ class ControllerDoctorIdentification extends Controller
             }
             else
             {
-                $fileurl = $this->createIdentificationUrl($customer_id);
-                $date = date("Y-m-d");
-                $filename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"];
-                $filename = md5($filename);
+                //$fileurl = $this->createIdentificationUrl($customer_id);
+                //$date = date("Y-m-d");
+                //$filename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"];
+                //$filename = md5($filename);
                 // 判断当期目录下的 upload 目录是否存在该文件
                 // 如果没有 upload 目录，你需要创建它，upload 目录权限为 777
                 //if (file_exists("image/" . $_FILES["file"]["name"]))
@@ -142,16 +142,16 @@ class ControllerDoctorIdentification extends Controller
                 //else
                 //{
                     // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-                    move_uploaded_file($_FILES["file"]["tmp_name"], $fileurl.$filename);
+                    move_uploaded_file($_FILES["file"]["tmp_name"], "image/".$_FILES["file"]["name"]/*$fileurl.$filename*/);
                     //echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
                 //}
 
                 $result = array(
                     'fileoriginname' => $_FILES["file"]["name"],
-                    'filename' => $filename,
+                    //'filename' => $filename,
                     'filetype' => $_FILES["file"]["type"],
                     'filesize' => ($_FILES["file"]["size"] / 1024),
-                    'fileurl' => $fileurl.$filename
+                    'fileurl' => "image/".$_FILES["file"]["name"]//$fileurl.$filename
                 );
 
 
