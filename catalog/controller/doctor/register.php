@@ -121,6 +121,8 @@ class ControllerDoctorRegister extends Controller
 
             $telephone_info = $this->model_doctor_doctor->getTelephone();
 
+            var_dump($telephone_info);
+
             if(in_array($data['telephone'],$telephone_info)) {
 
                 $doctor_info = $this->model_doctor_doctor->getCustomerByTelephone($data['telephone']);
