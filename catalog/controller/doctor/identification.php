@@ -150,7 +150,7 @@ class ControllerDoctorIdentification extends Controller
                     'filename' => $_FILES["file"]["name"],
                     'filetype' => $_FILES["file"]["type"],
                     'filesize' => ($_FILES["file"]["size"] / 1024),
-                    'filetmpurl' => "be.jinxingjk.com/image/".$_FILES["file"]["tmp_name"]
+                    'fileurl' => "be.jinxingjk.com/image/".$_FILES["file"]["tmp_name"]
                 );
 
 
