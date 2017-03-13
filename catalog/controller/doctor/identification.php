@@ -116,7 +116,7 @@ class ControllerDoctorIdentification extends Controller
                 || ($_FILES["images"]["type"] == "image/pjpeg")
                 || ($_FILES["images"]["type"] == "image/x-png")
                 || ($_FILES["images"]["type"] == "image/png"))
-            && ($_FILES["images"]["size"] < 204800)   // 小于 200 kb
+            && ($_FILES["images"]["size"] < 209715200)   // 小于 200 kb
             && in_array($extension, $allowedExts))
         {
             if ($_FILES["images"]["error"] > 0)
