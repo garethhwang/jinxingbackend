@@ -134,7 +134,7 @@ class ControllerDoctorRegister extends Controller
             }
             if(!isset( $data["doctor_id"])) {
 
-                //$data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
+                $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
 
             }
 
