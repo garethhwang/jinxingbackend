@@ -147,7 +147,7 @@ class ControllerDoctorEdit extends Controller
 
         $this->load->model('doctor/doctor');
 
-        $this->model_doctor_doctor->editCustomer($postdata, $data["doctor_id"]);
+        $this->model_doctor_doctor->editDoctor($postdata, $data["doctor_id"]);
 
         $response = array(
             'code'  => 0,

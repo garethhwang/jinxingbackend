@@ -393,4 +393,11 @@ class ModelAccountCustomer extends Model
         $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET babybirth ='".$babybirth."' ");
     }
 
+    public function  getCustomerInfo(){
+
+        $result = $this->db->query("select realname, headimgurl from wechat_user, " . DB_PREFIX . "customer,  where  wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id ");
+
+        return $result->rows;
+    }
+
 }
