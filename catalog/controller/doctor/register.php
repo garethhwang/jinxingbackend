@@ -110,13 +110,13 @@ class ControllerDoctorRegister extends Controller
             'agree' => $data['agree'],*/
         );
 
-        $this->load->model('doctor/doctor');
-
 
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
         } else {
             $data['isnotright'] = '0';
+
+            $this->load->model('doctor/doctor');
 
             $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
             //$this->customer->wechatlogin($data["openid"]);
