@@ -117,7 +117,7 @@ class ControllerDoctorIdentification extends Controller
             {
 
                 $response = array(
-                    'code'  => 0,
+                    'code'  => 1,
                     'message'  => $_FILES["file"]["error"] ,
                     'data' =>array(),
                 );
@@ -150,7 +150,7 @@ class ControllerDoctorIdentification extends Controller
 
 
                 $response = array(
-                    'code'  => 0,
+                    'code'  => 2,
                     'message'  => "",
                     'data' =>array(),
                 );
@@ -163,7 +163,7 @@ class ControllerDoctorIdentification extends Controller
         {
 
             $response = array(
-                'code'  => 0,
+                'code'  => 3,
                 'message'  => "非法的文件格式" ,
                 'data' =>array(),
             );
