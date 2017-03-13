@@ -118,7 +118,7 @@ class ControllerDoctorRegister extends Controller
         } else {
             $data['isnotright'] = '0';
 
-            $customer_id = $this->model_doctor_doctor->addDoctor($postdata);
+            $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
             //$this->customer->wechatlogin($data["openid"]);
             //unset($this->session->data['guest']);
             //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
