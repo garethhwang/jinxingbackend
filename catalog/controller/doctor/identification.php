@@ -101,9 +101,15 @@ class ControllerDoctorIdentification extends Controller
     {
 
 
+        $log = new Log("wechat.log");
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["images"]["name"]);
-        $extension = end($temp);     // 获取文件后缀名
+        $extension = end($temp);// 获取文件后缀名
+
+
+        $log-> write("文件后缀名".$extension ."     文件类型=".["images"]["type"]);
+
+
         if ((($_FILES["images"]["type"] == "image/gif")
                 || ($_FILES["images"]["type"] == "image/jpeg")
                 || ($_FILES["images"]["type"] == "image/jpg")
