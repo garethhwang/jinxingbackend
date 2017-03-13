@@ -15,8 +15,19 @@ class ControllerDoctorEdit extends Controller
 
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
-        $this->load->model('doctor/doctor');
+        /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
 
         if (!empty($doctor_info)) {
             $data['name'] = $doctor_info['name'];
@@ -100,6 +111,22 @@ class ControllerDoctorEdit extends Controller
 
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
+        /*$this->load->model('doctor/doctor');
+        $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+
+        //$data['doctor_id'] = $this->request->json('doctor_id', '');
         $data['name'] = $this->request->json('name', '');
         $data['telephone'] = $this->request->json('telephone', '');
         $data['sex'] = $this->request->json('sex', '');

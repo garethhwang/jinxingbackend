@@ -14,10 +14,22 @@ class ControllerDoctorIdentification extends Controller
     {
         $log = new Log("wechat.log");
 
-
         $data['doctor_id'] = $this->request->json('doctor_id', '');
-        $this->load->model('doctor/doctor');
+        /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+        $customer_id = $this->request->json("customer_id","");
 
         if (!empty($doctor_info)) {
             $data['name'] = $doctor_info['name'];
@@ -100,9 +112,25 @@ class ControllerDoctorIdentification extends Controller
     public function uploadimg()
     {
 
-        $doctor_id = $this->request->json("doctor_id","");
-        $customer_id = $this->request->json("customer_id","");
         $log = new Log("wechat.log");
+
+        $data['doctor_id'] = $this->request->json('doctor_id', '');
+        /*$this->load->model('doctor/doctor');
+        $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+        $customer_id = $this->request->json("customer_id","");
+
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
