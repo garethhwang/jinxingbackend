@@ -52,7 +52,7 @@ class ModelDoctorDoctor extends Model
 
     public function getCustomerByTelephone($telephone)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE telephone = '" . (int)$telephone . "'");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "doctor WHERE telephone = '" . (int)$telephone . "'");
 
         return $query->row ;
     }
