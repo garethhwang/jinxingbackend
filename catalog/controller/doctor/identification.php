@@ -107,7 +107,7 @@ class ControllerDoctorIdentification extends Controller
         $extension = end($temp);// 获取文件后缀名
 
 
-        $log-> write("文件后缀名".$extension ."     文件类型=".["images"]["type"]);
+        $log-> write("文件后缀名".$extension ."     文件类型=".$_FILES["images"]["type"]);
 
 
         if ((($_FILES["images"]["type"] == "image/gif")
