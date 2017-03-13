@@ -123,7 +123,7 @@ class ControllerDoctorRegister extends Controller
 
             //$log->write("telephone=". $telephone_info);
 
-            if(in_array($data['telephone'],$telephone_info['telephone'])) {
+            if(in_array($data['telephone'],$telephone_info)) {
 
                 $log->write("telephone=1111111");
                 $doctor_info = $this->model_doctor_doctor->getCustomerByTelephone($data['telephone']);

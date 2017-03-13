@@ -46,7 +46,7 @@ class ModelDoctorDoctor extends Model
 
         $result = $this->db->query("select telephone from " . DB_PREFIX . "doctor ");
 
-        return $result->rows;
+        return $result->rows['telephone'];
 
     }
 
