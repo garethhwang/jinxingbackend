@@ -18,19 +18,19 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $customer_info = $this->model_account_customer->getCustomerInfo();
 
-        var_dump($customer_info);
+        //var_dump($customer_info);
 
-        $result  = array(
+        /*$result  = array(
             'realname' =>  $customer_info['realname'],
             'headimgurl' =>  $customer_info['headimgurl']
-        );
+        );*/
 
         $response = array(
             'code'  => 0,
             'message'  => "",
             'data' =>array(),
         );
-        $response["data"] = $result;
+        $response["data"] = $customer_info;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
