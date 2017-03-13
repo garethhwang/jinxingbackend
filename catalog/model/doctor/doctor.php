@@ -44,9 +44,9 @@ class ModelDoctorDoctor extends Model
 
     public function getTelephone(){
 
-        $result = $this->db->query("select telephone from " . DB_PREFIX . "doctor ");
+        $result = $this->db->query("SELECT telephone FROM " . DB_PREFIX . "doctor ");
 
-        return $result->rows['telephone'];
+        return $result->rows;
 
     }
 
