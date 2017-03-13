@@ -29,78 +29,35 @@ class ControllerDoctorIdentification extends Controller
             $this->response->setOutput(json_encode($response));
         }*/
 
-        $customer_id = $this->request->json("customer_id","");
-
-        if (!empty($doctor_info)) {
-            $data['name'] = $doctor_info['name'];
-        } else {
-            $data['name'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['sex'] = $doctor_info['sex'];
-        } else {
-            $data['sex'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['img'] = $doctor_info['img '];
-        } else {
-            $data['img'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['telephone'] = $doctor_info['telephone'];
-        } else {
-            $data['telephone'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['starrating'] = $doctor_info['starrating'];
-        } else {
-            $data['starrating'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['discription'] = $doctor_info['discription'];
-        } else {
-            $data['discription'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['department'] = $doctor_info['department'];
-        } else {
-            $data['department'] = '';
-        }
-
-        if (!empty($doctor_info)) {
-            $data['depname'] = $this->ConvertDepartment($doctor_info['department']);
-        } else {
-            $data['depname'] = '';
-        }
-
-        $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
-        $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
-        $data["allcitys_data"] = $this->load->controller('wechat/wechatbinding/getAllCity');
-        $data["deps_data"] = $this->load->controller('wechat/wechatbinding/getOffice');
+        $data['customer_id'] = $this->request->json('customer_id', '');
+        $data['identification_text'] = $this->request->json('identification_text', '');
+        $data['face_img'] = $this->request->json('face_img', '');
+        $data['tongue_img'] = $this->request->json('tongue_img', '');
+        $data['face_img_thumbnail'] = $this->request->json('face_img_thumbnail', '');
+        $data['tongue_img_thumbnail'] = $this->request->json('tongue_img_thumbnail', '');
 
 
-        $result  = array(
-            'name' =>  $data['name'],
-            'telephone' =>  $data['telephone'],
-            'sex' =>  $data['sex'],
-            'img' =>  $data['img'],
-            'department' =>  $data['depname'],
-            'discription' =>  $data['discription'],
-            'starrating' =>  $data['starrating'],
+
+        $postdata  = array(
+            'doctor_id' => $data['doctor_id'],
+            'customer_id' => $data['customer_id'],
+            'identification_text' => $data['identification_text'],
+            'face_img' => $data['face_img'],
+            'tongue_img' => $data['tongue_img'],
+            'face_img_thumbnail' => $data['face_img_thumbnail'],
+            'tongue_img_thumbnail' => $data['tongue_img_thumbnail']
         );
+
+        $this->load->model('doctor/identification');
+
+        $this->model_doctor_identification->addIdentification($postdata);
 
         $response = array(
             'code'  => 0,
             'message'  => "",
             'data' =>array(),
         );
-        $response["data"] = $result;
+        $response["data"] = $data;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
