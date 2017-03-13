@@ -42,6 +42,21 @@ class ModelDoctorDoctor extends Model
         return $query->row;
     }
 
+    public function getTelephone(){
+
+        $result = $this->db->query("select telephone from " . DB_PREFIX . "doctor ");
+
+        return $result->rows;
+
+    }
+
+    public function getCustomerByTelephone($telephone)
+    {
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE telephone = '" . (int)$telephone . "'");
+
+        return $query->row ;
+    }
+
 
     /*public function getCustomerByEmail($email)
     {
