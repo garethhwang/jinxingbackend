@@ -100,15 +100,14 @@ class ControllerDoctorIdentification extends Controller
     public function uploadimg()
     {
 
-
+        $doctor_id = $this->request->json("doctor_id","");
+        $customer_id = $this->request->json("customer_id","");
         $log = new Log("wechat.log");
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
 
-
         $log-> write("文件后缀名".$extension ."     文件类型=".$_FILES["file"]["type"]);
-
 
         if ((($_FILES["file"]["type"] == "image/gif")
                 || ($_FILES["file"]["type"] == "image/jpeg")
@@ -130,9 +129,7 @@ class ControllerDoctorIdentification extends Controller
             }
             else
             {
-
-
-
+                //$fileurl = $this->createIdentificationUrl($customer_id);
                 // 判断当期目录下的 upload 目录是否存在该文件
                 // 如果没有 upload 目录，你需要创建它，upload 目录权限为 777
                 if (file_exists("image/" . $_FILES["file"]["name"]))
@@ -142,7 +139,7 @@ class ControllerDoctorIdentification extends Controller
                 else
                 {
                     // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-                    move_uploaded_file($_FILES["images"]["tmp_name"], "image/" . $_FILES["file"]["name"]);
+                    move_uploaded_file($_FILES["file"]["tmp_name"], "image/" . $_FILES["file"]["name"]);
                     //echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
                 }
 
@@ -181,8 +178,33 @@ class ControllerDoctorIdentification extends Controller
 
     }
 
+    public function createIdentificationUrl($customer_id){
 
 
+        $this->load->model('account/customer');
+        $customer_info = $this->model_account_customer->getCustomer($customer_id);
+        if (!empty($customer_info)) {
+            $data['realname'] = $customer_info['realname'];
+        } else {
+            $data['realname'] = '';
+        }
 
+        $date = date("Y-m-d");
+
+        if(!file_exists("image/identification".$date)){
+            mkdir("image/identification".$date);
+            chmod("image/identification".$date , 0777);
+        }
+
+        if (!file_exists("image/identification".$date."/".$data['realname'])){
+            mkdir("image/identification".$date."/".$data['realname']);
+            chmod("image/identification".$date."/".$data['realname'], 0777);
+        }
+
+        $url = "image/identification".$date."/".$data['realname'] ;
+
+        return  $url ;
+
+    }
 
 }
