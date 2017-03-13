@@ -1,5 +1,5 @@
 <?php
-class ModelAccountDoctor extends Model
+class ModelDoctorDoctor extends Model
 {
     public function addDoctor($data)
     {
