@@ -18,6 +18,8 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $customer_info = $this->model_account_customer->getCustomerInfo();
 
+        var_dump($customer_info);
+
         $result  = array(
             'realname' =>  $customer_info['realname'],
             'headimgurl' =>  $customer_info['headimgurl']
