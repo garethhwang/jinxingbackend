@@ -4,7 +4,7 @@ class ModelDoctorDoctor extends Model
     public function addDoctor($data)
     {
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "docter SET  telephone = '" . $this->db->escape($data['telephone']) . "',ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' ,date_added = NOW()");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "doctor SET  telephone = '" . $this->db->escape($data['telephone']) . "',ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' ,date_added = NOW()");
 
         $doctor_id = $this->db->getLastId();
 
