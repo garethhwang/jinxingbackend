@@ -100,19 +100,20 @@ class ControllerDoctorIdentification extends Controller
     public function uploadimg()
     {
 
+
         $allowedExts = array("gif", "jpeg", "jpg", "png");
-        $temp = explode(".", $_FILES["file"]["name"]);
+        $temp = explode(".", $_FILES["images"]["name"]);
         $extension = end($temp);     // 获取文件后缀名
-        if ((($_FILES["file"]["type"] == "image/gif")
-                || ($_FILES["file"]["type"] == "image/jpeg")
-                || ($_FILES["file"]["type"] == "image/jpg")
-                || ($_FILES["file"]["type"] == "image/pjpeg")
-                || ($_FILES["file"]["type"] == "image/x-png")
-                || ($_FILES["file"]["type"] == "image/png"))
-            && ($_FILES["file"]["size"] < 204800)   // 小于 200 kb
+        if ((($_FILES["images"]["type"] == "image/gif")
+                || ($_FILES["images"]["type"] == "image/jpeg")
+                || ($_FILES["images"]["type"] == "image/jpg")
+                || ($_FILES["images"]["type"] == "image/pjpeg")
+                || ($_FILES["images"]["type"] == "image/x-png")
+                || ($_FILES["images"]["type"] == "image/png"))
+            && ($_FILES["images"]["size"] < 204800)   // 小于 200 kb
             && in_array($extension, $allowedExts))
         {
-            if ($_FILES["file"]["error"] > 0)
+            if ($_FILES["images"]["error"] > 0)
             {
 
                 $response = array(
@@ -128,22 +129,22 @@ class ControllerDoctorIdentification extends Controller
 
                 // 判断当期目录下的 upload 目录是否存在该文件
                 // 如果没有 upload 目录，你需要创建它，upload 目录权限为 777
-                if (file_exists("image/" . $_FILES["file"]["name"]))
+                if (file_exists("image/" . $_FILES["images"]["name"]))
                 {
                     //echo $_FILES["file"]["name"] . " 文件已经存在。 ";
                 }
                 else
                 {
                     // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-                    move_uploaded_file($_FILES["file"]["tmp_name"], "image/" . $_FILES["file"]["name"]);
+                    move_uploaded_file($_FILES["images"]["tmp_name"], "image/" . $_FILES["images"]["name"]);
                     //echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
                 }
 
                 $result = array(
-                    'filename' => $_FILES["file"]["name"],
-                    'filetype' => $_FILES["file"]["type"],
-                    'filesize' => ($_FILES["file"]["size"] / 1024),
-                    'filetmpurl' => $_FILES["file"]["tmp_name"]
+                    'filename' => $_FILES["images"]["name"],
+                    'filetype' => $_FILES["images"]["type"],
+                    'filesize' => ($_FILES["images"]["size"] / 1024),
+                    'filetmpurl' => $_FILES["images"]["tmp_name"]
 
                 );
 
