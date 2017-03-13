@@ -4,7 +4,7 @@ class ModelAccountDoctor extends Model
     public function addDoctor($data)
     {
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "docter SET  telephone = '" . $this->db->escape($data['telephone']) . "', date_added = NOW()");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "docter SET  telephone = '" . $this->db->escape($data['telephone']) . "',ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' ,date_added = NOW()");
 
         $doctor_id = $this->db->getLastId();
 
@@ -15,12 +15,12 @@ class ModelAccountDoctor extends Model
     public function editDoctor($data, $doctor_id)
     {
 
-        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET realname = '" . $this->db->escape($data['realname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', barcode = '" . $this->db->escape($data['barcode']) . "', birthday = '" . $this->db->escape($data['birthday']) . "', department = '" . $this->db->escape($data['department']) . "', pregnantstatus = '1', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "',receiptdate = DATE_ADD( '".$this->db->escape($data['lastmenstrualdate'])."',INTERVAL 10 WEEK),ispregnant = '1' WHERE customer_id = '" . (int)$customer_id . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET name = '" . $this->db->escape($data['name']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', sex = '" . $this->db->escape($data['sex']) . "', img = '" . $this->db->escape($data['img']) . "', department = '" . $this->db->escape($data['department']) . "',  starrating = '" . $this->db->escape($data['starrating']) . "', discription = '" . $this->db->escape($data['discription']) . "' WHERE doctor_id = '" . (int)$doctor_id . "'");
 
 
     }
 
-    public function editPassword($email, $password)
+    /*public function editPassword($email, $password)
     {
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($password)))) . "', code = '' WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
     }
@@ -33,17 +33,17 @@ class ModelAccountDoctor extends Model
     public function editNewsletter($newsletter)
     {
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET newsletter = '" . (int)$newsletter . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
-    }
+    }*/
 
     public function getDoctor($doctor_id)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$doctor_id . "'");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "doctor WHERE doctor_id = '" . (int)$doctor_id . "'");
 
         return $query->row;
     }
 
 
-    public function getCustomerByEmail($email)
+    /*public function getCustomerByEmail($email)
     {
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
@@ -74,9 +74,9 @@ class ModelAccountDoctor extends Model
 
     public function getCustomerByToken($token)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE token = '" . $this->db->escape($token) . "' AND token != ''");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "doctor WHERE token = '" . $this->db->escape($token) . "' AND token != ''");
 
-        $this->db->query("UPDATE " . DB_PREFIX . "customer SET token = ''");
+        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET token = ''");
 
         return $query->row;
     }
@@ -127,29 +127,29 @@ class ModelAccountDoctor extends Model
         $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_ip` WHERE customer_id = '" . (int)$customer_id . "'");
 
         return $query->rows;
-    }
+    }*/
 
-    public function addLoginAttempt($email)
+    public function addLoginAttempt($telephone)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "doctor_login WHERE telephone = '" . (int)$telephone . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
 
         if (!$query->num_rows) {
-            $this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
+            $this->db->query("INSERT INTO " . DB_PREFIX . "doctor_login SET telephone = '" . (int)$telephone . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
         } else {
-            $this->db->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
+            $this->db->query("UPDATE " . DB_PREFIX . "doctor_login SET total = (total + 1), date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
         }
     }
 
-    public function getLoginAttempts($email)
+    public function getLoginAttempts($telephone)
     {
-        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "doctor_login` WHERE telephone = '" . (int)$telephone . "''");
 
         return $query->row;
     }
 
-    public function deleteLoginAttempts($email)
+    public function deleteLoginAttempts($telephone)
     {
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+        $this->db->query("DELETE FROM `" . DB_PREFIX . "doctor_login` WHERE telephone = '" . (int)$telephone . "'");
     }
 
 
