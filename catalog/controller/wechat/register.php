@@ -210,9 +210,8 @@ class ControllerWechatRegister extends Controller
 
             $this->load->model('wechat/userinfo');
             $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
-            $postdata["wechat_id"] = $temp["wechat_id"];
 
-            if(!isset($postdata["wechat_id"]) || $postdata["wechat_id"] == "0"){
+            if(!isset($temp)){
                 $response = array(
                     'code'  => 1031,
                     'message'  => "请您在微信客户端进行注册",
@@ -221,9 +220,12 @@ class ControllerWechatRegister extends Controller
                 $this->response->addHeader('Content-Type: application/json');
                 $this->response->setOutput(json_encode($response));
                 return;
+            } else {
+                $postdata["wechat_id"] = $temp["wechat_id"];
             }
 
-            $edc = date_create($postdata["lastmenstrualdate"]);
+
+        $edc = date_create($postdata["lastmenstrualdate"]);
             $edc = date_modify($edc, "+280 days");
             $postdata["edc"] = date_format($edc, "Y/m/d");
             $postdata["bmiindex"] = $postdata["weight"] / (pow($postdata["height"], 2) / 10000);
