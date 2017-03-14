@@ -42,7 +42,7 @@ class ControllerDoctorEdit extends Controller
         }
 
         if (!empty($doctor_info)) {
-            $data['img'] = $doctor_info['img '];
+            $data['img'] = $doctor_info['img'];
         } else {
             $data['img'] = '';
         }
