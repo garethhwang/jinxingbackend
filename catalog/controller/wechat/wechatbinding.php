@@ -136,13 +136,23 @@ class ControllerWechatWechatbinding extends Controller
 
         //$log->write("telephone=".$postdata["telephone"]."address_1=".$postdata["address_1"]."realname=".$postdata["realname"]);
 
-        $this->load->language('wechat/register');
-        $this->document->setTitle("金杏健康");
-        $this->load->model('account/customer');
+            $this->load->language('wechat/register');
+            $this->document->setTitle("金杏健康");
+            $this->load->model('account/customer');
 
             $this->load->model('wechat/userinfo');
             $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
             $postdata["wechat_id"] = $temp["wechat_id"];
+            if(!isset($postdata["wechat_id"]) || $postdata["wechat_id"] == "0"){
+                $response = array(
+                    'code'  => 1031,
+                    'message'  => "请您在微信客户端进行注册",
+                    'data' =>array(),
+                );
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+            }
 
             if($this->cache->get($postdata["telephone"]) !=  $postdata["smscode"]){
                              $data['isnotright'] = '1';
