@@ -282,7 +282,7 @@ class ControllerDoctorIdentification extends Controller
 
     public function createIdentificationUrl($customer_id){
 
-        $log = new Log("wecaht.log");
+        $log = new Log("wechat.log");
 
         $this->load->model('account/customer');
         $customer_info = $this->model_account_customer->getCustomer($customer_id);
