@@ -122,9 +122,24 @@ class ControllerDoctorIdentification extends Controller
             $this->response->setOutput(json_encode($response));
         }*/
 
-        $customer_id = $this->request->json("customer_id","");
+        $customer_id = $this->request->json("customer_id");
+
+        $customer_id = 592;
 
         $log->write("customer_id=".$customer_id);
+
+        if(!isset($customer_id)){
+
+            $response = array(
+                'code'  => 1062,
+                'message'  => "没有取得孕产妇信息" ,
+                'data' =>array(),
+            );
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+
+        }
 
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
