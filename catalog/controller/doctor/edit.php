@@ -263,8 +263,8 @@ class ControllerDoctorEdit extends Controller
                 $date = date("Y-m-d");
                 $filename = $doctor_id.$date.$_FILES["file"]["name"];
                 $fileresizename = $doctor_id.$date.$_FILES["file"]["name"]."resize";
-                $filename = md5($filename).$extension;
-                $fileresizename = md5($fileresizename).$extension;
+                $filename = md5($filename).".".$extension;
+                $fileresizename = md5($fileresizename).".".$extension;
                 $uploadfile = $fileurl.$filename;
                 $uploadfile_resize = $fileurl.$fileresizename;
 
