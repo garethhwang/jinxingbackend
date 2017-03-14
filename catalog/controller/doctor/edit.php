@@ -217,7 +217,7 @@ class ControllerDoctorEdit extends Controller
         $pic_width_max=120;
         $pic_height_max=90;
 
-        $doctor_id= $this->request->json('doctor_id', '');
+        //$doctor_id= $this->request->json('doctor_id', '');
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
@@ -262,8 +262,8 @@ class ControllerDoctorEdit extends Controller
             {
                 $fileurl = $this->createDctorUrl();
                 $date = date("Y-m-d");
-                $filename = $doctor_id.$date.$_FILES["file"]["name"];
-                $fileresizename = $doctor_id.$date.$_FILES["file"]["name"]."resize";
+                $filename = $date.$_FILES["file"]["name"];
+                $fileresizename = $date.$_FILES["file"]["name"]."resize";
                 $filename = md5($filename).".".$extension;
                 $fileresizename = md5($fileresizename).".".$extension;
                 $uploadfile = $fileurl.$filename;
@@ -306,7 +306,7 @@ class ControllerDoctorEdit extends Controller
 
 
                 $result = array(
-                    'doctor_id' => $doctor_id,
+
                     'fileoriginname' => $_FILES["file"]["name"],
                     'filename' => $filename,
                     'fileresizename' => $fileresizename,

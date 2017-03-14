@@ -107,7 +107,7 @@ class ControllerDoctorIdentification extends Controller
         $pic_width_max=120;
         $pic_height_max=90;
 
-        $doctor_id = $this->request->json('doctor_id', '');
+        //$doctor_id = $this->request->json('doctor_id', '');
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
@@ -122,24 +122,8 @@ class ControllerDoctorIdentification extends Controller
             $this->response->setOutput(json_encode($response));
         }*/
 
-        $customer_id = $this->request->json("customer_id");
+        //$customer_id = $this->request->json("customer_id");
 
-        //$customer_id = 593;
-
-        $log->write("customer_id=".$customer_id);
-
-        if(!isset($customer_id)){
-
-            $response = array(
-                'code'  => 1062,
-                'message'  => "没有取得孕产妇信息" ,
-                'data' =>array(),
-            );
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return ;
-
-        }
 
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
@@ -168,11 +152,11 @@ class ControllerDoctorIdentification extends Controller
             else
             {
 
-                $fileurl = $this->createIdentificationUrl($customer_id);
+                $fileurl = $this->createIdentificationUrl();
                 $date = date("Y-m-d");
-                $filename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"];
+                $filename = $date.$_FILES["file"]["name"];
                 $filename = md5($filename);
-                $fileresizename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"]."resize";
+                $fileresizename = $date.$_FILES["file"]["name"]."resize";
                 $filename = md5($filename).".".$extension;
                 $fileresizename = md5($fileresizename).".".$extension;
                 $uploadfile = $fileurl.$filename;
@@ -215,8 +199,7 @@ class ControllerDoctorIdentification extends Controller
 
 
                 $result = array(
-                    'doctor_id' => $doctor_id,
-                    'customer_id' => $customer_id,
+
                     'fileoriginname' => $_FILES["file"]["name"],
                     'filename' => $filename,
                     'fileresizename' => $fileresizename,
@@ -300,22 +283,8 @@ class ControllerDoctorIdentification extends Controller
         }
     }
 
-    public function createIdentificationUrl($customer_id){
+    public function createIdentificationUrl(){
 
-        $log = new Log("wechat.log");
-
-        $this->load->model('account/customer');
-        $customer_info = $this->model_account_customer->getCustomer($customer_id);
-
-        $log->write("11111customer_id=".$customer_id);
-
-        if (!empty($customer_info)) {
-            $data['realname'] = $customer_info['realname'];
-            $log->write("11111customer_name=".$data['realname']);
-
-        } else {
-            $data['realname'] = '';
-        }
 
         $date = date("Y-m-d");
 
@@ -324,12 +293,7 @@ class ControllerDoctorIdentification extends Controller
             chmod("image/identification/".$date , 0777);
         }
 
-        if (!file_exists("image/identification/".$date."/".$data['realname'])){
-            mkdir("image/identification/".$date."/".$data['realname']);
-            chmod("image/identification/".$date."/".$data['realname'], 0777);
-        }
-
-        $url = "image/identification/".$date."/".$data['realname']."/" ;
+        $url = "image/identification/".$date."/";
 
         return  $url ;
 
