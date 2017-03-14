@@ -211,6 +211,7 @@ class ControllerDoctorIdentification extends Controller
 
 
                 $result = array(
+                    'doctor_id' => $doctor_id,
                     'customer_id' => $customer_id,
                     'fileoriginname' => $_FILES["file"]["name"],
                     'filename' => $filename,

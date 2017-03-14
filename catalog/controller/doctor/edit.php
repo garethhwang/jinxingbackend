@@ -302,6 +302,7 @@ class ControllerDoctorEdit extends Controller
 
 
                 $result = array(
+                    'doctor_id' => $doctor_id,
                     'fileoriginname' => $_FILES["file"]["name"],
                     'filename' => $filename,
                     'fileresizename' => $fileresizename,
