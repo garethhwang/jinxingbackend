@@ -124,6 +124,8 @@ class ControllerDoctorIdentification extends Controller
 
         $customer_id = $this->request->json("customer_id","");
 
+        $log->write("customer_id=".$customer_id);
+
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
@@ -280,11 +282,17 @@ class ControllerDoctorIdentification extends Controller
 
     public function createIdentificationUrl($customer_id){
 
+        $log = new Log("wecaht.log");
 
         $this->load->model('account/customer');
         $customer_info = $this->model_account_customer->getCustomer($customer_id);
+
+        $log->write("11111customer_id=".$customer_id);
+
         if (!empty($customer_info)) {
             $data['realname'] = $customer_info['realname'];
+            $log->write("11111customer_name=".$data['realname']);
+
         } else {
             $data['realname'] = '';
         }
