@@ -270,7 +270,7 @@ class ControllerDoctorEdit extends Controller
 
                 move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 
-                if($_FILES["filename"]['size'])
+                if($_FILES["file"]['size'])
                 {
                     if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
                     {
