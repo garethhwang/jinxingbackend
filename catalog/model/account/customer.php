@@ -395,7 +395,7 @@ class ModelAccountCustomer extends Model
 
     public function  getCustomerInfo(){
 
-        $result = $this->db->query("select realname, headimgurl from wechat_user, " . DB_PREFIX . "customer  where  wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id ");
+        $result = $this->db->query("select customer_id, realname, headimgurl from wechat_user, " . DB_PREFIX . "customer  where  wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id ");
 
         return $result->rows;
     }
