@@ -15,4 +15,11 @@ class ModelDoctorIdentification extends Model
 
     }
 
+    public function getIdentification($doctor_id,$customer_id){
+
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "physicalidentification WHERE doctor_id = '" . (int)$doctor_id . "' AND customer_id ='" . (int)$customer_id . "' ");
+        return $query->rows;
+
+    }
+
 }

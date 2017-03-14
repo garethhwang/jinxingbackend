@@ -10,7 +10,40 @@ class ControllerDoctorIdentification extends Controller
 {
     private $error = array();
 
-    public function index()
+    public function index(){
+
+        $log = new Log("wechat.log");
+
+
+        $data['doctor_id'] = $this->request->json('doctor_id', '');
+        $data['customer_id'] = $this->request->json('customer_id', '');
+        $this->load->model('doctor/doctor');
+        $identification_info = $this->model_doctor_doctor->getIdentification($data['doctor_id'],$data['customer_id']);
+
+        /*if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] =  $identification_info;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+    }
+
+    public function submit()
     {
         $log = new Log("wechat.log");
 
@@ -71,7 +104,10 @@ class ControllerDoctorIdentification extends Controller
 
         $log = new Log("wechat.log");
 
-        $data['doctor_id'] = $this->request->json('doctor_id', '');
+        $pic_width_max=120;
+        $pic_height_max=90;
+
+        $doctor_id = $this->request->json('doctor_id', '');
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
@@ -114,29 +150,57 @@ class ControllerDoctorIdentification extends Controller
             }
             else
             {
-                //$fileurl = $this->createIdentificationUrl($customer_id);
-                //$date = date("Y-m-d");
-                //$filename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"];
-                //$filename = md5($filename);
-                // 判断当期目录下的 upload 目录是否存在该文件
-                // 如果没有 upload 目录，你需要创建它，upload 目录权限为 777
-                //if (file_exists("image/" . $_FILES["file"]["name"]))
-                //{
-                    //echo $_FILES["file"]["name"] . " 文件已经存在。 ";
-                //}
-                //else
-                //{
-                    // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
-                    move_uploaded_file($_FILES["file"]["tmp_name"], "image/".$_FILES["file"]["name"]/*$fileurl.$filename*/);
-                    //echo "文件存储在: " . "upload/" . $_FILES["file"]["name"];
-                //}
+
+                $fileurl = $this->createIdentificationUrl($customer_id);
+                $date = date("Y-m-d");
+                $filename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"];
+                $filename = md5($filename);
+                $fileresizename = $doctor_id.$customer_id.$date.$_FILES["file"]["name"]."resize";
+                $filename = md5($filename).".".$extension;
+                $fileresizename = md5($fileresizename).".".$extension;
+                $uploadfile = $fileurl.$filename;
+                $uploadfile_resize = $fileurl.$fileresizename;
+
+                move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
+
+                if($_FILES["file"]['size'])
+                {
+                    if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
+                    {
+                        //$im = imagecreatefromjpeg($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    elseif($_FILES["file"]["type"] == "image/x-png" || $_FILES["file"]["type"] == "image/png")
+                    {
+                        //$im = imagecreatefrompng($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefrompng($uploadfile);
+                    }
+                    elseif($_FILES["file"]["type"] == "image/gif")
+                    {
+                        //$im = imagecreatefromgif($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefromgif($uploadfile);
+                    }
+                    else//默认jpg
+                    {
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    if($im)
+                    {
+                        $this->ResizeImage($im,$pic_width_max,$pic_height_max,$uploadfile_resize);
+
+                        ImageDestroy ($im);
+                    }
+                }
+
 
                 $result = array(
                     'fileoriginname' => $_FILES["file"]["name"],
-                    //'filename' => $filename,
+                    'filename' => $filename,
+                    'fileresizename' => $fileresizename,
                     'filetype' => $_FILES["file"]["type"],
                     'filesize' => ($_FILES["file"]["size"] / 1024),
-                    'fileurl' => "image/".$_FILES["file"]["name"]//$fileurl.$filename
+                    'fileurl' => $uploadfile,
+                    'fileresizeurl' => $uploadfile_resize
                 );
 
 
@@ -165,6 +229,52 @@ class ControllerDoctorIdentification extends Controller
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
 
+    }
+
+    public function ResizeImage($uploadfile,$maxwidth,$maxheight,$name){
+        //取得当前图片大小
+        $width = imagesx($uploadfile);
+        $height = imagesy($uploadfile);
+        $i=0.5;
+        //生成缩略图的大小
+        if(($width > $maxwidth) || ($height > $maxheight))
+        {
+            /*
+            $widthratio = $maxwidth/$width;
+            $heightratio = $maxheight/$height;
+
+            if($widthratio < $heightratio)
+            {
+                $ratio = $widthratio;
+            }
+            else
+            {
+                 $ratio = $heightratio;
+            }
+
+            $newwidth = $width * $ratio;
+            $newheight = $height * $ratio;
+            */
+            $newwidth = $width * $i;
+            $newheight = $height * $i;
+            if(function_exists("imagecopyresampled"))
+            {
+                $uploaddir_resize = imagecreatetruecolor($newwidth, $newheight);
+                imagecopyresampled($uploaddir_resize, $uploadfile, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }
+            else
+            {
+                $uploaddir_resize = imagecreate($newwidth, $newheight);
+                imagecopyresized($uploaddir_resize, $uploadfile, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }
+
+            ImageJpeg ($uploaddir_resize,$name);
+            ImageDestroy ($uploaddir_resize);
+        }
+        else
+        {
+            ImageJpeg ($uploadfile,$name);
+        }
     }
 
     public function createIdentificationUrl($customer_id){

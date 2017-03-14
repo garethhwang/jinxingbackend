@@ -96,6 +96,7 @@ class ControllerDoctorEdit extends Controller
 
 
         $result  = array(
+            'doctor_id' => $data["doctor_id"],
             'name' =>  $data['name'],
             'telephone' =>  $data['telephone'],
             'sex' =>  $data['sex'],
@@ -215,7 +216,6 @@ class ControllerDoctorEdit extends Controller
 
         $pic_width_max=120;
         $pic_height_max=90;
-        //以上与下面段注释可以联合使用，可以使图片根据计算出来的比例压缩
 
         $doctor_id= $this->request->json('doctor_id', '');
         /*$this->load->model('doctor/doctor');
