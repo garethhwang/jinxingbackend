@@ -180,14 +180,14 @@ class ControllerDoctorIdentification extends Controller
 
         $date = date("Y-m-d");
 
-        if(!file_exists("image/identification".$date)){
-            mkdir("image/identification".$date);
-            chmod("image/identification".$date , 0777);
+        if(!file_exists("image/identification/".$date)){
+            mkdir("image/identification/".$date);
+            chmod("image/identification/".$date , 0777);
         }
 
         if (!file_exists("image/identification".$date."/".$data['realname'])){
-            mkdir("image/identification".$date."/".$data['realname']);
-            chmod("image/identification".$date."/".$data['realname'], 0777);
+            mkdir("image/identification/".$date."/".$data['realname']);
+            chmod("image/identification/".$date."/".$data['realname'], 0777);
         }
 
         $url = "image/identification/".$date."/".$data['realname']."/" ;

@@ -110,11 +110,11 @@ class ControllerWechatEdituser extends Controller
             $data['realname'] = '';
         }
 
-        if (!empty($customer_info)) {
+        /*if (!empty($customer_info)) {
             $data['babybirth'] = $customer_info['babybirth '];
         } else {
             $data['babybirth'] = '';
-        }
+        }*/
 
         if (!empty($customer_info)) {
             $data['pregnantstatus'] = $customer_info['pregnantstatus'];
@@ -631,7 +631,7 @@ class ControllerWechatEdituser extends Controller
             'barcode' =>  $data['barcode'],
             'department' =>  $data['depname'],
             'pregnantstatus' =>  $data['pregnantstatus'],
-            'babybirth' =>  $data['babybirth'],
+            //'babybirth' =>  $data['babybirth'],
             'birthday' =>  $data['birthday'],
             'height' =>  $data['height'],
             'weight' =>  $data['weight'],

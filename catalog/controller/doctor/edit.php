@@ -48,6 +48,18 @@ class ControllerDoctorEdit extends Controller
         }
 
         if (!empty($doctor_info)) {
+            $data['img_thumbnail'] = $doctor_info['img_thumbnail'];
+        } else {
+            $data['img_thumbnail'] = '';
+        }
+
+        if (!empty($doctor_info)) {
+            $data['district'] = $doctor_info['district'];
+        } else {
+            $data['district'] = '';
+        }
+
+        if (!empty($doctor_info)) {
             $data['telephone'] = $doctor_info['telephone'];
         } else {
             $data['telephone'] = '';
@@ -88,6 +100,8 @@ class ControllerDoctorEdit extends Controller
             'telephone' =>  $data['telephone'],
             'sex' =>  $data['sex'],
             'img' =>  $data['img'],
+            'img_thumbnail' => $data['img_thumbnail'],
+            'district' => $data['district'],
             'department' =>  $data['depname'],
             'discription' =>  $data['discription'],
             'starrating' =>  $data['starrating'],
@@ -131,6 +145,7 @@ class ControllerDoctorEdit extends Controller
         $data['telephone'] = $this->request->json('telephone', '');
         $data['sex'] = $this->request->json('sex', '');
         $data['img'] = $this->request->json('img', '');
+        $data['img_thumbnail'] = $this->request->json('img_thumbnail', '');
         $data['department'] = $this->request->json('department', '');
         $data['discription'] =  $this->request->json('discription', '');
         $data['starrating'] = $this->request->json('starrating', '');
@@ -140,6 +155,8 @@ class ControllerDoctorEdit extends Controller
             'telephone' =>  $data['telephone'],
             'sex' =>  $data['sex'],
             'img' =>  $data['img'],
+            'img_thumbnail' => $data['img_thumbnail'],
+            'district' => $data['district'],
             'department' =>  $data['depname'],
             'discription' =>  $data['discription'],
             'starrating' =>  $data['starrating'],
@@ -188,4 +205,199 @@ class ControllerDoctorEdit extends Controller
         }
 
     }
+
+    public function uploaddocimg()
+    {
+
+        $log = new Log("wechat.log");
+
+        $doctor_id= $this->request->json('doctor_id', '');
+        /*$this->load->model('doctor/doctor');
+        $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+        //$customer_id = $this->request->json("customer_id","");
+
+        $allowedExts = array("gif", "jpeg", "jpg", "png");
+        $temp = explode(".", $_FILES["file"]["name"]);
+        $extension = end($temp);// 获取文件后缀名
+
+        $log-> write("文件后缀名".$extension ."     文件类型=".$_FILES["file"]["type"]);
+
+        if ((($_FILES["file"]["type"] == "image/gif")
+                || ($_FILES["file"]["type"] == "image/jpeg")
+                || ($_FILES["file"]["type"] == "image/jpg")
+                || ($_FILES["file"]["type"] == "image/pjpeg")
+                || ($_FILES["file"]["type"] == "image/x-png")
+                || ($_FILES["file"]["type"] == "image/png"))
+            && ($_FILES["file"]["size"] < 209715200)   // 小于 200 kb
+            && in_array($extension, $allowedExts))
+        {
+            if ($_FILES["file"]["error"] > 0)
+            {
+
+                $response = array(
+                    'code'  => 1060,
+                    'message'  => $_FILES["file"]["error"] ,
+                    'data' =>array(),
+                );
+            }
+            else
+            {
+                $fileurl = $this->createDoctorUrl($doctor_id);
+                $date = date("Y-m-d");
+                $filename = $doctor_id.$date.$_FILES["file"]["name"];
+                $filename = md5($filename);
+                move_uploaded_file($_FILES["file"]["tmp_name"], $fileurl.$filename);
+
+                if($_FILES["filename"]['size'])
+                {
+                    if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
+                    {
+                        //$im = imagecreatefromjpeg($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    elseif($_FILES["file"]["type"] == "image/x-png")
+                    {
+                        //$im = imagecreatefrompng($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    elseif($_FILES["file"]["type"] == "image/gif")
+                    {
+                        //$im = imagecreatefromgif($_FILES[$upload_input_name]['tmp_name']);
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    else//默认jpg
+                    {
+                        $im = imagecreatefromjpeg($uploadfile);
+                    }
+                    if($im)
+                    {
+                        ResizeImage($im,$pic_width_max,$pic_height_max,$uploadfile_resize);
+
+                        ImageDestroy ($im);
+                    }
+                }
+
+
+                $result = array(
+                    'fileoriginname' => $_FILES["file"]["name"],
+                    'filename' => $filename,
+                    'filetype' => $_FILES["file"]["type"],
+                    'filesize' => ($_FILES["file"]["size"] / 1024),
+                    'fileurl' => $fileurl.$filename
+                );
+
+
+                $response = array(
+                    'code'  => 0,
+                    'message'  => "",
+                    'data' =>array(),
+                );
+                $response["data"] = $result;
+
+
+            }
+        }
+        else
+        {
+
+            $response = array(
+                'code'  => 1061,
+                'message'  => "非法的文件格式" ,
+                'data' =>array(),
+            );
+            //echo "非法的文件格式";
+        }
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+    }
+
+
+
+        $uploaddir_resize="upfiles_resize/";
+        $uploadfile_resize=$uploaddir_resize.$name;
+
+        //$pic_width_max=120;
+        //$pic_height_max=90;
+        //以上与下面段注释可以联合使用，可以使图片根据计算出来的比例压缩
+
+
+    public function ResizeImage($uploadfile,$maxwidth,$maxheight,$name){
+        //取得当前图片大小
+        $width = imagesx($uploadfile);
+        $height = imagesy($uploadfile);
+        $i=0.5;
+        //生成缩略图的大小
+        if(($width > $maxwidth) || ($height > $maxheight))
+        {
+            /*
+            $widthratio = $maxwidth/$width;
+            $heightratio = $maxheight/$height;
+
+            if($widthratio < $heightratio)
+            {
+                $ratio = $widthratio;
+            }
+            else
+            {
+                 $ratio = $heightratio;
+            }
+
+            $newwidth = $width * $ratio;
+            $newheight = $height * $ratio;
+            */
+            $newwidth = $width * $i;
+            $newheight = $height * $i;
+            if(function_exists("imagecopyresampled"))
+            {
+                $uploaddir_resize = imagecreatetruecolor($newwidth, $newheight);
+                imagecopyresampled($uploaddir_resize, $uploadfile, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }
+            else
+            {
+                $uploaddir_resize = imagecreate($newwidth, $newheight);
+                imagecopyresized($uploaddir_resize, $uploadfile, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }
+
+            ImageJpeg ($uploaddir_resize,$name);
+            ImageDestroy ($uploaddir_resize);
+        }
+        else
+        {
+            ImageJpeg ($uploadfile,$name);
+        }
+    }
+
+    public function createDctorUrl($doctor_id){
+
+            $date = date("Y-m-d");
+
+            if(!file_exists("image/doctor/".$date)) {
+                mkdir("image/doctor/".$date);
+                chmod("image/doctor/".$date , 0777);
+            }
+
+
+            $url = "image/doctor/".$date."/";
+
+            return  $url ;
+
+    }
+
+
+
+
 }
