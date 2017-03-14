@@ -147,6 +147,7 @@ class ControllerDoctorEdit extends Controller
         $data['img'] = $this->request->json('img', '');
         $data['img_thumbnail'] = $this->request->json('img_thumbnail', '');
         $data['department'] = $this->request->json('department', '');
+        $data['district'] = $this->request->json('district', '');
         $data['discription'] =  $this->request->json('discription', '');
         $data['starrating'] = $this->request->json('starrating', '');
 
@@ -157,7 +158,7 @@ class ControllerDoctorEdit extends Controller
             'img' =>  $data['img'],
             'img_thumbnail' => $data['img_thumbnail'],
             'district' => $data['district'],
-            'department' =>  $data['depname'],
+            'department' =>  $data['department'],
             'discription' =>  $data['discription'],
             'starrating' =>  $data['starrating'],
         );
