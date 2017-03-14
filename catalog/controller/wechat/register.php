@@ -225,7 +225,7 @@ class ControllerWechatRegister extends Controller
             }
 
 
-        $edc = date_create($postdata["lastmenstrualdate"]);
+            $edc = date_create($postdata["lastmenstrualdate"]);
             $edc = date_modify($edc, "+280 days");
             $postdata["edc"] = date_format($edc, "Y/m/d");
             $postdata["bmiindex"] = $postdata["weight"] / (pow($postdata["height"], 2) / 10000);

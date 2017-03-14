@@ -259,7 +259,7 @@ class ControllerDoctorEdit extends Controller
             }
             else
             {
-                $fileurl = $this->createDoctorUrl($doctor_id);
+                $fileurl = $this->createDctorUrl();
                 $date = date("Y-m-d");
                 $filename = $doctor_id.$date.$_FILES["file"]["name"];
                 $fileresizename = $doctor_id.$date.$_FILES["file"]["name"]."resize";
@@ -293,7 +293,7 @@ class ControllerDoctorEdit extends Controller
                     }
                     if($im)
                     {
-                        ResizeImage($im,$pic_width_max,$pic_height_max,$uploadfile_resize);
+                        $this->ResizeImage($im,$pic_width_max,$pic_height_max,$uploadfile_resize);
 
                         ImageDestroy ($im);
                     }
@@ -384,7 +384,7 @@ class ControllerDoctorEdit extends Controller
         }
     }
 
-    public function createDctorUrl($doctor_id){
+    public function createDctorUrl(){
 
             $date = date("Y-m-d");
 
