@@ -180,7 +180,7 @@ class ControllerDoctorIdentification extends Controller
 
                 move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 
-                if($_FILES["file"]['size'] > 102400) {
+                if($_FILES["file"]['size'] > 81920) {
 
                     if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
                     {
