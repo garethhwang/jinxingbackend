@@ -153,7 +153,7 @@ class ControllerDoctorIdentification extends Controller
                 || ($_FILES["file"]["type"] == "image/pjpeg")
                 || ($_FILES["file"]["type"] == "image/x-png")
                 || ($_FILES["file"]["type"] == "image/png"))
-            && ($_FILES["file"]["size"] < 209715200)   // 小于 200 kb
+            && ($_FILES["file"]["size"] < 209715200)
             && in_array($extension, $allowedExts))
         {
             if ($_FILES["file"]["error"] > 0)
@@ -180,8 +180,8 @@ class ControllerDoctorIdentification extends Controller
 
                 move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 
-                if($_FILES["file"]['size'])
-                {
+                if($_FILES["file"]['size'] > 102400) {
+
                     if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
                     {
                         //$im = imagecreatefromjpeg($_FILES[$upload_input_name]['tmp_name']);
@@ -207,6 +207,10 @@ class ControllerDoctorIdentification extends Controller
 
                         ImageDestroy ($im);
                     }
+                } else {
+
+                    $uploadfile_resize =  $uploadfile;
+
                 }
 
 

@@ -271,8 +271,8 @@ class ControllerDoctorEdit extends Controller
 
                 move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 
-                if($_FILES["file"]['size'])
-                {
+                if($_FILES["file"]['size'] > 102400) {
+
                     if($_FILES["file"]["type"] == "image/pjpeg" || $_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg")
                     {
                         //$im = imagecreatefromjpeg($_FILES[$upload_input_name]['tmp_name']);
@@ -298,6 +298,10 @@ class ControllerDoctorEdit extends Controller
 
                         ImageDestroy ($im);
                     }
+                } else {
+
+                    $uploadfile_resize =  $uploadfile;
+
                 }
 
 
