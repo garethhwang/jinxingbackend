@@ -124,7 +124,7 @@ class ControllerDoctorIdentification extends Controller
 
         $customer_id = $this->request->json("customer_id");
 
-        $customer_id = 592;
+        $customer_id = 593;
 
         $log->write("customer_id=".$customer_id);
 
