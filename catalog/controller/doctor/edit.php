@@ -15,10 +15,10 @@ class ControllerDoctorEdit extends Controller
 
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
-        /*$this->load->model('doctor/doctor');
+        $this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
-        if(empty($doctor_info)){
+        /*if(empty($doctor_info)){
             $response = array(
                 'code'  => 1011,
                 'message'  => "如需要使用本功能，请您注册",
