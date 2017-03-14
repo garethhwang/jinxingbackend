@@ -304,7 +304,7 @@ class ControllerDoctorIdentification extends Controller
             chmod("image/identification/".$date , 0777);
         }
 
-        if (!file_exists("image/identification".$date."/".$data['realname'])){
+        if (!file_exists("image/identification/".$date."/".$data['realname'])){
             mkdir("image/identification/".$date."/".$data['realname']);
             chmod("image/identification/".$date."/".$data['realname'], 0777);
         }
