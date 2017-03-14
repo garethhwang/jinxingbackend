@@ -17,7 +17,6 @@ class ControllerDoctorIdentification extends Controller
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
         $data['customer_id'] = $this->request->json('customer_id', '');
-        $log->write($data['doctor_id'].$data['customer_id']);
         $this->load->model('doctor/identification');
         $identification_info = $this->model_doctor_identification->getIdentification($data['doctor_id'],$data['customer_id']);
 
