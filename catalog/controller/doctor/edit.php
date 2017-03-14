@@ -211,6 +211,11 @@ class ControllerDoctorEdit extends Controller
 
         $log = new Log("wechat.log");
 
+
+        $pic_width_max=120;
+        $pic_height_max=90;
+        //以上与下面段注释可以联合使用，可以使图片根据计算出来的比例压缩
+
         $doctor_id= $this->request->json('doctor_id', '');
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
@@ -257,8 +262,13 @@ class ControllerDoctorEdit extends Controller
                 $fileurl = $this->createDoctorUrl($doctor_id);
                 $date = date("Y-m-d");
                 $filename = $doctor_id.$date.$_FILES["file"]["name"];
+                $fileresizename = $doctor_id.$date.$_FILES["file"]["name"]."resize";
                 $filename = md5($filename);
-                move_uploaded_file($_FILES["file"]["tmp_name"], $fileurl.$filename);
+                $fileresizename = md5($fileresizename);
+                $uploadfile = $fileurl.$filename;
+                $uploadfile_resize = $fileurl.$fileresizename;
+
+                move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 
                 if($_FILES["filename"]['size'])
                 {
@@ -267,15 +277,15 @@ class ControllerDoctorEdit extends Controller
                         //$im = imagecreatefromjpeg($_FILES[$upload_input_name]['tmp_name']);
                         $im = imagecreatefromjpeg($uploadfile);
                     }
-                    elseif($_FILES["file"]["type"] == "image/x-png")
+                    elseif($_FILES["file"]["type"] == "image/x-png" || $_FILES["file"]["type"] == "image/png")
                     {
                         //$im = imagecreatefrompng($_FILES[$upload_input_name]['tmp_name']);
-                        $im = imagecreatefromjpeg($uploadfile);
+                        $im = imagecreatefrompng($uploadfile);
                     }
                     elseif($_FILES["file"]["type"] == "image/gif")
                     {
                         //$im = imagecreatefromgif($_FILES[$upload_input_name]['tmp_name']);
-                        $im = imagecreatefromjpeg($uploadfile);
+                        $im = imagecreatefromgif($uploadfile);
                     }
                     else//默认jpg
                     {
@@ -293,9 +303,11 @@ class ControllerDoctorEdit extends Controller
                 $result = array(
                     'fileoriginname' => $_FILES["file"]["name"],
                     'filename' => $filename,
+                    'fileresizename' => $fileresizename,
                     'filetype' => $_FILES["file"]["type"],
                     'filesize' => ($_FILES["file"]["size"] / 1024),
-                    'fileurl' => $fileurl.$filename
+                    'fileurl' => $uploadfile,
+                    'fileresizeurl' => $uploadfile_resize
                 );
 
 
@@ -324,15 +336,6 @@ class ControllerDoctorEdit extends Controller
         $this->response->setOutput(json_encode($response));
 
     }
-
-
-
-        $uploaddir_resize="upfiles_resize/";
-        $uploadfile_resize=$uploaddir_resize.$name;
-
-        //$pic_width_max=120;
-        //$pic_height_max=90;
-        //以上与下面段注释可以联合使用，可以使图片根据计算出来的比例压缩
 
 
     public function ResizeImage($uploadfile,$maxwidth,$maxheight,$name){
