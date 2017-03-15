@@ -233,7 +233,19 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log('api.log');
         $log->write($data['customer_id']);
         if(!isset($data['customer_id'])){
-            $data['customer_id'] = "0";
+            $data['orders']= array();
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+
+            return ;
         }
 
         $allorderids= $this->model_wechat_ordercenter->getAllPaidOrderid($data['customer_id']);
@@ -377,7 +389,19 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log('api.log');
         $log->write($data['customer_id']);
         if(!isset($data['customer_id'])){
-            $data['customer_id'] = "0";
+            $data['orders']= array();
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+
+            return ;
         }
 
         $allorderids= $this->model_wechat_ordercenter->getAllCompletedOrderid($data['customer_id']);
