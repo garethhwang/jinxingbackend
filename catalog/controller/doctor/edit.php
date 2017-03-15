@@ -154,7 +154,7 @@ class ControllerDoctorEdit extends Controller
 
         $postdata  = array(
             'name' =>  $data['name'],
-            'telephone' =>  $data['telephone'],
+            //'telephone' =>  $data['telephone'],
             'sex' =>  $data['sex'],
             'img' =>  $data['img'],
             'img_thumbnail' => $data['img_thumbnail'],
