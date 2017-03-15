@@ -286,7 +286,7 @@ class ControllerDoctorIdentification extends Controller
     public function createIdentificationUrl(){
 
 
-        $date = date("Y-m-d");
+        $date = date("Ymd");
 
         if(!file_exists("image/identification/".$date)){
             mkdir("image/identification/".$date);

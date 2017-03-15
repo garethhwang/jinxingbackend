@@ -392,7 +392,7 @@ class ControllerDoctorEdit extends Controller
 
     public function createDctorUrl(){
 
-            $date = date("Y-m-d");
+            $date = date("Ymd");
 
             if(!file_exists("image/doctor/".$date)) {
                 mkdir("image/doctor/".$date);
