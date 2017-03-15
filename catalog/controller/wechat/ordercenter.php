@@ -76,7 +76,21 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log('api.log');
         $log->write($data['customer_id']);
         if(!isset($data['customer_id'])){
-            $data['customer_id'] = "0";
+
+            $data['orders']= array();
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+
+            return ;
+
         }
 
 
@@ -162,11 +176,11 @@ class ControllerWechatOrdercenter extends Controller
                 'code'  => 0,
                 'message'  => "",
                 'data' =>array(),
-            );
-            $response["data"] = $data;
+         );
+        $response["data"] = $data;
 
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
 
         /*if(isset($data['orders'])){
             $this->response->setOutput($this->load->view('wechat/orderto', $data));
@@ -505,7 +519,19 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log('api.log');
         $log->write($data['customer_id']);
         if(!isset($data['customer_id'])){
-            $data['customer_id'] = "0";
+            $data['orders']= array();
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+
+            return ;
         }
 
         $allorderids = $this->model_wechat_ordercenter->getAllOrderid($data['customer_id']);
