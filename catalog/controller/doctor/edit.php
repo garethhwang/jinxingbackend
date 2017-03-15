@@ -143,7 +143,7 @@ class ControllerDoctorEdit extends Controller
 
         //$data['doctor_id'] = $this->request->json('doctor_id', '');
         $data['name'] = $this->request->json('name', '');
-        $data['telephone'] = $this->request->json('telephone', '');
+        //$data['telephone'] = $this->request->json('telephone', '');
         $data['sex'] = $this->request->json('sex', '');
         $data['img'] = $this->request->json('img', '');
         $data['img_thumbnail'] = $this->request->json('img_thumbnail', '');
