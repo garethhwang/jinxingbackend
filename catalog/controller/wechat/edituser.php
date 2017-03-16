@@ -629,6 +629,7 @@ class ControllerWechatEdituser extends Controller
             'realname' =>  $data['realname'],
             'telephone' =>  $data['telephone'],
             'barcode' =>  $data['barcode'],
+            'departmentid' => $data['department'],
             'department' =>  $data['depname'],
             'pregnantstatus' =>  $data['pregnantstatus'],
             //'babybirth' =>  $data['babybirth'],
