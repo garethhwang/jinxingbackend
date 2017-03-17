@@ -97,7 +97,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             if( $switch[$i] != "1" || !isset($switch[$i])){
                 $switch[$i] = "0";
             }
-        }*/
+        }
 
         $log->write("总数：".count($switch)."第一个：".$switch['0'].
             "第二个：".$switch['1'].
@@ -106,7 +106,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             "第五个：".$switch['4'].
             "第六个：".$switch['5'].
             "第七个：".$switch['6'].
-            "第八个：".$switch['7']);
+            "第八个：".$switch['7']);*/
 
         $heartdisease = $this->request->json('heartdisease', array());
         $nephropathy = $this->request->json('nephropathy', array());
