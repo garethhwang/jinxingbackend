@@ -757,9 +757,10 @@ class ControllerWechatPhysicalReceipt extends Controller
             //$data['footer'] = $this->load->controller('common/wechatfooter');
             //$data['header'] = $this->load->controller('common/wechatheader');
 
-           $log->write("fir=".$data['firststart']."sec".$data['secondstart']."thi".$data['thirdstart'] );
+           //$log->write("fir=".$data['firststart']."sec".$data['secondstart']."thi".$data['thirdstart'] );
 
         $result  = array(
+            'highriskfactor' => $data['highriskfactor'],
             'isnotregist' => $data['isnotregist'],
             'ispregnant' =>$data['ispregnant'],
             'pregnant' =>$data["pregnant"],
