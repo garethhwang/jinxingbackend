@@ -72,7 +72,7 @@ class ControllerWechatPhysicalReceipt extends Controller
         $switch = $this->request->json('switch',array());
         $temparray = array(0,0,0,0,0,0,0,0);
 
-        foreach($switch as $key){
+        foreach($switch as $key) {
             if($key == "heart"){
                 $temparray['0'] = "1";
             }elseif ($key == "hyper"){
@@ -108,12 +108,12 @@ class ControllerWechatPhysicalReceipt extends Controller
             "第七个：".$switch['6'].
             "第八个：".$switch['7']);*/
 
-        $heartdisease = $this->request->json('heartdisease', array());
-        $nephropathy = $this->request->json('nephropathy', array());
-        $hepatopathy = $this->request->json('hepatopathy', array());
-        $thyroid = $this->request->json('thyroid', array());
-        $blood = $this->request->json('blood', array());
-        $others = $this->request->json('others', array());
+            $heartdisease = $this->request->json('heartdisease', array());
+            $nephropathy = $this->request->json('nephropathy', array());
+            $hepatopathy = $this->request->json('hepatopathy', array());
+            $thyroid = $this->request->json('thyroid', array());
+            $blood = $this->request->json('blood', array());
+            $others = $this->request->json('others', array());
 
 
 
@@ -267,13 +267,22 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'success' => $this->session->data['success']
             );
 
+            if( $temp == $test['receipt_text']){
 
-        $response = array(
-            'code'  => 0,
-            'message'  => "",
-            'data' =>array(),
-        );
-        $response["data"] = $data;
+                $response = array(
+                    'code' => 2,
+                    'message' => "如果您觉得没有符合的项目，请在\"其他\"中的\"其它\"填写具体因素",
+                    'data' => array(),
+                );
+
+            } else {
+                $response = array(
+                    'code' => 0,
+                    'message' => "",
+                    'data' => array(),
+                );
+                $response["data"] = $data;
+            }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
