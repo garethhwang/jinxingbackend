@@ -269,6 +269,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
             if( $temp == $test['receipt_text']){
 
+                $log->write("要填写信息");
                 $response = array(
                     'code' => 2,
                     'message' => "如果您觉得没有符合的项目，请在\"其他\"中的\"其它\"填写具体因素",
