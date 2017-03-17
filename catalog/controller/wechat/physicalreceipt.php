@@ -240,14 +240,24 @@ class ControllerWechatPhysicalReceipt extends Controller
                     $flagnum +=  $data['receipt'][$i]['flag'];
 
             }
-            $log->write("flagnum=".$flagnum);
 
+            if( $flagnum == 0 ) {
 
+                $log->write("要填写信息");
+                $response = array(
+                    'code' => 2,
+                    'message' => "如果您觉得没有符合的项目，请在\"其他\"中的\"其它\"填写具体因素",
+                    'data' => array(),
+                );
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+
+            }
 
             $temp = array(
-                'receipt' => $data['receipt']
-            );
-
+                    'receipt' => $data['receipt']
+                );
 
             $result = array(
 
@@ -275,24 +285,12 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'success' => $this->session->data['success']
             );
 
-
-            if( $flagnum == 0 ) {
-
-                $log->write("要填写信息");
-                $response = array(
-                    'code' => 2,
-                    'message' => "如果您觉得没有符合的项目，请在\"其他\"中的\"其它\"填写具体因素",
-                    'data' => array(),
-                );
-
-            } else {
-                $response = array(
+            $response = array(
                     'code' => 0,
                     'message' => "",
                     'data' => array(),
-                );
-                $response["data"] = $data;
-            }
+            );
+            $response["data"] = $data;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
