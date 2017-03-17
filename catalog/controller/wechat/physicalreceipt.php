@@ -236,6 +236,15 @@ class ControllerWechatPhysicalReceipt extends Controller
                     $data['receipt'][7]['flag'] = "0";
                 }
 
+            for($i=0;$i<count($data['receipt']);$i++){
+
+                    $flagnum = 0 ;
+                    $flagnum += $data['receipt'][$i]['flag'];
+                    $log->write("flagnum=".$flagnum);
+            }
+
+
+
             $temp = array(
                 'receipt' => $data['receipt']
             );
@@ -267,7 +276,8 @@ class ControllerWechatPhysicalReceipt extends Controller
                 'success' => $this->session->data['success']
             );
 
-            if( $temp == $test['receipt_text']){
+
+            if( $flagnum == 0 ) {
 
                 $log->write("要填写信息");
                 $response = array(
