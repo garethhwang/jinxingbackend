@@ -67,8 +67,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 {"id":"7","name":"血液系统疾病","flag":"1","detail": [{"key":"贫血HGB数值","value":"无"},{"key":"血小板异常数值","value":"无"},{"key":"再生障碍性贫血/白血病","value":"无"}]},
 {"id":"8","name":"其他","flag":"1","detail": [{"key":"精神疾病","value":"无"},{"key":"血型不合","value":"无"},{"key":"免疫系统疾病","value":"无"},{"key":"结核","value":"无"},{"key":"哮喘","value":"无"},{"key":"肿瘤","value":"无"},{"key":"性病","value":"无"},{"key":"其它","value":"无"}]}]}';
         $data['receipt'] = json_decode($test['receipt_text'], true)['receipt'];
-
-
+        $flagnum = 0 ;
         $switch = $this->request->json('switch',array());
         $temparray = array(0,0,0,0,0,0,0,0);
 
@@ -238,7 +237,6 @@ class ControllerWechatPhysicalReceipt extends Controller
 
             for($i=0;$i<count($data['receipt']);$i++){
 
-                    $flagnum = 0 ;
                     $flagnum = $flagnum + $data['receipt'][$i]['flag'];
 
             }
