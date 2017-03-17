@@ -240,8 +240,9 @@ class ControllerWechatPhysicalReceipt extends Controller
 
                     $flagnum = 0 ;
                     $flagnum += $data['receipt'][$i]['flag'];
-                    $log->write("flagnum=".$flagnum);
+
             }
+            $log->write("flagnum=".$flagnum);
 
 
 
