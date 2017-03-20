@@ -167,7 +167,7 @@ class ControllerWechatPuerpera extends Controller
         } else {
             $data['isnotright'] = '0';
             $this->model_account_customer->addPuerpera($postdata);
-            $this->customer->puerperalogin($data["openid"]);
+            $this->customer->wechatlogin($data["openid"]);
             unset($this->session->data['guest']);
             //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
             //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
