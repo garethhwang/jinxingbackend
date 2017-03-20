@@ -38,6 +38,11 @@ class ControllerCommonHomem extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }*/
+        if(isset($data['openid'])) {
+            $this->customer->wechatlogin($data["openid"]);
+            unset($this->session->data['guest']);
+        }
+
         if (isset($this->request->get['route'])) {
             $this->document->addLink($this->config->get('config_url'), 'canonical');
         }
