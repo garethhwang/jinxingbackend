@@ -145,6 +145,9 @@ class Customer {
                 $this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->customer_id . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', date_added = NOW()");
             }
 
+            $this->db->query("UPDATE " . DB_PREFIX . "customer_ip SET date_added = NOW()  WHERE customer_id = '" . (int)$this->customer_id . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+
+
             return true;
         } else {
             return false;
