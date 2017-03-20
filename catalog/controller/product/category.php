@@ -37,6 +37,11 @@ class ControllerProductCategory extends Controller
             return;
         }*/
 
+        if(isset($data['openid'])) {
+            $this->customer->wechatlogin($data["openid"]);
+            unset($this->session->data['guest']);
+        }
+
 
         /*if(!isset($this->session->data['openid'])){
             $response = array(
