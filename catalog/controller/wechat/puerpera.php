@@ -88,6 +88,8 @@ class ControllerWechatPuerpera extends Controller
             return;
         }
 
+
+
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         //SMS

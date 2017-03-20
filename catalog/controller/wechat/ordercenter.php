@@ -65,6 +65,9 @@ class ControllerWechatOrdercenter extends Controller
             return;
         }
 
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
         $data['column_quantity'] = "数量";
@@ -219,6 +222,9 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
+
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -377,6 +383,9 @@ class ControllerWechatOrdercenter extends Controller
             return;
         }
 
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -532,6 +541,11 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
+
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
+
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
         $data['column_quantity'] = "数量";
@@ -557,6 +571,7 @@ class ControllerWechatOrdercenter extends Controller
 
             return ;
         }
+
 
         $allorderids = $this->model_wechat_ordercenter->getAllOrderid($data['customer_id']);
 

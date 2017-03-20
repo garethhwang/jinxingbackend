@@ -86,6 +86,10 @@ class ControllerWechatOrder extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
+
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
         $this->load->model('wechat/userinfo');
         /*$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
@@ -220,6 +224,9 @@ class ControllerWechatOrder extends Controller
             $this->response->setOutput(json_encode($response));
             return;
         }
+
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 

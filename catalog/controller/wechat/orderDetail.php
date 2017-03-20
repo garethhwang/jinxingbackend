@@ -46,6 +46,9 @@ class ControllerWechatOrderDetail extends Controller
             return;
         }
 
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
+
         $order_id = $this->request->json('order_id', 0);
 
         //$temp['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
