@@ -29,7 +29,7 @@ class ControllerAccountPersonalCenter extends Controller
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
             $log->write("openidid=" .  $data["openid"]);
-        }/*else{
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -39,14 +39,17 @@ class ControllerAccountPersonalCenter extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 	
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
-        $log->write("用户号码=" . $data["customer_id"]);
+        //$log->write("用户号码=" . $data["customer_id"]);
 
+        if (!isset($data['customer_id'])){
+            $data['customer_id'] = "";
+        }
         if (!isset($data['address_id'])){
             $data['address_id'] = "";
         }
