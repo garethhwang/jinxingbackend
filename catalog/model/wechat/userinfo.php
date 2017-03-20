@@ -60,7 +60,7 @@ class ModelWechatUserinfo extends Model
     }
 
 
-    public function insertinto(){
+   /* public function insertinto(){
 
         $result = $this->db->query("select a.customer_id,a.date_added,b.lastmenstrualdate from " . DB_PREFIX . "customer a , " . DB_PREFIX . "physical b where a.customer_id = b.customer_id ");
         $insertdata = $result->rows;
@@ -76,7 +76,7 @@ class ModelWechatUserinfo extends Model
             }
 
 
-           /* if($query["lastmenstrualdate"]==null || $query["lastmenstrualdate"]=="0000-00-00"){
+           if($query["lastmenstrualdate"]==null || $query["lastmenstrualdate"]=="0000-00-00"){
 
                 $temp = date_create($query["date_added"]);
                 $fircheck = date_modify($temp,"+12 weeks");$fircheck = date_format($fircheck,'Y-m-d');$firchecks = date_create($fircheck);$firchecks = date_modify($firchecks,"+7 days");$firchecks = date_format($firchecks,'Y-m-d');$temp = date_create($query["date_added"]);
@@ -112,12 +112,12 @@ class ModelWechatUserinfo extends Model
                 $tenthicheck = date_modify($temp,"+40 weeks");$tenthicheck = date_format($tenthicheck,'Y-m-d');$tenthichecks = date_create($tenthicheck);$tenthichecks = date_modify($tenthichecks,"+7 days");$tenthichecks = date_format($tenthichecks,'Y-m-d');
 
                 $this->db->query("INSERT INTO " . DB_PREFIX . "checklist SET customer_id = '" . (int)$query["customer_id"] . "',lastmenstrualdate ='".$query["lastmenstrualdate"]."', fircheck =  '".$fircheck."',fircheckurl =  '" . checklist . "1?start=".$fircheck."&end=".$firchecks."' , seccheck =  '".$seccheck."', seccheckurl =  '" . checklist . "2?start=".$seccheck."&end=".$secchecks."' , thicheck =  '".$thicheck."', thicheckurl =  '" . checklist . "3?start=".$thicheck."&end=".$thichecks."' , foucheck =  '".$foucheck."', foucheckurl =  '" . checklist . "4?start=".$foucheck."&end=".$fouchecks."' , fifcheck =  '".$fifcheck."', fifcheckurl =  '" . checklist . "5?start=".$fifcheck."&end=".$fifchecks."' , sixcheck =  '".$sixcheck."', sixcheckurl =  '" . checklist . "6?start=".$sixcheck."&end=".$sixchecks."' , sevcheck =  '".$sevcheck."', sevcheckurl =  '" . checklist . "7?start=".$sevcheck."&end=".$sevchecks."' , eigcheck =  '".$eigcheck."', eigcheckurl =  '" . checklist . "8?start=".$eigcheck."&end=".$eigchecks."' , nincheck =  '".$nincheck."', nincheckurl =  '" . checklist . "9?start=".$nincheck."&end=".$ninchecks."' , tencheck =  '".$tencheck."', tencheckurl =  '" . checklist . "10?start=".$tencheck."&end=".$tenthichecks."&firend=".$tenchecks."&secstart=".$tenseccheck."&secend=".$tensecchecks."&thistart=".$tenthicheck."'");
-            }*/
+            }
 
 
         }
 
-    }
+    }*/
 
 
 
