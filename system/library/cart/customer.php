@@ -16,14 +16,12 @@ class Customer {
 
 
     public function __construct($registry) {
-        $log = new Log('wechat.log');
 
         $this->config = $registry->get('config');
         $this->db = $registry->get('db');
         $this->request = $registry->get('request');
         $this->session = $registry->get('session');
 
-        $log->write( "customer_id=".$this->session->data['customer_id']);
 
         if (isset($this->session->data['customer_id'])) {
             $customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND status = '1'");
@@ -38,7 +36,6 @@ class Customer {
                 $this->newsletter = $customer_query->row['newsletter'];
                 $this->address_id = $customer_query->row['address_id'];
 
-                $log->write( "222customer_id=".$this->customer_id);
 
                 $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -120,7 +117,7 @@ class Customer {
 
 
     public function wechatlogin($openid) {
-        $log = new Log('wechat.log');
+
 
             $wechat_query = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id AND status = '1'");
 
@@ -141,7 +138,6 @@ class Customer {
             $this->pregnantstatus = $wechat_query->row['pregnantstatus'];
 
 
-            $log->write( "333customer_id=".$this->customer_id);
 
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
