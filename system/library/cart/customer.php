@@ -15,7 +15,39 @@ class Customer {
     private $pregnantstatus;
 
 
-	public function __construct($registry) {
+    public function __construct($registry) {
+        $this->config = $registry->get('config');
+        $this->db = $registry->get('db');
+        $this->request = $registry->get('request');
+        $this->session = $registry->get('session');
+
+        if (isset($this->session->data['customer_id'])) {
+            $customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND status = '1'");
+
+            if ($customer_query->num_rows) {
+                $this->customer_id = $customer_query->row['customer_id'];
+                $this->realname = $customer_query->row['realname'];
+                $this->customer_group_id = $customer_query->row['customer_group_id'];
+                $this->email = $customer_query->row['email'];
+                $this->telephone = $customer_query->row['telephone'];
+                $this->fax = $customer_query->row['fax'];
+                $this->newsletter = $customer_query->row['newsletter'];
+                $this->address_id = $customer_query->row['address_id'];
+
+                $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+
+                $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+
+                if (!$query->num_rows) {
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->session->data['customer_id'] . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', date_added = NOW()");
+                }
+            } else {
+                $this->logout();
+            }
+        }
+    }
+
+	/*public function __construct($registry) {
 		$this->config = $registry->get('config');
 		$this->db = $registry->get('db');
 		$this->request = $registry->get('request');
@@ -45,7 +77,7 @@ class Customer {
 				$this->logout();
 			}
 		}
-	}
+	}*/
 
 	public function login($email, $password, $override = false) {
 		if ($override) {
@@ -123,6 +155,9 @@ class Customer {
         $this->wechat_id = $nonpregnant_query->row['wechat_id'];
         $this->pregnantstatus = $nonpregnant_query->row['pregnantstatus'];
 
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+
+
         return true;
     } else {
         return false;
@@ -143,6 +178,9 @@ class Customer {
             $this->telephone = $puerpera_query->row['telephone'];
             $this->wechat_id = $puerpera_query->row['wechat_id'];
             $this->pregnantstatus = $puerpera_query->row['pregnantstatus'];
+
+            $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+
 
 
             return true;
