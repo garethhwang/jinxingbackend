@@ -156,9 +156,21 @@ class ControllerWechatWechatbinding extends Controller
                 $postdata["wechat_id"] = $temp["wechat_id"];
             }
 
+            $record = $this->model_account_customer->getWechatCustomer($temp["wechat_id"], $data['telephone']);
+
+
             if($this->cache->get($postdata["telephone"]) !=  $postdata["smscode"]){
                              $data['isnotright'] = '1';
-            }else{
+            }elseif ($record) {
+                $response = array(
+                    'code'  => 1032,
+                    'message'  => "您已注册，无须重复注册",
+                    'data' =>array(),
+                );
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+            }else {
                 $data['isnotright'] = '0';
                 $this->model_account_customer->addNonpregnant($postdata);
                 $this->customer->wechatlogin($data["openid"]);
