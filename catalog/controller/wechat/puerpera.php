@@ -76,7 +76,7 @@ class ControllerWechatPuerpera extends Controller
             $codeinfo = json_decode($codeinfo, true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }else{
+        }/*else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -86,7 +86,7 @@ class ControllerWechatPuerpera extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
 
 
