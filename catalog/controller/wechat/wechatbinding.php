@@ -143,9 +143,7 @@ class ControllerWechatWechatbinding extends Controller
             $this->load->model('wechat/userinfo');
             $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
 
-            $log->write("openid=".$data["openid"]."temp=".$temp[0]);
-
-            if(!$temp){
+            if(!$temp["wechat_id"]){
                 $response = array(
                     'code'  => 1031,
                     'message'  => "请您在微信客户端进行注册",
