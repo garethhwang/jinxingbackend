@@ -341,12 +341,12 @@ class ModelAccountCustomer extends Model
         return $query->row['total'];
     }
 
-    public function getWechatCustomer($wechat_id,$telephone)
+    /*public function getWechatCustomer($wechat_id,$telephone)
     {
         $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE wechat_id = '" . (int)$wechat_id . "'AND telephone = '" . $this->db->escape($telephone) . "'");
 
         return $query->row['total'];
-    }
+    }*/
 
     public function getTotalNonpregnantByWechat($wechat_id)
     {
