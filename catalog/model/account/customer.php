@@ -322,14 +322,14 @@ class ModelAccountCustomer extends Model
     }
     public function getTotalCustomersByTelephone($telephone)
     {
-        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE telephone '" . $this->db->escape($telephone) . "'");
+        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE telephone = '" . $this->db->escape($telephone) . "'");
 
         return $query->row['total'];
     }
 
     public function getTotalNonpregnantByTelephone($telephone)
     {
-        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "nonpregnant WHERE telephone '" . $this->db->escape($telephone) . "'");
+        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "nonpregnant WHERE telephone = '" . $this->db->escape($telephone) . "'");
 
         return $query->row['total'];
     }
@@ -337,6 +337,13 @@ class ModelAccountCustomer extends Model
     public function getTotalCustomersByWechat($wechat_id)
     {
         $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE wechat_id = '" . (int)$wechat_id . "'");
+
+        return $query->row['total'];
+    }
+
+    public function getWechatCustomer($wechat_id,$telephone)
+    {
+        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE wechat_id = '" . (int)$wechat_id . "'AND telephone = '" . $this->db->escape($telephone) . "'");
 
         return $query->row['total'];
     }
