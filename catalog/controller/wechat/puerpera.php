@@ -149,6 +149,8 @@ class ControllerWechatPuerpera extends Controller
         $this->load->model('wechat/userinfo');
         $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
 
+        $log->write("openid=".$data["openid"]."temp=".$temp);
+
         if(!$temp){
             $response = array(
                 'code'  => 1031,
