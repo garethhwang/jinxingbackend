@@ -155,6 +155,7 @@ class ControllerWechatPuerpera extends Controller
                 'message'  => "请您在微信客户端进行注册",
                 'data' =>array(),
             );
+            $log->write("record=11");
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
