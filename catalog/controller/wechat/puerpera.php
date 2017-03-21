@@ -171,7 +171,7 @@ class ControllerWechatPuerpera extends Controller
         } elseif ($record) {
             $response = array(
                 'code'  => 1032,
-                'message'  => "您已注册，无须重复注册",
+                'message'  => "您已注册，请您在个人信息查看本人信息",
                 'data' =>array(),
             );
             $this->response->addHeader('Content-Type: application/json');
