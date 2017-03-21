@@ -224,6 +224,7 @@ class ControllerWechatRegister extends Controller
                 $postdata["wechat_id"] = $temp["wechat_id"];
             }
 
+            $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
 
             $edc = date_create($postdata["lastmenstrualdate"]);
@@ -251,7 +252,16 @@ class ControllerWechatRegister extends Controller
 
             if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
                 $data['isnotright'] = '1';
-            } else {
+            } elseif ($record) {
+                $response = array(
+                    'code'  => 1032,
+                    'message'  => "您已注册，无须重复注册",
+                    'data' =>array(),
+                );
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+            }else  {
                 $data['isnotright'] = '0';
                 $customer_id = $this->model_account_customer->addCustomer($postdata);
                 $this->customer->wechatlogin($data["openid"]);

@@ -164,7 +164,7 @@ class ControllerWechatPuerpera extends Controller
 
         $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
-        $log->write("record=".$record);
+        //$log->write("record=".$record);
 
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
