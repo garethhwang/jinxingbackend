@@ -79,7 +79,7 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $this->load->model('account/address');
         $address = $this->model_account_address->getAddress($customer['address_id'],$customer['customer_id']);
-        if(!isset($address)){
+        if(!isset($address) || $physical == ""){
             $address = array();
             $address['city'] = "";
         }
