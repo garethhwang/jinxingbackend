@@ -41,7 +41,7 @@ class ControllerDoctorCustomerinfo extends Controller
 
     public function all()
     {
-        //$log = new Log("wechat.log");
+        $log = new Log("wechat.log");
         $customer_id = $this->request->json('customer_id', '');
 
         $this->load->model('account/customer');
@@ -74,6 +74,9 @@ class ControllerDoctorCustomerinfo extends Controller
         if(!isset($physical)){
             $physical = array();
         }
+
+        $log->write("physical=". $physical);
+
 
         $this->load->model('account/address');
         $address = $this->model_account_address->getAddress($customer['address_id'],$customer['customer_id']);
