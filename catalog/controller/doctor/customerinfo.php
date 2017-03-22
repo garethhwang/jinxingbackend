@@ -55,10 +55,9 @@ class ControllerDoctorCustomerinfo extends Controller
             $customer['physical_id'] = "";
             $customer['department'] = "";
             $customer = array();
-            $log->write("asdasd");
         }
 
-        if(isset($wechat)) {
+        if($customer['wechat_id'] != "") {
             $this->load->model('wechat/userinfo');
             $wechat = $this->model_wechat_userinfo->getUserInfoByWechatId($customer['wechat_id']);
             $log->write("1111111");
@@ -67,7 +66,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $log->write("22222");
         }
 
-        if(isset($physical)) {
+        if($customer['physical_id'] != "") {
             $this->load->model('account/physical');
             $physical = $this->model_account_physical->getPhysical($customer['physical_id'], $customer['customer_id']);
         } else {
@@ -75,7 +74,7 @@ class ControllerDoctorCustomerinfo extends Controller
         }
 
 
-        if(isset($address)) {
+        if($customer['address_id'] != "") {
             $this->load->model('account/address');
             $address = $this->model_account_address->getAddress($customer['address_id'], $customer['customer_id']);
         } else {
@@ -85,17 +84,16 @@ class ControllerDoctorCustomerinfo extends Controller
 
 
         $data = array_merge($wechat,$customer,$physical,$address);
-        $data['district'] = $address['city'];
-        $data["department"] = $customer['department'];
 
-        if ($data["department"] != NULL) {
-            $data["department"] = $this->ConvertDepartment($data["department"]);
+
+        if ($customer['department'] != "") {
+            $data["department"] = $this->ConvertDepartment($customer['department']);
             //$log->write("department=" . $data["department"]);
         } else {
             $data["department"] = "";
         }
 
-        if (!isset($data['customer_id'])) {
+        if (!$data) {
             $data['height'] = "";
             $data['weight'] = "";
             $data['birthday'] = "";
@@ -126,6 +124,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['address_1'] = "";
 
         }
+
 
 
         if (!isset($data['barcode'])) {
@@ -210,9 +209,9 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['fetal'] = '';
         }
 
-        if (!isset($data['district'])) {
+        if (!isset($data['city'])) {
 
-            $data['district'] = '';
+            $data['city'] = '';
         }
 
         if (!isset($data['address_1'])) {
@@ -244,7 +243,7 @@ class ControllerDoctorCustomerinfo extends Controller
             'drug_inducedabortion' =>  $data['drug_inducedabortion'],
             'highriskfactor' =>  $data['highriskfactor'],
             'highrisk' =>  $data['highrisk'],
-            'district' =>  $data['district'],
+            'district' =>  $data['city'],
             'address_1' =>  $data['address_1'],
             'householdregister' =>  $data['householdregister'],
         );
