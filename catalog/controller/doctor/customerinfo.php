@@ -92,7 +92,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $data["department"] = "";
         }
 
-        if ($data == NULL) {
+        if (empty($data)) {
             $data['height'] = "";
             $data['weight'] = "";
             $data['birthday'] = "";
