@@ -84,14 +84,6 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $log->write("1111111=".$data);
 
-
-        if ($customer['department']) {
-            $data["department"] = $this->ConvertDepartment($customer['department']);
-            //$log->write("department=" . $data["department"]);
-        } else {
-            $data["department"] = "";
-        }
-
         if (empty($data)) {
             $data['height'] = "";
             $data['weight'] = "";
@@ -123,6 +115,16 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['address_1'] = "";
             $log->write("123456789");
         }
+
+
+        if ($data['department']) {
+            $data["department"] = $this->ConvertDepartment($data['department']);
+            //$log->write("department=" . $data["department"]);
+        } else {
+            $data["department"] = "";
+        }
+
+
 
         $result  = array(
             'headimgurl' =>  $data['headimgurl'],
