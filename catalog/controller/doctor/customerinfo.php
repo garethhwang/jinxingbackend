@@ -51,6 +51,8 @@ class ControllerDoctorCustomerinfo extends Controller
 
         if (!isset($customer['customer_id'])){
             $customer['customer_id'] = "";
+            $customer['department'] = "";
+            $customer = array();
         }
         if (!isset($customer['address_id'])){
             $customer['address_id'] = "";
@@ -74,9 +76,6 @@ class ControllerDoctorCustomerinfo extends Controller
         if(!isset($physical)){
             $physical = array();
         }
-
-        $log->write("physical=". $physical."department".$customer['department']);
-
 
         $this->load->model('account/address');
         $address = $this->model_account_address->getAddress($customer['address_id'],$customer['customer_id']);
