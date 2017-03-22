@@ -75,7 +75,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $physical = array();
         }
 
-        $log->write("physical=". $physical);
+        $log->write("physical=". $physical."department".$customer['department']);
 
 
         $this->load->model('account/address');
@@ -88,7 +88,6 @@ class ControllerDoctorCustomerinfo extends Controller
         $data['district'] = $address['city'];
         $data["department"] = $customer['department'];
 
-        $this->load->model('clinic/clinic');
         if ($data["department"] != NULL) {
             $data["department"] = $this->ConvertDepartment($data["department"]);
             //$log->write("department=" . $data["department"]);
