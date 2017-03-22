@@ -48,7 +48,7 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $customer = $this->model_account_customer->getCustomer($customer_id);
 
-        if(!isset($customer)){
+        if(!$customer){
             $customer['wechat_id'] = "";
             $customer['customer_id'] = "";
             $customer['address_id'] = "";
