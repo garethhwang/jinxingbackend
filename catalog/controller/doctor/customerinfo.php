@@ -63,8 +63,8 @@ class ControllerDoctorCustomerinfo extends Controller
         }
 
 
-        $this->load->model('wechat/useinfo');
-        $wechat = $this->model_wechat_useinfo->getUserInfoByWechatId($customer['wechat_id']);
+        $this->load->model('wechat/userinfo');
+        $wechat = $this->model_wechat_userinfo->getUserInfoByWechatId($customer['wechat_id']);
         if(!isset($wechat)){
             $wechat = array();
         }
