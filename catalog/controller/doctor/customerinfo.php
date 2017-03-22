@@ -49,12 +49,13 @@ class ControllerDoctorCustomerinfo extends Controller
         $customer = $this->model_account_customer->getCustomer($customer_id);
 
         if(!$customer){
+            $customer = array();
             $customer['wechat_id'] = "";
             $customer['customer_id'] = "";
             $customer['address_id'] = "";
             $customer['physical_id'] = "";
             $customer['department'] = "" ;
-            $customer = array();
+
         }
 
         if($customer['wechat_id']) {
@@ -82,7 +83,7 @@ class ControllerDoctorCustomerinfo extends Controller
 
          $data = array_merge($wechat,$customer,$physical,$address);
 
-        $log->write("1111111=".$data);
+         //$log->write("1111111=".$data);
 
         if (empty($data)) {
             $data['height'] = "";
@@ -111,7 +112,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['telephone'] = "";
             $data['productiondate'] = "";
             $data['householdregister'] = "";
-            $data['district'] = "";
+            $data['city'] = "";
             $data['address_1'] = "";
             $log->write("123456789");
         }
