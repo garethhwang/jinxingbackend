@@ -7,6 +7,12 @@ class ModelWechatUserinfo extends Model
         $result=$this->db->query("select * from wechat_user where openid='".$openid."'");
         return $result->row;
     }
+
+    public function getUserInfoByWechatId($wechat_id){
+        $result=$this->db->query("select * from wechat_user where wechat_id='".$wechat_id."'");
+        return $result->row;
+    }
+
     public function getCustomerByWechat($openid) {
         $result = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer, " . DB_PREFIX . "physical where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id and " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id ");
         return $result->row;

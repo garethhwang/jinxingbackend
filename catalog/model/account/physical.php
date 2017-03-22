@@ -57,7 +57,7 @@ class ModelAccountPhysical extends Model {
                 'weight'        => $physical_query->row['weight'],
                 'bmiindex'      => $physical_query->row['bmiindex'],
                 'bmitype'      => $physical_query->row['bmitype'],
-                'lastmenstrualdata'       => $physical_query->row['lastmenstrualdata'],
+                'lastmenstrualdate'       => $physical_query->row['lastmenstrualdate'],
                 'edc'           => $physical_query->row['edc'],
                 'gravidity'        => $physical_query->row['gravidity'],
                 'parity'           => $physical_query->row['parity'],

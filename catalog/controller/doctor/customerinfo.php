@@ -58,7 +58,16 @@ class ControllerDoctorCustomerinfo extends Controller
         if(!isset($customer['physical_id'])){
             $customer['physical_id'] = "";
         }
+        if(!isset($customer['wechat_id'])){
+            $customer['wechat_id'] = "";
+        }
 
+
+        $this->load->model('wechat/useinfo');
+        $wechat = $this->model_wechat_useinfo->getUserInfoByWechatId($customer['wechat_id']);
+        if(!isset($wechat)){
+            $wechat = array();
+        }
 
         $this->load->model('account/physical');
         $physical = $this->model_account_physical->getPhysical($customer['physical_id'],$customer['customer_id']);
@@ -72,7 +81,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $address = array();
             $address['city'] = "";
         }
-        $data = array_merge($customer,$physical,$address);
+        $data = array_merge($wechat,$customer,$physical,$address);
         $data['district'] = $address['city'];
         $data["department"] = $customer['department'];
 
