@@ -44,8 +44,8 @@ class ModelAccountPhysical extends Model {
         $this->db->query("DELETE FROM " . DB_PREFIX . "physical WHERE physical_id = '" . (int)$physical_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
     }
 
-    public function getPhysical($physical_id) {
-        $physical_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "physical WHERE physical_id = '" . (int)$physical_id . "' AND customer_id = '" . (int)$this->customer->getId() . "'");
+    public function getPhysical($physical_id,$customer_id) {
+        $physical_query = $this->db->query("SELECT DISTINCT * FROM " . DB_PREFIX . "physical WHERE physical_id = '" . (int)$physical_id . "' AND customer_id = '" . (int)$customer_id . "'");
 
         if ($physical_query->num_rows) {
 
