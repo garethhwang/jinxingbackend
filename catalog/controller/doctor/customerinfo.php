@@ -48,41 +48,42 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $customer = $this->model_account_customer->getCustomer($customer_id);
 
-
-        if (!isset($customer['customer_id'])){
+        if(!isset($customer)){
+            $customer['wechat_id'] = "";
             $customer['customer_id'] = "";
+            $customer['address_id'] = "";
+            $customer['physical_id'] = "";
             $customer['department'] = "";
             $customer = array();
-        }
-        if (!isset($customer['address_id'])){
-            $customer['address_id'] = "";
-        }
-        if(!isset($customer['physical_id'])){
-            $customer['physical_id'] = "";
-        }
-        if(!isset($customer['wechat_id'])){
-            $customer['wechat_id'] = "";
+            $log->write("asdasd");
         }
 
-
-        $this->load->model('wechat/userinfo');
-        $wechat = $this->model_wechat_userinfo->getUserInfoByWechatId($customer['wechat_id']);
-        if(!isset($wechat)){
+        if(isset($wechat)) {
+            $this->load->model('wechat/userinfo');
+            $wechat = $this->model_wechat_userinfo->getUserInfoByWechatId($customer['wechat_id']);
+            $log->write("1111111");
+        } else {
             $wechat = array();
+            $log->write("22222");
         }
 
-        $this->load->model('account/physical');
-        $physical = $this->model_account_physical->getPhysical($customer['physical_id'],$customer['customer_id']);
-        if(!isset($physical) || $physical == ""){
+        if(isset($physical)) {
+            $this->load->model('account/physical');
+            $physical = $this->model_account_physical->getPhysical($customer['physical_id'], $customer['customer_id']);
+        } else {
             $physical = array();
         }
 
-        $this->load->model('account/address');
-        $address = $this->model_account_address->getAddress($customer['address_id'],$customer['customer_id']);
-        if(!isset($address) || $physical == ""){
+
+        if(isset($address)) {
+            $this->load->model('account/address');
+            $address = $this->model_account_address->getAddress($customer['address_id'], $customer['customer_id']);
+        } else {
             $address = array();
             $address['city'] = "";
         }
+
+
         $data = array_merge($wechat,$customer,$physical,$address);
         $data['district'] = $address['city'];
         $data["department"] = $customer['department'];
