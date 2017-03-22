@@ -227,6 +227,7 @@ class ControllerDoctorCustomerinfo extends Controller
             'department' =>  $data['department'],
             'pregnantstatus' =>  $data['pregnantstatus'],
             'birthday' =>  $data['birthday'],
+            'babybirth' => $data['babybirth'],
             'height' =>  $data['height'],
             'weight' =>  $data['weight'],
             'bmitype' =>  $data['bmitype'],
