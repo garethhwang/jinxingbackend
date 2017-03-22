@@ -73,7 +73,7 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $this->load->model('account/physical');
         $physical = $this->model_account_physical->getPhysical($customer['physical_id'],$customer['customer_id']);
-        if(!isset($physical)){
+        if(!isset($physical) || $physical == ""){
             $physical = array();
         }
 
