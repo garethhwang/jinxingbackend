@@ -62,8 +62,16 @@ class ControllerDoctorCustomerinfo extends Controller
 
         $this->load->model('account/physical');
         $physical = $this->model_account_physical->getPhysical($customer['physical_id'],$customer['customer_id']);
+        if(!isset($physical)){
+            $physical = array();
+        }
+
         $this->load->model('account/address');
         $address = $this->model_account_address->getAddress($customer['address_id'],$customer['customer_id']);
+        if(!isset($address)){
+            $address = array();
+            $address['city'] = "";
+        }
         $data = array_merge($customer,$physical,$address);
         $data['district'] = $address['city'];
 
@@ -202,7 +210,6 @@ class ControllerDoctorCustomerinfo extends Controller
 
 
         $result  = array(
-            'error_warning' =>  $data['error_warning'],
             'headimgurl' =>  $data['headimgurl'],
             'realname' =>  $data['realname'],
             'telephone' =>  $data['telephone'],
