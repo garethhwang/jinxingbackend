@@ -55,6 +55,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $customer['physical_id'] = "";
             $customer['department'] = "" ;
             $customer = array();
+            $log->write("00000000");
         }
 
         if($customer['wechat_id']) {
@@ -82,7 +83,7 @@ class ControllerDoctorCustomerinfo extends Controller
         }
 
 
-        $data = array_merge($wechat,$customer,$physical,$address);
+         $data = array_merge($wechat,$customer,$physical,$address);
 
 
         if ($customer['department']) {
@@ -123,123 +124,6 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['address_1'] = "";
             $log->write("123456789");
         }
-
-        if (!isset($data['realname'])) {
-            $data['realname'] = '';
-        }
-
-        if (!isset($data['telephone'])) {
-            $data['telephone'] = '';
-        }
-
-
-        if (!isset($data['barcode'])) {
-            $data['barcode'] = '';
-        }
-
-        if (!isset($data['birthday'])) {
-            $data['birthday'] = '';
-        }
-
-        if (!isset($data['babybirth'])) {
-            $data['babybirth'] = '';
-        }
-
-
-        if (!isset( $data['height'])) {
-            $data['height'] = '';
-        }
-
-        if (!isset( $data['weight'])) {
-            $data['weight'] = '';
-        }
-
-        if (!isset($data['bmiindex'])) {
-
-            $data['bmiindex'] = '';
-        }
-
-        if (!isset($data['bmitype'])) {
-
-            $data['bmitype'] = '';
-        }
-
-        if (!isset($data['pregnantstatus'])) {
-
-            $data['pregnantstatus'] = '';
-        }
-
-
-        if (!isset($data['lastmenstrualdate'])) {
-
-            $data['lastmenstrualdate'] = '';
-        }
-
-        if (!isset( $data['edc'])) {
-
-            $data['edc'] = '';
-        }
-
-        if (!isset($data['gravidity'])) {
-
-            $data['gravidity'] = '';
-        }
-
-        if (!isset($data['parity'])) {
-
-            $data['parity'] = '';
-        }
-
-        if (!isset($data['vaginaldelivery'])) {
-
-            $data['vaginaldelivery'] = '';
-        }
-
-        if (!isset( $data['aesarean'] )) {
-
-            $data['aesarean'] = '';
-        }
-
-        if (!isset($data['spontaneousabortion'] )) {
-
-            $data['spontaneousabortion'] = '';
-        }
-
-        if (!isset($data['drug_inducedabortion'])) {
-
-            $data['drug_inducedabortion'] = '';
-        }
-
-        if (!isset($data['fetal'])) {
-
-            $data['fetal'] = '';
-        }
-
-        if (!isset($data['city'])) {
-
-            $data['city'] = '';
-        }
-
-        if (!isset($data['address_1'])) {
-
-            $data['address_1'] = '';
-        }
-
-        if (!isset($data['highriskfactor'])) {
-
-            $data['highriskfactor'] = '';
-        }
-
-        if (!isset($data['highrisk'])) {
-
-            $data['highrisk'] = '';
-        }
-
-        if (!isset($data['householdregister'])) {
-
-            $data['householdregister'] = '';
-        }
-
 
         $result  = array(
             'headimgurl' =>  $data['headimgurl'],
