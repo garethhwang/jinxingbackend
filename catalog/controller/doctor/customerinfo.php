@@ -50,22 +50,16 @@ class ControllerDoctorCustomerinfo extends Controller
 
         if(!$customer){
             $customer = array();
-            $customer['wechat_id'] = "";
-            $customer['customer_id'] = "";
-            $customer['address_id'] = "";
-            $customer['physical_id'] = "";
-            $customer['department'] = "" ;
-
         }
 
-        if($customer['wechat_id']) {
+        if(isset($customer['wechat_id'])) {
             $this->load->model('wechat/userinfo');
             $wechat = $this->model_wechat_userinfo->getUserInfoByWechatId($customer['wechat_id']);
         } else {
             $wechat = array();
         }
 
-        if($customer['physical_id']) {
+        if(isset($customer['physical_id'])) {
             $this->load->model('account/physical');
             $physical = $this->model_account_physical->getPhysical($customer['physical_id'], $customer['customer_id']);
         } else {
@@ -73,7 +67,7 @@ class ControllerDoctorCustomerinfo extends Controller
         }
 
 
-        if($customer['address_id']) {
+        if(isset($customer['address_id'])) {
             $this->load->model('account/address');
             $address = $this->model_account_address->getAddress($customer['address_id'], $customer['customer_id']);
         } else {
