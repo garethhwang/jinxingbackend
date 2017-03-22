@@ -74,6 +74,7 @@ class ControllerDoctorCustomerinfo extends Controller
         }
         $data = array_merge($customer,$physical,$address);
         $data['district'] = $address['city'];
+        $data["department"] = $customer['department'];
 
         $this->load->model('clinic/clinic');
         if ($data["department"] != NULL) {
