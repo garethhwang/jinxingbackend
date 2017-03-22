@@ -53,6 +53,7 @@ class ControllerDoctorCustomerinfo extends Controller
             $customer['customer_id'] = "";
             $customer['address_id'] = "";
             $customer['physical_id'] = "";
+            $customer['department'] = "" ;
             $customer = array();
         }
 
@@ -120,9 +121,16 @@ class ControllerDoctorCustomerinfo extends Controller
             $data['householdregister'] = "";
             $data['district'] = "";
             $data['address_1'] = "";
-
+            $log->write("123456789");
         }
 
+        if (!isset($data['realname'])) {
+            $data['realname'] = '';
+        }
+
+        if (!isset($data['telephone'])) {
+            $data['telephone'] = '';
+        }
 
 
         if (!isset($data['barcode'])) {
@@ -215,6 +223,21 @@ class ControllerDoctorCustomerinfo extends Controller
         if (!isset($data['address_1'])) {
 
             $data['address_1'] = '';
+        }
+
+        if (!isset($data['highriskfactor'])) {
+
+            $data['highriskfactor'] = '';
+        }
+
+        if (!isset($data['highrisk'])) {
+
+            $data['highrisk'] = '';
+        }
+
+        if (!isset($data['householdregister'])) {
+
+            $data['householdregister'] = '';
         }
 
 
