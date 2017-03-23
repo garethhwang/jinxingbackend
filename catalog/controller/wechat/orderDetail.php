@@ -141,11 +141,6 @@ class ControllerWechatOrderDetail extends Controller
                 $data['lastprice'] = $product_info['products'][0]['price'];
             }
 
-            if($product_info['products'][0]['product_id'] == 61){
-                $data['lastprice'] = 1;
-                $log->write("price=".$data['lastprice']);
-            }
-
             /**  pay for product */
             ini_set('date.timezone', 'Asia/Shanghai');
             //获取用户openid
@@ -155,6 +150,10 @@ class ControllerWechatOrderDetail extends Controller
             $openId = $temp['openid'];
             $title=$data['products'][0]['name'];
             $price=(int)$data['lastprice']*100;
+
+            if($product_info['products'][0]['product_id'] == 61){
+                $price = 1;
+            }
 
             //②、统一下单
             $input = new WxPayUnifiedOrder();
