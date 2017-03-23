@@ -152,7 +152,7 @@ class ControllerWechatOrderDetail extends Controller
             $price=(int)$data['lastprice']*100;
 
             if($product_info['products'][0]['product_id'] == 61){
-                $price = 1;
+                $price = 0;
             }
 
             //②、统一下单
