@@ -142,7 +142,7 @@ class ControllerWechatOrderDetail extends Controller
             }
 
             if($product_info['products'][0]['product_id'] == 61){
-                $data['lastprice'] = 1;
+                $data['lastprice'] = 0;
                 $log->write("price=".$data['lastprice']);
             }
 
