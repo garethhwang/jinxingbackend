@@ -151,10 +151,6 @@ class ControllerWechatOrderDetail extends Controller
             $title=$data['products'][0]['name'];
             $price=(int)$data['lastprice']*100;
 
-            if($product_info['products'][0]['product_id'] == 61){
-                $price = 0;
-            }
-
             //②、统一下单
             $input = new WxPayUnifiedOrder();
             $input->SetBody($title);

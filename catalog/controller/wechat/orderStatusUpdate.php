@@ -128,10 +128,10 @@ class ControllerWechatOrderStatusUpdate extends Controller
         $this->load->model('checkout/order');
         $this->model_checkout_order->addOrderHistory($data["order_id"], $data["order_status_id"]);
 
-        /*$result = $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162280");
+        $result = $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162280");
         if($result == 2) {
             $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162409");
-        }*/
+        }
         $results = $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162280");
         if($results == 2) {
             $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162409");
