@@ -44,7 +44,6 @@ class ControllerWechatOrderStatusUpdate extends Controller
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
-            $order_id=$order_id;
             $data['order_id']=$order_id;
             $this->model_wechat_ordercenter->UpdateOrderStatusToPaid($order_id);
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id);
@@ -126,6 +125,18 @@ class ControllerWechatOrderStatusUpdate extends Controller
             }
         }
 
+        $this->load->model('checkout/order');
+        $this->model_checkout_order->addOrderHistory($data["order_id"], $data["order_status_id"]);
+
+        /*$result = $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162280");
+        if($result == 2) {
+            $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162409");
+        }*/
+        $results = $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162280");
+        if($results == 2) {
+            $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162409");
+        }
+
         $response = array(
                 'code'  => 0,
                 'message'  => "",
@@ -137,6 +148,36 @@ class ControllerWechatOrderStatusUpdate extends Controller
         $this->response->setOutput(json_encode($response));
 
         //$this->response->setOutput($this->load->view('wechat/orderDetail', $data));
+    }
+
+    function sendTemplateSMS($to,$datas,$tempId)
+    {
+
+        //global $accountSid,$accountToken,$appId,$serverIP,$serverPort,$softVersion;
+        $rest = new REST(serverIP,serverPort,softVersion);
+        $rest->setAccount(accountSid,accountToken);
+        $rest->setAppId(appId);
+
+        $result = $rest->sendTemplateSMS($to,$datas,$tempId);
+        if($result == NULL ) {
+            //echo "result error!";
+            return 0;
+        }
+        if($result->statusCode == "0") {
+            $result->TemplateSMS;
+            //echo "Sendind TemplateSMS success!";
+            //获取返回信息
+            // $smsmessage = $result->TemplateSMS;
+            //echo "dateCreated:".$smsmessage->dateCreated."<br/>";
+            //echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+            return 1;
+        }else if($result->statusCode == "160040"){
+            return 2;
+        }else{
+            //echo "error code :" . $result->statusCode ."<br/>";
+            //echo "error msg :" . $result->statusMsg."<br/>";
+            return 0;
+        }
     }
 
 }
