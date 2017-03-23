@@ -26,7 +26,7 @@ class ControllerWechatOrderDetail extends Controller
         }
         //wechat
         $code = $this->request->json("code","");
-        $log->write("code=".$code);
+        //$log->write("code=".$code);
         if($code){
             $this->load->controller('wechat/userinfo/getUsertoken');
             $codeinfo = $this->cache->get($code);
@@ -143,6 +143,7 @@ class ControllerWechatOrderDetail extends Controller
 
             if($product_info['products'][0]['product_id'] == 61){
                 $data['lastprice'] = 0.01;
+                $log->write("price=".$data['lastprice']);
             }
 
             /**  pay for product */
