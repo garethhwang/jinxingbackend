@@ -141,6 +141,10 @@ class ControllerWechatOrderDetail extends Controller
                 $data['lastprice'] = $product_info['products'][0]['price'];
             }
 
+            if($product_info['products'][0]['product_id'] == 68) {
+                $data['lastprice'] = 9.9 ;
+            }
+
             /**  pay for product */
             ini_set('date.timezone', 'Asia/Shanghai');
             //获取用户openid
