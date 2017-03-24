@@ -494,9 +494,6 @@ class ControllerWechatOrder extends Controller
         //$this->response->setOutput($this->load->view('wechat/orderDetail', $data));
     }
 
-<<<<<<< HEAD
-}
-=======
     public function ConvertPosition($position){
         $temp_arr = explode(",", $position);
         $this->load->model('clinic/clinic');
@@ -515,4 +512,3 @@ class ControllerWechatOrder extends Controller
     }
 
 }
->>>>>>> a12ad571f9cfd4d6dd0a8895c039979dc2a4c050
