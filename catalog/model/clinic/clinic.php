@@ -78,14 +78,18 @@ class ModelClinicClinic extends Model
     public function getProvince($province_id)
     {
         $query = $this->db->query("SELECT name FROM wechat_province WHERE province_id ='" . (int)$province_id . "'");
-        return $query->row;
+        if($query->row){
+            return $query->row["name"];
+        }
     }
 
 
     public function getDistrict($district_id)
     {
         $query = $this->db->query("SELECT name FROM wechat_district WHERE district_id ='" . (int)$district_id . "'");
-        return $query->row;
+        if($query->row){
+            return $query->row["name"];
+        }
     }
 
 
@@ -93,7 +97,9 @@ class ModelClinicClinic extends Model
     public function getCity($city_id)
     {
         $query = $this->db->query("SELECT name FROM wechat_city WHERE city_id ='" . (int)$city_id . "'");
-        return $query->row;
+        if($query->row){
+            return $query->row["name"];
+        }
     }
 
     //get office info
