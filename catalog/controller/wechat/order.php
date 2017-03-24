@@ -306,7 +306,7 @@ class ControllerWechatOrder extends Controller
         $data['telephone'] = $this->request->json('telephone',1);
         $data['realname'] = $this->request->json('realname','renxiaopeng');
         $data['address'] = $this->request->json('address','北京');
-        $data['shipping_address_1'] = $this->request->json('shipping_address_1','北京');
+        $data['shipping_address_1'] = $this->request->json('address_1','北京');
         $data['shipping_date'] = $this->request->json('shipping_date','2017-1-4');
 
 
@@ -314,7 +314,7 @@ class ControllerWechatOrder extends Controller
         $data['invoice_prefix']='INV-2013-00';
         $data['store_id'] = '0';
         $data['store_name'] = '金杏健康';
-        $data['store_url'] = 'http://opencart.meluo.net/';
+        $data['store_url'] = 'http://wechat.jinxingjk.com/';
         $data['customer_group_id'] = '1';
         $data['email'] = 'sallyxie@meluo.net';
         $data['payment_realname'] = $data['realname'];
