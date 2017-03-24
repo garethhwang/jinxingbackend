@@ -261,7 +261,7 @@ class ControllerWechatEdituser extends Controller
         }
 
         if (!empty($customer_address)) {
-            $data['district'] = $customer_address['city'];
+            $data['district'] =  $this->ConvertPosition($customer_address['city']);
         } else {
             $data['district'] = '';
         }
@@ -849,7 +849,12 @@ class ControllerWechatEdituser extends Controller
             $provinceName = $this->model_clinic_clinic->getProvince($temp_arr[0]);
             $cityName = $this->model_clinic_clinic->getCity($temp_arr[1]);
             $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[1]);
-            return $provinceName . "," . $cityName . "," . $districtName;
+            if($provinceName == $cityName){
+                return $cityName."市".$districtName.'区';
+            } else {
+                return $provinceName."省".$cityName."市".$districtName.'区';
+            }
+
         }
 
     }
