@@ -500,7 +500,7 @@ class ControllerWechatOrder extends Controller
         if (count($temp_arr) == 3) {
             $provinceName = $this->model_clinic_clinic->getProvince($temp_arr[0]);
             $cityName = $this->model_clinic_clinic->getCity($temp_arr[1]);
-            $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[1]);
+            $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[2]);
             if($provinceName == $cityName){
                 return $cityName."市".$districtName.'区';
             } else {
