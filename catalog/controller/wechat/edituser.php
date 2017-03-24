@@ -828,8 +828,7 @@ class ControllerWechatEdituser extends Controller
 
 
 
-    public function ConvertDepartment($department)
-    {
+    public function ConvertDepartment($department){
         $temp_arr = explode(",", $department);
         $this->load->model('wechat/userinfo');
         if (count($temp_arr) == 3) {
@@ -841,8 +840,7 @@ class ControllerWechatEdituser extends Controller
 
     }
 
-    public function ConvertPosition($position)
-    {
+    public function ConvertPosition($position){
         $temp_arr = explode(",", $position);
         $this->load->model('clinic/clinic');
         if (count($temp_arr) == 3) {

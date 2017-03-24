@@ -59,14 +59,20 @@ class ControllerAccountPersonalCenter extends Controller
 
         $this->load->model('account/address');
         $temp = $this->model_account_address->getAddress($data['address_id'],$data['customer_id']);
-        $data['householdregister'] = $temp['householdregister'];
-        $data['district'] = $temp['city'];
-        $data['address_1'] = $temp['address_1'];
+        if(!empty($temp)){
+            $data['householdregister'] = $temp['householdregister'];
+            $data['district'] = $this->ConvertPosition($temp['city']);
+            $data['address_1'] = $temp['address_1'];
+        } else {
+            $data['householdregister'] = "";
+            $data['district'] = "";
+            $data['address_1'] = "";
+        }
 
-        $this->load->model('clinic/clinic');
-        if ($data["department"] != NULL) {
+
+        if (!empty($data["department"])) {
             $data["department"] = $this->ConvertDepartment($data["department"]);
-            $log->write("department=" . $data["department"]);
+            //$log->write("department=" . $data["department"]);
         } else {
             $data["department"] = "";
         }
@@ -100,8 +106,8 @@ class ControllerAccountPersonalCenter extends Controller
             $data['district'] = "";
             $data['address_1'] = "";
 
-            $this->error['warning'] = "PersonalCenter： userinfo 为空";
-            $log->write($this->error['warning']);
+            //$this->error['warning'] = "PersonalCenter： userinfo 为空";
+            //$log->write($this->error['warning']);
         }
 
 
@@ -246,8 +252,7 @@ class ControllerAccountPersonalCenter extends Controller
         //$this->response->setOutput($this->load->view('account/wechatregister',$data));
     }
 
-    public function ConvertDepartment($department)
-    {
+    public function ConvertDepartment($department){
         $temp_arr = explode(",", $department);
         $this->load->model('wechat/userinfo');
         if (count($temp_arr) == 3) {
@@ -255,6 +260,23 @@ class ControllerAccountPersonalCenter extends Controller
             $districtName = $this->model_wechat_userinfo->getDistrictName($temp_arr[1]);
             $officeName = $this->model_wechat_userinfo->getOfficeName($temp_arr[2]);
             return $cityName . "市" . $districtName . "区" . $officeName;
+        }
+
+    }
+
+    public function ConvertPosition($position){
+        $temp_arr = explode(",", $position);
+        $this->load->model('clinic/clinic');
+        if (count($temp_arr) == 3) {
+            $provinceName = $this->model_clinic_clinic->getProvince($temp_arr[0]);
+            $cityName = $this->model_clinic_clinic->getCity($temp_arr[1]);
+            $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[1]);
+            if($provinceName == $cityName){
+                return $cityName."市".$districtName.'区';
+            } else {
+                return $provinceName."省".$cityName."市".$districtName.'区';
+            }
+
         }
 
     }
