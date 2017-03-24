@@ -306,7 +306,7 @@ class ControllerWechatOrder extends Controller
         $data['telephone'] = $this->request->json('telephone',1);
         $data['realname'] = $this->request->json('realname','renxiaopeng');
         $data['address'] = $this->request->json('address','北京');
-        $data['shipping_address_1'] = $this->request->json('shipping_address_1','北京');
+        $data['shipping_address_1'] = $this->request->json('address_1','北京');
         $data['shipping_date'] = $this->request->json('shipping_date','2017-1-4');
 
 

@@ -37,9 +37,9 @@ define('EncodingAESKey','1bSbXZX3mEMxwp8p4lm8qHPCY0a80uQsPlicbt6hlEB');
 
 //SMS
 
-define('accountSid','8a48b5514f73ea32014f9873908a4784');
-define('accountToken','0ca181f887124b87a259daa742dd8b68');
-define('appId','8a216da85982d9da0159872a33120261');
+define('accountSid','8a216da85a7d6742015a9a49235b0c99');
+define('accountToken','6d4c425f988d4a7a9a019e3697743b35');
+define('appId','8a216da85a7d6742015a9a55b3d30ca1');
 define('serverIP','app.cloopen.com');
 define('serverPort','8883');
 define('softVersion','2013-12-26');
