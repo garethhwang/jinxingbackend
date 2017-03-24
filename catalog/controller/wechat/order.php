@@ -305,7 +305,7 @@ class ControllerWechatOrder extends Controller
         $data['productCount'] = $this->request->json('productCount',1);
         $data['telephone'] = $this->request->json('telephone',1);
         $data['realname'] = $this->request->json('realname','renxiaopeng');
-        $data['address'] = $this->request->json('address','北京');
+        $data['shipping_city'] = $this->request->json('city','北京市');
         $data['shipping_address_1'] = $this->request->json('address_1','北京');
         $data['shipping_date'] = $this->request->json('shipping_date','2017-1-4');
 
@@ -333,7 +333,7 @@ class ControllerWechatOrder extends Controller
         $data['payment_code'] = 'cod';
         $data['shipping_realname'] = $data['realname'];
         $data['shipping_address_2'] = '1111111';
-        $data['shipping_city'] = $data['address'];
+        //$data['shipping_city'] = $data['address'];
         $data['shipping_postcode'] = '1111111111';
         $data['shipping_country'] = 'China';
         $data['shipping_country_id'] = '44';
