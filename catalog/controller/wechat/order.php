@@ -169,7 +169,7 @@ class ControllerWechatOrder extends Controller
             'price' =>  $data['product']['price'],
             'realname' => $data['customer']['realname'],
             'telephone' => $data['customer']['telephone'],
-            'city'  =>  $data['address']['city'],
+            'city'  =>  $this->ConvertPosition($data['address']['city']),
             'address_1' => $data['address']['address_1'],
             'service_tel' => $data['service_tel']
 
@@ -494,4 +494,25 @@ class ControllerWechatOrder extends Controller
         //$this->response->setOutput($this->load->view('wechat/orderDetail', $data));
     }
 
+<<<<<<< HEAD
 }
+=======
+    public function ConvertPosition($position){
+        $temp_arr = explode(",", $position);
+        $this->load->model('clinic/clinic');
+        if (count($temp_arr) == 3) {
+            $provinceName = $this->model_clinic_clinic->getProvince($temp_arr[0]);
+            $cityName = $this->model_clinic_clinic->getCity($temp_arr[1]);
+            $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[1]);
+            if($provinceName == $cityName){
+                return $cityName."市".$districtName.'区';
+            } else {
+                return $provinceName."省".$cityName."市".$districtName.'区';
+            }
+
+        }
+
+    }
+
+}
+>>>>>>> a12ad571f9cfd4d6dd0a8895c039979dc2a4c050
