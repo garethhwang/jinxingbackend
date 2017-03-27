@@ -169,7 +169,7 @@ class ControllerWechatOrder extends Controller
             'price' =>  $data['product']['price'],
             'realname' => $data['customer']['realname'],
             'telephone' => $data['customer']['telephone'],
-            'district' => $data['address']['city'],
+            'districtid' => $data['address']['city'],
             'city'  =>  $this->ConvertPosition($data['address']['city']),
             'address_1' => $data['address']['address_1'],
             'service_tel' => $data['service_tel']
