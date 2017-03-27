@@ -287,8 +287,6 @@ class ControllerWechatEdituser extends Controller
            /*$this->load->model('account/customer');
             $postdata["bmiindex"] = $postdata["weight"] / (pow($postdata["height"], 2) / 10000);
             $postdata["bmiindex"] = round($postdata["bmiindex"], 2);
-
-
             if ($postdata["bmiindex"] < "18.5") {
                 $postdata["bmitype"] = "过轻";
             } else if ($postdata["bmiindex"] < "25") {
