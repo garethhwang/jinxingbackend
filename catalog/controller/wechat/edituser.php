@@ -317,7 +317,6 @@ class ControllerWechatEdituser extends Controller
 
             //$this->session->data['success'] = $this->language->get('text_success');
 
-
             // Add to activity log
             if ($this->config->get('config_customer_activity')) {
                 $this->load->model('account/activity');
