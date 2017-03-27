@@ -261,6 +261,12 @@ class ControllerWechatEdituser extends Controller
         }
 
         if (!empty($customer_address)) {
+            $data['districtid'] =  $customer_address['city'];
+        } else {
+            $data['districtid'] = '';
+        }
+
+        if (!empty($customer_address)) {
             $data['district'] =  $this->ConvertPosition($customer_address['city']);
         } else {
             $data['district'] = '';
@@ -648,6 +654,7 @@ class ControllerWechatEdituser extends Controller
             'drug_inducedabortion' =>  $data['drug_inducedabortion'],
             'highriskfactor' =>  $data['highriskfactor'],
             'highrisk' =>  $data['highrisk'],
+            'districtid' => $data['districtid'],
             'district' =>  $data['district'],
             'address_1' =>  $data['address_1'],
             'householdregister'   =>  $data['householdregister'],

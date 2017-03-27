@@ -120,7 +120,7 @@ class ControllerWechatOrderDetail extends Controller
 
             $data = array_merge($order_info, $product_info, $order_totals);
 
-            //$data['shipping_city'] = $this->ConvertPosition($data['shipping_city']);
+            $data['shipping_city'] = $this->ConvertPosition($data['shipping_city']);
 
             $this->load->model('extension/total/coupon');
             $coupon_info = $this->model_extension_total_coupon->getCouponInfo($order_id,$order_info['customer_id']);
