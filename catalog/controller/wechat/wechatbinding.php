@@ -507,7 +507,7 @@ class ControllerWechatWechatbinding extends Controller
                     foreach($alloffice as $office) {
                         $offices["value"] = $office["id"];
                         $offices["lable"] = $office["name"];
-                        $data[$province["children"]][$city["children"]][$district["children"]][] = $offices;
+                        $data["children"]["children"]["children"][] = $offices;
 
                     }
 
