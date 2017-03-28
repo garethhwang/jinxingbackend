@@ -483,18 +483,22 @@ class ControllerWechatWechatbinding extends Controller
     public function getAllAddress(){
 
         $data = array();
+        $log = new Log('wechat.log');
 
         $this->load->model('wechat/bind');
 
         $province = $this->model_wechat_bind->getProvinces();
         for($i=0;$i<count($province);$i++) {
-            $data[$i]["value"] = $province[$i]["id"] ;
-            $data[$i]["lable"] = $province[$i]["name"] ;
+            $data[$i]["value"] = $province[$i]["id"];
+            $data[$i]["lable"] = $province[$i]["name"];
             $city = $this->model_wechat_bind->getCities($province[$i]["id"]);
 
-            for($j=0;$j<count($city);$i++) {
-                $data[$i][$j]["value"] = $city[$j]["id"] ;
-                $data[$i][$j]["lable"] = $city[$j]["name"] ;
+            for ($j = 0; $j < count($city); $i++) {
+                $data[$i]["children"][$j]["value"] = $city[$j]["id"];
+                $data[$i]["children"][$j]["lable"] = $city[$j]["name"];
+
+                $log->write("value=".$data[$i]["children"][$j]["value"]);
+
                 $district = $this->model_wechat_bind->getDistricts($city[$j]["id"]);
 
                 /*for($k=0;$k<count($district);$k++) {
@@ -511,8 +515,9 @@ class ControllerWechatWechatbinding extends Controller
                 }*/
 
             }
-
         }
+
+
 
         /*$data =array(
             'province' => $allprovince,
