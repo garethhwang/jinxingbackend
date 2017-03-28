@@ -612,10 +612,8 @@ class ControllerWechatEdituser extends Controller
         /*foreach($data["provs_data"] as $aa){
             $log->write("provs=".$aa);
         }*/
-        $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
-        $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
-        $data["allcitys_data"] = $this->load->controller('wechat/wechatbinding/getAllCity');
-        $data["deps_data"] = $this->load->controller('wechat/wechatbinding/getOffice');
+        $data["pcd_data"] = $this->load->controller('wechat/wechatbinding/getPCD');
+        $data["cdo_data"] = $this->load->controller('wechat/wechatbinding/getCDO');
 
         $this->document->setTitle("个人信息");
 
