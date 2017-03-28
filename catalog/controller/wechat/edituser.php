@@ -612,6 +612,13 @@ class ControllerWechatEdituser extends Controller
         /*foreach($data["provs_data"] as $aa){
             $log->write("provs=".$aa);
         }*/
+        $data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
+
+        $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
+        $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
+        $data["allcitys_data"] = $this->load->controller('wechat/wechatbinding/getAllCity');
+        $data["deps_data"] = $this->load->controller('wechat/wechatbinding/getOffice');
+
         $data["pcd_data"] = $this->load->controller('wechat/wechatbinding/getPCD');
         $data["cdo_data"] = $this->load->controller('wechat/wechatbinding/getCDO');
 
@@ -654,7 +661,12 @@ class ControllerWechatEdituser extends Controller
             'address_1' =>  $data['address_1'],
             'householdregister'   =>  $data['householdregister'],
             'pcd_data' =>  $data["pcd_data"] ,
-            'cdo_data' =>  $data["cdo_data"]
+            'cdo_data' =>  $data["cdo_data"],
+            'provs_data' =>  $data["provs_data"] ,
+            'citys_data' =>  $data["citys_data"] ,
+            'dists_data' =>  $data["dists_data"] ,
+            'allcitys_data' =>  $data["allcitys_data"] ,
+            'deps_data' =>  $data["deps_data"]
 
     );
 
