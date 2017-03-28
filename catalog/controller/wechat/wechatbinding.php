@@ -490,31 +490,30 @@ class ControllerWechatWechatbinding extends Controller
         foreach ($allprovince as $province) {
             $data["value"] = $province["id"] ;
             $data["lable"] = $province["name"] ;
-            $city = $this->model_wechat_bind->getCities($province["id"]);
-            $citys["value"] = $city["id"] ;
-            $citys["lable"] = $city["name"] ;
-            $data[$province["id"]] =$citys;
+            $allcity = $this->model_wechat_bind->getCities($province["id"]);
 
+            foreach($allcity as $city) {
+                $citys["value"] = $city["id"] ;
+                $citys["lable"] = $city["name"] ;
+                $data[$province["id"]] =$citys;
+                $alldistrict = $this->model_wechat_bind->getDistricts($city["id"]);
 
-            $allcities = $this->model_wechat_bind->getAllCities();
-            foreach ($allcities as $city) {
-                $district = $this->model_wechat_bind->getDistricts($city["id"]);
-                $districts["value"] = $district["id"];
-                $districts["lable"] = $district["name"];
-                $data[$province["id"]][$city["id"]]= $districts;
+                foreach($alldistrict as $district){
+                    $districts["value"] = $district["id"];
+                    $districts["lable"] = $district["name"];
+                    $data[$province["id"]][$city["id"]]= $districts;
+                    $alloffice = $this->model_wechat_bind->getOffice($district["id"]);
 
-                $allDistricts = $this->model_wechat_bind->getAllDistricts();
-                foreach ($allDistricts as $district) {
-                    $office = $this->model_wechat_bind->getOffice($district["id"]);
-                    $offices["value"] = $office["id"];
-                    $offices["lable"] = $office["name"];
-                    $data[$province["id"]][$city["id"]][$district["id"]] = $offices;
+                    foreach($alloffice as $office) {
+                        $offices["value"] = $office["id"];
+                        $offices["lable"] = $office["name"];
+                        $data[$province["id"]][$city["id"]][$district["id"]] = $offices;
+
+                    }
 
                 }
 
-
             }
-
 
         }
 
