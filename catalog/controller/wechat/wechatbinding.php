@@ -493,11 +493,13 @@ class ControllerWechatWechatbinding extends Controller
             $data[$i]["lable"] = $province[$i]["name"];
             $city = $this->model_wechat_bind->getCities($province[$i]["id"]);
 
+            $log->write("value=".count($city));
+
             for ($j = 0; $j < count($city); $i++) {
                 $data[$i]["children"][$j]["value"] = $city[$j]["id"];
                 $data[$i]["children"][$j]["lable"] = $city[$j]["name"];
 
-                $log->write("value=".$data[$i]["children"][$j]["value"]);
+
 
                 $district = $this->model_wechat_bind->getDistricts($city[$j]["id"]);
 
