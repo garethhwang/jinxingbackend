@@ -495,7 +495,7 @@ class ControllerWechatWechatbinding extends Controller
 
             $log->write("value=".count($city));
 
-            for ($j = 0; $j < count($city); $i++) {
+            for ($j = 0; $j < count($city); $j++) {
                 $data[$i]["children"][$j]["value"] = $city[$j]["id"];
                 $data[$i]["children"][$j]["lable"] = $city[$j]["name"];
 
