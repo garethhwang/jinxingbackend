@@ -653,11 +653,8 @@ class ControllerWechatEdituser extends Controller
             'district' =>  $data['district'],
             'address_1' =>  $data['address_1'],
             'householdregister'   =>  $data['householdregister'],
-            'provs_data' =>  $data["provs_data"] ,
-            'citys_data' =>  $data["citys_data"] ,
-            'dists_data' =>  $data["dists_data"] ,
-            'allcitys_data' =>  $data["allcitys_data"] ,
-            'deps_data' =>  $data["deps_data"]
+            'pcd_data' =>  $data["pcd_data"] ,
+            'cdo_data' =>  $data["cdo_data"]
 
     );
 
