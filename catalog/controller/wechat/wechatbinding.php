@@ -581,6 +581,7 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+        return $data;
     }
 
 
@@ -632,7 +633,9 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
+        return $data;
     }
+
 
 
 
