@@ -486,29 +486,25 @@ class ControllerWechatWechatbinding extends Controller
 
         $this->load->model('wechat/bind');
 
-        $allprovince = $this->model_wechat_bind->getProvinces();
-        foreach ($allprovince as $province) {
-            $provinces["value"] = $province["id"] ;
-            $provinces["lable"] = $province["name"] ;
-            $data[] = $provinces;
-            $allcity = $this->model_wechat_bind->getCities($province["id"]);
+        $province = $this->model_wechat_bind->getProvinces();
+        for($i=0;$i<count($province);$i++) {
+            $data[$i]["value"] = $province[$i]["id"] ;
+            $data[$i]["lable"] = $province[$i]["name"] ;
+            $city = $this->model_wechat_bind->getCities($province["id"]);
 
-            foreach($allcity as $city) {
-                $citys["value"] = $city["id"] ;
-                $citys["lable"] = $city["name"] ;
-                $data["children"][] =$citys;
-                $alldistrict = $this->model_wechat_bind->getDistricts($city["id"]);
+            for($j=0;$j<count($city);$i++) {
+                $data[$i]["children"][$j]["value"] = $city[$j]["id"] ;
+                $data[$i]["children"][$j]["lable"] = $city[$j]["name"] ;
+                $district = $this->model_wechat_bind->getDistricts($city["id"]);
 
-                foreach($alldistrict as $district){
-                    $districts["value"] = $district["id"];
-                    $districts["lable"] = $district["name"];
-                    $data["children"]["children"][]= $districts;
-                    $alloffice = $this->model_wechat_bind->getOffice($district["id"]);
+                for($k=0;$k<count($district);$k++) {
+                    $data[$i]["children"][$j]["children"][$k]["value"] = $district[$k]["id"] ;
+                    $data[$i]["children"][$j]["children"][$k]["lable"] = $district[$k]["name"] ;
+                    $office = $this->model_wechat_bind->getOffice($district["id"]);
 
-                    foreach($alloffice as $office) {
-                        $offices["value"] = $office["id"];
-                        $offices["lable"] = $office["name"];
-                        $data["children"]["children"]["children"][] = $offices;
+                    for($z=0;$z<count($office);$z++) {
+                        $data[$i]["children"][$j]["children"][$k]["children"][$z]["value"] = $office[$z]["id"] ;
+                        $data[$i]["children"][$j]["children"][$k]["children"][$z]["lable"] = $office[$z]["name"] ;
 
                     }
 
