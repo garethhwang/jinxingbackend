@@ -480,6 +480,62 @@ class ControllerWechatWechatbinding extends Controller
     }
 
 
+    public function getAllAddress(){
+
+        $data = array();
+
+        $this->load->model('wechat/bind');
+
+        $allprovince = $this->model_wechat_bind->getProvinces();
+        foreach ($allprovince as $province) {
+            $data["value"] = $province["id"] ;
+            $data["lable"] = $province["name"] ;
+            $city = $this->model_wechat_bind->getCities($province["id"]);
+            $citys["value"] = $city["id"] ;
+            $citys["lable"] = $city["name"] ;
+            $data[$province["id"]] =$citys;
+
+
+            $allcities = $this->model_wechat_bind->getAllCities();
+            foreach ($allcities as $city) {
+                $district = $this->model_wechat_bind->getDistricts($city["id"]);
+                $districts["value"] = $district["id"];
+                $districts["lable"] = $district["name"];
+                $data[$province["id"]][$city["id"]]= $districts;
+
+                $allDistricts = $this->model_wechat_bind->getAllDistricts();
+                foreach ($allDistricts as $district) {
+                    $office = $this->model_wechat_bind->getOffice($district["id"]);
+                    $offices["value"] = $office["id"];
+                    $offices["lable"] = $office["name"];
+                    $data[$province["id"]][$city["id"]][$district["id"]] = $offices;
+
+                }
+
+
+            }
+
+
+        }
+
+        /*$data =array(
+            'province' => $allprovince,
+            'city' =>  $allcity,
+            'district' => $alldistrict,
+            'office' => $alloffice,
+            'allcities' => $allcities
+        );*/
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+    }
 
 
 
