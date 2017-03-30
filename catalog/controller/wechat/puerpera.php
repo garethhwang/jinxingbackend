@@ -168,7 +168,7 @@ class ControllerWechatPuerpera extends Controller
 
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
-        } elseif ($record) {
+        } elseif ($record && !empty($temp["wechat_id"])) {
             $response = array(
                 'code'  => 1032,
                 'message'  => "您已注册，请您在个人信息查看本人信息",
