@@ -145,9 +145,11 @@ class ControllerWechatOrder extends Controller
             $data['product']['price'] = floatval($data['product']['price']);
         }
 
-        $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
-        $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
-        $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
+        $data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
+        $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
+        $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
+        $data["pcd_data"] = $this->load->controller('wechat/wechatbinding/getPCD');
+        $data["cdo_data"] = $this->load->controller('wechat/wechatbinding/getCDO');
         $data['action'] = $this->url->link('wechat/order/addOrder', '&product_id=' . $product_id, true);
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
@@ -172,7 +174,9 @@ class ControllerWechatOrder extends Controller
             'districtid' => $data['address']['city'],
             'city'  =>  $this->ConvertPosition($data['address']['city']),
             'address_1' => $data['address']['address_1'],
-            'service_tel' => $data['service_tel']
+            'service_tel' => $data['service_tel'],
+            'pcd_data' =>  $data["pcd_data"] ,
+            'cdo_data' =>  $data["cdo_data"],
 
         );
 
