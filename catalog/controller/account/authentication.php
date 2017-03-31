@@ -6,9 +6,8 @@ class ControllerAccountAuthentication extends Controller {
 
         $jxsession = $this->request->json("jxsession");
         $code = $this->request->json("code");
-        $date = date("Ymd");
 
-        if (empty($this->cache->get($jxsession))) {
+        if (empty($jxsession)) {
             if (!empty($code)) {
 
                 if ($this->cache->get($code)) {
