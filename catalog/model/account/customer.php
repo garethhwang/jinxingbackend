@@ -235,6 +235,39 @@ class ModelAccountCustomer extends Model
 
     }
 
+    public function addNotWechatCostomer($data){
+
+
+        if (isset($data['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($data['customer_group_id'], $this->config->get('config_customer_group_display'))) {
+            $customer_group_id = $data['customer_group_id'];
+        } else {
+            $customer_group_id = $this->config->get('config_customer_group_id');
+        }
+
+        $this->load->model('account/customer_group');
+
+        $customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', store_id = '" . (int)$this->config->get('config_store_id') . "', language_id = '" . (int)$this->config->get('config_language_id') . "', telephone = '" . $this->db->escape($data['telephone']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['account']) ? json_encode($data['custom_field']['account']) : '') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', status = '1', approved = '" . (int)!$customer_group_info['approval'] . "',receiptdate = NULL ,ispregnant = '0',date_added = NOW()");
+
+        $customer_id = $this->db->getLastId();
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', householdregister = '是',  address_1 = '" . $this->db->escape($data['address_1']) . "', city = '" . $this->db->escape($data['district']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "'");
+
+        $address_id = $this->db->getLastId();
+
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "physical SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['physical']) ? json_encode($data['custom_field']['physical']) : '') . "'");
+
+
+        $physical_id = $this->db->getLastId();
+
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET physical_id = '" . (int)$physical_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        return $customer_id;
+
+    }
 
 
     public function editCustomer($data, $customer_id)
@@ -242,6 +275,16 @@ class ModelAccountCustomer extends Model
         //$customer_id = $this->customer->getId();
 
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', barcode = '" . $this->db->escape($data['barcode']) . "', birthday = '" . $this->db->escape($data['birthday']) . "', department = '" . $this->db->escape($data['department']) . "', pregnantstatus = '1', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "',receiptdate = DATE_ADD( '".$this->db->escape($data['lastmenstrualdate'])."',INTERVAL 10 WEEK),firreceipt = DATE_ADD( '".$this->db->escape($data["lastmenstrualdate"])."',INTERVAL 10 WEEK), secreceipt = DATE_ADD( '".$this->db->escape($data["lastmenstrualdate"])."',INTERVAL 20 WEEK),thireceipt = DATE_ADD( '".$this->db->escape($data["lastmenstrualdate"])."',INTERVAL 34 WEEK),ispregnant = '1' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
+
+    }
+
+    public function updateWechatCustomer($wechat_id, $telephone)
+    {
+        //$customer_id = $this->customer->getId();
+
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET wechat_id = '" . (int)$wechat_id . "' WHERE telephone = '" . (int)$telephone . "'");
 
         //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
 
@@ -314,12 +357,22 @@ class ModelAccountCustomer extends Model
         return $query->row;
     }
 
+    public function getCustomerByTelephone($telephone)
+    {
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer, " . DB_PREFIX . "physical, " . DB_PREFIX . "address WHERE telephone = '" . $this->db->escape($telephone) . "' AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "address.customer_id ");
+
+        return $query->row;
+
+    }
+
     public function getTotalCustomersByEmail($email)
     {
         $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
         return $query->row['total'];
     }
+
+
     public function getTotalCustomersByTelephone($telephone)
     {
         $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer WHERE telephone = '" . $this->db->escape($telephone) . "'");

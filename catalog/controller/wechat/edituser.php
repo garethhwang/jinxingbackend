@@ -44,12 +44,12 @@ class ControllerWechatEdituser extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
-        $this->load->model('wechat/userinfo');
+        /*$this->load->model('wechat/userinfo');
         $temp = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         $log->write("customer_id=".$temp["customer_id"]);
 
 
-        /*$realname = $this->request->json('realname');
+        $realname = $this->request->json('realname');
         $telephone = $this->request->json('telephone');
         $barcode = $this->request->json('barcode');
         $birthday = $this->request->json('birthday');
@@ -96,7 +96,7 @@ class ControllerWechatEdituser extends Controller
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         $this->load->model('account/address');
-        $customer_address = $this->model_account_address->getAddress($temp["address_id"],$temp["customer_id"]);
+        $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
 
         if (!empty($customer_info)) {
             $data['headimgurl'] = $customer_info['headimgurl'];

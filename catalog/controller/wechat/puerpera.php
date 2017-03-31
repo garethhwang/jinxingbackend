@@ -145,7 +145,7 @@ class ControllerWechatPuerpera extends Controller
         $this->load->language('wechat/register');
         $this->document->setTitle("金杏健康");
         $this->load->model('account/customer');
-
+        //$telephone_info = $this->model_account_customer->getTotalCustomersByTelephone($data['telephone']);
         $this->load->model('wechat/userinfo');
         $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
 
@@ -171,17 +171,30 @@ class ControllerWechatPuerpera extends Controller
         } elseif ($record && !empty($temp["wechat_id"])) {
             $response = array(
                 'code'  => 1032,
-                'message'  => "您已注册，请您在个人信息查看本人信息",
+                'message'  => "您微信号已注册，请您在个人信息查看本人信息",
                 'data' =>array(),
             );
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }else {
+        }/*elseif ($telephone_info && empty($temp["wechat_id"])) {
+
+            $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
+            $this->load->controller('account/authentication/authWechat($data["openid"])');
+            $response = array(
+                'code'  => 1033,
+                'message'  => "您手机号已注册，请您在个人信息查看本人信息",
+                'data' =>array(),
+            );
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }*/else {
             $data['isnotright'] = '0';
             $this->model_account_customer->addPuerpera($postdata);
             $this->customer->wechatlogin($data["openid"]);
             unset($this->session->data['guest']);
+            //$this->load->controller('account/authentication/authWechat($data["openid"])');
             //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
             //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
         }

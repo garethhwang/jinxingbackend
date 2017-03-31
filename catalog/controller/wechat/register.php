@@ -224,6 +224,7 @@ class ControllerWechatRegister extends Controller
                 $postdata["wechat_id"] = $temp["wechat_id"];
             }
 
+            //$telephone_info = $this->model_account_customer->getTotalCustomersByTelephone($data['telephone']);
             $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
 
@@ -255,17 +256,30 @@ class ControllerWechatRegister extends Controller
             } elseif ($record && !empty($temp["wechat_id"])) {
                 $response = array(
                     'code'  => 1032,
-                    'message'  => "您已注册，请您在个人信息查看本人信息",
+                    'message'  => "您微信号已注册，请您在个人信息查看本人信息",
                     'data' =>array(),
                 );
                 $this->response->addHeader('Content-Type: application/json');
                 $this->response->setOutput(json_encode($response));
                 return;
-            }else  {
+            }/*elseif ($telephone_info && empty($temp["wechat_id"])) {
+
+            $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
+            $this->load->controller('account/authentication/authWechat($data["openid"])');
+            $response = array(
+                'code'  => 1033,
+                'message'  => "您手机号已注册，请您在个人信息查看本人信息",
+                'data' =>array(),
+            );
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }*/else  {
                 $data['isnotright'] = '0';
                 $customer_id = $this->model_account_customer->addCustomer($postdata);
                 $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
+                //$this->load->controller('account/authentication/authWechat($data["openid"])');
                 //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
             }
 
