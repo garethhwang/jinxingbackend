@@ -119,7 +119,7 @@ class ControllerWechatAdvise extends Controller
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
 
         //$log ->write("openid=".$data["telephone"]) ;
-        $data["asd"] = $this->load->controller('account/authentication/wechat');
+        $data["asd"] = $this->load->controller('account/authentication/wechat($data["telephone"])');
         $log ->write("asd=". $data["asd"]);
         //$this->model_wechat_userinfo->insertinto();
 
@@ -141,7 +141,7 @@ class ControllerWechatAdvise extends Controller
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
-        $this->session->data["nav"] = "personal_center";
+        //$this->session->data["nav"] = "personal_center";
 
         $response = array(
             'code' => 0,
