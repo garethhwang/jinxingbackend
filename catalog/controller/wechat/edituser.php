@@ -613,7 +613,6 @@ class ControllerWechatEdituser extends Controller
             $log->write("provs=".$aa);
         }*/
         $data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
-
         $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
         $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
         $data["allcitys_data"] = $this->load->controller('wechat/wechatbinding/getAllCity');
@@ -745,7 +744,7 @@ class ControllerWechatEdituser extends Controller
         $data['address_1'] = $this->request->json('address_1','');
 
 
-        $log->write( 'aa='.$data['district'].'bb='.$data['department']);
+        //$log->write( 'aa='.$data['district'].'bb='.$data['department']);
 
 
         $postdata  = array(

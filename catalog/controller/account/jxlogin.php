@@ -1,9 +1,8 @@
 <?php
-class ControllerDoctorRegister extends Controller
+class ControllerAccountJxlogin extends Controller
 {
 
-    public function validcode()
-    {
+    public function validcode() {
 
         $telephone = $this->request->json('telephone');
 
@@ -48,8 +47,7 @@ class ControllerDoctorRegister extends Controller
         $this->response->setOutput(json_encode($response));
     }
 
-    public function index()
-    {
+    public function index() {
         //$log = new Log("wechat.log");
         $data['telephone'] = $this->request->json('telephone', '');
         $data['smscode'] = $this->request->json('smscode', 1);
@@ -81,9 +79,10 @@ class ControllerDoctorRegister extends Controller
 
             }else {
                 $this->load->model('account/customer');
-                $customer_id = $this->model_account_customer->addNotWechatCostomer($data['telephone']);
+                $customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
                 $info = $this->model_account_customer->getCustomer($customer_id);
-                $this->cache->set($jxsession, json_encode($info));
+                $data["edit"] = 1 ;
+                $this->cache->set($jxsession, $data['telephone']);
             }
 
             /*$this->load->model('wechat/userinfo');
@@ -121,8 +120,7 @@ class ControllerDoctorRegister extends Controller
 
 
 
-    function sendTemplateSMS($to,$datas,$tempId)
-    {
+    function sendTemplateSMS($to,$datas,$tempId) {
 
         //global $accountSid,$accountToken,$appId,$serverIP,$serverPort,$softVersion;
         $rest = new REST(serverIP,serverPort,softVersion);

@@ -235,7 +235,7 @@ class ModelAccountCustomer extends Model
 
     }
 
-    public function addNotWechatCostomer($data){
+    public function addNotWechatCustomer($data){
 
 
         if (isset($data['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($data['customer_group_id'], $this->config->get('config_customer_group_display'))) {
@@ -280,11 +280,21 @@ class ModelAccountCustomer extends Model
 
     }
 
+    public function editNotWechatCustomer($data, $telephone)
+    {
+        //$customer_id = $this->customer->getId();
+
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
+
+        //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
+
+    }
+
     public function updateWechatCustomer($wechat_id, $telephone)
     {
         //$customer_id = $this->customer->getId();
 
-        $this->db->query("UPDATE " . DB_PREFIX . "customer SET wechat_id = '" . (int)$wechat_id . "' WHERE telephone = '" . (int)$telephone . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET wechat_id = '" . (int)$wechat_id . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
 
         //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
 
