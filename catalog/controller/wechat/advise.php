@@ -119,8 +119,8 @@ class ControllerWechatAdvise extends Controller
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
 
         $log ->write("openid=".$data["telephone"]) ;
-        $asd = $this->load->controller('account/authentication/wechat');
-        $log ->write("asd=".$asd) ;
+        $data["asd"] = $this->load->controller('account/authentication/wechat');
+        $log ->write("asd=". $data["asd"]);
         //$this->model_wechat_userinfo->insertinto();
 
 
