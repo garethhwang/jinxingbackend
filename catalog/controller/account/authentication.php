@@ -73,6 +73,8 @@ class ControllerAccountAuthentication extends Controller {
 
     public function Wechat() {
 
+        $log = new Log('wechat.log');
+        $log ->write("asdasdasdasdasd") ;
 
         return 1234;
 
