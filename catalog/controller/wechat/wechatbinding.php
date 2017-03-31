@@ -174,24 +174,23 @@ class ControllerWechatWechatbinding extends Controller
                 return;
             }/*elseif ($telephone_info && empty($temp["wechat_id"])) {
 
-            $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
-            $this->load->controller('account/authentication/authWechat($data["openid"])');
-            $response = array(
-                'code'  => 1033,
-                'message'  => "您手机号已注册，请您在个人信息查看本人信息",
-                'data' =>array(),
-            );
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return;
-        }*/else {
+                $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
+                $data["jxsession"] = $this->authWechat($data["openid"]);
+                $response = array(
+                    'code'  => 1033,
+                    'message'  => "您手机号已注册，请您在个人信息查看本人信息",
+                    'data' => array(),
+                );
+                $response["data"] = $data;
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return;
+            }*/else {
                 $data['isnotright'] = '0';
                 $this->model_account_customer->addNonpregnant($postdata);
                 $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
-                //$this->load->controller('account/authentication/authWechat($data["openid"])');
-                //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
-                //$this->response->redirect($this->url->link('wechat/registersuccess', '', true));
+                //$data["jxsession"] = $this->authWechat($data["openid"]);
             }
 
             //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
@@ -205,8 +204,6 @@ class ControllerWechatWechatbinding extends Controller
         $data['entry_address_1'] = $this->language->get('entry_address');
 
 
-        //$data['button_continue'] = $this->language->get('button_continue');
-        //$data['button_upload'] = $this->language->get('button_upload');
 
         if (isset($this->error['warning'])) {
             $data['error_warning'] = $this->error['warning'];
@@ -647,6 +644,20 @@ class ControllerWechatWechatbinding extends Controller
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
         return $data;
+    }
+
+    public function authWechat($openid) {
+
+        $date = date("Ymd");
+        $jxsession = md5($openid.$date);
+        $this->load->model('wechat/userinfo');
+        $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
+        $this->load->model('account/address');
+        $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
+        $data = array_merge($customer_info,$customer_address);
+        $this->cache->set($jxsession, json_encode($data));
+        return $jxsession;
+
     }
 
 

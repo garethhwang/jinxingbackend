@@ -70,15 +70,6 @@ class ControllerAccountAuthentication extends Controller {
 
     }
 
-    public function wechat() {
-
-        $log = new Log('wechat.log');
-        $log ->write("asdasdasdasdasd") ;
-
-        return 1111;
-
-    }
-
     private function getUser($accesstoken, $openid)
     {
         $get_url = sprintf(WECHAT_GETUSERINFO, $accesstoken, $openid);
