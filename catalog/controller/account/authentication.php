@@ -71,10 +71,10 @@ class ControllerAccountAuthentication extends Controller {
 
     }
 
-    public function Wechat($openid) {
+    public function Wechat() {
 
 
-        return $openid;
+        return 1234;
 
     }
 
