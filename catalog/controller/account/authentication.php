@@ -17,6 +17,7 @@ class ControllerAccountAuthentication extends Controller {
                     $codeinfo=json_decode($codeinfo,true);
                     $data["openid"] = $codeinfo["openid"];
                     $data["wechat_id"] = $codeinfo["wechat_id"];
+                    $log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
 
                 }else {
 
@@ -41,6 +42,8 @@ class ControllerAccountAuthentication extends Controller {
                         $this->error["error_warning"] = $get_return["errmsg"];
                         $data["wechat_id"] = "";
                     }
+
+                    $log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
 
                 }
 
