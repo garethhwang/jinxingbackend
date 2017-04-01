@@ -55,13 +55,13 @@ class ControllerWechatRegister extends Controller
     {
         $log = new Log("wechat.log");
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
+        /*$data["jxsession"] = $this->load->controller('account/authentication');
         if($data["jxsession"] == 0) {
             $data["login"] = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);*/
 
-        /*if(isset($this->session->data['openid'])){
+        if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -75,7 +75,7 @@ class ControllerWechatRegister extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }*/
+        }
 
         /*if(!isset($this->session->data['openid'])){
             $response = array(
@@ -210,7 +210,7 @@ class ControllerWechatRegister extends Controller
             );
 
             $this->load->model('wechat/userinfo');
-            $temp = $this->model_wechat_userinfo->getUserInfo($customer_info["openid"]);
+            $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
 
             if(!$temp){
                 $response = array(
@@ -279,9 +279,9 @@ class ControllerWechatRegister extends Controller
             }*/else  {
                 $data['isnotright'] = '0';
                 $customer_id = $this->model_account_customer->addCustomer($postdata);
-                $this->customer->wechatlogin($customer_info["openid"]);
+                $this->customer->wechatlogin($data["openid"]);
                 unset($this->session->data['guest']);
-                $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+                //$data["jxsession"] = $this->authWechat($customer_info["openid"]);
             }
 
             $data['breadcrumbs'] = array();

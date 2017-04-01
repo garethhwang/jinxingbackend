@@ -16,14 +16,14 @@ class ControllerWechatPersonalinfo extends Controller
 
         $log = new Log('wechat.log');
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
+        /*$data["jxsession"] = $this->load->controller('account/authentication');
         if($data["jxsession"] == 0) {
             $data["login"] = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
-        $log->write("realname=".$customer_info["realname"]."   telephone=".$customer_info["telephone"]."  city=".$customer_info["city"]);
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);*/
+        //$log->write("realname=".$customer_info["realname"]."   telephone=".$customer_info["telephone"]."  city=".$customer_info["city"]);
 
-        /*if(isset($this->session->data['openid'])){
+        if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -47,17 +47,17 @@ class ControllerWechatPersonalinfo extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
 
-        $this->customer->wechatlogin( $customer_info["openid"]);
+        $this->customer->wechatlogin( $data["openid"]);
         unset($this->session->data['guest']);
 
         //$this->load->model('wechat/userinfo');
         //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
         //$log->write("open id is ".$data["openid"]." ,customer id is ".$data['customer_id']);
-        if (!isset($customer_info['customer_id'])) {
+        if (!isset($data['customer_id'])) {
             $data['isnotregist'] = "1" ;
             $data['customer_id'] = " ";
         }
@@ -65,10 +65,10 @@ class ControllerWechatPersonalinfo extends Controller
             $data['isnotregist'] = "0" ;
         }
 
-        if(!isset($customer_info['ispregnant'])){
+        if(!isset($data['ispregnant'])){
             $data['ispregnant'] = "";
         }
-        if($customer_info['ispregnant'] == "0" ){
+        if($data['ispregnant'] == "0" ){
             $data["pregnant"] = "0";
         }else{
             $data["pregnant"] = "1";
