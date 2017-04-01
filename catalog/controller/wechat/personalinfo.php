@@ -13,19 +13,16 @@ class ControllerWechatPersonalinfo extends Controller
     public function index()
     {
 
-        $data["error_warning"] = "";
+
         $log = new Log('wechat.log');
 
-        /*$data["jxsession"] = $this->request->json("jxsession");
-        if(empty($data["jxsession"])) {
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = $this->cache->get($data["jxsession"]);
 
-            $data["jxsession"] = $this->load->controller('account/authentication');
-            if($data["jxsession"] == 0) {
-                $data["login"] = 1 ;
-            }
-        }*/
-
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -49,37 +46,17 @@ class ControllerWechatPersonalinfo extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
-
-
-        /*if(isset($this->session->data['openid'])){
-            $data["openid"] = $this->session->data['openid'];
-            //$data["wechat_id"]= $this->cache->get($this->session->data['openid']);
-        }
-        else{
-            $data["openid"] = "";
-            $this->error['warning'] = "微信信息没有获取到！";
-        }*/
-        /*if(!isset($this->session->data['openid'])){
-            $response = array(
-                'code'  => 1001,
-                'message'  => "微信信息没有获取到！",
-                'data' =>array(),
-            );
-
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return;
         }*/
 
-        $this->customer->wechatlogin($data["openid"]);
+
+        $this->customer->wechatlogin( $customer_info["openid"]);
         unset($this->session->data['guest']);
 
-        $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        //$this->load->model('wechat/userinfo');
+        //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
         //$log->write("open id is ".$data["openid"]." ,customer id is ".$data['customer_id']);
-        if (!isset($data['customer_id'])) {
+        if (!isset($customer_info['customer_id'])) {
             $data['isnotregist'] = "1" ;
             $data['customer_id'] = " ";
         }
@@ -87,10 +64,10 @@ class ControllerWechatPersonalinfo extends Controller
             $data['isnotregist'] = "0" ;
         }
 
-        if(!isset($data['ispregnant'])){
+        if(!isset($customer_info['ispregnant'])){
             $data['ispregnant'] = "";
         }
-        if($data['ispregnant'] == "0" ){
+        if($customer_info['ispregnant'] == "0" ){
             $data["pregnant"] = "0";
         }else{
             $data["pregnant"] = "1";

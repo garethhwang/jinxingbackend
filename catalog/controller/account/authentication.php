@@ -4,8 +4,10 @@ class ControllerAccountAuthentication extends Controller {
     public function index()
     {
 
-        $jxsession = $this->request->json("jxsession");
-        $code = $this->request->json("code");
+        $log = new Log('wechat.log');
+        $jxsession = $this->request->json("jxsession",0);
+        $code = $this->request->json("code",0);
+        $log->write("session=".$jxsession."   code=".$code);
 
         if (empty($jxsession)) {
             if (!empty($code)) {

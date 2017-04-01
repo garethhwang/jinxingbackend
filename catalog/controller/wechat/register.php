@@ -55,7 +55,13 @@ class ControllerWechatRegister extends Controller
     {
         $log = new Log("wechat.log");
 
-        if(isset($this->session->data['openid'])){
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = $this->cache->get($data["jxsession"]);
+
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -69,12 +75,7 @@ class ControllerWechatRegister extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }
-        //$this->cache->set("wechatcode", $code);
-        //$data = $this->load->controller('wechat/userinfo/getUsertoken');
-        //$data=json_decode($codeinfo,true);
-        //$log->write("111111=".$data["openid"]);
-        //$log->write("22eeeee2=".$data["wechat_id"]);
+        }*/
 
         /*if(!isset($this->session->data['openid'])){
             $response = array(
@@ -209,7 +210,7 @@ class ControllerWechatRegister extends Controller
             );
 
             $this->load->model('wechat/userinfo');
-            $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
+            $temp = $this->model_wechat_userinfo->getUserInfo($customer_info["openid"]);
 
             if(!$temp){
                 $response = array(
@@ -278,9 +279,9 @@ class ControllerWechatRegister extends Controller
             }*/else  {
                 $data['isnotright'] = '0';
                 $customer_id = $this->model_account_customer->addCustomer($postdata);
-                $this->customer->wechatlogin($data["openid"]);
+                $this->customer->wechatlogin($customer_info["openid"]);
                 unset($this->session->data['guest']);
-                //$data["jxsession"] = $this->authWechat($data["openid"]);
+                $data["jxsession"] = $this->authWechat($customer_info["openid"]);
             }
 
             $data['breadcrumbs'] = array();
