@@ -20,7 +20,7 @@ class ControllerWechatPersonalinfo extends Controller
         if($data["jxsession"] == 0) {
             $data["login"] = 1 ;
         }
-        $customer_info = $this->cache->get($data["jxsession"]);
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
