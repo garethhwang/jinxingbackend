@@ -70,6 +70,9 @@ class ControllerAccountAuthentication extends Controller {
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
         $this->load->model('account/address');
         $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
+        if(!is_array($customer_address)){
+            $customer_address = array();
+        }
         $data = array_merge($customer_info,$customer_address);
         $this->cache->set($jxsession, json_encode($data));
         return $jxsession;
