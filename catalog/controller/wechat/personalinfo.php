@@ -53,8 +53,8 @@ class ControllerWechatPersonalinfo extends Controller
         $this->customer->wechatlogin( $data["openid"]);
         unset($this->session->data['guest']);
 
-        //$this->load->model('wechat/userinfo');
-        //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $this->load->model('wechat/userinfo');
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
 
         //$log->write("open id is ".$data["openid"]." ,customer id is ".$data['customer_id']);
         if (!isset($data['customer_id'])) {
