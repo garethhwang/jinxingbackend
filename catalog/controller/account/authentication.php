@@ -74,7 +74,9 @@ class ControllerAccountAuthentication extends Controller {
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
         }else {
-            $this->cache->set($jxsession, json_encode($openid));
+            $this->load->model('wechat/userinfo');
+            $wechat = $this->model_wechat_userinfo->getUserInfo($openid);
+            $this->cache->set($jxsession, json_encode($wechat));
         }
 
         return $jxsession;
