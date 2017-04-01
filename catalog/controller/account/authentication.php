@@ -7,7 +7,7 @@ class ControllerAccountAuthentication extends Controller {
         $log = new Log('wechat.log');
         $jxsession = $this->request->json("jxsession",0);
         $code = $this->request->json("code",0);
-        $log->write("session=".$jxsession."   code=".$code);
+        //$log->write("session=".$jxsession."   code=".$code);
 
         if (empty($jxsession)) {
             if (!empty($code)) {
@@ -17,7 +17,7 @@ class ControllerAccountAuthentication extends Controller {
                     $codeinfo=json_decode($codeinfo,true);
                     $data["openid"] = $codeinfo["openid"];
                     $data["wechat_id"] = $codeinfo["wechat_id"];
-                    $log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
+                    //$log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
 
                 }else {
 
@@ -43,12 +43,12 @@ class ControllerAccountAuthentication extends Controller {
                         $data["wechat_id"] = "";
                     }
 
-                    $log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
+                    //$log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
 
                 }
 
                 $jxsession = $this->authWechatuser($data["openid"]);
-                $log->write("jxssion=".$jxsession);
+                //$log->write("jxssion=".$jxsession);
 
                 return $jxsession;
 
