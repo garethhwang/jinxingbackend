@@ -47,7 +47,7 @@ class ControllerAccountAuthentication extends Controller {
 
                 }
 
-                $jxsession = $this->authWechat($data["openid"]);
+                $jxsession = $this->authWechatuser($data["openid"]);
                 $log->write("jxssion=".$jxsession);
 
                 return $jxsession;
@@ -62,7 +62,7 @@ class ControllerAccountAuthentication extends Controller {
         }
     }
 
-    public function authWechat($openid) {
+    public function authWechatuser($openid) {
 
         $date = date("Ymd");
         $jxsession = md5($openid.$date);
@@ -74,7 +74,7 @@ class ControllerAccountAuthentication extends Controller {
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
         }else {
-            $this->cache->set($jxsession, json_encode($customer_info));
+            $this->cache->set($jxsession, json_encode($openid));
         }
 
         return $jxsession;

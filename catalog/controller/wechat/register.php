@@ -263,7 +263,7 @@ class ControllerWechatRegister extends Controller
                 $this->response->addHeader('Content-Type: application/json');
                 $this->response->setOutput(json_encode($response));
                 return;
-            }/*elseif ($telephone_info && empty($temp["wechat_id"])) {
+            }/*elseif ($telephone_info) {
 
                 $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
                 $data["jxsession"] = $this->authWechat($data["openid"]);
