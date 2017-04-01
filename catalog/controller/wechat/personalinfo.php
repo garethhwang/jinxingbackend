@@ -15,8 +15,15 @@ class ControllerWechatPersonalinfo extends Controller
 
         $data["error_warning"] = "";
         $log = new Log('wechat.log');
-        $get_return = array();
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
+        /*$data["jxsession"] = $this->request->json("jxsession");
+        if(empty($data["jxsession"])) {
+
+            $data["jxsession"] = $this->load->controller('account/authentication');
+            if($data["jxsession"] == 0) {
+                $data["login"] = 1 ;
+            }
+        }*/
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -32,7 +39,7 @@ class ControllerWechatPersonalinfo extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }else{
+        }else {
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
