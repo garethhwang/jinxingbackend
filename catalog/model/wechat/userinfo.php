@@ -20,7 +20,7 @@ class ModelWechatUserinfo extends Model
 
 
     public function addWechatUser($data){
-        $this->db->query("insert into wechat_user(subscribe,openid,nickname,sex,city,country,province,wlanguage,headimgurl) values('1','".$data["openid"]."','".$data["nickname"]."','".$data["sex"]."','".$data["city"]."','".$data["country"]."','".$data["province"]."','".$data["language"]."','".$data["headimgurl"]."')");
+        $this->db->query("insert into wechat_user(subscribe,openid,nickname,sex,city,country,province,wlanguage,headimgurl,date_added) values('1','".$data["openid"]."','".$data["nickname"]."','".$data["sex"]."','".$data["city"]."','".$data["country"]."','".$data["province"]."','".$data["language"]."','".$data["headimgurl"]."',NOW())");
         $result=$this->db->query("select * from wechat_user where openid='".$data["openid"]."'");
         return $result->row["wechat_id"];
     }
