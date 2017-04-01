@@ -21,6 +21,7 @@ class ControllerWechatPersonalinfo extends Controller
             $data["login"] = 1 ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $log->write("realname=".$customer_info["realname"]."   telephone=".$customer_info["telephone"]);
 
         /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
