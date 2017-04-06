@@ -475,7 +475,7 @@ class ControllerWechatOrder extends Controller
             $data['discount'] = "0";
             $data['lastprice'] = $data['products'][0]['price'];
         }
-
+        $data['customer_id'] = $customer_info['customer_id'];
         $data["jxsession"] = $jxsession;
 
         $this->load->model('checkout/order');
