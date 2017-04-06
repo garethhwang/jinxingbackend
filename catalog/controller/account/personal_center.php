@@ -8,9 +8,8 @@ class ControllerAccountPersonalCenter extends Controller
     {
         $log = new Log("wechat.log");
 
-        $this->load->model('wechat/userinfo');
-
-	//$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        /*$this->load->model('wechat/userinfo');
+	    //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->load->controller('wechat/userinfo/getUsertoken');
             $log->write("123456=" . $this->session->data['openid']);
@@ -43,196 +42,198 @@ class ControllerAccountPersonalCenter extends Controller
 	
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);*/
 
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
-        //$log->write("用户号码=" . $data["customer_id"]);
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
-        if (!isset($data['customer_id'])){
-            $data['customer_id'] = "";
+
+        if (!isset($customer_info['customer_id'])){
+            $customer_info['customer_id'] = "";
         }
-        if (!isset($data['address_id'])){
-            $data['address_id'] = "";
+        if (!isset($customer_info['address_id'])){
+            $customer_info['address_id'] = "";
         }
-        if (!isset($data['department'])){
-            $data['department'] = "";
+        if (!isset($customer_info['department'])){
+            $customer_info['department'] = "";
         }
 
         $this->load->model('account/address');
-        $temp = $this->model_account_address->getAddress($data['address_id'],$data['customer_id']);
+        $temp = $this->model_account_address->getAddress($customer_info['address_id'],$customer_info['customer_id']);
         if(!empty($temp)){
-            $data['householdregister'] = $temp['householdregister'];
-            $data['district'] = $this->ConvertPosition($temp['city']);
-            $data['address_1'] = $temp['address_1'];
+            $customer_info['householdregister'] = $temp['householdregister'];
+            $customer_info['district'] = $this->ConvertPosition($temp['city']);
+            $customer_info['address_1'] = $temp['address_1'];
         } else {
-            $data['householdregister'] = "";
-            $data['district'] = "";
-            $data['address_1'] = "";
+            $customer_info['householdregister'] = "";
+            $customer_info['district'] = "";
+            $customer_info['address_1'] = "";
         }
 
 
-        if (!empty($data["department"])) {
-            $data["department"] = $this->ConvertDepartment($data["department"]);
-            //$log->write("department=" . $data["department"]);
+        if (!empty($customer_info["department"])) {
+            $customer_info["department"] = $this->ConvertDepartment($customer_info["department"]);
+
         } else {
-            $data["department"] = "";
+            $customer_info["department"] = "";
         }
 
-        if (!isset($data['customer_id'])) {
-            $data['height'] = "";
-            $data['weight'] = "";
-            $data['birthday'] = "";
-            $data['barcode'] = "";
-            $data['bmiindex'] = "";
-            $data['bmitype'] = "";
-            $data['pregnantstatus'] = "";
-            $data['lastmenstrualdate'] = "";
-            $data['edc'] = "";
-            $data['gravidity'] = "";
-            $data['vaginaldelivery'] = "";
-            $data['parity'] = "";
-            $data['aesarean'] = "";
-            $data['spontaneousabortion'] = "";
-            $data['drug_inducedabortion'] = "";
-            $data['fetal'] = "";
-            $data['highrisk'] = "";
-            $data['highriskfactor'] = "";
-            $data['headimgurl'] = "";
-            $data['realname'] = "";
-            $data['nickname'] = "";
-            $data['department'] = "";
-            $data['telephone'] = "";
-            $data['productiondate'] = "";
-            $data['householdregister'] = "";
-            $data['district'] = "";
-            $data['address_1'] = "";
+        if (!isset($customer_info['customer_id'])) {
+            $customer_info['height'] = "";
+            $customer_info['weight'] = "";
+            $customer_info['birthday'] = "";
+            $customer_info['barcode'] = "";
+            $customer_info['bmiindex'] = "";
+            $customer_info['bmitype'] = "";
+            $customer_info['pregnantstatus'] = "";
+            $customer_info['lastmenstrualdate'] = "";
+            $customer_info['edc'] = "";
+            $customer_info['gravidity'] = "";
+            $customer_info['vaginaldelivery'] = "";
+            $customer_info['parity'] = "";
+            $customer_info['aesarean'] = "";
+            $customer_info['spontaneousabortion'] = "";
+            $customer_info['drug_inducedabortion'] = "";
+            $customer_info['fetal'] = "";
+            $customer_info['highrisk'] = "";
+            $customer_info['highriskfactor'] = "";
+            $customer_info['headimgurl'] = "";
+            $customer_info['realname'] = "";
+            $customer_info['nickname'] = "";
+            $customer_info['department'] = "";
+            $customer_info['telephone'] = "";
+            $customer_info['productiondate'] = "";
+            $customer_info['householdregister'] = "";
+            $customer_info['district'] = "";
+            $customer_info['address_1'] = "";
 
             //$this->error['warning'] = "PersonalCenter： userinfo 为空";
             //$log->write($this->error['warning']);
         }
 
 
-        if (!isset($data['barcode'])) {
-            $data['barcode'] = '';
+        if (!isset($customer_info['barcode'])) {
+            $customer_info['barcode'] = '';
         }
 
-        if (!isset($data['birthday'])) {
-            $data['birthday'] = '';
-        }
-
-
-        if (!isset( $data['height'])) {
-            $data['height'] = '';
-        }
-
-        if (!isset( $data['weight'])) {
-            $data['weight'] = '';
-        }
-
-        if (!isset($data['bmiindex'])) {
-
-            $data['bmiindex'] = '';
-        }
-
-        if (!isset($data['bmitype'])) {
-
-            $data['bmitype'] = '';
-        }
-
-        if (!isset($data['pregnantstatus'])) {
-
-            $data['pregnantstatus'] = '';
+        if (!isset($customer_info['birthday'])) {
+            $customer_info['birthday'] = '';
         }
 
 
-        if (!isset($data['lastmenstrualdate'])) {
-
-            $data['lastmenstrualdate'] = '';
+        if (!isset($customer_info['height'])) {
+            $customer_info['height'] = '';
         }
 
-        if (!isset( $data['edc'])) {
-
-            $data['edc'] = '';
+        if (!isset($customer_info['weight'])) {
+            $customer_info['weight'] = '';
         }
 
-        if (!isset($data['gravidity'])) {
+        if (!isset($customer_info['bmiindex'])) {
 
-            $data['gravidity'] = '';
+            $customer_info['bmiindex'] = '';
         }
 
-        if (!isset($data['parity'])) {
+        if (!isset($customer_info['bmitype'])) {
 
-            $data['parity'] = '';
+            $customer_info['bmitype'] = '';
         }
 
-        if (!isset($data['vaginaldelivery'])) {
+        if (!isset($customer_info['pregnantstatus'])) {
 
-            $data['vaginaldelivery'] = '';
-        }
-
-        if (!isset( $data['aesarean'] )) {
-
-            $data['aesarean'] = '';
-        }
-
-        if (!isset($data['spontaneousabortion'] )) {
-
-            $data['spontaneousabortion'] = '';
-        }
-
-        if (!isset($data['drug_inducedabortion'])) {
-
-            $data['drug_inducedabortion'] = '';
-        }
-
-        if (!isset($data['fetal'])) {
-
-            $data['fetal'] = '';
+            $customer_info['pregnantstatus'] = '';
         }
 
 
+        if (!isset($customer_info['lastmenstrualdate'])) {
 
-        $this->document->setTitle("基本信息");
-        $this->session->data["nav"] = "personal_center";
-        //$data['header'] = $this->load->controller('common/wechatheader');
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-        $data['userinfo_url'] = $this->url->link('wechat/userinfo', '', true);
+            $customer_info['lastmenstrualdate'] = '';
+        }
+
+        if (!isset($customer_info['edc'])) {
+
+            $customer_info['edc'] = '';
+        }
+
+        if (!isset($customer_info['gravidity'])) {
+
+            $customer_info['gravidity'] = '';
+        }
+
+        if (!isset($customer_info['parity'])) {
+
+            $customer_info['parity'] = '';
+        }
+
+        if (!isset($customer_info['vaginaldelivery'])) {
+
+            $customer_info['vaginaldelivery'] = '';
+        }
+
+        if (!isset($customer_info['aesarean'] )) {
+
+            $customer_info['aesarean'] = '';
+        }
+
+        if (!isset($customer_info['spontaneousabortion'] )) {
+
+            $customer_info['spontaneousabortion'] = '';
+        }
+
+        if (!isset($customer_info['drug_inducedabortion'])) {
+
+            $customer_info['drug_inducedabortion'] = '';
+        }
+
+        if (!isset($customer_info['fetal'])) {
+
+            $customer_info['fetal'] = '';
+        }
+
+
+        $customer_info['userinfo_url'] = $this->url->link('wechat/userinfo', '', true);
 
         if (isset($this->error['warning'])) {
-            $data['error_warning'] = $this->error['warning'];
+            $customer_info['error_warning'] = $this->error['warning'];
         } else {
-            $data['error_warning'] = '';
+            $customer_info['error_warning'] = '';
         }
         //$this->load->model('clinic/clinic');
-        //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
+        //$customer_info["departmentlist"] = $this->model_clinic_clinic->getOffices();
 
-        $log->write( $data['barcode']. $data['height'].$data['lastmenstrualdate'].$data['aesarean'].$data['address_1']);
+        //$log->write( $customer_info['barcode']. $customer_info['height'].$customer_info['lastmenstrualdate'].$customer_info['aesarean'].$customer_info['address_1']);
 
         $result  = array(
-            'error_warning' =>  $data['error_warning'], 
-            'headimgurl' =>  $data['headimgurl'],
-            'realname' =>  $data['realname'],
-            'telephone' =>  $data['telephone'],
-            'barcode' =>  $data['barcode'],
-            'department' =>  $data['department'],
-            'pregnantstatus' =>  $data['pregnantstatus'],
-            'birthday' =>  $data['birthday'],
-            'height' =>  $data['height'],
-            'weight' =>  $data['weight'],
-            'bmitype' =>  $data['bmitype'],
-            'bmiindex' =>  $data['bmiindex'],
-            'lastmenstrualdate' =>  $data['lastmenstrualdate'],
-            'gravidity' =>  $data['gravidity'],
-            'parity' =>  $data['parity'],
-            'edc' =>  $data['edc'],
-            'vaginaldelivery' =>  $data['vaginaldelivery'],
-            'aesarean' =>  $data['aesarean'],
-            'spontaneousabortion' =>  $data['spontaneousabortion'],
-            'drug_inducedabortion' =>  $data['drug_inducedabortion'],
-            'highriskfactor' =>  $data['highriskfactor'],
-            'highrisk' =>  $data['highrisk'],
-            'district' =>  $data['district'],
-            'address_1' =>  $data['address_1'],
-            'householdregister' =>  $data['householdregister'],
+            'jxsession' => $data["jxsession"],
+            'login' => $data["login"],
+            'error_warning' =>  $customer_info['error_warning'],
+            'headimgurl' =>  $customer_info['headimgurl'],
+            'realname' =>  $customer_info['realname'],
+            'telephone' =>  $customer_info['telephone'],
+            'barcode' =>  $customer_info['barcode'],
+            'department' =>  $customer_info['department'],
+            'pregnantstatus' =>  $customer_info['pregnantstatus'],
+            'birthday' =>  $customer_info['birthday'],
+            'height' =>  $customer_info['height'],
+            'weight' =>  $customer_info['weight'],
+            'bmitype' =>  $customer_info['bmitype'],
+            'bmiindex' =>  $customer_info['bmiindex'],
+            'lastmenstrualdate' =>  $customer_info['lastmenstrualdate'],
+            'gravidity' =>  $customer_info['gravidity'],
+            'parity' =>  $customer_info['parity'],
+            'edc' =>  $customer_info['edc'],
+            'vaginaldelivery' =>  $customer_info['vaginaldelivery'],
+            'aesarean' =>  $customer_info['aesarean'],
+            'spontaneousabortion' =>  $customer_info['spontaneousabortion'],
+            'drug_inducedabortion' =>  $customer_info['drug_inducedabortion'],
+            'highriskfactor' =>  $customer_info['highriskfactor'],
+            'highrisk' =>  $customer_info['highrisk'],
+            'district' =>  $customer_info['district'],
+            'address_1' =>  $customer_info['address_1'],
+            'householdregister' =>  $customer_info['householdregister'],
             );
 
 
