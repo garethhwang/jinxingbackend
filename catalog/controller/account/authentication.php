@@ -89,6 +89,7 @@ class ControllerAccountAuthentication extends Controller {
             $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
+            $log->write("addressid=".$data["address_id"]."realname".$data["realname"]);
         }else {
             $jxsession="";
         }
