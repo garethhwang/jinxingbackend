@@ -156,8 +156,11 @@ class ControllerWechatOrder extends Controller
         $this->load->model('extension/total/coupon');
         $couponlist = $this->model_extension_total_coupon->getCouponListForCustomer($product_id,721);
         $data['couponall'] = array();
+        $log1=new Log('coupon.log');
+
         if(isset($couponlist)){
             foreach ($couponlist as $coupon){
+                $log1->write($coupon['code']);
                 $data['couponall'][] = $this->model_extension_total_coupon->getCoupon($coupon['code'], $product_id, 721);
             }
         }
