@@ -64,6 +64,9 @@ class ControllerWechatOrderDetail extends Controller
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
 
+        $log->write("openid = ".$customer_info["openid"]);
+
+
 
         $order_id = $this->request->json('order_id', 0);
 
@@ -170,7 +173,7 @@ class ControllerWechatOrderDetail extends Controller
             $tools = new JsApiPay();
 
             //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            if(!empty($customer_info['openid'])){
+            if(empty($customer_info['openid'])){
 
                 $response = array(
                     'code'  => 1035,

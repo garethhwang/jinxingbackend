@@ -77,6 +77,8 @@ class ControllerAccountAuthentication extends Controller {
 
         $date = date("Y-m-d h:i:sa");
         $this->load->model('wechat/userinfo');
+
+        $log->write("1234567678=".$openid);
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
 
         if(!empty($customer_info["address_id"]) && !empty($customer_info["customer_id"])){
@@ -87,6 +89,7 @@ class ControllerAccountAuthentication extends Controller {
             $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
+            $log->write("addressid=".$data["address_id"]."realname".$data["realname"]);
         }else {
             $jxsession="";
         }
