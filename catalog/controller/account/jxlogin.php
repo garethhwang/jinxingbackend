@@ -49,9 +49,10 @@ class ControllerAccountJxlogin extends Controller
 
     public function index() {
         //$log = new Log("wechat.log");
+
         $date = date("Ymd");
         $data['telephone'] = $this->request->json('telephone', '');
-        $data['smscode'] = $this->request->json('smscode', 1);
+        $data['smscode'] = $this->request->json('smscode');
 
         $postdata  = array(
             'telephone' => $data['telephone'],
@@ -83,7 +84,7 @@ class ControllerAccountJxlogin extends Controller
                 $customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
                 $info = $this->model_account_customer->getCustomer($customer_id);
                 $data["edit"] = 1 ;
-                $this->cache->set($jxsession, $data['telephone']);
+                $this->cache->set($jxsession, $info);
             }
 
             /*$this->load->model('wechat/userinfo');
