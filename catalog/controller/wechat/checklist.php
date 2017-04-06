@@ -117,12 +117,6 @@ class  ControllerWechatChecklist extends Controller
         }
 
 
-        //$this->document->setTitle("产检计划");
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-        //$data['header'] = $this->load->controller('common/wechatheader');
-        //$this->session->data["nav"]="personal_center";
-
-
         //$log->write( $data['fircheck']. $data['foucheck'].$data['sevcheck'].$data['tencheck'].$data['tenthicheck']);
 
         $result = array(
