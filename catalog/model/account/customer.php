@@ -252,13 +252,13 @@ class ModelAccountCustomer extends Model
 
         $customer_id = $this->db->getLastId();
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', householdregister = '是',  address_1 = '" . $this->db->escape($data['address_1']) . "', city = '" . $this->db->escape($data['district']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "'");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', householdregister = '是',  custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "'");
 
         $address_id = $this->db->getLastId();
 
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "physical SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['physical']) ? json_encode($data['custom_field']['physical']) : '') . "'");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "physical SET customer_id = '" . (int)$customer_id . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['physical']) ? json_encode($data['custom_field']['physical']) : '') . "'");
 
 
         $physical_id = $this->db->getLastId();
