@@ -11,11 +11,11 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
+
             $response = array(
-                'code'  => 1011,
-                'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务",
-                'data' =>array(
-                ),
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
             );
 
             $this->response->addHeader('Content-Type: application/json');
@@ -360,10 +360,12 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
+
             $response = array(
-                'code'  => 1002,
-                'message'  => "欢迎来到金杏健康，请您先登录",
-                'data' =>array(),
+                'code'  => 1011,
+                'message'  => "如果您是孕妇用户，请注册后使用本功能，如果您是非孕妇用户，请直接访问健康服务",
+                'data' =>array(
+                ),
             );
 
             $this->response->addHeader('Content-Type: application/json');
