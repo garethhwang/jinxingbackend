@@ -4,6 +4,8 @@ class ControllerAccountJxedit extends Controller
 
     public function index() {
 
+        $log = new Log("wechat.log");
+
 
         $data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
@@ -42,6 +44,9 @@ class ControllerAccountJxedit extends Controller
 
             $info = $this->model_account_customer->getCustomerByTelephone($customer_info["telephone"]);
             $this->cache->set($data['jxsession'], json_encode($info));
+
+            $aaa = json_decode($this->cache->get($data["jxsession"]),true);
+            $log->write($aaa["realname"].$aaa["telephone"].$aaa["district"].$aaa['babybirth']);
 
         }
 
