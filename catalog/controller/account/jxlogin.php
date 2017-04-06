@@ -74,7 +74,7 @@ class ControllerAccountJxlogin extends Controller
                     $this->load->model('wechat/userinfo');
                     $wechat_info = $this->model_wechat_userinfo->getUserInfoByWechatId($customer_info["wechat_id"]);
                     $info = array_merge($customer_info,$wechat_info);
-                    $log->write("openid=".$info["wechat_id"]);
+                    $log->write("openid=".$info["openid"]);
                     $this->cache->set($data["jxsession"], json_encode($info));
                 }else {
                     $this->cache->set($data["jxsession"], json_encode($customer_info));
