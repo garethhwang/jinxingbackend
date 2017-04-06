@@ -78,13 +78,16 @@ class ControllerAccountJxlogin extends Controller
                 }else {
                     $this->cache->set($data["jxsession"], json_encode($customer_info));
                 }
-                $data["edit"] = 0 ;
             }else {
                 $this->load->model('account/customer');
                 $customer_id = $this->model_account_customer->addNotWechatCustomer($postdata);
                 $info = $this->model_account_customer->getCustomer($customer_id);
-                $data["edit"] = 1 ;
                 $this->cache->set($data["jxsession"], $info);
+            }
+            if(empty($customer_info["realname"])) {
+                $data["edit"] = 1;
+            }else {
+                $data["edit"] = 0;
             }
 
             /*$this->load->model('wechat/userinfo');
