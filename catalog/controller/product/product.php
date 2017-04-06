@@ -165,6 +165,13 @@ class ControllerProductProduct extends Controller
         }
 */
 
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         $product_id = $this->request->json('product_id', 0);
 
         $log->write("product_info ". $product_id);

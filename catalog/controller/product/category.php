@@ -11,7 +11,12 @@ class ControllerProductCategory extends Controller
 
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        if(isset($this->session->data['openid'])){
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+               $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -25,7 +30,7 @@ class ControllerProductCategory extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }/*else{
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -35,41 +40,15 @@ class ControllerProductCategory extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
-
+        }
         if(isset($data['openid'])) {
             $this->customer->wechatlogin($data["openid"]);
             unset($this->session->data['guest']);
         }
-
-
-        /*if(!isset($this->session->data['openid'])){
-            $response = array(
-                'code'  => 1001,
-                'message'  => "微信信息没有获取到！",
-                'data' =>array(),
-            );
-
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return;
-        }*/
-        //if(isset($this->session->data['openid'])){
-        //    $data["openid"] = $this->session->data['openid'];
-        //}
-        //else{
-        //    $this->error['warning'] = "微信信息没有获取到！";
-        //    $data["openid"] ="";
-        //}
-
-        ////$log->write("openid=".$data['openid']);
-
-
-
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
 
-        if (!isset($data['customer_id'])) {
+        if (!isset($customer_info['customer_id'])) {
             $data['isnotregist'] = "1";
             $data['customer_id'] = "";
         }
