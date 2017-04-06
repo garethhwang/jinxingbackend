@@ -20,6 +20,7 @@ class ControllerAccountJxedit extends Controller
             return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $log->write("seesion7777777=".$data["jxsession"]);
 
         $data['realname'] = $this->request->json('realname', '');
         $data['pregnantstatus'] =  $this->request->json('pregnantstatus', '');
