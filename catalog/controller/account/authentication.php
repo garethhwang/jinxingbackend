@@ -9,7 +9,12 @@ class ControllerAccountAuthentication extends Controller {
         $code = $this->request->json("code",0);
         $log->write("session=".$jxsession."   code=".$code);
 
-        if (empty($jxsession)) {
+        if (!empty($jxsession)) {
+
+            return $jxsession;
+
+        } else {
+
             if (!empty($code)) {
 
                 if ($this->cache->get($code)) {
@@ -57,9 +62,6 @@ class ControllerAccountAuthentication extends Controller {
 
                 return ;
             }
-        } else {
-
-            return $jxsession;
         }
     }
 
