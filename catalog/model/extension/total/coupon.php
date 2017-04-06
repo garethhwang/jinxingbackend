@@ -120,6 +120,19 @@ class ModelExtensionTotalCoupon extends Model {
 		}
 	}
 
+    public function getCouponListForCustomer($product_id,$customer_id){
+	    $log=new Log('coupon.log');
+        $log->write("SELECT * FROM `" . DB_PREFIX . "coupon` c LEFT JOIN " . DB_PREFIX . "coupon_customer cc ON ( customer_id = 721 ) WHERE cc.coupon_id = c.coupon_id AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
+
+        $coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` c LEFT JOIN " . DB_PREFIX . "coupon_customer cc ON ( customer_id = 721 ) WHERE cc.coupon_id = c.coupon_id AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
+        if ($coupon_query->num_rows){
+            return $coupon_query->rows;
+        }else{
+            return null;
+        }
+
+    }
+
 	public function getTotal($total,$code,$product_id,$customer_id)
     {
         $log = new Log("wechat.log");
@@ -238,7 +251,6 @@ class ModelExtensionTotalCoupon extends Model {
         }
        return $total;
     }
-
 
 	public function confirm($order_info, $order_total) {
 		$code = '';
