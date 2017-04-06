@@ -43,10 +43,16 @@ class ControllerWechatOrderStatusUpdate extends Controller
 
 
         $jxsession = $this->load->controller('account/authentication');
-        if($jxsession == 0) {
-            $login = 0 ;
-        }else {
-            $login = 1 ;
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
@@ -139,7 +145,6 @@ class ControllerWechatOrderStatusUpdate extends Controller
 
 
         $data["jxsession"] = $jxsession;
-        $data["login"] = $login;
 
         $this->load->model('checkout/order');
         $this->model_checkout_order->addOrderHistory($data["order_id"], $data["order_status_id"]);

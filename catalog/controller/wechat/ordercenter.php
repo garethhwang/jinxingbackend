@@ -14,6 +14,19 @@ class ControllerWechatOrdercenter extends Controller
     {
         $this->document->setTitle("订单中心");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+
         $this->session->data["nav"]="order";
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
@@ -66,8 +79,16 @@ class ControllerWechatOrdercenter extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);*/
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -228,8 +249,16 @@ class ControllerWechatOrdercenter extends Controller
         unset($this->session->data['guest']);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -395,8 +424,16 @@ class ControllerWechatOrdercenter extends Controller
         unset($this->session->data['guest']);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -561,8 +598,16 @@ class ControllerWechatOrdercenter extends Controller
         unset($this->session->data['guest']);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -861,8 +906,16 @@ class ControllerWechatOrdercenter extends Controller
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -911,7 +964,7 @@ class ControllerWechatOrdercenter extends Controller
             'message'  => "已成功删除该订单",
             'data' =>array(),
         );
-        //$response["data"] = $data;
+        $response["data"] = $data;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

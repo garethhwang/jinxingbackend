@@ -45,8 +45,16 @@ class ControllerAccountPersonalCenter extends Controller
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -208,7 +216,6 @@ class ControllerAccountPersonalCenter extends Controller
 
         $result  = array(
             'jxsession' => $data["jxsession"],
-            'login' => $data["login"],
             'error_warning' =>  $customer_info['error_warning'],
             'headimgurl' =>  $customer_info['headimgurl'],
             'realname' =>  $customer_info['realname'],

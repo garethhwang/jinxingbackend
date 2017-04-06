@@ -10,10 +10,16 @@ class ControllerWechatAdvise extends Controller
 
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 0 ;
-        }else {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
         /*if(isset($this->session->data['openid'])){
@@ -66,7 +72,6 @@ class ControllerWechatAdvise extends Controller
 
         $result = array(
             'jxsession' => $data["jxsession"],
-            'login' => $data["login"],
             'advisetext' => $data['advisetext'],
             'customer_id' => $customer_info['customer_id'],
             'service_tel' => $data['service_tel'],
@@ -92,10 +97,16 @@ class ControllerWechatAdvise extends Controller
 
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 0 ;
-        }else {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
