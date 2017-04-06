@@ -6,10 +6,15 @@ class ControllerWechatAdvise extends Controller
 
     public function index()
     {
-       // $log = new Log('wechat.log');
+        $log = new Log('wechat.log');
 
 
-        if(isset($this->session->data['openid'])){
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -30,19 +35,19 @@ class ControllerWechatAdvise extends Controller
             return;
         }
 
-        //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);*/
 
 
         $data['advisetext'] = $this->request->json('advisetext', '');
-
-        $this->model_wechat_userinfo->addAdvise($data, $data["customer_id"]);
         $data['service_tel'] = WECHAT_SERVICE_TEL;
+
+        $this->model_wechat_userinfo->addAdvise($data, $customer_info["customer_id"]);
 
 
         /*if ($this->request->server['REQUEST_METHOD'] == 'POST') {
@@ -58,8 +63,10 @@ class ControllerWechatAdvise extends Controller
         $this->session->data["nav"] = "personal_center";
 
         $result = array(
+            'jxsession' => $data["jxsession"],
+            'login' => $data["login"],
             'advisetext' => $data['advisetext'],
-            'customer_id' => $data['customer_id'],
+            'customer_id' => $customer_info['customer_id'],
             'service_tel' => $data['service_tel'],
         );
 
@@ -78,9 +85,18 @@ class ControllerWechatAdvise extends Controller
 
     public function show(){
 
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $log = new Log('wechat.log');
+
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
+        /*$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -96,7 +112,7 @@ class ControllerWechatAdvise extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }/*else{
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -106,17 +122,13 @@ class ControllerWechatAdvise extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
-
-
-        $data['service_tel'] = WECHAT_SERVICE_TEL;
-
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data['openid']);*/
 
         //$this->model_wechat_userinfo->insertinto();
 
@@ -133,7 +145,7 @@ class ControllerWechatAdvise extends Controller
 
         }*/
         //$data['action'] = $this->url->link('wechat/advisesuccess', '', true);
-        $this->document->setTitle("投诉建议");
+        //$this->document->setTitle("投诉建议");
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         $response = array(
