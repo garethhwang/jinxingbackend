@@ -81,10 +81,10 @@ class ControllerAccountJxlogin extends Controller
 
             }else {
                 $this->load->model('account/customer');
-                $customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
-                $info = $this->model_account_customer->getCustomer($customer_id);
+                //$customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
+                //$info = $this->model_account_customer->getCustomer($customer_id);
                 $data["edit"] = 1 ;
-                $this->cache->set($jxsession, $info);
+                //$this->cache->set($jxsession, $info);
             }
 
             /*$this->load->model('wechat/userinfo');
