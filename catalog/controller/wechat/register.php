@@ -55,13 +55,13 @@ class ControllerWechatRegister extends Controller
     {
         $log = new Log("wechat.log");
 
-        /*$data["jxsession"] = $this->load->controller('account/authentication');
+        $data["jxsession"] = $this->load->controller('account/authentication');
         if($data["jxsession"] == 0) {
             $data["login"] = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);*/
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -77,7 +77,7 @@ class ControllerWechatRegister extends Controller
             $data["wechat_id"] = $codeinfo["wechat_id"];
         }
 
-        /*if(!isset($this->session->data['openid'])){
+        if(!isset($this->session->data['openid'])){
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -148,15 +148,11 @@ class ControllerWechatRegister extends Controller
             echo $output = json_encode(array('msgid' => $msgid, 'html' => $html));
             return $output;
         }*/
-
-
-       
-
-        $this->load->language('wechat/register');
+        /*$this->load->language('wechat/register');
         $this->document->setTitle($this->language->get('heading_title'));
         $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
         $this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
-        $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+        $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');*/
 
         $this->load->model('account/customer');
 
@@ -209,592 +205,585 @@ class ControllerWechatRegister extends Controller
             'agree' => $data['agree'],
             );
 
+        if(!empty($customer_info["openid"])){
             $this->load->model('wechat/userinfo');
-            $temp = $this->model_wechat_userinfo->getUserInfo($data["openid"]);
-
-            if(!$temp){
-                $response = array(
-                    'code'  => 1031,
-                    'message'  => "请您在微信客户端进行注册",
-                    'data' =>array(),
-                );
-                $this->response->addHeader('Content-Type: application/json');
-                $this->response->setOutput(json_encode($response));
-                return;
-            } else {
-                $postdata["wechat_id"] = $temp["wechat_id"];
-            }
-
-            //$telephone_info = $this->model_account_customer->getTotalCustomersByTelephone($data['telephone']);
+            $temp = $this->model_wechat_userinfo->getUserInfo($customer_info["openid"]);
+            $postdata["wechat_id"] = $temp["wechat_id"];
             $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
+        } else {
+            $postdata["wechat_id"] = "";
+        }
 
-            $edc = date_create($postdata["lastmenstrualdate"]);
-            $edc = date_modify($edc, "+280 days");
-            $postdata["edc"] = date_format($edc, "Y/m/d");
-            $postdata["bmiindex"] = $postdata["weight"] / (pow($postdata["height"], 2) / 10000);
-            $postdata["bmiindex"] = round($postdata["bmiindex"], 2);
+        $telephone_info = $this->model_account_customer->getTotalCustomersByTelephone($data['telephone']);
 
-            if ($postdata["bmiindex"] < "18.5") {
-                $postdata["bmitype"] = "过轻";
-            } else if ($postdata["bmiindex"] < "25") {
-                $postdata["bmitype"] = "正常";
-            } else if ($postdata["bmiindex"] < "28") {
-                $postdata["bmitype"] = "过重";
-            } else if ($postdata["bmiindex"] < "32") {
-                $postdata["bmitype"] = "肥胖";
-            } else {
-                $postdata["bmitype"] = "非常肥胖";
-            }
+        $edc = date_create($postdata["lastmenstrualdate"]);
+        $edc = date_modify($edc, "+280 days");
+        $postdata["edc"] = date_format($edc, "Y/m/d");
+        $postdata["bmiindex"] = $postdata["weight"] / (pow($postdata["height"], 2) / 10000);
+        $postdata["bmiindex"] = round($postdata["bmiindex"], 2);
 
-            if ($postdata["highrisk"] == "否") {
-                $postdata["highriskfactor"] = "无";
-            }
+        if ($postdata["bmiindex"] < "18.5") {
+            $postdata["bmitype"] = "过轻";
+        } else if ($postdata["bmiindex"] < "25") {
+            $postdata["bmitype"] = "正常";
+        } else if ($postdata["bmiindex"] < "28") {
+            $postdata["bmitype"] = "过重";
+        } else if ($postdata["bmiindex"] < "32") {
+            $postdata["bmitype"] = "肥胖";
+        } else {
+            $postdata["bmitype"] = "非常肥胖";
+        }
+
+        if ($postdata["highrisk"] == "否") {
+            $postdata["highriskfactor"] = "无";
+        }
 
 
-            if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
-                $data['isnotright'] = '1';
-            } elseif ($record && !empty($temp["wechat_id"])) {
-                $response = array(
-                    'code'  => 1032,
-                    'message'  => "您微信号已注册，请您在个人信息查看本人信息",
-                    'data' =>array(),
-                );
-                $this->response->addHeader('Content-Type: application/json');
-                $this->response->setOutput(json_encode($response));
-                return;
-            }/*elseif ($telephone_info) {
-
+        if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
+            $data['isnotright'] = '1';
+        } elseif (!empty($record ) && !empty($temp["wechat_id"])) {
+            $response = array(
+                'code'  => 1032,
+                'message'  => "您微信号已注册，请您在个人信息查看本人信息",
+                'data' =>array(),
+            );
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }elseif ($telephone_info) {
+            if(!empty($temp["wechat_id"])) {
                 $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
-                $data["jxsession"] = $this->authWechat($data["openid"]);
-                $response = array(
-                    'code'  => 1033,
-                    'message'  => "您手机号已注册，请您在个人信息查看本人信息",
-                    'data' => array(),
-                );
-                $response["data"] = $data;
-                $this->response->addHeader('Content-Type: application/json');
-                $this->response->setOutput(json_encode($response));
-                return;
-            }*/else  {
-                $data['isnotright'] = '0';
-                $customer_id = $this->model_account_customer->addCustomer($postdata);
-                $this->customer->wechatlogin($data["openid"]);
-                unset($this->session->data['guest']);
-                //$data["jxsession"] = $this->authWechat($customer_info["openid"]);
+                $data["jxsession"] = $this->authWechat($customer_info["openid"]);
             }
-
-            $data['breadcrumbs'] = array();
-
-            $data['breadcrumbs'][] = array(
-                'text' => $this->language->get('text_home'),
-                'href' => $this->url->link('common/home')
+            $response = array(
+                'code'  => 1033,
+                'message'  => "您手机号已注册，请您在个人信息查看本人信息",
+                'data' => array(),
             );
+            $response["data"] = $data;
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return;
+        }else  {
+            $data['isnotright'] = '0';
+            $customer_id = $this->model_account_customer->addCustomer($postdata);
+            //$this->customer->wechatlogin($data["openid"]);
+            //unset($this->session->data['guest']);
+            //$data["jxsession"] = $this->authWechat($customer_info["openid"]);
+        }
 
-            $data['breadcrumbs'][] = array(
-                'text' => $this->language->get('text_account'),
-                'href' => $this->url->link('account/account', '', true)
-            );
+        /*$data['breadcrumbs'] = array();
 
-            $data['breadcrumbs'][] = array(
-                'text' => $this->language->get('text_register'),
-                'href' => $this->url->link('account/register', '', true)
-            );
+        $data['breadcrumbs'][] = array(
+            'text' => $this->language->get('text_home'),
+            'href' => $this->url->link('common/home')
+        );
 
-            /*$data['heading_title'] = $this->language->get('heading_title');
+        $data['breadcrumbs'][] = array(
+            'text' => $this->language->get('text_account'),
+            'href' => $this->url->link('account/account', '', true)
+        );
 
-            $data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', true));
-            $data['text_your_details'] = $this->language->get('text_your_details');
-            $data['text_your_address'] = $this->language->get('text_your_address');
-            //$data['text_your_password'] = $this->language->get('text_your_password');
-            $data['text_your_physical'] = $this->language->get('text_your_physical');
-            // $data['text_newsletter'] = $this->language->get('text_newsletter');
-            $data['text_yes'] = $this->language->get('text_yes');
-            $data['text_no'] = $this->language->get('text_no');
-            $data['text_select'] = $this->language->get('text_select');
-            $data['text_none'] = $this->language->get('text_none');
-            $data['text_loading'] = $this->language->get('text_loading');
+        $data['breadcrumbs'][] = array(
+            'text' => $this->language->get('text_register'),
+            'href' => $this->url->link('account/register', '', true)
+        );
 
-            $data['entry_customer_group'] = $this->language->get('entry_customer_group');
-            //$data['entry_email'] = $this->language->get('entry_email');
-            $data['entry_telephone'] = $this->language->get('entry_telephone');
-            //$data['entry_fax'] = $this->language->get('entry_fax');
-            $data['entry_productiondate'] = $this->language->get('entry_productiondate');
-            $data['entry_department'] = $this->language->get('entry_department');
-            $data['entry_pregnantstatus'] = $this->language->get('entry_pregnantstatus');
-            $data['entry_realname'] = $this->language->get('entry_realname');
-            $data['entry_barcode'] = $this->language->get('entry_barcode');
-            $data['entry_birthday'] = $this->language->get('entry_birthday');
-            $data['entry_householdregister'] = $this->language->get('entry_householdregister');
-            $data['entry_company'] = $this->language->get('entry_company');
-            $data['entry_address_1'] = $this->language->get('entry_address');
-            //$data['entry_address_2'] = $this->language->get('entry_address_2');
-            $data['entry_postcode'] = $this->language->get('entry_postcode');
-            $data['entry_city'] = $this->language->get('entry_city');
-            //$data['entry_country'] = $this->language->get('entry_country');
-            $data['entry_zone'] = $this->language->get('entry_zone');
-            //$data['entry_newsletter'] = $this->language->get('entry_newsletter');
-            //$data['entry_password'] = $this->language->get('entry_password');
-            //$data['entry_confirm'] = $this->language->get('entry_confirm');
+        $data['heading_title'] = $this->language->get('heading_title');
 
-            $data['entry_height'] = $this->language->get('entry_height');
-            $data['entry_weight'] = $this->language->get('entry_weight');
-            $data['entry_bmiindex'] = $this->language->get('entry_bmiindex');
-            $data['entry_bmitype'] = $this->language->get('entry_bmitype');
-            $data['entry_lastmenstrualdate'] = $this->language->get('entry_lastmenstrualdate');
-            $data['entry_edc'] = $this->language->get('entry_edc');
-            $data['entry_gravidity'] = $this->language->get('entry_gravidity');
-            $data['entry_vaginaldelivery'] = $this->language->get('entry_vaginaldelivery');
-            $data['entry_parity'] = $this->language->get('entry_parity');
-            $data['entry_aesarean'] = $this->language->get('entry_aesarean');
-            $data['entry_spontaneousabortion'] = $this->language->get('entry_spontaneousabortion');
-            $data['entry_drug_inducedabortion'] = $this->language->get('entry_drug_inducedabortion');
-            $data['entry_fetal'] = $this->language->get('entry_fetal');
-            $data['entry_highrisk'] = $this->language->get('entry_highrisk');
-            $data['entry_highriskfactor'] = $this->language->get('entry_highriskfactor');*/
+        $data['text_account_already'] = sprintf($this->language->get('text_account_already'), $this->url->link('account/login', '', true));
+        $data['text_your_details'] = $this->language->get('text_your_details');
+        $data['text_your_address'] = $this->language->get('text_your_address');
+        //$data['text_your_password'] = $this->language->get('text_your_password');
+        $data['text_your_physical'] = $this->language->get('text_your_physical');
+        // $data['text_newsletter'] = $this->language->get('text_newsletter');
+        $data['text_yes'] = $this->language->get('text_yes');
+        $data['text_no'] = $this->language->get('text_no');
+        $data['text_select'] = $this->language->get('text_select');
+        $data['text_none'] = $this->language->get('text_none');
+        $data['text_loading'] = $this->language->get('text_loading');
 
+        $data['entry_customer_group'] = $this->language->get('entry_customer_group');
+        //$data['entry_email'] = $this->language->get('entry_email');
+        $data['entry_telephone'] = $this->language->get('entry_telephone');
+        //$data['entry_fax'] = $this->language->get('entry_fax');
+        $data['entry_productiondate'] = $this->language->get('entry_productiondate');
+        $data['entry_department'] = $this->language->get('entry_department');
+        $data['entry_pregnantstatus'] = $this->language->get('entry_pregnantstatus');
+        $data['entry_realname'] = $this->language->get('entry_realname');
+        $data['entry_barcode'] = $this->language->get('entry_barcode');
+        $data['entry_birthday'] = $this->language->get('entry_birthday');
+        $data['entry_householdregister'] = $this->language->get('entry_householdregister');
+        $data['entry_company'] = $this->language->get('entry_company');
+        $data['entry_address_1'] = $this->language->get('entry_address');
+        //$data['entry_address_2'] = $this->language->get('entry_address_2');
+        $data['entry_postcode'] = $this->language->get('entry_postcode');
+        $data['entry_city'] = $this->language->get('entry_city');
+        //$data['entry_country'] = $this->language->get('entry_country');
+        $data['entry_zone'] = $this->language->get('entry_zone');
+        //$data['entry_newsletter'] = $this->language->get('entry_newsletter');
+        //$data['entry_password'] = $this->language->get('entry_password');
+        //$data['entry_confirm'] = $this->language->get('entry_confirm');
 
-            if (isset($this->error['warning'])) {
-                $data['error_warning'] = $this->error['warning'];
-            } else {
-                $data['error_warning'] = '';
-            }
-
-            /*if (isset($this->error['realname'])) {
-                $data['error_realname'] = $this->error['realname'];
-            } else {
-                $data['error_realname'] = '';
-            }
-
-            if (isset($this->error['telephone'])) {
-                $data['error_telephone'] = $this->error['telephone'];
-            } else {
-                $data['error_telephone'] = '';
-            }
-
-
-            if (isset($this->error['productiondate'])) {
-                $data['error_productiondate'] = $this->error['productiondate'];
-            } else {
-                $data['error_productiondate'] = '';
-            }
+        $data['entry_height'] = $this->language->get('entry_height');
+        $data['entry_weight'] = $this->language->get('entry_weight');
+        $data['entry_bmiindex'] = $this->language->get('entry_bmiindex');
+        $data['entry_bmitype'] = $this->language->get('entry_bmitype');
+        $data['entry_lastmenstrualdate'] = $this->language->get('entry_lastmenstrualdate');
+        $data['entry_edc'] = $this->language->get('entry_edc');
+        $data['entry_gravidity'] = $this->language->get('entry_gravidity');
+        $data['entry_vaginaldelivery'] = $this->language->get('entry_vaginaldelivery');
+        $data['entry_parity'] = $this->language->get('entry_parity');
+        $data['entry_aesarean'] = $this->language->get('entry_aesarean');
+        $data['entry_spontaneousabortion'] = $this->language->get('entry_spontaneousabortion');
+        $data['entry_drug_inducedabortion'] = $this->language->get('entry_drug_inducedabortion');
+        $data['entry_fetal'] = $this->language->get('entry_fetal');
+        $data['entry_highrisk'] = $this->language->get('entry_highrisk');
+        $data['entry_highriskfactor'] = $this->language->get('entry_highriskfactor');*/
 
 
-            if (isset($this->error['department'])) {
-                $data['error_department'] = $this->error['department'];
-            } else {
-                $data['error_department'] = '';
-            }
+        /*if (isset($this->error['warning'])) {
+            $data['error_warning'] = $this->error['warning'];
+        } else {
+            $data['error_warning'] = '';
+        }
+
+        if (isset($this->error['realname'])) {
+            $data['error_realname'] = $this->error['realname'];
+        } else {
+            $data['error_realname'] = '';
+        }
+
+        if (isset($this->error['telephone'])) {
+            $data['error_telephone'] = $this->error['telephone'];
+        } else {
+            $data['error_telephone'] = '';
+        }
 
 
-            if (isset($this->error['householdregister'])) {
-                $data['error_householdregister'] = $this->error['householdregister'];
-            } else {
-                $data['error_householdregister'] = '';
-            }
+        if (isset($this->error['productiondate'])) {
+            $data['error_productiondate'] = $this->error['productiondate'];
+        } else {
+            $data['error_productiondate'] = '';
+        }
 
 
-            if (isset($this->error['pregnantstatus'])) {
-                $data['error_pregnantstatus'] = $this->error['pregnantstatus'];
-            } else {
-                $data['error_pregnantstatus'] = '';
-            }
+        if (isset($this->error['department'])) {
+            $data['error_department'] = $this->error['department'];
+        } else {
+            $data['error_department'] = '';
+        }
 
-            if (isset($this->error['height'])) {
-                $data['error_height'] = $this->error['height'];
-            } else {
-                $data['error_height'] = '';
-            }
 
-            if (isset($this->error['weight'])) {
-                $data['error_weight'] = $this->error['weight'];
-            } else {
-                $data['error_weight'] = '';
-            }
+        if (isset($this->error['householdregister'])) {
+            $data['error_householdregister'] = $this->error['householdregister'];
+        } else {
+            $data['error_householdregister'] = '';
+        }
 
-            if (isset($this->error['bmiindex'])) {
-                $data['error_bmiindex'] = $this->error['bmiindex'];
-            } else {
-                $data['error_bmiindex'] = '';
-            }
 
-            if (isset($this->error['bmitype'])) {
-                $data['error_bmitype'] = $this->error['bmitype'];
-            } else {
-                $data['error_bmitype'] = '';
-            }
+        if (isset($this->error['pregnantstatus'])) {
+            $data['error_pregnantstatus'] = $this->error['pregnantstatus'];
+        } else {
+            $data['error_pregnantstatus'] = '';
+        }
 
-            if (isset($this->error['lastmenstrualdate'])) {
-                $data['error_lastmenstrualdate'] = $this->error['lastmenstrualdate'];
-            } else {
-                $data['error_lastmenstrualdate'] = '';
-            }
+        if (isset($this->error['height'])) {
+            $data['error_height'] = $this->error['height'];
+        } else {
+            $data['error_height'] = '';
+        }
 
-            if (isset($this->error['edc'])) {
-                $data['error_edc'] = $this->error['edc'];
-            } else {
-                $data['error_edc'] = '';
-            }
+        if (isset($this->error['weight'])) {
+            $data['error_weight'] = $this->error['weight'];
+        } else {
+            $data['error_weight'] = '';
+        }
 
-            if (isset($this->error['gravidity'])) {
-                $data['error_gravidity'] = $this->error['gravidity'];
-            } else {
-                $data['error_gravidity'] = '';
-            }
+        if (isset($this->error['bmiindex'])) {
+            $data['error_bmiindex'] = $this->error['bmiindex'];
+        } else {
+            $data['error_bmiindex'] = '';
+        }
 
-            if (isset($this->error['parity'])) {
-                $data['error_parity'] = $this->error['parity'];
-            } else {
-                $data['error_parity'] = '';
-            }
+        if (isset($this->error['bmitype'])) {
+            $data['error_bmitype'] = $this->error['bmitype'];
+        } else {
+            $data['error_bmitype'] = '';
+        }
 
-            if (isset($this->error['vaginaldelivery'])) {
-                $data['error_vaginaldelivery'] = $this->error['vaginaldelivery'];
-            } else {
-                $data['error_vaginaldelivery'] = '';
-            }
+        if (isset($this->error['lastmenstrualdate'])) {
+            $data['error_lastmenstrualdate'] = $this->error['lastmenstrualdate'];
+        } else {
+            $data['error_lastmenstrualdate'] = '';
+        }
 
-            if (isset($this->error['aesarean'])) {
-                $data['error_aesarean'] = $this->error['aesarean'];
-            } else {
-                $data['error_aesarean'] = '';
-            }
+        if (isset($this->error['edc'])) {
+            $data['error_edc'] = $this->error['edc'];
+        } else {
+            $data['error_edc'] = '';
+        }
 
-            if (isset($this->error['spontaneousabortion'])) {
-                $data['error_spontaneousabortion'] = $this->error['spontaneousabortion'];
-            } else {
-                $data['error_spontaneousabortion'] = '';
-            }
+        if (isset($this->error['gravidity'])) {
+            $data['error_gravidity'] = $this->error['gravidity'];
+        } else {
+            $data['error_gravidity'] = '';
+        }
 
-            if (isset($this->error['drug_inducedabortion'])) {
-                $data['error_drug_inducedabortion'] = $this->error['drug_inducedabortion'];
-            } else {
-                $data['error_drug_inducedabortion'] = '';
-            }
+        if (isset($this->error['parity'])) {
+            $data['error_parity'] = $this->error['parity'];
+        } else {
+            $data['error_parity'] = '';
+        }
 
-            if (isset($this->error['fetal'])) {
-                $data['error_fetal'] = $this->error['fetal'];
-            } else {
-                $data['error_fetal'] = '';
-            }
+        if (isset($this->error['vaginaldelivery'])) {
+            $data['error_vaginaldelivery'] = $this->error['vaginaldelivery'];
+        } else {
+            $data['error_vaginaldelivery'] = '';
+        }
 
-            if (isset($this->error['highrisk'])) {
-                $data['error_highrisk'] = $this->error['highrisk'];
-            } else {
-                $data['error_highrisk'] = '';
-            }
+        if (isset($this->error['aesarean'])) {
+            $data['error_aesarean'] = $this->error['aesarean'];
+        } else {
+            $data['error_aesarean'] = '';
+        }
 
-            if (isset($this->error['highriskfactor'])) {
-                $data['error_highriskfactor'] = $this->error['highriskfactor'];
-            } else {
-                $data['error_highriskfactor'] = '';
-            }
+        if (isset($this->error['spontaneousabortion'])) {
+            $data['error_spontaneousabortion'] = $this->error['spontaneousabortion'];
+        } else {
+            $data['error_spontaneousabortion'] = '';
+        }
 
-            if (isset($this->error['barcode'])) {
-                $data['error_barcode'] = $this->error['barcode'];
-            } else {
-                $data['error_barcode'] = '';
-            }
+        if (isset($this->error['drug_inducedabortion'])) {
+            $data['error_drug_inducedabortion'] = $this->error['drug_inducedabortion'];
+        } else {
+            $data['error_drug_inducedabortion'] = '';
+        }
 
-            if (isset($this->error['birthday'])) {
-                $data['error_birthday'] = $this->error['birthday'];
-            } else {
-                $data['error_birthday'] = '';
-            }
+        if (isset($this->error['fetal'])) {
+            $data['error_fetal'] = $this->error['fetal'];
+        } else {
+            $data['error_fetal'] = '';
+        }
 
-            if (isset($this->error['householdregister'])) {
-                $data['error_householdregister'] = $this->error['householdregister'];
-            } else {
-                $data['error_householdregister'] = '';
-            }
+        if (isset($this->error['highrisk'])) {
+            $data['error_highrisk'] = $this->error['highrisk'];
+        } else {
+            $data['error_highrisk'] = '';
+        }
 
-            if (isset($this->error['address_1'])) {
-                $data['error_address_1'] = $this->error['address_1'];
-            } else {
-                $data['error_address_1'] = '';
-            }
+        if (isset($this->error['highriskfactor'])) {
+            $data['error_highriskfactor'] = $this->error['highriskfactor'];
+        } else {
+            $data['error_highriskfactor'] = '';
+        }
 
-            if (isset($this->error['city'])) {
-                $data['error_city'] = $this->error['city'];
-            } else {
-                $data['error_city'] = '';
-            }
+        if (isset($this->error['barcode'])) {
+            $data['error_barcode'] = $this->error['barcode'];
+        } else {
+            $data['error_barcode'] = '';
+        }
 
-            if (isset($this->error['zone'])) {
-                $data['error_zone'] = $this->error['zone'];
-            } else {
-                $data['error_zone'] = '';
-            }
+        if (isset($this->error['birthday'])) {
+            $data['error_birthday'] = $this->error['birthday'];
+        } else {
+            $data['error_birthday'] = '';
+        }
 
-            if (isset($this->error['custom_field'])) {
-                $data['error_custom_field'] = $this->error['custom_field'];
-            } else {
-                $data['error_custom_field'] = array();
-            }
+        if (isset($this->error['householdregister'])) {
+            $data['error_householdregister'] = $this->error['householdregister'];
+        } else {
+            $data['error_householdregister'] = '';
+        }
 
-            if (isset($this->error['agree'])) {
-                $data['error_agree'] = $this->error['agree'];
-            } else {
-                $data['error_agree'] = '';
-            }*/
+        if (isset($this->error['address_1'])) {
+            $data['error_address_1'] = $this->error['address_1'];
+        } else {
+            $data['error_address_1'] = '';
+        }
+
+        if (isset($this->error['city'])) {
+            $data['error_city'] = $this->error['city'];
+        } else {
+            $data['error_city'] = '';
+        }
+
+        if (isset($this->error['zone'])) {
+            $data['error_zone'] = $this->error['zone'];
+        } else {
+            $data['error_zone'] = '';
+        }
+
+        if (isset($this->error['custom_field'])) {
+            $data['error_custom_field'] = $this->error['custom_field'];
+        } else {
+            $data['error_custom_field'] = array();
+        }
+
+        if (isset($this->error['agree'])) {
+            $data['error_agree'] = $this->error['agree'];
+        } else {
+            $data['error_agree'] = '';
+        }*/
 
             //$data['action'] = $this->url->link('wechat/register', '', true);
 
-            $data['customer_groups'] = array();
+        $data['customer_groups'] = array();
 
-            if (is_array($this->config->get('config_customer_group_display'))) {
-                $this->load->model('account/customer_group');
+        if (is_array($this->config->get('config_customer_group_display'))) {
+            $this->load->model('account/customer_group');
 
-                $customer_groups = $this->model_account_customer_group->getCustomerGroups();
+            $customer_groups = $this->model_account_customer_group->getCustomerGroups();
 
-                foreach ($customer_groups as $customer_group) {
-                    if (in_array($customer_group['customer_group_id'], $this->config->get('config_customer_group_display'))) {
-                        $data['customer_groups'][] = $customer_group;
-                    }
+            foreach ($customer_groups as $customer_group) {
+                if (in_array($customer_group['customer_group_id'], $this->config->get('config_customer_group_display'))) {
+                    $data['customer_groups'][] = $customer_group;
                 }
             }
+        }
 
 
-            $customer_group_id = $this->request->json('customer_group_id');
-            if (isset($customer_group_id)) {
-                $data['customer_group_id'] = $customer_group_id;
+        $customer_group_id = $this->request->json('customer_group_id');
+        if (isset($customer_group_id)) {
+            $data['customer_group_id'] = $customer_group_id;
+        } else {
+            $data['customer_group_id'] = $this->config->get('config_customer_group_id');
+        }
+
+        /*if (isset($this->request->post['realname'])) {
+            $data['realname'] = $this->request->post['realname'];
+        } else {
+            $data['realname'] = '';
+        }
+
+        if (isset($this->request->post['barcode'])) {
+            $data['barcode'] = $this->request->post['barcode'];
+        } else {
+            $data['barcode'] = '';
+        }
+
+        if (isset($this->request->post['birthday'])) {
+            $data['birthday'] = $this->request->post['birthday'];
+        } else {
+            $data['birthday'] = '';
+        }
+
+        if (isset($this->request->post['telephone'])) {
+            $data['telephone'] = $this->request->post['telephone'];
+        } else {
+            $data['telephone'] = '';
+        }
+
+        if (isset($this->request->post['productiondate'])) {
+            $data['productiondate'] = $this->request->post['productiondate'];
+        } else {
+            $data['productiondate'] = '';
+        }
+
+        if (isset($this->request->post['department'])) {
+            $data['department'] = $this->request->post['department'];
+        } else {
+            $data['department'] = '';
+        }
+
+        if (isset($this->request->post['householdregister'])) {
+            $data['householdregister'] = $this->request->post['householdregister'];
+        } else {
+            $data['householdregister'] = '';
+        }
+
+
+        if (isset($this->request->post['height'])) {
+            $data['height'] = $this->request->post['height'];
+        } else {
+            $data['height'] = '';
+        }
+
+        if (isset($this->request->post['weight'])) {
+            $data['weight'] = $this->request->post['weight'];
+        } else {
+            $data['weight'] = '';
+        }
+
+        if (isset($this->request->post['bmiindex'])) {
+            $data['bmiindex'] = $this->request->post['bmiindex'];
+        } else {
+            $data['bmiindex'] = '';
+        }
+
+        if (isset($this->request->post['bmitype'])) {
+            $data['bmitype'] = $this->request->post['bmitype'];
+        } else {
+            $data['bmitype'] = '';
+        }
+
+        if (isset($this->request->post['lastmenstrualdate'])) {
+            $data['lastmenstrualdate'] = $this->request->post['lastmenstrualdate'];
+        } else {
+            $data['lastmenstrualdate'] = '';
+        }
+
+        if (isset($this->request->post['edc'])) {
+            $data['edc'] = $this->request->post['edc'];
+        } else {
+            $data['edc'] = '';
+        }
+
+        if (isset($this->request->post['gravidity'])) {
+            $data['gravidity'] = $this->request->post['gravidity'];
+        } else {
+            $data['gravidity'] = '';
+        }
+
+        if (isset($this->request->post['parity'])) {
+            $data['parity'] = $this->request->post['parity'];
+        } else {
+            $data['parity'] = '';
+        }
+
+        if (isset($this->request->post['vaginaldelivery'])) {
+            $data['vaginaldelivery'] = $this->request->post['vaginaldelivery'];
+        } else {
+            $data['vaginaldelivery'] = '';
+        }
+
+        if (isset($this->request->post['aesarean'])) {
+            $data['aesarean'] = $this->request->post['aesarean'];
+        } else {
+            $data['aesarean'] = '';
+        }
+
+        if (isset($this->request->post['spontaneousabortion'])) {
+            $data['spontaneousabortion'] = $this->request->post['spontaneousabortion'];
+        } else {
+            $data['spontaneousabortion'] = '';
+        }
+
+        if (isset($this->request->post['drug_inducedabortion'])) {
+            $data['drug_inducedabortion'] = $this->request->post['drug_inducedabortion'];
+        } else {
+            $data['drug_inducedabortion'] = '';
+        }
+
+        if (isset($this->request->post['fetal'])) {
+            $data['fetal'] = $this->request->post['fetal'];
+        } else {
+            $data['fetal'] = '';
+        }
+
+        if (isset($this->request->post['highrisk'])) {
+            $data['highrisk'] = $this->request->post['highrisk'];
+        } else {
+            $data['highrisk'] = '';
+        }
+
+        if (isset($this->request->post['highriskfactor'])) {
+            $data['highriskfactor'] = $this->request->post['highriskfactor'];
+        } else {
+            $data['highriskfactor'] = '';
+        }
+
+        if (isset($this->request->post['householdregister'])) {
+            $data['householdregister'] = $this->request->post['householdregister'];
+        } else {
+            $data['householdregister'] = '';
+        }
+
+        if (isset($this->request->post['address_1'])) {
+            $data['address_1'] = $this->request->post['address_1'];
+        } else {
+            $data['address_1'] = '';
+        }
+
+        if (isset($this->request->post['address_2'])) {
+            $data['address_2'] = $this->request->post['address_2'];
+        } else {
+            $data['address_2'] = '';
+        }
+
+        if (isset($this->request->post['postcode'])) {
+            $data['postcode'] = $this->request->post['postcode'];
+        } elseif (isset($this->session->data['shipping_address']['postcode'])) {
+            $data['postcode'] = $this->session->data['shipping_address']['postcode'];
+        } else {
+            $data['postcode'] = '';
+        }
+
+        if (isset($this->request->post['city'])) {
+            $data['city'] = $this->request->post['city'];
+        } else {
+            $data['city'] = '';
+        }
+
+        if (isset($this->request->post['pregnantstatus'])) {
+            $data['pregnantstatus'] = $this->request->post['pregnantstatus'];
+        } else {
+            $data['pregnantstatus'] = '';
+        }
+
+        if (isset($this->request->post['zone_id'])) {
+            $data['zone_id'] = (int)$this->request->post['zone_id'];
+        } elseif (isset($this->session->data['shipping_address']['zone_id'])) {
+            $data['zone_id'] = $this->session->data['shipping_address']['zone_id'];
+        } else {
+            $data['zone_id'] = '';
+        }*/
+
+        // Custom Fields
+        $this->load->model('account/custom_field');
+
+        $data['custom_fields'] = $this->model_account_custom_field->getCustomFields();
+
+        $custom_field = $this->request->json('custom_field');
+
+        if (isset($custom_field)) {
+            if (isset($custom_field['account'])) {
+                $account_custom_field = $custom_field['account'];
             } else {
-                $data['customer_group_id'] = $this->config->get('config_customer_group_id');
+                $account_custom_field = array();
             }
 
-            /*if (isset($this->request->post['realname'])) {
-                $data['realname'] = $this->request->post['realname'];
+            if (isset($custom_field['address'])) {
+                $address_custom_field = $custom_field['address'];
             } else {
-                $data['realname'] = '';
+                $address_custom_field = array();
             }
 
-            if (isset($this->request->post['barcode'])) {
-                $data['barcode'] = $this->request->post['barcode'];
-            } else {
-                $data['barcode'] = '';
-            }
+            $data['register_custom_field'] = $account_custom_field + $address_custom_field;
+        } else {
+            $data['register_custom_field'] = array();
+        }
 
-            if (isset($this->request->post['birthday'])) {
-                $data['birthday'] = $this->request->post['birthday'];
-            } else {
-                $data['birthday'] = '';
-            }
+        /*$data['column_left'] = $this->load->controller('common/column_left');
+        $data['column_right'] = $this->load->controller('common/column_right');
+        $data['content_top'] = $this->load->controller('common/content_top');
+        $data['content_bottom'] = $this->load->controller('common/content_bottom');
+        $this->session->data["nav"] = "user";
+        $data['footer'] = $this->load->controller('common/wechatfooter');
+        $data['header'] = $this->load->controller('common/wechatheader');*/
 
-            if (isset($this->request->post['telephone'])) {
-                $data['telephone'] = $this->request->post['telephone'];
-            } else {
-                $data['telephone'] = '';
-            }
-
-            if (isset($this->request->post['productiondate'])) {
-                $data['productiondate'] = $this->request->post['productiondate'];
-            } else {
-                $data['productiondate'] = '';
-            }
-
-            if (isset($this->request->post['department'])) {
-                $data['department'] = $this->request->post['department'];
-            } else {
-                $data['department'] = '';
-            }
-
-            if (isset($this->request->post['householdregister'])) {
-                $data['householdregister'] = $this->request->post['householdregister'];
-            } else {
-                $data['householdregister'] = '';
-            }
+        $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
+        $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
+        $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
+        $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
+        $data["deps_data"] = json_encode($this->load->controller('wechat/wechatbinding/getOffice'));
 
 
-            if (isset($this->request->post['height'])) {
-                $data['height'] = $this->request->post['height'];
-            } else {
-                $data['height'] = '';
-            }
-
-            if (isset($this->request->post['weight'])) {
-                $data['weight'] = $this->request->post['weight'];
-            } else {
-                $data['weight'] = '';
-            }
-
-            if (isset($this->request->post['bmiindex'])) {
-                $data['bmiindex'] = $this->request->post['bmiindex'];
-            } else {
-                $data['bmiindex'] = '';
-            }
-
-            if (isset($this->request->post['bmitype'])) {
-                $data['bmitype'] = $this->request->post['bmitype'];
-            } else {
-                $data['bmitype'] = '';
-            }
-
-            if (isset($this->request->post['lastmenstrualdate'])) {
-                $data['lastmenstrualdate'] = $this->request->post['lastmenstrualdate'];
-            } else {
-                $data['lastmenstrualdate'] = '';
-            }
-
-            if (isset($this->request->post['edc'])) {
-                $data['edc'] = $this->request->post['edc'];
-            } else {
-                $data['edc'] = '';
-            }
-
-            if (isset($this->request->post['gravidity'])) {
-                $data['gravidity'] = $this->request->post['gravidity'];
-            } else {
-                $data['gravidity'] = '';
-            }
-
-            if (isset($this->request->post['parity'])) {
-                $data['parity'] = $this->request->post['parity'];
-            } else {
-                $data['parity'] = '';
-            }
-
-            if (isset($this->request->post['vaginaldelivery'])) {
-                $data['vaginaldelivery'] = $this->request->post['vaginaldelivery'];
-            } else {
-                $data['vaginaldelivery'] = '';
-            }
-
-            if (isset($this->request->post['aesarean'])) {
-                $data['aesarean'] = $this->request->post['aesarean'];
-            } else {
-                $data['aesarean'] = '';
-            }
-
-            if (isset($this->request->post['spontaneousabortion'])) {
-                $data['spontaneousabortion'] = $this->request->post['spontaneousabortion'];
-            } else {
-                $data['spontaneousabortion'] = '';
-            }
-
-            if (isset($this->request->post['drug_inducedabortion'])) {
-                $data['drug_inducedabortion'] = $this->request->post['drug_inducedabortion'];
-            } else {
-                $data['drug_inducedabortion'] = '';
-            }
-
-            if (isset($this->request->post['fetal'])) {
-                $data['fetal'] = $this->request->post['fetal'];
-            } else {
-                $data['fetal'] = '';
-            }
-
-            if (isset($this->request->post['highrisk'])) {
-                $data['highrisk'] = $this->request->post['highrisk'];
-            } else {
-                $data['highrisk'] = '';
-            }
-
-            if (isset($this->request->post['highriskfactor'])) {
-                $data['highriskfactor'] = $this->request->post['highriskfactor'];
-            } else {
-                $data['highriskfactor'] = '';
-            }
-
-            if (isset($this->request->post['householdregister'])) {
-                $data['householdregister'] = $this->request->post['householdregister'];
-            } else {
-                $data['householdregister'] = '';
-            }
-
-            if (isset($this->request->post['address_1'])) {
-                $data['address_1'] = $this->request->post['address_1'];
-            } else {
-                $data['address_1'] = '';
-            }
-
-            if (isset($this->request->post['address_2'])) {
-                $data['address_2'] = $this->request->post['address_2'];
-            } else {
-                $data['address_2'] = '';
-            }
-
-            if (isset($this->request->post['postcode'])) {
-                $data['postcode'] = $this->request->post['postcode'];
-            } elseif (isset($this->session->data['shipping_address']['postcode'])) {
-                $data['postcode'] = $this->session->data['shipping_address']['postcode'];
-            } else {
-                $data['postcode'] = '';
-            }
-
-            if (isset($this->request->post['city'])) {
-                $data['city'] = $this->request->post['city'];
-            } else {
-                $data['city'] = '';
-            }
-
-            if (isset($this->request->post['pregnantstatus'])) {
-                $data['pregnantstatus'] = $this->request->post['pregnantstatus'];
-            } else {
-                $data['pregnantstatus'] = '';
-            }
-
-            if (isset($this->request->post['zone_id'])) {
-                $data['zone_id'] = (int)$this->request->post['zone_id'];
-            } elseif (isset($this->session->data['shipping_address']['zone_id'])) {
-                $data['zone_id'] = $this->session->data['shipping_address']['zone_id'];
-            } else {
-                $data['zone_id'] = '';
-            }*/
-
-            // Custom Fields
-            $this->load->model('account/custom_field');
-
-            $data['custom_fields'] = $this->model_account_custom_field->getCustomFields();
-
-            $custom_field = $this->request->json('custom_field');
-
-            if (isset($custom_field)) {
-                if (isset($custom_field['account'])) {
-                    $account_custom_field = $custom_field['account'];
-                } else {
-                    $account_custom_field = array();
-                }
-
-                if (isset($custom_field['address'])) {
-                    $address_custom_field = $custom_field['address'];
-                } else {
-                    $address_custom_field = array();
-                }
-
-                $data['register_custom_field'] = $account_custom_field + $address_custom_field;
-            } else {
-                $data['register_custom_field'] = array();
-            }
-
-            /*$data['column_left'] = $this->load->controller('common/column_left');
-            $data['column_right'] = $this->load->controller('common/column_right');
-            $data['content_top'] = $this->load->controller('common/content_top');
-            $data['content_bottom'] = $this->load->controller('common/content_bottom');
-            $this->session->data["nav"] = "user";
-            $data['footer'] = $this->load->controller('common/wechatfooter');
-            $data['header'] = $this->load->controller('common/wechatheader');*/
-
-            $data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
-            $data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
-            $data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
-            $data["allcitys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getAllCity'));
-            $data["deps_data"] = json_encode($this->load->controller('wechat/wechatbinding/getOffice'));
-
-
-            if($data['isnotright'] == '1'){
-                    $response = array(
-                        'code'  => 1030,
-                        'message'  => "验证码不正确",
-                        'data' =>array(),
-                    );
-            }else{
-                    $response = array(
-                        'code'  => 0,
-                        'message'  => "",
-                        'data' =>array(),
-                    );
-                    $response["data"] = $data;
-            }
+        if($data['isnotright'] == '1'){
+            $response = array(
+                'code'  => 1030,
+                'message'  => "验证码不正确",
+                'data' =>array(),
+            );
+        }else{
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $data;
+        }
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));

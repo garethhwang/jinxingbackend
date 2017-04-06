@@ -166,7 +166,7 @@ class ControllerWechatOrderDetail extends Controller
             if(!empty($customer_info['openid'])){
 
                 $response = array(
-                    'code'  => 1033,
+                    'code'  => 1035,
                     'message'  => "请在微信客户端支付",
                     'data' =>array(),
                 );
