@@ -350,9 +350,9 @@ class ModelAccountCustomer extends Model
 
     }
 
-    public function updateReceiptDate($data, $adddate)
+    public function updateReceiptDate($data, $adddate,$customer_id)
     {
-        $customer_id = $this->customer->getId();
+        //$customer_id = $this->customer->getId();
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET receiptdate = DATE_ADD('".$this->db->escape($data['lastmenstrualdate'])."',INTERVAL ".(int)$adddate." WEEK) WHERE customer_id = '" . (int)$customer_id . "'");
 
     }

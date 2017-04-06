@@ -8,8 +8,14 @@ class ControllerWechatPhysicalReceipt extends Controller
     public function submit(){
 
         $log = new Log("wechat.log");
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -36,25 +42,13 @@ class ControllerWechatPhysicalReceipt extends Controller
         }
 
 
-        /*if(!isset($this->session->data['openid'])){
-            $response = array(
-                'code'  => 1001,
-                'message'  => "微信信息没有获取到！",
-                'data' =>array(),
-            );
-
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return;
-        }*/
-
 
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
 
 
         $test['receipt_text'] = '{"receipt":[
@@ -262,24 +256,26 @@ class ControllerWechatPhysicalReceipt extends Controller
             $result = array(
 
                 'receipt_id' => '1',
-                'customer_id' => $data['customer_id'],
+                'customer_id' => $customer_info['customer_id'],
                 'receipt_text' => json_encode($temp, JSON_UNESCAPED_UNICODE)
             );
 
             $this->load->model('wechat/physicalreceipt');
             $this->model_wechat_physicalreceipt->addReceiptHistory($result);
-            $record = $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
+            $record = $this->model_wechat_physicalreceipt->getRecord($customer_info['customer_id']);
             $this->load->model('account/customer');
             if ($record == '1') {
-                $this->model_account_customer->updateReceiptDate($data, '20');
+                $this->model_account_customer->updateReceiptDate($data, '20',$customer_info['customer_id']);
             }
             if ($record == '2') {
-                $this->model_account_customer->updateReceiptDate($data, '34');
+                $this->model_account_customer->updateReceiptDate($data, '34',$customer_info['customer_id']);
             }
             //$log->write("record=".$record);
             $this->session->data['success'] = "1";
 
             $data =array(
+                'jxsession' => $data["jxsession"],
+                'login' => $data["login"],
                 'receipttext' => $result,
                 'record' => $record,
                 'success' => $this->session->data['success']
@@ -304,7 +300,7 @@ class ControllerWechatPhysicalReceipt extends Controller
     {
         $log = new log('wechat.log');
 
-        $data["error_warning"] = "";
+        /*$data["error_warning"] = "";
         $get_return = array();
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
@@ -332,7 +328,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
 
         /*if(!isset($this->session->data['openid'])){
@@ -345,18 +341,23 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
 
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);
 
-        //$log->write("openid is ".$data['openid']);
-
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
         //$log->write("open id is ".$data["openid"]." ,customer id is ".$data['customer_id']);
-        if (!isset($data['customer_id'])) {
+        if (!isset($customer_info['customer_id'])) {
             $data['isnotregist'] = "1" ;
             $data['customer_id'] = " ";
         }
@@ -364,19 +365,19 @@ class ControllerWechatPhysicalReceipt extends Controller
             $data['isnotregist'] = "0";
         }
 
-        if(!isset($data['ispregnant'])){
+        if(!isset($customer_info['ispregnant'])){
             $data['ispregnant'] = "";
         }
-        if($data['ispregnant'] == "0" ){
+        if($customer_info['ispregnant'] == "0" ){
             $data["pregnant"] = "0";
         }else{
             $data["pregnant"] = "1";
         }
 
-        if(!isset($data['highrisk'])){
+        if(!isset($customer_info['highrisk'])){
             $data['highrisk'] = "";
         }
-        if($data['highrisk'] == "否" || $data['highrisk'] == NULL){
+        if($customer_info['highrisk'] == "否" || $customer_info['highrisk'] == NULL){
             $data["ishighrisk"] = "0";
         }
         else{
@@ -385,13 +386,17 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
 
-        if (!isset($data['receiptdate'])) {
+        if (!isset($customer_info['receiptdate'])) {
             $data['receiptdate'] = date("Y-m-d",strtotime("+10 week"));
+        }else {
+            $data['receiptdate'] = $customer_info['receiptdate'];
         }
 
 
-        if (!isset($data['lastmenstrualdate'])) {
+        if (!isset($customer_info['lastmenstrualdate'])) {
             $data['lastmenstrualdate'] = date("Y-m-d");
+        }else{
+            $data['lastmenstrualdate'] = $customer_info['lastmenstrualdate'];
         }
 
         $data['last'] = date_create($data['lastmenstrualdate']);
@@ -449,7 +454,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
         $this->load->model('wechat/physicalreceipt');
-        $num = $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
+        $num = $this->model_wechat_physicalreceipt->getRecord($customer_info['customer_id']);
         //$log->write("num=".$num);
 
         $firstreceipt= date_create($data['lastmenstrualdate']);
@@ -466,7 +471,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             $this->load->model('wechat/physicalreceipt');
             $this->model_wechat_physicalreceipt->addReceiptNullHistory();
             $this->load->model('account/customer');
-            $this->model_account_customer->updateReceiptDate($data, '20');
+            $this->model_account_customer->updateReceiptDate($data, '20',$customer_info['customer_id']);
             if(date("Y-m-d")<$first) {
                 $data['isnottime'] = "1";
             }
@@ -486,13 +491,13 @@ class ControllerWechatPhysicalReceipt extends Controller
                 $this->model_wechat_physicalreceipt->addReceiptNullHistory();
                 $this->model_wechat_physicalreceipt->addReceiptNullHistory();
                 $this->load->model('account/customer');
-                $this->model_account_customer->updateReceiptDate($data, '34');
+                $this->model_account_customer->updateReceiptDate($data, '34',$customer_info['customer_id']);
             }
             if ($num == '1') {
                 $this->load->model('wechat/physicalreceipt');
                 $this->model_wechat_physicalreceipt->addReceiptNullHistory();
                 $this->load->model('account/customer');
-                $this->model_account_customer->updateReceiptDate($data, '34');
+                $this->model_account_customer->updateReceiptDate($data, '34',$customer_info['customer_id']);
             }
             if(date("Y-m-d")<$second){
                 $data['isnottime'] = "1" ;
@@ -749,7 +754,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
 
         $this->load->model('wechat/physicalreceipt');
-        $data["historyrecord"]= $this->model_wechat_physicalreceipt->getRecord($data['customer_id']);
+        $data["historyrecord"]= $this->model_wechat_physicalreceipt->getRecord($customer_info['customer_id']);
         $log->write("historyrecord=".$data["historyrecord"]);
 
 
@@ -770,13 +775,15 @@ class ControllerWechatPhysicalReceipt extends Controller
 
            //$log->write("success=".$data["success"]);
 
-            $this->document->setTitle("回访调查");
+            //$this->document->setTitle("回访调查");
             //$data['footer'] = $this->load->controller('common/wechatfooter');
             //$data['header'] = $this->load->controller('common/wechatheader');
 
            //$log->write("fir=".$data['firststart']."sec".$data['secondstart']."thi".$data['thirdstart'] );
 
         $result  = array(
+            'jxsession' => $data["jxsession"],
+            'login' => $data["login"],
             'highriskfactor' => $data['highriskfactor'],
             'isnotregist' => $data['isnotregist'],
             'ispregnant' =>$data['ispregnant'],
