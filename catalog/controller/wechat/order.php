@@ -147,14 +147,14 @@ class ControllerWechatOrder extends Controller
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         $this->load->model('extension/total/coupon');
-        $couponlist = $this->model_extension_total_coupon->getCouponListForCustomer($product_id,721);
+        $couponlist = $this->model_extension_total_coupon->getCouponListForCustomer($product_id,$data['customer']["customer_id"]);
         $data['couponall'] = array();
         $log1=new Log('coupon.log');
 
         if(isset($couponlist)){
             foreach ($couponlist as $coupon){
                 $log1->write($coupon['code']);
-                $data['couponall'][] = $this->model_extension_total_coupon->getCoupon($coupon['code'], $product_id, 721);
+                $data['couponall'][] = $this->model_extension_total_coupon->getCoupon($coupon['code'], $product_id, $data['customer']["customer_id"]);
             }
         }
 
@@ -452,8 +452,6 @@ class ControllerWechatOrder extends Controller
             'value' => $product_info['price']*$data['productCount'],
             'sort_order' => '9'
         );
-
-       
 
          $this->load->model('extension/total/coupon');
         if(isset( $data['couponcode'])){
