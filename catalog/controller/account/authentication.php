@@ -29,10 +29,10 @@ class ControllerAccountAuthentication extends Controller {
                     $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
                     $get_return = file_get_contents($get_url);
                     $get_return = (array)json_decode($get_return);
-                    $data["openid"] = $get_return["openid"];
                     $this->load->model('wechat/userinfo');
                     if (isset($get_return["openid"])) {
 
+                        $data["openid"] = $get_return["openid"];
                         $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
                         if (isset($wechatid)) {
                             $data["wechat_id"] = $wechatid;
