@@ -71,6 +71,8 @@ class ControllerAccountJxlogin extends Controller
             $customer_info = $this->model_account_customer->getCustomerByTelephone($data['telephone']);
             if(!empty($customer_info["customer_id"])) {
                 if(!empty($customer_info["wechat_id"])){
+                    $log->write("openid111111=");
+                    $log->write("wechatid=".$customer_info["wechat_id"]);
                     $this->load->model('wechat/userinfo');
                     $wechat_info = $this->model_wechat_userinfo->getUserInfoByWechatId($customer_info["wechat_id"]);
                     $info = array_merge($customer_info,$wechat_info);
@@ -79,7 +81,7 @@ class ControllerAccountJxlogin extends Controller
                     $this->cache->set($data["jxsession"], json_encode($customer_info));
                 }
                 $data["edit"] = 0 ;
-                $aa=$this->cache->get($data["jxsession"]);
+                $aa = $this->cache->get($data["jxsession"]);
                 $log->write("openid=".$aa["openid"]);
             }else {
                 $this->load->model('account/customer');
