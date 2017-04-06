@@ -123,13 +123,6 @@ class ControllerWechatOrder extends Controller
 
         $product_id = $this->request->json('product_id', 0);
 
-        //$data['product_id'] = $product_id;
-        //$this->session->data['coupon_product_id'] = $product_id;
-
-
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-       // $data['header'] = $this->load->controller('common/wechatheader');
-
         $this->load->model('catalog/product');
         $data['product'] = $this->model_catalog_product->getProduct($product_id);
 
@@ -165,11 +158,6 @@ class ControllerWechatOrder extends Controller
             }
         }
 
-        //$data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
-        //$data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
-       //$data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
-        //$data['action'] = $this->url->link('wechat/order/addOrder', '&product_id=' . $product_id, true);
-
         $result = array(
 
             'jxsession' => $data["jxsession"],
@@ -198,9 +186,56 @@ class ControllerWechatOrder extends Controller
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
 
-
-
         //$this->response->setOutput($this->load->view('wechat/order', $data));
+    }
+
+    public function getDiscount(){
+        $jxsession = $this->load->controller('account/authentication');
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        $customer_info = json_decode($this->cache->get($jxsession),true);
+
+        $couponcode =  $this->request->json('couponcode',"");
+        $data['product_id'] = $this->request->json('product_id',50);
+        $product_id = $data['product_id'];
+        $product_info = $this->model_catalog_product->getProduct($product_id);
+
+        $this->load->model('extension/total/coupon');
+        if(isset( $couponcode)){
+            $coupon_info = $this->model_extension_total_coupon->getCoupon( $couponcode, $product_id,$customer_info['customer_id']);
+            if($coupon_info['type'] == 'F'){
+                $data["coupontype"] = "F";
+            }
+            if($coupon_info['type'] == 'P'){
+                $data["coupontype"] = "P";
+            }
+            $data = $this->model_extension_total_coupon->getTotal($data,$couponcode, $product_id,$customer_info['customer_id']);
+            $data['discount'] = $coupon_info['discount'];
+            $data['lastprice'] = floatval($data['total']);
+        }else{
+            $data["coupontype"] = "";
+            $data['discount'] = "0";
+            $data['lastprice'] = $product_info['price'];
+        }
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
     }
 
     public function addOrder(){
@@ -259,7 +294,6 @@ class ControllerWechatOrder extends Controller
         }else{
             $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data['openid']);
         }*/
-
 
         $couponcode =  $this->request->json('couponcode',"");
 
@@ -320,12 +354,6 @@ class ControllerWechatOrder extends Controller
             }
         }
 
-
-
-
-
-
-
         $data['productCount'] = $this->request->json('productCount',1);
         $data['telephone'] = $this->request->json('telephone',1);
         $data['realname'] = $this->request->json('realname','renxiaopeng');
@@ -333,14 +361,12 @@ class ControllerWechatOrder extends Controller
         $data['shipping_address_1'] = $this->request->json('address_1','北京');
         $data['shipping_date'] = $this->request->json('shipping_date','2017-1-4');
 
-
-
         $data['invoice_prefix']='INV-2013-00';
         $data['store_id'] = '0';
         $data['store_name'] = '金杏健康';
         $data['store_url'] = 'http://wechat.jinxingjk.com/';
         $data['customer_group_id'] = '1';
-        $data['email'] = 'sallyxie@meluo.net';
+        $data['email'] = 'aa@test.com';
         $data['payment_realname'] = $data['realname'];
         $data['payment_company'] = '11111';
         $data['payment_address_1'] = '111111';
@@ -387,9 +413,6 @@ class ControllerWechatOrder extends Controller
         $log->write("product_id");
         $log->write($product_id);
         $product_info = $this->model_catalog_product->getProduct($product_id);
-
-        $log->write("product_info price");
-        $log->write($product_info['price']);
 
         $data['total'] = $product_info['price'];
 
@@ -470,40 +493,6 @@ class ControllerWechatOrder extends Controller
         }
 
         $this->model_checkout_order->addOrderHistory($json['order_id'], $order_status_id);
-
-
-        //$this->load->model('extension/total/coupon');
-        //$this->model_extension_total_coupon->confirm($order_info, $order_total);
-
-
-        /**  pay for product */
-        /*
-        ini_set('date.timezone', 'Asia/Shanghai');
-        //获取用户openid
-        $tools = new JsApiPay();
-        $openId = $data['openid'];
-        $title=$data['products'][0]['name'];
-        $price=(int) $data['lastprice']*100;
-
-        //②、统一下单
-        $input = new WxPayUnifiedOrder();
-        $input->SetBody($title);
-        $input->SetAttach($title);
-        $input->SetOut_trade_no(WxPayConfig::MCHID . date("YmdHis"));
-        $input->SetTotal_fee((int)$price);
-        $input->SetTime_start(date("YmdHis"));
-        $input->SetGoods_tag("test");
-        $input->SetNotify_url("http://paysdk.weixin.qq.com/example/notify.php");
-        $input->SetTrade_type("JSAPI");
-        $input->SetOpenid($openId);
-        $input->SetAppid('wx5ce715491b2cf046');
-        $order = WxPayApi::unifiedOrder($input);
-
-        $jsApiParameters = $tools->GetJsApiParameters($order);
-        $data["wxpay"] = $jsApiParameters;
-        */
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-        //$data['header'] = $this->load->controller('common/wechatheader');
 
         $response = array(
                 'code'  => 0,
