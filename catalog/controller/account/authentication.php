@@ -30,10 +30,13 @@ class ControllerAccountAuthentication extends Controller {
                     $get_return = file_get_contents($get_url);
                     $get_return = (array)json_decode($get_return);
                     $this->load->model('wechat/userinfo');
+                    $log->write("openid111=1111111");
                     if (isset($get_return["openid"])) {
 
                         $data["openid"] = $get_return["openid"];
                         $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
+
+                        $log->write("openid111=2222222");
                         if (isset($wechatid)) {
                             $data["wechat_id"] = $wechatid;
 
@@ -46,6 +49,7 @@ class ControllerAccountAuthentication extends Controller {
                     } else {
                         //$this->error["error_warning"] = $get_return["errmsg"];
                         $data["wechat_id"] = "";
+                        $log->write("openid111=333333");
                     }
 
                     //$log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
