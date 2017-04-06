@@ -37,8 +37,8 @@ class ControllerAccountJxedit extends Controller
             );
             $this->load->model('account/customer');
             $this->model_account_customer->editNotWechatCustomer($postdata, $customer_info["telephone"]);
-            $this->load->model('account/physical');
-            $this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata, $customer_info["customer_id"]);
+            //$this->load->model('account/physical');
+            //$this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata, $customer_info["customer_id"]);
             $this->load->model('account/address');
             $this->model_account_address->editAddress($customer_info["address_id"], $postdata, $customer_info["customer_id"] );
 
@@ -46,7 +46,7 @@ class ControllerAccountJxedit extends Controller
             $this->cache->set($data['jxsession'], json_encode($info));
 
             $aaa = json_decode($this->cache->get($data["jxsession"]),true);
-            $log->write($aaa["realname"].$aaa["telephone"].$aaa["district"].$aaa['babybirth']);
+            $log->write($aaa["realname"].$aaa["telephone"].$aaa["city"].$aaa['babybirth']);
 
         }
 
