@@ -82,7 +82,7 @@ class ControllerAccountJxlogin extends Controller
                 }
                 $data["edit"] = 0 ;
                 $aa = $this->cache->get($data["jxsession"]);
-                $log->write("openid=".$aa["openid"]);
+                //$log->write("openid=".$aa["openid"]);
             }else {
                 $this->load->model('account/customer');
                 //$customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
