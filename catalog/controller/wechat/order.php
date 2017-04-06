@@ -210,7 +210,6 @@ class ControllerWechatOrder extends Controller
         $this->load->model('catalog/product');
         $product_id = $data['product_id'];
         $product_info = $this->model_catalog_product->getProduct($product_id);
-        $data['total'] = $product_info['price'];
 
         $this->load->model('extension/total/coupon');
         if(isset( $couponcode)){
