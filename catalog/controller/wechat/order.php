@@ -67,6 +67,8 @@ class ControllerWechatOrder extends Controller
         }
         $data['customer'] = json_decode($this->cache->get($data["jxsession"]),true);
 
+
+
         /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
@@ -143,6 +145,15 @@ class ControllerWechatOrder extends Controller
         }
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
+        $this->load->model('extension/total/coupon');
+        $couponlist = $this->model_extension_total_coupon->getCouponListForCustomer($product_id,721);
+        $data['couponall'] = array();
+        if(isset($couponlist)){
+            foreach ($couponlist as $coupon){
+                $data['couponall'][] = $this->model_extension_total_coupon->getCoupon($coupon['code'], $product_id, 721);
+            }
+        }
+
         //$data["provs_data"] = json_encode($this->load->controller('wechat/wechatbinding/getProvince'));
         //$data["citys_data"] = json_encode($this->load->controller('wechat/wechatbinding/getCity'));
        //$data["dists_data"] = json_encode($this->load->controller('wechat/wechatbinding/getDistrict'));
@@ -162,6 +173,7 @@ class ControllerWechatOrder extends Controller
             'service_tel' => $data['service_tel'],
             'pcd_data' =>  $data["pcd_data"] ,
             'cdo_data' =>  $data["cdo_data"],
+            'couponall' => $data['couponall']
 
         );
 
