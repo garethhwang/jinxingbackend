@@ -12,7 +12,7 @@ class ControllerWechatOrderStatusUpdate extends Controller
 
     public function index()
     {
-        $this->document->setTitle("金杏健康");
+        /*$this->document->setTitle("金杏健康");
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         if(isset($this->session->data['openid'])){
@@ -39,7 +39,16 @@ class ControllerWechatOrderStatusUpdate extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
+        }*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
         }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
+
+
         $order_id = $this->request->json('order_id');
 
         if (isset($order_id)) {

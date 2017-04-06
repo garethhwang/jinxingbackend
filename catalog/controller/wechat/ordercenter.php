@@ -35,9 +35,7 @@ class ControllerWechatOrdercenter extends Controller
 
     public function getPendingList()
     {
-        $this->document->setTitle("待支付订单");
-
-        //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
+        /*$this->document->setTitle("待支付订单");
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -66,7 +64,13 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -74,11 +78,9 @@ class ControllerWechatOrdercenter extends Controller
         $data['column_price'] = "单品价格";
         $data['column_total'] = "单品小计";
 
-        $this->load->model('wechat/ordercenter');
-        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
-        $log->write($data['customer_id']);
-        if(!isset($data['customer_id'])){
+        $log->write($customer_info['customer_id']);
+        if(!isset($customer_info['customer_id'])){
 
             $data['orders']= array();
 
@@ -95,9 +97,8 @@ class ControllerWechatOrdercenter extends Controller
             return ;
 
         }
-
-
-        $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
+        $this->load->model('wechat/ordercenter');
+        $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($customer_info['customer_id']);
 
         foreach ($allorderids as $order_id)
         {
@@ -197,7 +198,7 @@ class ControllerWechatOrdercenter extends Controller
         $this->document->setTitle("已支付未完成订单");
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -224,7 +225,14 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
         $data['column_product'] = "商品";
         $data['column_model'] = "型号";
@@ -235,10 +243,10 @@ class ControllerWechatOrdercenter extends Controller
         //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
         $this->load->model('wechat/ordercenter');
-        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
+        //$data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
-        $log->write($data['customer_id']);
-        if(!isset($data['customer_id'])){
+        $log->write($customer_info['customer_id']);
+        if(!isset($customer_info['customer_id'])){
             $data['orders']= array();
 
             $response = array(
@@ -254,7 +262,7 @@ class ControllerWechatOrdercenter extends Controller
             return ;
         }
 
-        $allorderids= $this->model_wechat_ordercenter->getAllPaidOrderid($data['customer_id']);
+        $allorderids= $this->model_wechat_ordercenter->getAllPaidOrderid($customer_info['customer_id']);
 
         foreach ($allorderids as $order_id)
         {
@@ -357,7 +365,7 @@ class ControllerWechatOrdercenter extends Controller
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -384,7 +392,14 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
 
         $data['column_product'] = "商品";
@@ -394,10 +409,10 @@ class ControllerWechatOrdercenter extends Controller
         $data['column_total'] = "单品小计";
 
         $this->load->model('wechat/ordercenter');
-        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
+        //$data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
-        $log->write($data['customer_id']);
-        if(!isset($data['customer_id'])){
+        $log->write($customer_info['customer_id']);
+        if(!isset($customer_info['customer_id'])){
             $data['orders']= array();
 
             $response = array(
@@ -413,7 +428,7 @@ class ControllerWechatOrdercenter extends Controller
             return ;
         }
 
-        $allorderids= $this->model_wechat_ordercenter->getAllCompletedOrderid($data['customer_id']);
+        $allorderids= $this->model_wechat_ordercenter->getAllCompletedOrderid($customer_info['customer_id']);
 
         foreach ($allorderids as $order_id)
         {
@@ -516,7 +531,7 @@ class ControllerWechatOrdercenter extends Controller
         $this->document->setTitle("所有订单");
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -543,7 +558,14 @@ class ControllerWechatOrdercenter extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
 
         $data['column_product'] = "商品";
@@ -553,10 +575,10 @@ class ControllerWechatOrdercenter extends Controller
         $data['column_total'] = "单品小计";
 
         $this->load->model('wechat/ordercenter');
-        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
+        //$data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
         $log = new Log('api.log');
-        $log->write($data['customer_id']);
-        if(!isset($data['customer_id'])){
+        $log->write($customer_info['customer_id']);
+        if(!isset($customer_info['customer_id'])){
             $data['orders']= array();
 
             $response = array(
@@ -573,7 +595,7 @@ class ControllerWechatOrdercenter extends Controller
         }
 
 
-        $allorderids = $this->model_wechat_ordercenter->getAllOrderid($data['customer_id']);
+        $allorderids = $this->model_wechat_ordercenter->getAllOrderid($customer_info['customer_id']);
 
         foreach ($allorderids as $order_id)
         {
@@ -809,7 +831,7 @@ class ControllerWechatOrdercenter extends Controller
         $log = new Log("wechat.log");
 
 
-        $this->document->setTitle("删除订单");
+        /*$this->document->setTitle("删除订单");
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -835,45 +857,53 @@ class ControllerWechatOrdercenter extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }
+        }*/
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         $order_id = $this->request->json('order_id', 0);
 
         $this->load->model('wechat/ordercenter');
 
-        $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
-        if(!isset($data['customer_id'])){
-            $data['customer_id'] = "0";
+        //$data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data["openid"]);
+        if(!empty($customer_info['customer_id'])){
+
+            $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($customer_info['customer_id']);
+
+            foreach ($allorderids as $id){
+
+                if ($order_id == $id['order_id']) {
+
+                    $this->load->model('extension/total/coupon');
+
+                    $this->model_extension_total_coupon->unconfirm($order_id);
+
+                }
+            }
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order_option` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order_total` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "order_history` WHERE order_id = '" . (int)$order_id . "'");
+            $this->db->query("DELETE `or`, ort FROM `" . DB_PREFIX . "order_recurring` `or`, `" . DB_PREFIX . "order_recurring_transaction` `ort` WHERE order_id = '" . (int)$order_id . "' AND ort.order_recurring_id = `or`.order_recurring_id");
+            $this->db->query("DELETE FROM `" . DB_PREFIX . "affiliate_transaction` WHERE order_id = '" . (int)$order_id . "'");
+
+            // Gift Voucher
+            $this->load->model('extension/total/voucher');
+
+            $this->model_extension_total_voucher->disableVoucher($order_id);
+
         }
 
        // $log->write("CUSTOMERid=". $data['customer_id']);
 
-        $allorderids= $this->model_wechat_ordercenter->getAllPendingOrderid($data['customer_id']);
 
-        foreach ($allorderids as $id){
-
-            if ($order_id == $id['order_id']) {
-
-                $this->load->model('extension/total/coupon');
-
-                $this->model_extension_total_coupon->unconfirm($order_id);
-
-            }
-        }
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_option` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_voucher` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_total` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "order_history` WHERE order_id = '" . (int)$order_id . "'");
-        $this->db->query("DELETE `or`, ort FROM `" . DB_PREFIX . "order_recurring` `or`, `" . DB_PREFIX . "order_recurring_transaction` `ort` WHERE order_id = '" . (int)$order_id . "' AND ort.order_recurring_id = `or`.order_recurring_id");
-        $this->db->query("DELETE FROM `" . DB_PREFIX . "affiliate_transaction` WHERE order_id = '" . (int)$order_id . "'");
-
-        // Gift Voucher
-        $this->load->model('extension/total/voucher');
-
-        $this->model_extension_total_voucher->disableVoucher($order_id);
 
 
         $response = array(

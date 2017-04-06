@@ -57,11 +57,17 @@ class ControllerWechatOrder extends Controller
 
     public function index()
     {
-        $this->document->setTitle("下单支付");
+        //$this->document->setTitle("下单支付");
 
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
-        if(isset($this->session->data['openid'])){
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $data['customer'] = json_decode($this->cache->get($data["jxsession"]),true);
+
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -91,31 +97,7 @@ class ControllerWechatOrder extends Controller
         unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        /*$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
-
-        if (!isset($data['customer_id'])) {
-            $data['isnotregist'] = "1";
-            $data['customer_id'] = "";
-        }
-        else{
-            $data['isnotregist'] = "0" ;
-        }
-
-        if(!isset($this->session->data['openid'])){
-            $response = array(
-                'code'  => 1001,
-                'message'  => "微信信息没有获取到！",
-                'data' =>array(),
-            );
-
-            $this->response->addHeader('Content-Type: application/json');
-            $this->response->setOutput(json_encode($response));
-            return;
-        }*/
-
-        //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-
-        $data['customer'] = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $data['customer'] = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
 
         if(!isset($data['customer']["address_id"])){
             $data['customer']["address_id"] = "";
@@ -167,6 +149,9 @@ class ControllerWechatOrder extends Controller
         //$data['action'] = $this->url->link('wechat/order/addOrder', '&product_id=' . $product_id, true);
 
         $result = array(
+
+            'jxsession' => $data["jxsession"],
+            'login' => $data["login"],
             'name' => $data['product']['name'],
             'price' =>  $data['product']['price'],
             'realname' => $data['customer']['realname'],
@@ -198,11 +183,14 @@ class ControllerWechatOrder extends Controller
     public function addOrder(){
         $log = new Log("wechat.log");
 
-        $this->document->setTitle("金杏健康");
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
-        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
-
-        $this->load->model('wechat/ordercenter');
+        //$this->document->setTitle("金杏健康");
+        /*$this->load->model('wechat/ordercenter');
 
         if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -239,7 +227,7 @@ class ControllerWechatOrder extends Controller
             $data['customer_id'] = $this->session->data['customer_id'];
         }else{
             $data['customer_id'] = $this->model_wechat_ordercenter->getCustomeridByOpenid($data['openid']);
-        }
+        }*/
 
 
         $couponcode =  $this->request->json('couponcode',"");
@@ -252,7 +240,7 @@ class ControllerWechatOrder extends Controller
             $this->load->model('extension/total/coupon');
 
             //$log->write("couponcode=".$couponcode);
-            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id,$data['customer_id']);
+            $validcoupon = $this->model_extension_total_coupon->getCoupon($couponcode, $product_id,$customer_info['customer_id']);
 
             //$log->write("validcoupon=".$validcoupon);
 
@@ -413,14 +401,14 @@ class ControllerWechatOrder extends Controller
          $this->load->model('extension/total/coupon');
         if(isset( $data['couponcode'])){
 
-            $coupon_info = $this->model_extension_total_coupon->getCoupon( $data['couponcode'], $product_id,$data['customer_id']);
+            $coupon_info = $this->model_extension_total_coupon->getCoupon( $data['couponcode'], $product_id,$customer_info['customer_id']);
             if($coupon_info['type'] == 'F'){
                 $data["coupontype"] = "F";
             }
             if($coupon_info['type'] == 'P'){
                 $data["coupontype"] = "P";
             }
-            $data = $this->model_extension_total_coupon->getTotal($data,$data['couponcode'], $product_id,$data['customer_id']);
+            $data = $this->model_extension_total_coupon->getTotal($data,$data['couponcode'], $product_id,$customer_info['customer_id']);
             $data['discount'] = $coupon_info['discount'];
             $data['lastprice'] = floatval($data['total']);
             //$log->write("lastprice".$data['total']);

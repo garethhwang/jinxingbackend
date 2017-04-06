@@ -18,7 +18,7 @@ class ControllerWechatOrderDetail extends Controller
 
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -47,11 +47,17 @@ class ControllerWechatOrderDetail extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
 
         $order_id = $this->request->json('order_id', 0);
 
-        //$temp['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         if (isset($order_id)) {
             $this->load->model('wechat/ordercenter');
@@ -153,7 +159,22 @@ class ControllerWechatOrderDetail extends Controller
             $tools = new JsApiPay();
 
             //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            $openId = $temp['openid'];
+            if(!empty($customer_info['openid'])){
+
+                $response = array(
+                    'code'  => 1033,
+                    'message'  => "请在微信客户端支付",
+                    'data' =>array(),
+                );
+
+                $this->response->addHeader('Content-Type: application/json');
+                $this->response->setOutput(json_encode($response));
+                return ;
+
+            }
+
+
+            $openId = $customer_info['openid'];
             $title=$data['products'][0]['name'];
             $price=(int)($data['lastprice']*100);
 
