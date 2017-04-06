@@ -13,7 +13,7 @@ class ControllerCommonHomem extends Controller
     public function index()
     {
         $log = new Log("wechat.log");
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -37,7 +37,7 @@ class ControllerCommonHomem extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
+        }
         if(isset($data['openid'])) {
             $this->customer->wechatlogin($data["openid"]);
             unset($this->session->data['guest']);
@@ -45,7 +45,7 @@ class ControllerCommonHomem extends Controller
 
         if (isset($this->request->get['route'])) {
             $this->document->addLink($this->config->get('config_url'), 'canonical');
-        }
+        }*/
 
         $this->document->setTitle("金杏健康");
         //$data['header'] = $this->load->controller('common/wechatheader');

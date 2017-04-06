@@ -4,6 +4,8 @@ class ControllerAccountJxedit extends Controller
 
     public function index() {
 
+        $log = new Log("wechat.log");
+
 
         $data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
@@ -24,6 +26,7 @@ class ControllerAccountJxedit extends Controller
         $data['babybirth'] = $this->request->json('babybirth', '');
         $data['district'] = $this->request->json('district', '');
         $data['address_1'] = $this->request->json('address_1','');
+        $data['householdregister'] = $this->request->json('householdregister', '');
 
         if(!empty($customer_info["customer_id"])) {
             $postdata  = array(
@@ -31,17 +34,21 @@ class ControllerAccountJxedit extends Controller
                 'district' => $data['district'],
                 'address_1' => $data['address_1'],
                 'pregnantstatus' => $data['pregnantstatus'],
-                'babybirth' => $data['babybirth']
+                'babybirth' => $data['babybirth'],
+                'householdregister' => $data['householdregister'],
             );
             $this->load->model('account/customer');
             $this->model_account_customer->editNotWechatCustomer($postdata, $customer_info["telephone"]);
-            $this->load->model('account/physical');
-            $this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata, $customer_info["customer_id"]);
+            //$this->load->model('account/physical');
+            //$this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata, $customer_info["customer_id"]);
             $this->load->model('account/address');
             $this->model_account_address->editAddress($customer_info["address_id"], $postdata, $customer_info["customer_id"] );
 
             $info = $this->model_account_customer->getCustomerByTelephone($customer_info["telephone"]);
             $this->cache->set($data['jxsession'], json_encode($info));
+
+            $aaa = json_decode($this->cache->get($data["jxsession"]),true);
+            $log->write($aaa["realname"].$aaa["telephone"].$aaa["city"].$aaa['babybirth']);
 
         }
 

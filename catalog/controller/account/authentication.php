@@ -7,9 +7,14 @@ class ControllerAccountAuthentication extends Controller {
         $log = new Log('wechat.log');
         $jxsession = $this->request->json("jxsession",0);
         $code = $this->request->json("code",0);
-        //$log->write("session=".$jxsession."   code=".$code);
+        $log->write("session=".$jxsession."   code=".$code);
 
-        if (empty($jxsession)) {
+        if (!empty($jxsession)) {
+
+            return $jxsession;
+
+        } else {
+
             if (!empty($code)) {
 
                 if ($this->cache->get($code)) {
@@ -57,27 +62,24 @@ class ControllerAccountAuthentication extends Controller {
 
                 return ;
             }
-        } else {
-
-            return $jxsession;
         }
     }
 
     public function authWechatuser($openid) {
 
-        $date = date("Ymd");
-        $jxsession = md5($openid.$date);
+        $date = date("Y-m-d h:i:sa");
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
+
         if(!empty($customer_info["address_id"]) && !empty($customer_info["customer_id"])){
+
+            $jxsession = md5($customer_info["customer_id"].$customer_info["telephone"].$date);
             $this->load->model('account/address');
             $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
         }else {
-            $this->load->model('wechat/userinfo');
-            $wechat = $this->model_wechat_userinfo->getUserInfo($openid);
-            $this->cache->set($jxsession, json_encode($wechat));
+            $jxsession="";
         }
 
         return $jxsession;
