@@ -81,6 +81,7 @@ class ControllerAccountAuthentication extends Controller {
         $log->write("1234567678=".$openid);
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
 
+
         if(!empty($customer_info["address_id"]) && !empty($customer_info["customer_id"])){
 
             $log->write("openid111=777777");
