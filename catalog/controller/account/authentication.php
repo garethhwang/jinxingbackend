@@ -39,7 +39,7 @@ class ControllerAccountAuthentication extends Controller {
                         $this->cache->set($code, json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
 
                     } else {
-                        $this->error["error_warning"] = $get_return["errmsg"];
+                        //$this->error["error_warning"] = $get_return["errmsg"];
                         $data["wechat_id"] = "";
                     }
 

@@ -20,6 +20,8 @@ class ControllerAccountJxedit extends Controller
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         $data['realname'] = $this->request->json('realname', '');
+        $data['pregnantstatus'] =  $this->request->json('pregnantstatus', '');
+        $data['babybirth'] = $this->request->json('babybirth', '');
         $data['district'] = $this->request->json('district', '');
         $data['address_1'] = $this->request->json('address_1','');
 
@@ -28,6 +30,8 @@ class ControllerAccountJxedit extends Controller
                 'realname'  => $data['realname'],
                 'district' => $data['district'],
                 'address_1' => $data['address_1'],
+                'pregnantstatus' => $data['pregnantstatus'],
+                'babybirth' => $data['babybirth']
             );
             $this->load->model('account/customer');
             $this->model_account_customer->editNotWechatCustomer($postdata, $customer_info["telephone"]);

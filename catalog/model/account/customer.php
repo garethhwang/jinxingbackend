@@ -252,13 +252,13 @@ class ModelAccountCustomer extends Model
 
         $customer_id = $this->db->getLastId();
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', householdregister = '是',  address_1 = '" . $this->db->escape($data['address_1']) . "', city = '" . $this->db->escape($data['district']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "'");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', householdregister = '是',  custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? json_encode($data['custom_field']['address']) : '') . "'");
 
         $address_id = $this->db->getLastId();
 
         $this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "physical SET customer_id = '" . (int)$customer_id . "', realname = '" . $this->db->escape($data['realname']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['physical']) ? json_encode($data['custom_field']['physical']) : '') . "'");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "physical SET customer_id = '" . (int)$customer_id . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['physical']) ? json_encode($data['custom_field']['physical']) : '') . "'");
 
 
         $physical_id = $this->db->getLastId();
@@ -284,7 +284,7 @@ class ModelAccountCustomer extends Model
     {
         //$customer_id = $this->customer->getId();
 
-        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . " ',babybirth = '" . $this->db->escape($data['babybirth']) . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
 
         //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
 
