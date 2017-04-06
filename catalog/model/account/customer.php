@@ -284,7 +284,7 @@ class ModelAccountCustomer extends Model
     {
         //$customer_id = $this->customer->getId();
 
-        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . " ',babybirth = '" . $this->db->escape($data['babybirth']) . "' WHERE telephone = '" . $this->db->escape($telephone) . "'");
 
         //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
 
