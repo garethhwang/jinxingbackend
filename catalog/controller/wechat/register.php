@@ -251,6 +251,7 @@ class ControllerWechatRegister extends Controller
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
         } elseif (!empty($record ) && !empty($temp["wechat_id"])) {
+            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
             $response = array(
                 'code'  => 1032,
                 'message'  => "您微信号已注册，请您在个人信息查看本人信息",
@@ -278,7 +279,7 @@ class ControllerWechatRegister extends Controller
             $customer_id = $this->model_account_customer->addCustomer($postdata);
             //$this->customer->wechatlogin($data["openid"]);
             //unset($this->session->data['guest']);
-            //$data["jxsession"] = $this->authWechat($customer_info["openid"]);
+            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
         }
 
         /*$data['breadcrumbs'] = array();
@@ -1051,9 +1052,9 @@ class ControllerWechatRegister extends Controller
     public function authWechat($openid) {
 
         $date = date("Y-m-d h:i:sa");
-        $jxsession = md5($openid.$date);
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
+        $jxsession = md5($customer_info["customer_id"].$customer_info["telephone"].$date);
         $this->load->model('account/address');
         $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
         $data = array_merge($customer_info,$customer_address);
