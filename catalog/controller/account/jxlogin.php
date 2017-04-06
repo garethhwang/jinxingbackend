@@ -53,7 +53,7 @@ class ControllerAccountJxlogin extends Controller
         $data["jxsession"] = $this->load->controller('account/authentication');
         $code = $this->request->json("code");
 
-        if(empty($data["jxsession"])) {
+        /*if(empty($data["jxsession"])) {
             $response = array(
                 'code'  => 1002,
                 'message'  => "欢迎来到金杏健康，请您先登录",
@@ -63,7 +63,7 @@ class ControllerAccountJxlogin extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return ;
-        }
+        }*/
         //$customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         $date = date("Y-m-d h:i:sa");
