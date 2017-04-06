@@ -122,7 +122,7 @@ class ControllerWechatPuerpera extends Controller
 
         //$data["openid"] = "oKe2EwWLwAU7EQu7rNof5dfG1U8g";
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
+        /*$data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
             $response = array(
                 'code'  => 1002,
@@ -134,7 +134,8 @@ class ControllerWechatPuerpera extends Controller
             $this->response->setOutput(json_encode($response));
             return ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);*/
+        $code_info = $this->load->controller('account/authentication/getWechat');
 
 
         $data['telephone'] = $this->request->json('telephone', '');
@@ -160,9 +161,9 @@ class ControllerWechatPuerpera extends Controller
         $this->document->setTitle("金杏健康");
         $this->load->model('account/customer');
 
-        if(!empty($customer_info["openid"])){
+        if(!empty($code_info["openid"])){
             $this->load->model('wechat/userinfo');
-            $temp = $this->model_wechat_userinfo->getUserInfo($customer_info["openid"]);
+            $temp = $this->model_wechat_userinfo->getUserInfo($code_info["openid"]);
             $postdata["wechat_id"] = $temp["wechat_id"];
             $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
@@ -175,7 +176,7 @@ class ControllerWechatPuerpera extends Controller
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
         } elseif (!empty($record ) && !empty($temp["wechat_id"])) {
-            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+            $data["jxsession"] = $this->authWechat($code_info["openid"]);
             $response = array(
                 'code'  => 1032,
                 'message'  => "您微信号已注册，请您在个人信息查看本人信息",
@@ -187,7 +188,7 @@ class ControllerWechatPuerpera extends Controller
         }elseif ($telephone_info) {
             if (!empty($temp["wechat_id"])) {
                 $this->model_account_customer->updateWechatCustomer($temp["wechat_id"], $data['telephone']);
-                $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+                $data["jxsession"] = $this->authWechat($code_info["openid"]);
             }
             $response = array(
                 'code' => 1033,
@@ -203,7 +204,7 @@ class ControllerWechatPuerpera extends Controller
             $this->model_account_customer->addPuerpera($postdata);
             //$this->customer->wechatlogin($data["openid"]);
             //unset($this->session->data['guest']);
-            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+            $data["jxsession"] = $this->authWechat($code_info["openid"]);
         }
 
         //$log->write("telephone=".$this->request->post["telephone"]."smscode=".$this->cache->get($this->request->post["telephone"])."isnotright=".$data['isnotright']);
