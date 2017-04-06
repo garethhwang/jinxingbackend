@@ -164,7 +164,7 @@ class Customer {
             $this->customer_id = $web_query->row['customer_id'];
             $this->customer_group_id = $web_query->row['customer_group_id'];
             $this->telephone = $web_query->row['telephone'];
-            $this->pregnantstatus = $wechat_query->row['pregnantstatus'];
+            $this->pregnantstatus = $web_query->row['pregnantstatus'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
