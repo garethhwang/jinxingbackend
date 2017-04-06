@@ -64,12 +64,16 @@ class ControllerAccountAuthentication extends Controller {
 
             }else {
 
-                return ;
+                $jxsession = "";
+
+                return $jxsession ;
             }
         }
     }
 
     public function authWechatuser($openid) {
+
+        $log = new Log('wechat.log');
 
         $date = date("Y-m-d h:i:sa");
         $this->load->model('wechat/userinfo');
@@ -77,6 +81,8 @@ class ControllerAccountAuthentication extends Controller {
 
         if(!empty($customer_info["address_id"]) && !empty($customer_info["customer_id"])){
 
+
+            $log->write("openid111=777777");
             $jxsession = md5($customer_info["customer_id"].$customer_info["telephone"].$date);
             $this->load->model('account/address');
             $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
