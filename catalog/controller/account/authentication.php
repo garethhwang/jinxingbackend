@@ -55,7 +55,7 @@ class ControllerAccountAuthentication extends Controller {
 
             }else {
 
-                return 0;
+                return ;
             }
         } else {
 

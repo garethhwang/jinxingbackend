@@ -10,8 +10,16 @@ class ControllerWechatPhysicalReceipt extends Controller
         $log = new Log("wechat.log");
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
         //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
@@ -350,8 +358,16 @@ class ControllerWechatPhysicalReceipt extends Controller
         $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -783,7 +799,6 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $result  = array(
             'jxsession' => $data["jxsession"],
-            'login' => $data["login"],
             'highriskfactor' => $data['highriskfactor'],
             'isnotregist' => $data['isnotregist'],
             'ispregnant' =>$data['ispregnant'],

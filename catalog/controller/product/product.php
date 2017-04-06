@@ -167,8 +167,16 @@ class ControllerProductProduct extends Controller
 
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -192,7 +200,7 @@ class ControllerProductProduct extends Controller
         $product_info['service_notes'] = html_entity_decode($product_info['service_notes'], ENT_QUOTES, 'UTF-8');
         $product_info['applicable_user'] = html_entity_decode($product_info['applicable_user'], ENT_QUOTES, 'UTF-8');
         $product_info['jxsession'] = $data["jxsession"];
-        $product_info['login'] = $data["login"];
+
 
 
 

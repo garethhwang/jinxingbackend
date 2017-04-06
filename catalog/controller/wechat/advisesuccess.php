@@ -10,7 +10,7 @@ class ControllerWechatAdvisesuccess extends Controller
 
         //$data['header'] = $this->load->controller('common/wechatheader');
 
-	$response = array(
+	    $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),

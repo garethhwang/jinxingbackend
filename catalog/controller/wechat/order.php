@@ -62,8 +62,16 @@ class ControllerWechatOrder extends Controller
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $data['customer'] = json_decode($this->cache->get($data["jxsession"]),true);
 
@@ -162,7 +170,6 @@ class ControllerWechatOrder extends Controller
         $result = array(
 
             'jxsession' => $data["jxsession"],
-            'login' => $data["login"],
             'name' => $data['product']['name'],
             'price' =>  $data['product']['price'],
             'realname' => $data['customer']['realname'],
@@ -196,8 +203,16 @@ class ControllerWechatOrder extends Controller
         $log = new Log("wechat.log");
 
         $jxsession = $this->load->controller('account/authentication');
-        if($jxsession == 0) {
-            $login = 1 ;
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
@@ -432,7 +447,6 @@ class ControllerWechatOrder extends Controller
         }
 
         $data["jxsession"] = $jxsession;
-        $data["login"] = $login;
 
         $this->load->model('checkout/order');
         $json['order_id']=$this->model_checkout_order->addOrder($data);

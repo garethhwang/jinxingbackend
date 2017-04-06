@@ -40,8 +40,16 @@ class ControllerWechatVaccinemenu extends Controller
         unset($this->session->data['guest']);*/
 
         $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 

@@ -50,8 +50,16 @@ class ControllerWechatOrderDetail extends Controller
         unset($this->session->data['guest']);*/
 
         $jxsession = $this->load->controller('account/authentication');
-        if($jxsession == 0) {
-            $login = 1 ;
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
@@ -154,7 +162,6 @@ class ControllerWechatOrderDetail extends Controller
             }
 
             $data["jxsession"] = $jxsession;
-            $data["login"] = $login;
 
 
             /**  pay for product */
