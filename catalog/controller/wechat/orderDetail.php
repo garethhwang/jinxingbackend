@@ -173,7 +173,7 @@ class ControllerWechatOrderDetail extends Controller
             $tools = new JsApiPay();
 
             //$this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
-            if(!empty($customer_info['openid'])){
+            if(empty($customer_info['openid'])){
 
                 $response = array(
                     'code'  => 1035,
