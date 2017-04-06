@@ -154,6 +154,35 @@ class Customer {
         }
     }
 
+    public function weblogin($telephone) {
+
+
+        $web_query = $this->db->query("select * from  " . DB_PREFIX . "customer where telephone='".(int)$telephone."'AND status = '1'");
+
+        if ($web_query->num_rows) {
+
+            $this->customer_id = $web_query->row['customer_id'];
+            $this->customer_group_id = $web_query->row['customer_group_id'];
+            $this->telephone = $web_query->row['telephone'];
+            $this->pregnantstatus = $wechat_query->row['pregnantstatus'];
+
+            $this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+
+            $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->customer_id . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+
+            if (!$query->num_rows) {
+                $this->db->query("INSERT INTO " . DB_PREFIX . "customer_ip SET customer_id = '" . (int)$this->customer_id . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', date_added = NOW()");
+            }
+
+            $this->db->query("UPDATE " . DB_PREFIX . "customer_ip SET date_added = NOW()  WHERE customer_id = '" . (int)$this->customer_id . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     /*public function nonpregnantlogin($openid) {
 

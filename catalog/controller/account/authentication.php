@@ -48,6 +48,7 @@ class ControllerAccountAuthentication extends Controller {
                 }
 
                 $jxsession = $this->authWechatuser($data["openid"]);
+                $this->customer->wechatlogin( $data["openid"]);
                 //$log->write("jxssion=".$jxsession);
 
                 return $jxsession;

@@ -49,6 +49,7 @@ class ControllerAccountJxlogin extends Controller
 
     public function index() {
         //$log = new Log("wechat.log");
+        $date = date("Ymd");
         $data['telephone'] = $this->request->json('telephone', '');
         $data['smscode'] = $this->request->json('smscode', 1);
 
@@ -63,7 +64,7 @@ class ControllerAccountJxlogin extends Controller
             $data['isnotright'] = '1';
         } else {
             $data['isnotright'] = '0';
-            $jxsession = md5($data['telephone'].$data['smscode']);
+            $jxsession = md5($data['telephone'].$data['smscode'].$date);
             $data["jxsession"] = $jxsession ;
             $this->load->model('account/customer');
             $customer_info = $this->model_account_customer->getCustomerByTelephone($data['telephone']);
@@ -92,6 +93,7 @@ class ControllerAccountJxlogin extends Controller
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));*/
 
+            $this->customer->weblogin($data['telephone']);
 
         }
 
