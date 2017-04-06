@@ -1050,7 +1050,7 @@ class ControllerWechatRegister extends Controller
 
     public function authWechat($openid) {
 
-        $date = date("Ymd");
+        $date = date("Y-m-d h:i:sa");
         $jxsession = md5($openid.$date);
         $this->load->model('wechat/userinfo');
         $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);

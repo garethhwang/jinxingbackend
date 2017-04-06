@@ -50,7 +50,7 @@ class ControllerAccountJxlogin extends Controller
     public function index() {
         $log = new Log("wechat.log");
 
-        $date = date("Ymd");
+        $date = date("Y-m-d h:i:sa");
         $data['telephone'] = $this->request->json('telephone', '');
         $data['smscode'] = $this->request->json('smscode');
 
