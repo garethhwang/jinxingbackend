@@ -22,7 +22,7 @@ class ControllerAccountAuthentication extends Controller {
                     $codeinfo=json_decode($codeinfo,true);
                     $data["openid"] = $codeinfo["openid"];
                     $data["wechat_id"] = $codeinfo["wechat_id"];
-                    //$log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
+                    $log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
 
                 }else {
 
@@ -30,13 +30,12 @@ class ControllerAccountAuthentication extends Controller {
                     $get_return = file_get_contents($get_url);
                     $get_return = (array)json_decode($get_return);
                     $this->load->model('wechat/userinfo');
-                    $log->write("openid111=1111111");
+                    $log->write("openid111=11111");
                     if (isset($get_return["openid"])) {
 
                         $data["openid"] = $get_return["openid"];
                         $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
-
-                        $log->write("openid111=2222222");
+                        $log->write("openid111=22222");
                         if (isset($wechatid)) {
                             $data["wechat_id"] = $wechatid;
 
@@ -49,12 +48,13 @@ class ControllerAccountAuthentication extends Controller {
                     } else {
                         //$this->error["error_warning"] = $get_return["errmsg"];
                         $data["wechat_id"] = "";
-                        $log->write("openid111=333333");
+
                     }
 
                     //$log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
 
                 }
+                $log->write("openid111=".$data["openid"]);
 
                 $jxsession = $this->authWechatuser($data["openid"]);
                 $this->customer->wechatlogin( $data["openid"]);
