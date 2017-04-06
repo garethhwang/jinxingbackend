@@ -49,11 +49,12 @@ class ControllerWechatOrderDetail extends Controller
         $this->customer->wechatlogin($data["openid"]);
         unset($this->session->data['guest']);*/
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        $jxsession = $this->load->controller('account/authentication');
+        if($jxsession == 0) {
+            $login = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $customer_info = json_decode($this->cache->get($jxsession),true);
+
 
 
         $order_id = $this->request->json('order_id', 0);
@@ -151,6 +152,9 @@ class ControllerWechatOrderDetail extends Controller
             if($product_info['products'][0]['product_id'] == 68) {
                 $data['lastprice'] = 9.9 ;
             }
+
+            $data["jxsession"] = $jxsession;
+            $data["login"] = $login;
 
 
             /**  pay for product */

@@ -183,11 +183,11 @@ class ControllerWechatOrder extends Controller
     public function addOrder(){
         $log = new Log("wechat.log");
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+        $jxsession = $this->load->controller('account/authentication');
+        if($jxsession == 0) {
+            $login = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $customer_info = json_decode($this->cache->get($jxsession),true);
 
         //$this->document->setTitle("金杏健康");
         /*$this->load->model('wechat/ordercenter');
@@ -419,6 +419,8 @@ class ControllerWechatOrder extends Controller
             $data['lastprice'] = $data['products'][0]['price'];
         }
 
+        $data["jxsession"] = $jxsession;
+        $data["login"] = $login;
 
         $this->load->model('checkout/order');
         $json['order_id']=$this->model_checkout_order->addOrder($data);

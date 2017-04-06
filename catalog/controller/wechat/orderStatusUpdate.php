@@ -41,11 +41,12 @@ class ControllerWechatOrderStatusUpdate extends Controller
             return;
         }*/
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
-        if($data["jxsession"] == 0) {
-            $data["login"] = 1 ;
+
+        $jxsession = $this->load->controller('account/authentication');
+        if($jxsession == 0) {
+            $login = 1 ;
         }
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        $customer_info = json_decode($this->cache->get($jxsession),true);
 
 
 
@@ -133,6 +134,10 @@ class ControllerWechatOrderStatusUpdate extends Controller
                 $data['lastprice'] = $product_info['products'][0]['price'];
             }
         }
+
+
+        $data["jxsession"] = $jxsession;
+        $data["login"] = $login;
 
         $this->load->model('checkout/order');
         $this->model_checkout_order->addOrderHistory($data["order_id"], $data["order_status_id"]);
