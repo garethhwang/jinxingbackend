@@ -50,6 +50,22 @@ class ControllerAccountJxlogin extends Controller
     public function index() {
         $log = new Log("wechat.log");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        $code = $this->request->json("code");
+
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        //$customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         $date = date("Y-m-d h:i:sa");
         $data['telephone'] = $this->request->json('telephone', '');
         $data['smscode'] = $this->request->json('smscode');
@@ -65,23 +81,38 @@ class ControllerAccountJxlogin extends Controller
             $data['isnotright'] = '1';
         } else {
             $data['isnotright'] = '0';
-            $jxsession = md5($data['telephone'].$data['smscode'].$date);
-            $data["jxsession"] = $jxsession ;
             $this->load->model('account/customer');
             $customer_info = $this->model_account_customer->getCustomerByTelephone($data['telephone']);
             if(!empty($customer_info["customer_id"])) {
+                $data["jxsession"] = md5($customer_info["customer_id"].$customer_info["telephone"].$date);
                 if(!empty($customer_info["wechat_id"])){
                     $this->load->model('wechat/userinfo');
                     $wechat_info = $this->model_wechat_userinfo->getUserInfoByWechatId($customer_info["wechat_id"]);
                     $info = array_merge($customer_info,$wechat_info);
                     $this->cache->set($data["jxsession"], json_encode($info));
                 }else {
-                    $this->cache->set($data["jxsession"], json_encode($customer_info));
+                    if(!empty($code)) {
+                        $code_info = $this->getWechat($code);
+                        $this->model_account_customer->updateWechatCustomer($code_info["wechat_id"],$data['telephone']);
+                        $data["jxsession"] = $this->authWechat($code_info["openid"]);
+                        $response = array(
+                            'code'  => 1033,
+                            'message'  => "您手机号已注册，请您在个人信息查看本人信息",
+                            'data' => array(),
+                        );
+                        $response["data"] = $data;
+                        $this->response->addHeader('Content-Type: application/json');
+                        $this->response->setOutput(json_encode($response));
+                        return;
+                    }else {
+                        $this->cache->set($data["jxsession"], json_encode($customer_info));
+                    }
                 }
             }else {
                 $this->load->model('account/customer');
                 $customer_id = $this->model_account_customer->addNotWechatCustomer($postdata);
                 $info = $this->model_account_customer->getCustomer($customer_id);
+                $data["jxsession"] = md5($customer_id.$info["telephone"].$date);
                 $this->cache->set($data["jxsession"], $info);
             }
             if(empty($customer_info["realname"])) {
@@ -154,5 +185,67 @@ class ControllerAccountJxlogin extends Controller
             return 0;
         }
     }
+
+
+    function getWechat($code) {
+
+        if ($this->cache->get($code)) {
+            $codeinfo = $this->cache->get($code);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+
+        }else {
+
+            $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
+            $get_return = file_get_contents($get_url);
+            $get_return = (array)json_decode($get_return);
+            $data["openid"] = $get_return["openid"];
+            $this->load->model('wechat/userinfo');
+            if (isset($get_return["openid"])) {
+
+                $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
+                if (isset($wechatid)) {
+                    $data["wechat_id"] = $wechatid;
+
+                } else {
+                    $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
+                    $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
+                }
+                $this->cache->set($code, json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
+
+            } else {
+                $data["wechat_id"] = "";
+            }
+
+        }
+
+        $codeinfo = json_decode($this->cache->get($code),true);
+        return  $codeinfo;
+    }
+
+    private function getUser($accesstoken, $openid)
+    {
+        $get_url = sprintf(WECHAT_GETUSERINFO, $accesstoken, $openid);
+        $get_return = file_get_contents($get_url);
+        $get_return = (array)json_decode($get_return);
+        return $get_return;
+    }
+
+    public function authWechat($openid) {
+
+        $date = date("Y-m-d h:i:sa");
+        $this->load->model('wechat/userinfo');
+        $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($openid);
+        $jxsession = md5($customer_info["customer_id"].$customer_info["telephone"].$date);
+        $this->load->model('account/address');
+        $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
+        $data = array_merge($customer_info,$customer_address);
+        $this->cache->set($jxsession, json_encode($data));
+        return $jxsession;
+
+    }
+
+
 
 }
