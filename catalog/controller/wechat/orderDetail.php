@@ -51,9 +51,9 @@ class ControllerWechatOrderDetail extends Controller
 
         $jxsession = $this->load->controller('account/authentication');
         if($jxsession == 0) {
-            $login = 1 ;
-        }else {
             $login = 0 ;
+        }else {
+            $login = 1 ;
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 

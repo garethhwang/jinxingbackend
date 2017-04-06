@@ -11,6 +11,8 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $data["jxsession"] = $this->load->controller('account/authentication');
         if($data["jxsession"] == 0) {
+            $data["login"] = 0 ;
+        }else {
             $data["login"] = 1 ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
