@@ -14,7 +14,14 @@ class ControllerWechatEdituser extends Controller
     {
         $log = new Log("wechat.log");
 
-        if(isset($this->session->data['openid'])){
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
+
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -42,7 +49,7 @@ class ControllerWechatEdituser extends Controller
 
         //$data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
 
         /*$this->load->model('wechat/userinfo');
         $temp = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
@@ -93,18 +100,19 @@ class ControllerWechatEdituser extends Controller
             'district' => $district,
             'address_1' => $address_1,
             );*/
-        $this->load->model('wechat/userinfo');
-        $customer_info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
-        $this->load->model('account/address');
-        $customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
 
-        if (!empty($customer_info)) {
+        //$this->load->model('wechat/userinfo');
+        //$customer_info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        //$this->load->model('account/address');
+        //$customer_address = $this->model_account_address->getAddress($customer_info["address_id"],$customer_info["customer_id"]);
+
+        if (!empty($customer_info['headimgurl'])) {
             $data['headimgurl'] = $customer_info['headimgurl'];
         } else {
             $data['headimgurl'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['realname'])) {
             $data['realname'] = $customer_info['realname'];
         } else {
             $data['realname'] = '';
@@ -116,38 +124,38 @@ class ControllerWechatEdituser extends Controller
             $data['babybirth'] = '';
         }*/
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['pregnantstatus'])) {
             $data['pregnantstatus'] = $customer_info['pregnantstatus'];
         } else {
             $data['pregnantstatus'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['barcode'])) {
             $data['barcode'] = $customer_info['barcode'];
         } else {
             $data['barcode'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['birthday'])) {
             $data['birthday'] = $customer_info['birthday'];
         } else {
             $data['birthday'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['telephone'])) {
             $data['telephone'] = $customer_info['telephone'];
         } else {
             $data['telephone'] = '';
         }
 
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['department'])) {
             $data['department'] = $customer_info['department'];
         } else {
             $data['department'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['department'])) {
             $data['depname'] = $this->ConvertDepartment($customer_info['department']);
         } else {
             $data['depname'] = '';
@@ -170,73 +178,73 @@ class ControllerWechatEdituser extends Controller
         }*/
 
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['height'])) {
             $data['height'] = $customer_info['height'];
         } else {
             $data['height'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['weight'])) {
             $data['weight'] = $customer_info['weight'];
         } else {
             $data['weight'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['bmiindex'])) {
             $data['bmiindex'] = $customer_info['bmiindex'];
         } else {
             $data['bmiindex'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['bmitype'])) {
             $data['bmitype'] = $customer_info['bmitype'];
         } else {
             $data['bmitype'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['lastmenstrualdate'])) {
             $data['lastmenstrualdate'] = $customer_info['lastmenstrualdate'];
         } else {
             $data['lastmenstrualdate'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['edc'])) {
             $data['edc'] = $customer_info['edc'];
         } else {
             $data['edc'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['gravidity'])) {
             $data['gravidity'] = $customer_info['gravidity'];
         } else {
             $data['gravidity'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['parity'])) {
             $data['parity'] = $customer_info['parity'];
         } else {
             $data['parity'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['vaginaldelivery'])) {
             $data['vaginaldelivery'] = $customer_info['vaginaldelivery'];
         } else {
             $data['vaginaldelivery'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['aesarean'])) {
             $data['aesarean'] = $customer_info['aesarean'];
         } else {
             $data['aesarean'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['spontaneousabortion'])) {
             $data['spontaneousabortion'] = $customer_info['spontaneousabortion'];
         } else {
             $data['spontaneousabortion'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['drug_inducedabortion'])) {
             $data['drug_inducedabortion'] = $customer_info['drug_inducedabortion'];
         } else {
             $data['drug_inducedabortion'] = '';
@@ -248,38 +256,38 @@ class ControllerWechatEdituser extends Controller
             $data['fetal'] = '';
         }*/
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['highrisk'])) {
             $data['highrisk'] = $customer_info['highrisk'];
         } else {
             $data['highrisk'] = '';
         }
 
-        if (!empty($customer_info)) {
+        if (!empty($customer_info['highriskfactor'])) {
             $data['highriskfactor'] = $customer_info['highriskfactor'];
         } else {
             $data['highriskfactor'] = '';
         }
 
-        if (!empty($customer_address)) {
-            $data['districtid'] =  $customer_address['city'];
+        if (!empty($customer_info['city'])) {
+            $data['districtid'] =  $customer_info['city'];
         } else {
             $data['districtid'] = '';
         }
 
-        if (!empty($customer_address)) {
-            $data['district'] =  $this->ConvertPosition($customer_address['city']);
+        if (!empty($customer_info['city'])) {
+            $data['district'] =  $this->ConvertPosition($customer_info['city']);
         } else {
             $data['district'] = '';
         }
 
-        if (!empty($customer_address)) {
-            $data['address_1'] = $customer_address['address_1'];
+        if (!empty($customer_info['address_1'])) {
+            $data['address_1'] = $customer_info['address_1'];
         } else {
             $data['address_1'] = '';
         }
 
-        if (!empty($customer_address)) {
-            $data['householdregister'] = $customer_address['householdregister'];
+        if (!empty($customer_info['householdregister'])) {
+            $data['householdregister'] = $customer_info['householdregister'];
         } else {
             $data['householdregister'] = '';
         }
@@ -571,13 +579,8 @@ class ControllerWechatEdituser extends Controller
            $data['error_confirm'] = '';
        }*/
 
-        //$data['action'] = $this->url->link('wechat/edituser', '', true);
-
         $data['customer_groups'] = array();
 
-
-        
-           
 
         // Custom Fields
         $this->load->model('account/custom_field');
@@ -609,9 +612,7 @@ class ControllerWechatEdituser extends Controller
         //$this->load->model('clinic/clinic');
         //$data["departmentlist"] = $this->model_clinic_clinic->getOffices();
         //$data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
-        /*foreach($data["provs_data"] as $aa){
-            $log->write("provs=".$aa);
-        }*/
+
         $data["provs_data"] = $this->load->controller('wechat/wechatbinding/getProvince');
         $data["citys_data"] = $this->load->controller('wechat/wechatbinding/getCity');
         $data["dists_data"] = $this->load->controller('wechat/wechatbinding/getDistrict');
@@ -623,15 +624,13 @@ class ControllerWechatEdituser extends Controller
 
         $this->document->setTitle("个人信息");
 
-
-        //$data['footer'] = $this->load->controller('common/wechatfooter');
-        //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
 
-        //$log->write( "info=".$data['dpname'].$data['district']);
 
 
         $result  = array(
+            'jxsession' => $data["jxsession"],
+            'login' => $data["login"],
             'headimgurl' =>  $data['headimgurl'],
             'realname' =>  $data['realname'],
             'telephone' =>  $data['telephone'],
@@ -687,8 +686,14 @@ class ControllerWechatEdituser extends Controller
 
         $log = new Log("wechat.log");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -702,7 +707,7 @@ class ControllerWechatEdituser extends Controller
             $codeinfo=json_decode($codeinfo,true);
             $data["openid"] = $codeinfo["openid"];
             $data["wechat_id"] = $codeinfo["wechat_id"];
-        }/*else{
+        }else{
             $response = array(
                 'code'  => 1001,
                 'message'  => "微信信息没有获取到！",
@@ -712,15 +717,13 @@ class ControllerWechatEdituser extends Controller
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return;
-        }*/
-        //$this->customer->wechatlogin($data["openid"]);
-        //unset($this->session->data['guest']);
+        }
+        $this->customer->wechatlogin($data["openid"]);
+        unset($this->session->data['guest']);
 
         $this->load->model('wechat/userinfo');
-        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
+        $data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);*/
 
-
-        $data['wechatcode'] = $code;
         $data['realname'] = $this->request->json('realname', '');
         $data['telephone'] = $this->request->json('telephone', '');
         $data['barcode'] = $this->request->json('barcode', '');
@@ -798,11 +801,11 @@ class ControllerWechatEdituser extends Controller
         $edc = date_modify($edc, "+280 days");
         $postdata["edc"] = date_format($edc, "Y/m/d");
 
-        $this->model_account_customer->editCustomer($postdata, $data["customer_id"]);
+        $this->model_account_customer->editCustomer($postdata, $customer_info["customer_id"]);
         $this->load->model('account/physical');
-        $this->model_account_physical->editPhysical($data["physical_id"], $postdata,$data["customer_id"]);
+        $this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata,$customer_info["customer_id"]);
         $this->load->model('account/address');
-        $this->model_account_address->editAddress($data["address_id"], $postdata,$data["customer_id"] );
+        $this->model_account_address->editAddress($customer_info["address_id"], $postdata,$customer_info["customer_id"] );
 
         $custom_field = $this->request->json('custom_field');
 
