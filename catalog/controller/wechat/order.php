@@ -206,6 +206,8 @@ class ControllerWechatOrder extends Controller
 
         $couponcode =  $this->request->json('couponcode',"");
         $data['product_id'] = $this->request->json('product_id',50);
+
+        $this->load->model('catalog/product');
         $product_id = $data['product_id'];
         $product_info = $this->model_catalog_product->getProduct($product_id);
 
