@@ -175,6 +175,7 @@ class ControllerWechatOrder extends Controller
             'jxsession' => $data["jxsession"],
             'name' => $data['product']['name'],
             'price' =>  $data['product']['price'],
+            'customer_id' => $data['customer']['customer_id'],
             'realname' => $data['customer']['realname'],
             'telephone' => $data['customer']['telephone'],
             'districtid' => $data['address']['city'],
