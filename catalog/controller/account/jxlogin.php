@@ -74,9 +74,9 @@ class ControllerAccountJxlogin extends Controller
                     $this->load->model('wechat/userinfo');
                     $wechat_info = $this->model_wechat_userinfo->getUserInfoByWechatId($customer_info["wechat_id"]);
                     $info = array_merge($customer_info,$wechat_info);
-                    $this->cache->set($jxsession, json_encode($info));
+                    $this->cache->set($data["jxsession"], json_encode($info));
                 }else {
-                    $this->cache->set($jxsession, json_encode($customer_info));
+                    $this->cache->set($data["jxsession"], json_encode($customer_info));
                 }
 
             }else {
@@ -84,7 +84,7 @@ class ControllerAccountJxlogin extends Controller
                 //$customer_id = $this->model_account_customer->addNotWechatCustomer($data['telephone']);
                 //$info = $this->model_account_customer->getCustomer($customer_id);
                 $data["edit"] = 1 ;
-                //$this->cache->set($jxsession, $info);
+                //$this->cache->set($data["jxsession"], $info);
             }
 
             /*$this->load->model('wechat/userinfo');
