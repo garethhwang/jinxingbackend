@@ -6,7 +6,7 @@ class ControllerAccountAuthentication extends Controller {
 
         $log = new Log('wechat.log');
         $jxsession = $this->request->json("jxsession",0);
-        $code = $this->request->json("code",0);
+
         $log->write("session=".$jxsession."   code=".$code);
 
         if (!empty($jxsession)) {
@@ -17,47 +17,12 @@ class ControllerAccountAuthentication extends Controller {
 
             if (!empty($code)) {
 
-                if ($this->cache->get($code)) {
-                    $codeinfo = $this->cache->get($code);
-                    $codeinfo=json_decode($codeinfo,true);
-                    $data["openid"] = $codeinfo["openid"];
-                    $data["wechat_id"] = $codeinfo["wechat_id"];
-                    $log->write("openid111=".$data["openid"]."   wechat111=".$data["wechat_id"]);
+                $codeinfo = $this->getWechat();
 
-                }else {
+                $log->write("openid111=".$codeinfo["openid"]);
 
-                    $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
-                    $get_return = file_get_contents($get_url);
-                    $get_return = (array)json_decode($get_return);
-                    $this->load->model('wechat/userinfo');
-                    $log->write("openid111=11111");
-                    if (isset($get_return["openid"])) {
-
-                        $data["openid"] = $get_return["openid"];
-                        $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
-                        $log->write("openid111=22222");
-                        if (isset($wechatid)) {
-                            $data["wechat_id"] = $wechatid;
-
-                        } else {
-                            $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
-                            $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
-                        }
-                        $this->cache->set($code, json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
-
-                    } else {
-                        //$this->error["error_warning"] = $get_return["errmsg"];
-                        $data["wechat_id"] = "";
-
-                    }
-
-                    //$log->write("openid222=".$data["openid"]."   wechat222=".$data["wechat_id"]);
-
-                }
-                $log->write("openid111=".$data["openid"]);
-
-                $jxsession = $this->authWechatuser($data["openid"]);
-                $this->customer->wechatlogin( $data["openid"]);
+                $jxsession = $this->authWechatuser($codeinfo["openid"]);
+                $this->customer->wechatlogin( $codeinfo["openid"]);
                 //$log->write("jxssion=".$jxsession);
 
                 return $jxsession;
@@ -90,12 +55,50 @@ class ControllerAccountAuthentication extends Controller {
             $data = array_merge($customer_info,$customer_address);
             $this->cache->set($jxsession, json_encode($data));
             $log->write("addressid=".$data["address_id"]."realname".$data["realname"]);
-        }else {
+        }else  {
             $jxsession="";
         }
 
         return $jxsession;
 
+    }
+
+    function getWechat() {
+
+        $code = $this->request->json("code",0);
+        if ($this->cache->get($code)) {
+            $codeinfo = $this->cache->get($code);
+            $codeinfo=json_decode($codeinfo,true);
+            $data["openid"] = $codeinfo["openid"];
+            $data["wechat_id"] = $codeinfo["wechat_id"];
+
+        }else {
+
+            $get_url = sprintf(WECHAT_USERTOKEN, AppID, AppSecret, $code);
+            $get_return = file_get_contents($get_url);
+            $get_return = (array)json_decode($get_return);
+            $data["openid"] = $get_return["openid"];
+            $this->load->model('wechat/userinfo');
+            if (isset($get_return["openid"])) {
+
+                $wechatid = $this->model_wechat_userinfo->isUserValid($get_return["openid"]);
+                if (isset($wechatid)) {
+                    $data["wechat_id"] = $wechatid;
+
+                } else {
+                    $wechatinfo = $this->getUser($get_return["access_token"], $get_return["openid"]);
+                    $data["wechat_id"] = $this->model_wechat_userinfo->addWechatUser($wechatinfo);
+                }
+                $this->cache->set($code, json_encode(array('openid' => $get_return["openid"], 'wechat_id' => $data["wechat_id"])));
+
+            } else {
+                $data["wechat_id"] = "";
+            }
+
+        }
+
+        $codeinfo = json_decode($this->cache->get($code),true);
+        return  $codeinfo;
     }
 
     private function getUser($accesstoken, $openid)

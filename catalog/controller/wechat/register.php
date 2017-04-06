@@ -55,7 +55,7 @@ class ControllerWechatRegister extends Controller
     {
         $log = new Log("wechat.log");
 
-        $data["jxsession"] = $this->load->controller('account/authentication');
+        //$data["jxsession"] = $this->load->controller('account/authentication');
         /*if(empty($data["jxsession"])) {
             $response = array(
                 'code'  => 1002,
@@ -67,7 +67,7 @@ class ControllerWechatRegister extends Controller
             $this->response->setOutput(json_encode($response));
             return ;
         }*/
-        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+        //$customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
@@ -123,6 +123,7 @@ class ControllerWechatRegister extends Controller
         }*/
 
         //$data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
+        $code_info = $this->load->controller('account/authentication/getWechat');
 
         $this->load->model('wechat/userinfo');
         /*$info = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
@@ -213,9 +214,9 @@ class ControllerWechatRegister extends Controller
             'agree' => $data['agree'],
             );
 
-        if(!empty($customer_info["openid"])){
+        if(!empty($code_info["openid"])){
             $this->load->model('wechat/userinfo');
-            $temp = $this->model_wechat_userinfo->getUserInfo($customer_info["openid"]);
+            $temp = $this->model_wechat_userinfo->getUserInfo($code_info["openid"]);
             $postdata["wechat_id"] = $temp["wechat_id"];
             $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
 
@@ -251,7 +252,7 @@ class ControllerWechatRegister extends Controller
         if ($this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
             $data['isnotright'] = '1';
         } elseif (!empty($record ) && !empty($temp["wechat_id"])) {
-            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+            $data["jxsession"] = $this->authWechat($code_info["openid"]);
             $response = array(
                 'code'  => 1032,
                 'message'  => "您微信号已注册，请您在个人信息查看本人信息",
@@ -263,7 +264,7 @@ class ControllerWechatRegister extends Controller
         }elseif ($telephone_info) {
             if(!empty($temp["wechat_id"])) {
                 $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
-                $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+                $data["jxsession"] = $this->authWechat($code_info["openid"]);
             }
             $response = array(
                 'code'  => 1033,
@@ -279,7 +280,7 @@ class ControllerWechatRegister extends Controller
             $customer_id = $this->model_account_customer->addCustomer($postdata);
             //$this->customer->wechatlogin($data["openid"]);
             //unset($this->session->data['guest']);
-            $data["jxsession"] = $this->authWechat($customer_info["openid"]);
+            $data["jxsession"] = $this->authWechat($code_info["openid"]);
         }
 
         /*$data['breadcrumbs'] = array();
