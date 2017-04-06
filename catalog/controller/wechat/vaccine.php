@@ -13,16 +13,21 @@ class ControllerWechatVaccine extends Controller
     public function index()
     {
         $this->document->setTitle("疫苗接种表");
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
        // $data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
-	$response = array(
+	    $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
 		);
-		//$response["data"] = $data;
+		$response["data"] = $data;
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($response));
@@ -33,16 +38,21 @@ class ControllerWechatVaccine extends Controller
     public function free()
     {
         $this->document->setTitle("疫苗接种表");
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
         $this->session->data["nav"] = "personal_center";
-	$response = array(
+	    $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
 		);
-		//$response["data"] = $data;
+		$response["data"] = $data;
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($response));

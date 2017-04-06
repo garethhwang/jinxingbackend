@@ -15,7 +15,7 @@ class ControllerWechatVaccinemenu extends Controller
         $get_return = array();
        // $this->session->data['openid']='oKe2EwVNWJZA_KzUHULhS1gX6tZQ';
 
-        if(isset($this->session->data['openid'])){
+        /*if(isset($this->session->data['openid'])){
             $data["openid"] = $this->session->data['openid'];
         }
         else{
@@ -37,20 +37,26 @@ class ControllerWechatVaccinemenu extends Controller
         }
 
         $this->customer->wechatlogin($data["openid"]);
-        unset($this->session->data['guest']);
+        unset($this->session->data['guest']);*/
+
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if($data["jxsession"] == 0) {
+            $data["login"] = 1 ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
         //$this->load->model('wechat/userinfo');
         //$data = $this->model_wechat_userinfo->getCustomerByWechat($data["openid"]);
         //$lastmenstrualdate = date_format($data["lastmenstrualdate"],"Y-m-d");
 
 
-        $this->document->setTitle("疫苗接种表");
+        //$this->document->setTitle("疫苗接种表");
 
         //$data['footer'] = $this->load->controller('common/wechatfooter');
         //$data['header'] = $this->load->controller('common/wechatheader');
-        $this->session->data["nav"] = "personal_center";
+        //$this->session->data["nav"] = "personal_center";
 
-	$response = array(
+	    $response = array(
 				'code'  => 0,
 				'message'  => "",
 				'data' =>array(),
