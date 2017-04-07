@@ -205,6 +205,7 @@ class ControllerWechatRegister extends Controller
             'parity' => $data['parity'],
             'vaginaldelivery' => $data['vaginaldelivery'],
             'aesarean' => $data['aesarean'],
+            'fetal' => $data['fetal'],
             'spontaneousabortion' => $data['spontaneousabortion'],
             'drug_inducedabortion'=> $data['drug_inducedabortion'],
             'highrisk' => $data['highrisk'],
