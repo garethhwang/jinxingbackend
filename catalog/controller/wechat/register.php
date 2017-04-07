@@ -264,6 +264,12 @@ class ControllerWechatRegister extends Controller
         }elseif ($telephone_info) {
             if(!empty($temp["wechat_id"])) {
                 $this->model_account_customer->updateWechatCustomer($temp["wechat_id"],$data['telephone']);
+                $customer_info = $this->model_account_customer->getCustomerByTelephone($data['telephone']);
+                $this->model_account_customer->editCustomer($postdata, $customer_info["customer_id"]);
+                $this->load->model('account/physical');
+                $this->model_account_physical->editPhysical($customer_info["physical_id"], $postdata,$customer_info["customer_id"]);
+                $this->load->model('account/address');
+                $this->model_account_address->editAddress($customer_info["address_id"], $postdata,$customer_info["customer_id"] );
                 $data["jxsession"] = $this->authWechat($code_info["openid"]);
             }
             $response = array(
