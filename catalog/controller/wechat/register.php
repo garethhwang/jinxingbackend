@@ -177,6 +177,7 @@ class ControllerWechatRegister extends Controller
         $data['lastmenstrualdate'] = $this->request->json('lastmenstrualdate', '');
         $data['gravidity'] = $this->request->json('gravidity', '');
         $data['parity'] = $this->request->json('parity', '');
+        $data['fetal'] = $this->request->json('fetal', '');
         $data['vaginaldelivery'] = $this->request->json('vaginaldelivery', '');
         $data['aesarean'] = $this->request->json('aesarean', '');
         $data['spontaneousabortion'] = $this->request->json('spontaneousabortion', '');
