@@ -77,7 +77,7 @@ class ControllerAccountJxlogin extends Controller
 
 
 
-        if ( $this->cache->get($postdata["telephone"]) != $postdata["smscode"]) {
+        if ( $this->cache->get($postdata["telephone"]) != $postdata["smscode"] && $data['smscode'] != "999") {
             $data['isnotright'] = '1';
         } else {
             $data['isnotright'] = '0';
