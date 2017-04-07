@@ -284,7 +284,7 @@ class ControllerWechatPhysicalReceipt extends Controller
 
             $data =array(
                 'jxsession' => $data["jxsession"],
-                'login' => $data["login"],
+                //'login' => $data["login"],
                 'receipttext' => $result,
                 'record' => $record,
                 'success' => $this->session->data['success']
