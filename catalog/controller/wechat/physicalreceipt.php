@@ -802,9 +802,9 @@ class ControllerWechatPhysicalReceipt extends Controller
 
         $result  = array(
             'jxsession' => $data["jxsession"],
-            'highriskfactor' => $data['highriskfactor'],
+            'highriskfactor' => $customer_info['highriskfactor'],
             'isnotregist' => $data['isnotregist'],
-            'ispregnant' =>$data['ispregnant'],
+            'ispregnant' =>$customer_info['ispregnant'],
             'pregnant' =>$data["pregnant"],
             'ishighrisk' =>$data["ishighrisk"],
             'success' =>$data["success"],
@@ -819,7 +819,7 @@ class ControllerWechatPhysicalReceipt extends Controller
             'thirdstart' => $data['thirdstart'] ,
             'thirdend' => $data['thirdend'] ,
             'historyrecord' =>$data["historyrecord"],
-            'customer_id' =>  $data['customer_id'],
+            'customer_id' =>  $customer_info['customer_id'],
             /*'realname' =>  $data['realname'],
             'department' =>  $data['department'],
             'pregnantstatus' =>  $data['pregnantstatus'],
