@@ -280,6 +280,16 @@ class ModelAccountCustomer extends Model
 
     }
 
+    public function editPuerpera($data, $customer_id)
+    {
+        //$customer_id = $this->customer->getId();
+
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET realname = '" . $this->db->escape($data['realname']) . "',babybirth = '" . $this->db->escape($data['babybirth']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', pregnantstatus = '2', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        //email = '" . $this->db->escape($data['email']) . "', productiondate = '" . $this->db->escape($data['productiondate']) . "', fax = '" . $this->db->escape($data['fax']) . "', pregnantstatus = '" . $this->db->escape($data['pregnantstatus']) . "'
+
+    }
+
     public function editNotWechatCustomer($data, $telephone)
     {
         //$customer_id = $this->customer->getId();
