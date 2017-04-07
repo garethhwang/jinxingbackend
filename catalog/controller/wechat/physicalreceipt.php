@@ -274,10 +274,10 @@ class ControllerWechatPhysicalReceipt extends Controller
             $record = $this->model_wechat_physicalreceipt->getRecord($customer_info['customer_id']);
             $this->load->model('account/customer');
             if ($record == '1') {
-                $this->model_account_customer->updateReceiptDate($data, '20',$customer_info['customer_id']);
+                $this->model_account_customer->updateReceiptDate($customer_info, '20',$customer_info['customer_id']);
             }
             if ($record == '2') {
-                $this->model_account_customer->updateReceiptDate($data, '34',$customer_info['customer_id']);
+                $this->model_account_customer->updateReceiptDate($customer_info, '34',$customer_info['customer_id']);
             }
             //$log->write("record=".$record);
             $this->session->data['success'] = "1";
