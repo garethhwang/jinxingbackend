@@ -161,6 +161,7 @@ class ControllerWechatPuerpera extends Controller
         $this->document->setTitle("金杏健康");
         $this->load->model('account/customer');
 
+
         if(!empty($code_info["openid"])){
             $this->load->model('wechat/userinfo');
             $temp = $this->model_wechat_userinfo->getUserInfo($code_info["openid"]);

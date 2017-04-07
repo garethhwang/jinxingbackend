@@ -220,6 +220,7 @@ class ControllerWechatRegister extends Controller
             $temp = $this->model_wechat_userinfo->getUserInfo($code_info["openid"]);
             $postdata["wechat_id"] = $temp["wechat_id"];
             $record = $this->model_account_customer->getTotalCustomersByWechat($temp["wechat_id"]);
+            $log->write("record=".$record);
 
         } else {
             $postdata["wechat_id"] = "";
