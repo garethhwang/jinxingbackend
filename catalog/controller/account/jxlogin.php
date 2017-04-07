@@ -115,7 +115,7 @@ class ControllerAccountJxlogin extends Controller
                 $info = $this->model_account_customer->getCustomer($customer_id);
                 $log->write("address_id=".$info["address_id"]);
                 $data["jxsession"] = md5($customer_id.$info["telephone"].$date);
-                $this->cache->set($data["jxsession"], $info);
+                $this->cache->set($data["jxsession"], json_encode($info));
                 $log->write("ddddddddd");
             }
             if(empty($customer_info["realname"])) {
