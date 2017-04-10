@@ -84,6 +84,9 @@ class ControllerWechatEvaluate extends Controller
         }
         $this->model_doctor_doctor->editDoctorStarrating($starrating ,$data["doctor_id"]);
 
+        $this->load->model('wechat/ordercenter');
+        $this->model_wechat_ordercenter->UpdateOrderStatusToEvaluate($data["order_id"]);
+
 
         $response = array(
             'code'  => 0,
