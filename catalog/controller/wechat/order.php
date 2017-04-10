@@ -11,6 +11,26 @@ class ControllerWechatOrder extends Controller
     private $error = array();
 
 
+    public function getDoctorInfo()
+    {
+
+        $this->load->model('doctor/doctor');
+
+        $doctor_info = $this->model_doctor_doctor->getAllDoctor();
+
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $doctor_info;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+        //$this->response->setOutput($this->load->view('wechat/order', $data));
+    }
      /*public function validcoupon()
     {
 
