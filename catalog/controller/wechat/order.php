@@ -74,6 +74,32 @@ class ControllerWechatOrder extends Controller
        
     }*/
 
+    public function getDoctorEvaluate()
+    {
+
+        $doctor_id = $this->request->json('doctor_id', 0);
+
+        $this->load->model('doctor/doctor');
+
+        $data = $this->model_doctor_doctor->getDoctorEvaluate($doctor_id);
+
+        $this->load->model('account/customer');
+
+        $customer_info = $this->model_account_customer->getCustomer( $data["customer_id"]);
+        $data["realname"] = $customer_info["realname"] ;
+
+        $response = array(
+            'code'  => 0,
+            'message'  => "",
+            'data' =>array(),
+        );
+        $response["data"] = $data;
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+        //$this->response->setOutput($this->load->view('wechat/order', $data));
+    }
 
     public function index()
     {
@@ -264,6 +290,7 @@ class ControllerWechatOrder extends Controller
     public function addOrder(){
         $log = new Log("wechat.log");
 
+        $doctor_id =  $this->request->json('doctor_id',"");
         $jxsession = $this->load->controller('account/authentication');
         if(empty($jxsession)) {
             $response = array(
@@ -495,6 +522,7 @@ class ControllerWechatOrder extends Controller
         }
         $data['customer_id'] = $customer_info['customer_id'];
         $data["jxsession"] = $jxsession;
+        $data["doctor_id"] = $doctor_id;
 
         $this->load->model('checkout/order');
         $json['order_id']=$this->model_checkout_order->addOrder($data);

@@ -11,11 +11,25 @@ class ModelDoctorDoctor extends Model
         return $doctor_id;
     }
 
+    public function addDoctorEvaluate($data)
+    {
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "evaluate SET  doctor_id = '" . $this->db->escape($data['doctor_id']) . "',customer_id = '" . $this->db->escape($data['customer_id']) . "' ,order_id = '" . $this->db->escape($data['order_id']) . "' , evaluate_text = '" . $this->db->escape($data['evaluate_text']) . "' ,starrating  = '" . $this->db->escape($data['starrating']) . "' ,date_added = NOW()");
+
+    }
 
     public function editDoctor($data, $doctor_id)
     {
 
         $this->db->query("UPDATE " . DB_PREFIX . "doctor SET name = '" . $this->db->escape($data['name']) . "', sex = '" . $this->db->escape($data['sex']) . "', img = '" . $this->db->escape($data['img']) . "',img_thumbnail = '" . $this->db->escape($data['img_thumbnail']) . "', department = '" . $this->db->escape($data['department']) . "',  district = '" . $this->db->escape($data['district']) . "',starrating = '" . $this->db->escape($data['starrating']) . "', discription = '" . $this->db->escape($data['discription']) . "' WHERE doctor_id = '" . (int)$doctor_id . "'");
+
+
+    }
+
+    public function editDoctorStarrating($starrating, $doctor_id)
+    {
+
+        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET starrating = '" . $this->db->escape($starrating) . "' WHERE doctor_id = '" . (int)$doctor_id . "'");
 
 
     }
@@ -40,6 +54,13 @@ class ModelDoctorDoctor extends Model
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "doctor WHERE doctor_id = '" . (int)$doctor_id . "'");
 
         return $query->row;
+    }
+
+    public function getDoctorEvaluate($doctor_id)
+    {
+        $query = $this->db->query("SELECT  FROM " . DB_PREFIX . "evaluate WHERE doctor_id = '" . (int)$doctor_id . "'");
+
+        return $query->rows;
     }
 
     public function getAllDoctor()
