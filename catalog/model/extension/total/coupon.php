@@ -177,7 +177,7 @@ class ModelExtensionTotalCoupon extends Model {
                     $coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product_id . "' AND category_id = '" . (int)$category_id . "'");
 
                     if ($coupon_category_query->row['total']) {
-                        $product_data[] = $product_id;
+                        $product_data = $product_id;
                         continue;
                     }
                 }
@@ -209,6 +209,7 @@ class ModelExtensionTotalCoupon extends Model {
                 $coupon_customergroup_data[] = $customergroup['customer_group_id'];
             }
 
+            $customer_data = array();
             if ($coupon_customer_data || $coupon_customergroup_data) {
 
                 if (in_array( $customer_id , $coupon_customer_data)) {
@@ -219,7 +220,7 @@ class ModelExtensionTotalCoupon extends Model {
                     $coupon_customergroup_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "customer` WHERE `customer_id` = '" . (int)$customer_id . "' AND customer_group_id = '" . (int)$customergroup_id . "'");
 
                     if ($coupon_customergroup_query->row['total']) {
-                        $customer_data[] = $customer_id;
+                        $customer_data = $customer_id;
                         continue;
                     }
                 }
