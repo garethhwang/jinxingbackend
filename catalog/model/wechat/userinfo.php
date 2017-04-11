@@ -14,8 +14,8 @@ class ModelWechatUserinfo extends Model
     }
 
     public function getCustomerByWechat($openid) {
-        $log=new Log('wechat.log');
-        $log->write("select * from wechat_user, " . DB_PREFIX . "customer, " . DB_PREFIX . "physical where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id and " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id ");
+        //$log=new Log('wechat.log');
+        //$log->write("select * from wechat_user, " . DB_PREFIX . "customer, " . DB_PREFIX . "physical where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id and " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id ");
 
         $result = $this->db->query("select * from wechat_user, " . DB_PREFIX . "customer, " . DB_PREFIX . "physical where openid='".$openid."' and wechat_user.wechat_id = " . DB_PREFIX . "customer.wechat_id and " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id ");
         return $result->row;

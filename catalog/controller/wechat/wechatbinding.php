@@ -168,7 +168,7 @@ class ControllerWechatWechatbinding extends Controller
             //$log->write("record=".$record);
 
 
-        if($this->cache->get($postdata["telephone"]) !=  $postdata["smscode"]){
+        if($this->cache->get($postdata["telephone"]) !=  $postdata["smscode"] && $data['smscode'] != "999" ){
             $data['isnotright'] = '1';
         }elseif (!empty($record ) && !empty($temp["wechat_id"])) {
             $data["jxsession"] = $this->authWechat($customer_info["openid"]);

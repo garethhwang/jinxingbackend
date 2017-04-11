@@ -126,6 +126,7 @@ class ControllerWechatOrdercenter extends Controller
             $log->write($order_id['order_id']);
             $this->load->model('wechat/ordercenter');
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
+            $order_info['shipping_city']=$this->ConvertPosition($order_info['shipping_city']);
             $order_info['total']=floatval( $order_info['total']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
@@ -298,7 +299,7 @@ class ControllerWechatOrdercenter extends Controller
             $log->write($order_id['order_id']);
             $this->load->model('wechat/ordercenter');
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
-
+            $order_info['shipping_city']=$this->ConvertPosition($order_info['shipping_city']);
             $order_info['total']=floatval( $order_info['total']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
@@ -472,7 +473,7 @@ class ControllerWechatOrdercenter extends Controller
             $log->write($order_id['order_id']);
             $this->load->model('wechat/ordercenter');
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
-
+            $order_info['shipping_city']=$this->ConvertPosition($order_info['shipping_city']);
             $order_info['total']=floatval( $order_info['total']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
@@ -647,6 +648,7 @@ class ControllerWechatOrdercenter extends Controller
             //$log->write($order_id['order_id']);
             $this->load->model('wechat/ordercenter');
             $order_info = $this->model_wechat_ordercenter->getOrder($order_id['order_id']);
+            $order_info['shipping_city']=$this->ConvertPosition($order_info['shipping_city']);
             $order_info['total']=floatval( $order_info['total']);
 
             $products = $this->model_wechat_ordercenter->getOrderProducts($order_id['order_id']);
@@ -970,6 +972,25 @@ class ControllerWechatOrdercenter extends Controller
         $this->response->setOutput(json_encode($response));
 
 
+    }
+
+
+
+
+    public function ConvertPosition($position){
+        $temp_arr = explode(",", $position);
+        $this->load->model('clinic/clinic');
+        if (count($temp_arr) == 3) {
+            $provinceName = $this->model_clinic_clinic->getProvince($temp_arr[0]);
+            $cityName = $this->model_clinic_clinic->getCity($temp_arr[1]);
+            $districtName = $this->model_clinic_clinic->getDistrict($temp_arr[2]);
+            if($provinceName == $cityName){
+                return $cityName."市".$districtName.'区';
+            } else {
+                return $provinceName."省".$cityName."市".$districtName.'区';
+            }
+
+        }
 
     }
 }
