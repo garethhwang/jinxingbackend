@@ -228,7 +228,8 @@ class ModelWechatOrdercenter extends Model
                 'user_agent'              => $order_query->row['user_agent'],
                 'accept_language'         => $order_query->row['accept_language'],
                 'date_added'              => $order_query->row['date_added'],
-                'date_modified'           => $order_query->row['date_modified']
+                'date_modified'           => $order_query->row['date_modified'],
+                'doctor_id'                => $order_query->row['doctor_id'],
             );
         } else {
             return;

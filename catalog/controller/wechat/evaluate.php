@@ -21,9 +21,12 @@ class ControllerWechatEvaluate extends Controller
             return ;
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
-        $data["customer_id"] = $customer_info["customer_id"] ;
         $data["order_id"] = $this->request->json('order_id', 0);
-        $data["doctor_id"] = $this->request->json('doctor_id', 0);
+
+        $this->load->model('wechat/ordercenter');
+        $order_info = $this->model_wechat_ordercenter->getOrder($data["order_id"]);
+        $data["doctor_id"] = $order_info["doctor_id"];
+        $data["customer_id"] = $order_info["customer_id"] ;
 
         $data["jxsession"] = $jxsession;
         $data['service_tel'] = WECHAT_SERVICE_TEL;
