@@ -62,10 +62,11 @@ class ControllerWechatEvaluate extends Controller
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
         $data["customer_id"] = $customer_info["customer_id"] ;
-        $data["order_id"] = $this->request->json('order_id', 0);
-        $data["doctor_id"] = $this->request->json('doctor_id', 0);
-        $data["evaluate_text"] = $this->request->json('evaluate_text', 0);
-        $data["starrating"] = $this->request->json('starrating', 0);
+        $data["order_id"] = $this->request->json('order_id');
+        $data["doctor_id"] = $this->request->json('doctor_id');
+        $data["evaluate_text"] = $this->request->json('evaluate_text',"");
+        $data["starrating"] = $this->request->json('starrating');
+        $data["evaluate_tag"] = $this->request->json('evaluate_tag',"");
         $data["jxsession"] = $jxsession;
         $data['service_tel'] = WECHAT_SERVICE_TEL;
 
@@ -74,7 +75,8 @@ class ControllerWechatEvaluate extends Controller
             'order_id' => $data["order_id"] ,
             'doctor_id' => $data["doctor_id"] ,
             'evaluate_text' => $data["evaluate_text"] ,
-            'starration' => $data["starrating"]
+            'starrating' => $data["starrating"],
+            'evaluate_tag' => $data["evaluate_tag"]
         );
 
         $this->load->model('doctor/doctor');
