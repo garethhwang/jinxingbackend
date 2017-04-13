@@ -83,8 +83,9 @@ class ControllerWechatEvaluate extends Controller
             'evaluate_tag' => $data["evaluate_tag"]
         );
 
+        $log->write("star==".$postdata["starrating"]);
         $this->load->model('doctor/doctor');
-        $this->model_doctor_doctor->addDoctorEvaluate($postdata);
+        /*$this->model_doctor_doctor->addDoctorEvaluate($postdata);
         $doctor_info = $this->model_doctor_doctor->getDoctor($data["doctor_id"]);
         if(empty($doctor_info["starrating"])) {
             $starrating = round($data["starrating"] ,1) ;
@@ -94,7 +95,7 @@ class ControllerWechatEvaluate extends Controller
         $this->model_doctor_doctor->editDoctorStarrating($starrating ,$data["doctor_id"]);
 
         $this->load->model('wechat/ordercenter');
-        $this->model_wechat_ordercenter->UpdateOrderStatusToEvaluate($data["order_id"]);
+        $this->model_wechat_ordercenter->UpdateOrderStatusToEvaluate($data["order_id"]);*/
 
 
         $response = array(
