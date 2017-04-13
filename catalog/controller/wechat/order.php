@@ -83,17 +83,19 @@ class ControllerWechatOrder extends Controller
 
         $data = $this->model_doctor_doctor->getDoctorEvaluate($doctor_id);
 
-        $this->load->model('account/customer');
-
-        //$customer_info = $this->model_account_customer->getCustomer($data["customer_id"]);
-        //$data["realname"] = $customer_info["realname"] ;
+        foreach ($data as $info) {
+            $this->load->model('account/customer');
+            $customer_info = $this->model_account_customer->getCustomer($info["customer_id"]);
+            $info["realname"] = $customer_info["realname"] ;
+            $evaluate_info[] = $info ;
+        }
 
         $response = array(
             'code'  => 0,
             'message'  => "",
             'data' =>array(),
         );
-        $response["data"] = $data;
+        $response["data"] = $evaluate_info;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
