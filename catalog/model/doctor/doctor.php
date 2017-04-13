@@ -14,7 +14,7 @@ class ModelDoctorDoctor extends Model
     public function addDoctorEvaluate($data)
     {
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "evaluate SET  doctor_id = '" . $this->db->escape($data['doctor_id']) . "',customer_id = '" . $this->db->escape($data['customer_id']) . "' ,order_id = '" . $this->db->escape($data['order_id']) . "' , evaluate_text = '" . $this->db->escape($data['evaluate_text']) . "' ,starrating  = '" . $this->db->escape($data['starrating']) . "' ,date_added = NOW()");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "evaluate SET  doctor_id = '" . $this->db->escape($data['doctor_id']) . "',customer_id = '" . $this->db->escape($data['customer_id']) . "' ,order_id = '" . $this->db->escape($data['order_id']) . "' , evaluate_text = '" . $this->db->escape($data['evaluate_text']) . "' ,starrating  = '" . $this->db->escape($data['starrating']) . "' , evaluate_tag  = '" . $this->db->escape($data['evaluate_tag']) . "',date_added = NOW()");
 
     }
 
