@@ -269,4 +269,9 @@ class ModelWechatOrdercenter extends Model
         $info_query = $this->db->query("SELECT telephone, realname FROM " . DB_PREFIX . "customer WHERE customer_id = '" . $customer_id . "'");
         return $info_query->row;
     }
+
+    public function getOrderEvaluate($order_id){
+        $info_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "evaluate WHERE $order_id = '" . (int)$order_id . "'");
+        return $info_query->row;
+    }
 }

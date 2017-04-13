@@ -83,10 +83,24 @@ class ControllerWechatEvaluate extends Controller
             'evaluate_tag' => $data["evaluate_tag"]
         );
 
-        $log->write("star==".$postdata["starrating"]);
+        $this->load->model('wechat/ordercenter');
+        $evaluate_info = $this->model_wechat_ordercenter->getOrderEvaluate( $data['order_id']);
+        if(!empty($evaluate_info)) {
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "该订单已评价。",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+
+        }
         $this->load->model('doctor/doctor');
         $this->model_doctor_doctor->addDoctorEvaluate($postdata);
-        /*$doctor_info = $this->model_doctor_doctor->getDoctor($data["doctor_id"]);
+        $doctor_info = $this->model_doctor_doctor->getDoctor($data["doctor_id"]);
         if(empty($doctor_info["starrating"])) {
             $starrating = round($data["starrating"] ,1) ;
         }else {
@@ -95,7 +109,7 @@ class ControllerWechatEvaluate extends Controller
         $this->model_doctor_doctor->editDoctorStarrating($starrating ,$data["doctor_id"]);
 
         $this->load->model('wechat/ordercenter');
-        $this->model_wechat_ordercenter->UpdateOrderStatusToEvaluate($data["order_id"]);*/
+        $this->model_wechat_ordercenter->UpdateOrderStatusToEvaluate($data["order_id"]);
 
 
         $response = array(
