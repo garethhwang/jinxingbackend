@@ -58,7 +58,7 @@ class ModelDoctorDoctor extends Model
 
     public function getDoctorEvaluate($doctor_id)
     {
-        $query = $this->db->query("SELECT  FROM " . DB_PREFIX . "evaluate WHERE doctor_id = '" . (int)$doctor_id . "'");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "evaluate WHERE doctor_id = '" . (int)$doctor_id . "'");
 
         return $query->rows;
     }
