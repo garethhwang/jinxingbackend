@@ -85,8 +85,8 @@ class ControllerWechatOrder extends Controller
 
         $this->load->model('account/customer');
 
-        $customer_info = $this->model_account_customer->getCustomer( $data["customer_id"]);
-        $data["realname"] = $customer_info["realname"] ;
+        //$customer_info = $this->model_account_customer->getCustomer($data["customer_id"]);
+        //$data["realname"] = $customer_info["realname"] ;
 
         $response = array(
             'code'  => 0,
