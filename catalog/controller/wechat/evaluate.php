@@ -85,8 +85,8 @@ class ControllerWechatEvaluate extends Controller
 
         $log->write("star==".$postdata["starrating"]);
         $this->load->model('doctor/doctor');
-        /*$this->model_doctor_doctor->addDoctorEvaluate($postdata);
-        $doctor_info = $this->model_doctor_doctor->getDoctor($data["doctor_id"]);
+        $this->model_doctor_doctor->addDoctorEvaluate($postdata);
+        /*$doctor_info = $this->model_doctor_doctor->getDoctor($data["doctor_id"]);
         if(empty($doctor_info["starrating"])) {
             $starrating = round($data["starrating"] ,1) ;
         }else {
