@@ -88,6 +88,8 @@ class ControllerWechatEvaluate extends Controller
         $evaluate_info = $this->model_wechat_ordercenter->getOrderEvaluate($data['order_id']);
         if(!empty($evaluate_info)) {
 
+            $log->write("11111111order_id=".$postdata["order_id"]);
+
             $response = array(
                 'code'  => 1070,
                 'message'  => "该订单已评价。",
