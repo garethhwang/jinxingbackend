@@ -88,7 +88,7 @@ class ControllerWechatEvaluate extends Controller
         if(!empty($evaluate_info)) {
 
             $response = array(
-                'code'  => 0,
+                'code'  => 1070,
                 'message'  => "该订单已评价。",
                 'data' =>array(),
             );
