@@ -271,7 +271,7 @@ class ModelWechatOrdercenter extends Model
     }
 
     public function getOrderEvaluate($order_id){
-        $info_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "evaluate WHERE $order_id = '" . (int)$order_id . "'");
+        $info_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "evaluate WHERE order_id = '" . (int)$order_id . "'");
         return $info_query->row;
     }
 }
