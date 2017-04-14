@@ -14,9 +14,22 @@ class ControllerWechatOrder extends Controller
     public function getDoctorInfo()
     {
 
-        $this->load->model('doctor/doctor');
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
 
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+
+        $this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getAllDoctor();
+        $doctor_info["jxsession"] = $data["jxsession"] ;
 
 
         $response = array(
@@ -77,6 +90,19 @@ class ControllerWechatOrder extends Controller
     public function getDoctorEvaluate()
     {
 
+        $jxsession = $this->load->controller('account/authentication');
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+
         $doctor_id = $this->request->json('doctor_id', 0);
 
         $this->load->model('doctor/doctor');
@@ -89,6 +115,10 @@ class ControllerWechatOrder extends Controller
             $info["realname"] = $customer_info["realname"] ;
             $evaluate_info[] = $info ;
         }
+
+        $evaluate_info["jxsession"] = $jxsession ;
+
+
 
         $response = array(
             'code'  => 0,
