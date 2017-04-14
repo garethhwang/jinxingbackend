@@ -95,6 +95,7 @@ class ControllerWechatOrder extends Controller
     {
 
         $data["jxsession"] = $this->load->controller('account/authentication');
+
         if(empty($data["jxsession"])) {
             $response = array(
                 'code'  => 1002,
@@ -122,7 +123,7 @@ class ControllerWechatOrder extends Controller
 
         $result = array(
             'jxsession' => $data["jxsession"],
-            'doctor_info'=> $evaluate_info
+            'evaluate_info' => $evaluate_info
         );
 
 
