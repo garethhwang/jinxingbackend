@@ -231,7 +231,6 @@ class ControllerWechatOrder extends Controller
         if(isset($data['product']['price'])){
             $data['product']['price'] = floatval($data['product']['price']);
         }
-        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
         $this->load->model('extension/total/coupon');
         $couponlist = $this->model_extension_total_coupon->getCouponListForCustomer($product_id,$data['customer']["customer_id"]);
@@ -564,6 +563,7 @@ class ControllerWechatOrder extends Controller
         $data['customer_id'] = $customer_info['customer_id'];
         $data["jxsession"] = $jxsession;
         $data["doctor_id"] = $doctor_id;
+        $log->write("doctor_id=".$data["doctor_id"]);
 
         $this->load->model('checkout/order');
         $json['order_id']=$this->model_checkout_order->addOrder($data);
