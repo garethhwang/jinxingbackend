@@ -1,10 +1,19 @@
 <?php
 class ModelDoctorDoctor extends Model
 {
-    public function addDoctor($data)
+    /*public function addDoctor($data)
     {
 
         $this->db->query("INSERT INTO " . DB_PREFIX . "doctor SET  telephone = '" . $this->db->escape($data['telephone']) . "',ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' ,date_added = NOW()");
+
+        $doctor_id = $this->db->getLastId();
+
+        return $doctor_id;
+    }*/
+    public function addDoctor($data)
+    {
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "doctor SET  telephone = '" . $this->db->escape($data['telephone']) . "',realname = '" . $this->db->escape($data['realname']) . "',ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' ,  district = '" . $this->db->escape($data['district']) . "',  address = '" . $this->db->escape($data['address_1']) . "',date_added = NOW()");
 
         $doctor_id = $this->db->getLastId();
 
@@ -21,7 +30,7 @@ class ModelDoctorDoctor extends Model
     public function editDoctor($data, $doctor_id)
     {
 
-        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET name = '" . $this->db->escape($data['name']) . "', sex = '" . $this->db->escape($data['sex']) . "', img = '" . $this->db->escape($data['img']) . "',img_thumbnail = '" . $this->db->escape($data['img_thumbnail']) . "', department = '" . $this->db->escape($data['department']) . "',  district = '" . $this->db->escape($data['district']) . "',starrating = '" . $this->db->escape($data['starrating']) . "', discription = '" . $this->db->escape($data['discription']) . "' WHERE doctor_id = '" . (int)$doctor_id . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "doctor SET realname = '" . $this->db->escape($data['name']) . "', sex = '" . $this->db->escape($data['sex']) . "', img = '" . $this->db->escape($data['img']) . "',img_thumbnail = '" . $this->db->escape($data['img_thumbnail']) . "', department = '" . $this->db->escape($data['department']) . "',  district = '" . $this->db->escape($data['district']) . "',starrating = '" . $this->db->escape($data['starrating']) . "', discription = '" . $this->db->escape($data['discription']) . "' WHERE doctor_id = '" . (int)$doctor_id . "'");
 
 
     }

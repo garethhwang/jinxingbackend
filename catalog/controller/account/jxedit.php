@@ -20,7 +20,7 @@ class ControllerAccountJxedit extends Controller
             return ;
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
-        $log->write("seesion7777777=".$customer_info["customer_id"]);
+        //$log->write("seesion7777777=".$customer_info["customer_id"]);
 
         $data['realname'] = $this->request->json('realname', '');
         $data['pregnantstatus'] =  $this->request->json('pregnantstatus', '');
@@ -51,6 +51,11 @@ class ControllerAccountJxedit extends Controller
             $aaa = json_decode($this->cache->get($data["jxsession"]),true);
             $log->write($aaa["realname"].$aaa["telephone"].$aaa["city"].$aaa['babybirth']);
 
+        }
+        if($data['pregnantstatus'] == 4) {
+
+            $postdata["telephone"] = $customer_info["telephone"];
+            $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
         }
 
         $response = array(
