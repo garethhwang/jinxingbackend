@@ -114,6 +114,8 @@ class ControllerWechatOrder extends Controller
 
         $data = $this->model_doctor_doctor->getDoctorEvaluate($doctor_id);
 
+		$evaluate_info = [];
+
         foreach ($data as $info) {
             $this->load->model('account/customer');
             $customer_info = $this->model_account_customer->getCustomer($info["customer_id"]);
