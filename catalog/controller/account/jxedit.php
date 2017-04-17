@@ -54,6 +54,7 @@ class ControllerAccountJxedit extends Controller
         }
         if($data['pregnantstatus'] == 4) {
 
+            $this->load->model('doctor/doctor');
             $postdata["telephone"] = $customer_info["telephone"];
             $data["doctor_id"] = $this->model_doctor_doctor->addDoctor($postdata);
         }
