@@ -5,7 +5,7 @@
  * Date: 2017/4/20
  * Time: 18:43
  */
-class ControllerAccountT extends Controller {
+class ControllerAccountTrain extends Controller {
     public function index() {
         $telephone = $this->request->json('telephone');
 
