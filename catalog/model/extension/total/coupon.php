@@ -126,7 +126,7 @@ class ModelExtensionTotalCoupon extends Model {
         $log = new Log('coupon.log');
         foreach ( $coupon_query->rows as $coupon )
         {
-            $log->write('Enter getCouponListForCustomer:' . $coupon['coupon_id']);
+            $log->write('Enter getCouponListForCustomer:' . $coupon['code']);
             $status = true;
             $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "'");
 
