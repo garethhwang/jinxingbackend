@@ -123,27 +123,29 @@ class ModelExtensionTotalCoupon extends Model {
     public function getCouponListForCustomer($product_id,$customer_id) {
         $coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
         $coupon_list=array();
+        $log = new Log('coupon.log');
         foreach ( $coupon_query->rows as $coupon )
         {
+            $log->write('Enter getCouponListForCustomer:' . $coupon['code']);
             $status = true;
             $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "'");
 
             if ($coupon['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon['uses_total'])) {
+                $log->write('使用总数超限');
                 $status = false;
-                continue;
             }
 
             if ($coupon['logged'] && !$customer_id) {
+                $log->write('用户登录错误');
                 $status = false;
-                continue;
             }
 
             if ($customer_id) {
                 $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "' AND ch.customer_id = '" . (int)$customer_id . "'");
 
                 if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
+                    $log->write('用户使用数量超限');
                     $status = false;
-                    continue;
                 }
             }
 
@@ -167,28 +169,41 @@ class ModelExtensionTotalCoupon extends Model {
 
             $product_data = array();
 
-            if ($coupon_product_data || $coupon_category_data) {
-
+            if ($coupon_product_data) {
                 if (in_array( $product_id , $coupon_product_data)) {
+                    $log->write('商品过滤找到');
                     $product_data = $product_id;
                 }
+
+                if (!$product_data) {
+                    $log->write('商品过滤未找到');
+                    $status = false;
+                }
+            }
+
+            $product_category_data = array();
+
+            if ( $coupon_category_data) {
 
                 foreach ($coupon_category_data as $category_id) {
                     $coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product_id . "' AND category_id = '" . (int)$category_id . "'");
 
                     if ($coupon_category_query->row['total']) {
-                        $product_data = $product_id;
+                        $log->write('商品种类过滤找到');
+                        $product_category_data = $product_id;
                         continue;
                     }
                 }
 
-                if (!$product_data) {
+                if (!$product_category_data) {
+                    $log->write('商品过滤未找到');
                     $status = false;
-                    continue;
                 }
-            } else {
+            }
+
+            if (!$coupon_product_data && !$coupon_category_data ) {
+                $log->write('wei she zhi product ');
                 $status = false;
-                continue;
             }
 
             //customer
@@ -227,11 +242,9 @@ class ModelExtensionTotalCoupon extends Model {
 
                 if (!$customer_data) {
                     $status = false;
-                    continue;
                 }
             } else {
                 $status = false;
-                continue;
             }
 
 
