@@ -123,16 +123,20 @@ class ModelExtensionTotalCoupon extends Model {
     public function getCouponListForCustomer($product_id,$customer_id) {
         $coupon_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "coupon` WHERE ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND status = '1'");
         $coupon_list=array();
+        $log = new Log('coupon.log');
         foreach ( $coupon_query->rows as $coupon )
         {
+            $log->write('Enter getCouponListForCustomer:' . $coupon['coupon_id']);
             $status = true;
             $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "'");
 
             if ($coupon['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon['uses_total'])) {
+                $log->write('使用总数超限');
                 $status = false;
             }
 
             if ($coupon['logged'] && !$customer_id) {
+                $log->write('用户登录错误');
                 $status = false;
             }
 
@@ -140,6 +144,7 @@ class ModelExtensionTotalCoupon extends Model {
                 $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "' AND ch.customer_id = '" . (int)$customer_id . "'");
 
                 if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
+                    $log->write('用户使用数量超限');
                     $status = false;
                 }
             }
@@ -180,9 +185,11 @@ class ModelExtensionTotalCoupon extends Model {
                 }
 
                 if (!$product_data) {
+                    $log->write('shang pin guo lv:'. $product_data);
                     $status = false;
                 }
             } else {
+                $log->write('wei she zhi product ');
                 $status = false;
             }
 
