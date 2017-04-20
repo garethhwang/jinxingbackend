@@ -183,12 +183,12 @@ class ModelExtensionTotalCoupon extends Model {
                 }
 
                 if (!$product_data) {
-                    continue;
                     $status = false;
+                    continue;
                 }
             } else {
-                continue;
                 $status = false;
+                continue;
             }
 
             //customer
@@ -226,12 +226,12 @@ class ModelExtensionTotalCoupon extends Model {
                 }
 
                 if (!$customer_data) {
-                    continue;
                     $status = false;
+                    continue;
                 }
             } else {
-                continue;
                 $status = false;
+                continue;
             }
 
 
