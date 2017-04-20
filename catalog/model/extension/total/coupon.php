@@ -169,28 +169,39 @@ class ModelExtensionTotalCoupon extends Model {
 
             $product_data = array();
 
-            if ($coupon_product_data || $coupon_category_data) {
-
+            if ($coupon_product_data) {
                 if (in_array( $product_id , $coupon_product_data)) {
                     $log->write('商品过滤找到');
                     $product_data = $product_id;
-                }
-
-                foreach ($coupon_category_data as $category_id) {
-                    $coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product_id . "' AND category_id = '" . (int)$category_id . "'");
-
-                    if ($coupon_category_query->row['total']) {
-                        $log->write('商品种类过滤找到');
-                        $product_data = $product_id;
-                        continue;
-                    }
                 }
 
                 if (!$product_data) {
                     $log->write('商品过滤未找到');
                     $status = false;
                 }
-            } else {
+            }
+
+            $product_category_data = array();
+
+            if ( $coupon_category_data) {
+
+                foreach ($coupon_category_data as $category_id) {
+                    $coupon_category_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "product_to_category` WHERE `product_id` = '" . (int)$product_id . "' AND category_id = '" . (int)$category_id . "'");
+
+                    if ($coupon_category_query->row['total']) {
+                        $log->write('商品种类过滤找到');
+                        $product_category_data = $product_id;
+                        continue;
+                    }
+                }
+
+                if (!$product_category_data) {
+                    $log->write('商品过滤未找到');
+                    $status = false;
+                }
+            }
+
+            if (!$coupon_product_data && !$coupon_category_data ) {
                 $log->write('wei she zhi product ');
                 $status = false;
             }
