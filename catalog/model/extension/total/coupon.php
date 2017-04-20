@@ -129,21 +129,21 @@ class ModelExtensionTotalCoupon extends Model {
             $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "'");
 
             if ($coupon['uses_total'] > 0 && ($coupon_history_query->row['total'] >= $coupon['uses_total'])) {
-                continue;
                 $status = false;
+                continue;
             }
 
             if ($coupon['logged'] && !$customer_id) {
-                continue;
                 $status = false;
+                continue;
             }
 
             if ($customer_id) {
                 $coupon_history_query = $this->db->query("SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "coupon_history` ch WHERE ch.coupon_id = '" . (int)$coupon['coupon_id'] . "' AND ch.customer_id = '" . (int)$customer_id . "'");
 
                 if ($coupon_query->row['uses_customer'] > 0 && ($coupon_history_query->row['total'] >= $coupon_query->row['uses_customer'])) {
-                    continue;
                     $status = false;
+                    continue;
                 }
             }
 
