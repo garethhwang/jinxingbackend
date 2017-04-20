@@ -259,7 +259,7 @@ class ControllerWechatOrder extends Controller
             'pcd_data' =>  $data["pcd_data"] ,
             'cdo_data' =>  $data["cdo_data"],
             'couponall' => $data['couponall'],
-            'service_timer ' => $data['product']['service_timer']
+            'service_timer' => $data['product']['service_timer']
 
         );
 
