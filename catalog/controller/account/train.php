@@ -8,12 +8,13 @@
 class ControllerAccountTrain extends Controller {
     public function index() {
         $telephone = $this->request->json('telephone');
+        $name = $this->request->json('name');
 
-        if(isset($telephone)){
+        if(isset($telephone) && isset($name)){
 
             $code = rand(100000 ,999999);
 
-            $sms = $this->sendTemplateSMS($telephone, array($code, '5'), "157827");
+            $sms = $this->sendTemplateSMS($telephone, array($name, '24' ,'18610834247'), "169423");
 
             $this->cache->set($telephone, $code);
 
