@@ -14,11 +14,25 @@ class ControllerDoctorIdentification extends Controller
 
         $log = new Log("wechat.log");
 
+        $jxsession = $this->load->controller('account/authentication');
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        $customer_info = json_decode($this->cache->get($jxsession),true);
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
         $data['customer_id'] = $this->request->json('customer_id', '');
         $this->load->model('doctor/identification');
         $identification_info = $this->model_doctor_identification->getIdentification($data['doctor_id'],$data['customer_id']);
+        $identification_info['jxsession'] = $jxsession ;
 
         /*if(empty($doctor_info)){
             $response = array(
@@ -47,7 +61,22 @@ class ControllerDoctorIdentification extends Controller
     {
         $log = new Log("wechat.log");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         $data['doctor_id'] = $this->request->json('doctor_id', '');
+
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
