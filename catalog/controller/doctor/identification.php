@@ -156,6 +156,8 @@ class ControllerDoctorIdentification extends Controller
 
 
         $img_base64 = $this->request->json('img_base64');
+        $log-> write("img= ".$img_base64);
+
         $img_name = $this->request->json('img_name');
         if(!empty($img_base64) && !empty($img_name)) {
 
@@ -251,8 +253,6 @@ class ControllerDoctorIdentification extends Controller
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
-
-        $log-> write("file= ".$_FILES."       文件后缀名".$extension ."     文件类型=".$_FILES["file"]["type"]);
 
         if ((($_FILES["file"]["type"] == "image/gif")
                 || ($_FILES["file"]["type"] == "image/jpeg")
