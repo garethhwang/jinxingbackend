@@ -128,7 +128,7 @@ class ControllerDoctorIdentification extends Controller
     }
 
 
-    public function uploadimg() {
+    public function uploadphoto() {
 
 
         $log = new Log("wechat.log");
@@ -222,7 +222,7 @@ class ControllerDoctorIdentification extends Controller
         $this->response->setOutput(json_encode($response));
 
     }
-    public function uploadphoto()
+    public function uploadimg()
     {
 
         $log = new Log("wechat.log");
