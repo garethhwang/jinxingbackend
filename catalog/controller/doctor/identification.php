@@ -259,7 +259,7 @@ class ControllerDoctorIdentification extends Controller
 
         //$customer_id = $this->request->json("customer_id");
 
-        $log->write("file==  ".$_FILES["file"]);
+        $log->write("file==  ".$_FILES["file"]["name"]);
         return ;
 
         $allowedExts = array("gif", "jpeg", "jpg", "png");
