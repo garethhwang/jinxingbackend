@@ -232,9 +232,9 @@ class ControllerDoctorIdentification extends Controller
 
         $log = new Log("wechat.log");
 
-        $file = $this->request->json('file',998);
-        $log->write("test==  ".$file);
-        return;
+        //$file = $this->request->json('file',998);
+        //$log->write("test==  ".$file);
+        //return;
 
 
 
@@ -263,6 +263,8 @@ class ControllerDoctorIdentification extends Controller
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
+
+        $log->write("file==  ".$_FILES["file"]);
 
         if ((($_FILES["file"]["type"] == "image/gif")
                 || ($_FILES["file"]["type"] == "image/jpeg")
