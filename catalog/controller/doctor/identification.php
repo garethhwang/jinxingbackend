@@ -224,10 +224,20 @@ class ControllerDoctorIdentification extends Controller
         $this->response->setOutput(json_encode($response));
 
     }
+
     public function uploadimg()
     {
 
+
+
         $log = new Log("wechat.log");
+
+        $file = $this->request->json('file',998);
+        $log->write("test==  ".$file);
+        return;
+
+
+
 
         $pic_width_max=120;
         $pic_height_max=90;
