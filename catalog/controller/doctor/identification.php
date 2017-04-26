@@ -259,13 +259,12 @@ class ControllerDoctorIdentification extends Controller
 
         //$customer_id = $this->request->json("customer_id");
 
-        $log->write("file==  ".$_FILES["file"]["name"]);
+        $log->write("file==  ".$_FILES["file"]);
         return ;
 
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
-
 
 
         if ((($_FILES["file"]["type"] == "image/gif")
