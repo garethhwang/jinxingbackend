@@ -28,10 +28,10 @@ class ControllerDoctorIdentification extends Controller
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
-        $data['doctor_id'] = $this->request->json('doctor_id', '');
-        $data['customer_id'] = $this->request->json('customer_id', '');
+        //$data['doctor_id'] = $this->request->json('doctor_id', '');
+        //$data['customer_id'] = $this->request->json('customer_id', '');
         $this->load->model('doctor/identification');
-        $identification_info = $this->model_doctor_identification->getIdentification($data['doctor_id'],$data['customer_id']);
+        $identification_info = $this->model_doctor_identification->getIdentification($customer_info['customer_id']);
         $identification_info['jxsession'] = $jxsession ;
 
         /*if(empty($doctor_info)){
@@ -75,7 +75,7 @@ class ControllerDoctorIdentification extends Controller
         }
         $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
 
-        $data['doctor_id'] = $this->request->json('doctor_id', '');
+        //$data['doctor_id'] = $this->request->json('doctor_id', '');
 
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
@@ -91,7 +91,7 @@ class ControllerDoctorIdentification extends Controller
             $this->response->setOutput(json_encode($response));
         }*/
 
-        $data['customer_id'] = $this->request->json('customer_id', '');
+        $data['customer_id'] = $customer_info['customer_id'];
         $data['identification_text'] = $this->request->json('identification_text', '');
         $data['face_img'] = $this->request->json('face_img', '');
         $data['tongue_img'] = $this->request->json('tongue_img', '');
@@ -101,7 +101,6 @@ class ControllerDoctorIdentification extends Controller
 
 
         $postdata  = array(
-            'doctor_id' => $data['doctor_id'],
             'customer_id' => $data['customer_id'],
             'identification_text' => $data['identification_text'],
             'face_img' => $data['face_img'],
