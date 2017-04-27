@@ -14,6 +14,19 @@ class ControllerDoctorCustomerinfo extends Controller
     {
         $log = new Log("wechat.log");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+
         $this->load->model('account/customer');
 
         $customer_info = $this->model_account_customer->getCustomerInfo();
@@ -25,12 +38,17 @@ class ControllerDoctorCustomerinfo extends Controller
             'headimgurl' =>  $customer_info['headimgurl']
         );*/
 
+        $result = array(
+            'jxsession' => $data["jxsession"],
+            'doctor_info'=> $customer_info
+        );
+
         $response = array(
             'code'  => 0,
             'message'  => "",
             'data' =>array(),
         );
-        $response["data"] = $customer_info;
+        $response["data"] = $result;
 
         $this->response->addHeader('Content-Type: application/json');
         $this->response->setOutput(json_encode($response));
