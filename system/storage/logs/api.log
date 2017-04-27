@@ -25674,3 +25674,1082 @@
 2017-04-17 9:52:33 - INSERT INTO ph_order_total SET order_id = '856', code = 'total', title = '总计', `value` = '499', sort_order = '9'
 2017-04-17 9:52:33 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '856'
 2017-04-17 9:52:33 - SELECT * FROM ph_order_product WHERE order_id = '856'
+2017-04-17 10:08:45 - product_id
+2017-04-17 10:08:45 - 50
+2017-04-17 10:08:45 - 1
+2017-04-17 10:08:45 - 499.0000
+2017-04-17 10:08:45 - 499
+2017-04-17 10:08:45 - doctor_id=16
+2017-04-17 10:08:45 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '767', customer_group_id = '1', realname = 'huangxinyu', email = 'aa@test.com', telephone = '13662112168', fax = '', custom_field = '', payment_realname = 'huangxinyu', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'huangxinyu', shipping_address_1 = '北京', shipping_address_2 = '1111111', shipping_city = '北京市', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-2-14', doctor_id = '16'
+2017-04-17 10:08:45 - enter products
+2017-04-17 10:08:45 - INSERT INTO ph_order_product SET order_id = '857', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:08:45 - 499
+2017-04-17 10:08:45 - 499
+2017-04-17 10:08:45 - INSERT INTO ph_order_total SET order_id = '857', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:08:45 - 0
+2017-04-17 10:08:45 - 0
+2017-04-17 10:08:45 - INSERT INTO ph_order_total SET order_id = '857', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:08:45 - 499
+2017-04-17 10:08:45 - 499
+2017-04-17 10:08:45 - INSERT INTO ph_order_total SET order_id = '857', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:13:36 - product_id
+2017-04-17 10:13:36 - 50
+2017-04-17 10:13:36 - 1
+2017-04-17 10:13:36 - 499.0000
+2017-04-17 10:13:36 - 499
+2017-04-17 10:13:36 - doctor_id=16
+2017-04-17 10:13:36 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '767', customer_group_id = '1', realname = 'huangxinyu', email = 'aa@test.com', telephone = '13662112168', fax = '', custom_field = '', payment_realname = 'huangxinyu', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'huangxinyu', shipping_address_1 = '北京', shipping_address_2 = '1111111', shipping_city = '北京市', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-2-14', doctor_id = '16'
+2017-04-17 10:13:36 - enter products
+2017-04-17 10:13:36 - INSERT INTO ph_order_product SET order_id = '858', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:13:36 - 499
+2017-04-17 10:13:36 - 499
+2017-04-17 10:13:36 - INSERT INTO ph_order_total SET order_id = '858', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:13:36 - 0
+2017-04-17 10:13:36 - 0
+2017-04-17 10:13:36 - INSERT INTO ph_order_total SET order_id = '858', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:13:36 - 499
+2017-04-17 10:13:36 - 499
+2017-04-17 10:13:36 - INSERT INTO ph_order_total SET order_id = '858', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:25:50 - product_id
+2017-04-17 10:25:50 - 50
+2017-04-17 10:25:50 - 1
+2017-04-17 10:25:50 - 499.0000
+2017-04-17 10:25:50 - 499
+2017-04-17 10:25:50 - doctor_id=15
+2017-04-17 10:25:50 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = '郑test', email = 'aa@test.com', telephone = '18601293201', fax = '', custom_field = '', payment_realname = '郑test', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '郑test', shipping_address_1 = 'test', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-06', doctor_id = '15'
+2017-04-17 10:25:50 - enter products
+2017-04-17 10:25:50 - INSERT INTO ph_order_product SET order_id = '859', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:25:50 - 499
+2017-04-17 10:25:50 - 499
+2017-04-17 10:25:50 - INSERT INTO ph_order_total SET order_id = '859', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:25:50 - 0
+2017-04-17 10:25:50 - 0
+2017-04-17 10:25:50 - INSERT INTO ph_order_total SET order_id = '859', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:25:50 - 499
+2017-04-17 10:25:50 - 499
+2017-04-17 10:25:50 - INSERT INTO ph_order_total SET order_id = '859', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:25:50 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:25:50 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:26:40 - 748
+2017-04-17 10:26:40 - 859
+2017-04-17 10:26:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:26:40 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:26:40 - 791
+2017-04-17 10:26:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:26:40 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:26:40 - 790
+2017-04-17 10:26:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:26:40 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:26:41 - 748
+2017-04-17 10:26:41 - 859
+2017-04-17 10:26:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:26:41 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:26:41 - 791
+2017-04-17 10:26:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:26:41 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:26:41 - 790
+2017-04-17 10:26:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:26:41 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:26:51 - product_id
+2017-04-17 10:26:51 - 50
+2017-04-17 10:26:51 - 1
+2017-04-17 10:26:51 - 499.0000
+2017-04-17 10:26:51 - 499
+2017-04-17 10:26:51 - doctor_id=
+2017-04-17 10:26:51 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = 'renxiaopeng', email = 'aa@test.com', telephone = '1', fax = '', custom_field = '', payment_realname = 'renxiaopeng', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'renxiaopeng', shipping_address_1 = '北京', shipping_address_2 = '1111111', shipping_city = '北京市', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-17 10:26:51 - enter products
+2017-04-17 10:26:51 - INSERT INTO ph_order_product SET order_id = '860', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:26:51 - 499
+2017-04-17 10:26:51 - 499
+2017-04-17 10:26:51 - INSERT INTO ph_order_total SET order_id = '860', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:26:51 - 0
+2017-04-17 10:26:51 - 0
+2017-04-17 10:26:51 - INSERT INTO ph_order_total SET order_id = '860', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:26:51 - 499
+2017-04-17 10:26:51 - 499
+2017-04-17 10:26:51 - INSERT INTO ph_order_total SET order_id = '860', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:26:52 - 748
+2017-04-17 10:26:52 - 859
+2017-04-17 10:26:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:26:52 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:26:52 - 791
+2017-04-17 10:26:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:26:52 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:26:52 - 790
+2017-04-17 10:26:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:26:52 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:27:35 - product_id
+2017-04-17 10:27:35 - 50
+2017-04-17 10:27:35 - 1
+2017-04-17 10:27:35 - 499.0000
+2017-04-17 10:27:35 - 499
+2017-04-17 10:27:35 - doctor_id=11
+2017-04-17 10:27:35 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = '郑test', email = 'aa@test.com', telephone = '18601293201', fax = '', custom_field = '', payment_realname = '郑test', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '郑test', shipping_address_1 = 'test', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-06', doctor_id = '11'
+2017-04-17 10:27:35 - enter products
+2017-04-17 10:27:35 - INSERT INTO ph_order_product SET order_id = '861', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:27:35 - 499
+2017-04-17 10:27:35 - 499
+2017-04-17 10:27:35 - INSERT INTO ph_order_total SET order_id = '861', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:27:35 - 0
+2017-04-17 10:27:35 - 0
+2017-04-17 10:27:35 - INSERT INTO ph_order_total SET order_id = '861', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:27:35 - 499
+2017-04-17 10:27:35 - 499
+2017-04-17 10:27:35 - INSERT INTO ph_order_total SET order_id = '861', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:27:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:27:35 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:28:58 - 748
+2017-04-17 10:28:58 - 861
+2017-04-17 10:28:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:28:58 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:28:58 - 859
+2017-04-17 10:28:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:28:58 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:28:58 - 791
+2017-04-17 10:28:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:28:58 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:28:58 - 790
+2017-04-17 10:28:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:28:58 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:29:01 - 748
+2017-04-17 10:29:01 - 861
+2017-04-17 10:29:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:29:01 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:29:01 - 859
+2017-04-17 10:29:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:29:01 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:29:01 - 791
+2017-04-17 10:29:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:29:01 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:29:01 - 790
+2017-04-17 10:29:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:29:01 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:29:13 - product_id
+2017-04-17 10:29:13 - 50
+2017-04-17 10:29:13 - 1
+2017-04-17 10:29:13 - 499.0000
+2017-04-17 10:29:13 - 499
+2017-04-17 10:29:13 - doctor_id=
+2017-04-17 10:29:13 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = 'renxiaopeng', email = 'aa@test.com', telephone = '1', fax = '', custom_field = '', payment_realname = 'renxiaopeng', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = 'renxiaopeng', shipping_address_1 = '北京', shipping_address_2 = '1111111', shipping_city = '北京市', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-17 10:29:13 - enter products
+2017-04-17 10:29:13 - INSERT INTO ph_order_product SET order_id = '862', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:29:13 - 499
+2017-04-17 10:29:13 - 499
+2017-04-17 10:29:13 - INSERT INTO ph_order_total SET order_id = '862', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:29:13 - 0
+2017-04-17 10:29:13 - 0
+2017-04-17 10:29:13 - INSERT INTO ph_order_total SET order_id = '862', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:29:13 - 499
+2017-04-17 10:29:13 - 499
+2017-04-17 10:29:13 - INSERT INTO ph_order_total SET order_id = '862', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:29:14 - 748
+2017-04-17 10:29:14 - 861
+2017-04-17 10:29:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:29:14 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:29:14 - 859
+2017-04-17 10:29:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:29:14 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:29:14 - 791
+2017-04-17 10:29:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:29:14 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:29:14 - 790
+2017-04-17 10:29:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:29:14 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:32:40 - 748
+2017-04-17 10:32:40 - 861
+2017-04-17 10:32:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:32:40 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:32:40 - 859
+2017-04-17 10:32:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:32:40 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:32:40 - 791
+2017-04-17 10:32:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:32:40 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:32:40 - 790
+2017-04-17 10:32:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:32:40 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:32:47 - 748
+2017-04-17 10:32:47 - 861
+2017-04-17 10:32:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:32:47 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:32:47 - 859
+2017-04-17 10:32:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:32:47 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:32:47 - 791
+2017-04-17 10:32:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:32:47 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:32:47 - 790
+2017-04-17 10:32:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:32:47 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:33:01 - 748
+2017-04-17 10:33:01 - 861
+2017-04-17 10:33:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:33:01 - SELECT * FROM ph_order_product WHERE order_id = '861'
+2017-04-17 10:33:01 - 859
+2017-04-17 10:33:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:33:01 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:33:01 - 791
+2017-04-17 10:33:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:33:01 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:33:01 - 790
+2017-04-17 10:33:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:33:01 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:33:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '861'
+2017-04-17 10:33:08 - 748
+2017-04-17 10:33:08 - 859
+2017-04-17 10:33:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 10:33:08 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 10:33:08 - 791
+2017-04-17 10:33:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 10:33:08 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 10:33:08 - 790
+2017-04-17 10:33:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 10:33:08 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 10:48:58 - product_id
+2017-04-17 10:48:58 - 50
+2017-04-17 10:48:58 - 1
+2017-04-17 10:48:58 - 499.0000
+2017-04-17 10:48:58 - 499
+2017-04-17 10:48:58 - doctor_id=
+2017-04-17 10:48:58 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '767', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京SOHO ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '400', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-13', doctor_id = ''
+2017-04-17 10:48:58 - enter products
+2017-04-17 10:48:58 - INSERT INTO ph_order_product SET order_id = '863', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 10:48:58 - 499
+2017-04-17 10:48:58 - 499
+2017-04-17 10:48:58 - INSERT INTO ph_order_total SET order_id = '863', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 10:48:58 - 0
+2017-04-17 10:48:58 - 0
+2017-04-17 10:48:58 - INSERT INTO ph_order_total SET order_id = '863', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 10:48:58 - 499
+2017-04-17 10:48:58 - 499
+2017-04-17 10:48:58 - INSERT INTO ph_order_total SET order_id = '863', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 10:48:58 - -99
+2017-04-17 10:48:58 - -99
+2017-04-17 10:48:58 - INSERT INTO ph_order_total SET order_id = '863', code = 'coupon', title = '折扣券 (11223344)', `value` = '-99', sort_order = '4'
+2017-04-17 10:48:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '863'
+2017-04-17 10:48:58 - SELECT * FROM ph_order_product WHERE order_id = '863'
+2017-04-17 12:06:52 - product_id
+2017-04-17 12:06:52 - 58
+2017-04-17 12:06:52 - 1
+2017-04-17 12:06:52 - 499.0000
+2017-04-17 12:06:52 - 499
+2017-04-17 12:06:52 - doctor_id=
+2017-04-17 12:06:52 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '767', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京SOHO ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '249', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-17', doctor_id = ''
+2017-04-17 12:06:52 - enter products
+2017-04-17 12:06:52 - INSERT INTO ph_order_product SET order_id = '864', product_id = '58', name = '回乳/排乳', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 12:06:52 - 499
+2017-04-17 12:06:52 - 499
+2017-04-17 12:06:52 - INSERT INTO ph_order_total SET order_id = '864', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 12:06:52 - 0
+2017-04-17 12:06:52 - 0
+2017-04-17 12:06:52 - INSERT INTO ph_order_total SET order_id = '864', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 12:06:52 - 499
+2017-04-17 12:06:52 - 499
+2017-04-17 12:06:52 - INSERT INTO ph_order_total SET order_id = '864', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 12:06:52 - -250
+2017-04-17 12:06:52 - -250
+2017-04-17 12:06:52 - INSERT INTO ph_order_total SET order_id = '864', code = 'coupon', title = '折扣券 (LIHAIYANG)', `value` = '-250', sort_order = '4'
+2017-04-17 12:06:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '864'
+2017-04-17 12:06:52 - SELECT * FROM ph_order_product WHERE order_id = '864'
+2017-04-17 12:07:21 - 767
+2017-04-17 12:07:21 - 864
+2017-04-17 12:07:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '864'
+2017-04-17 12:07:21 - SELECT * FROM ph_order_product WHERE order_id = '864'
+2017-04-17 12:07:24 - 767
+2017-04-17 12:53:44 - 748
+2017-04-17 12:53:44 - 859
+2017-04-17 12:53:44 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 12:53:44 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 12:53:44 - 791
+2017-04-17 12:53:44 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 12:53:44 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 12:53:44 - 790
+2017-04-17 12:53:44 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 12:53:44 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 12:53:54 - 748
+2017-04-17 12:53:54 - 859
+2017-04-17 12:53:54 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 12:53:54 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 12:53:54 - 791
+2017-04-17 12:53:54 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 12:53:54 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 12:53:54 - 790
+2017-04-17 12:53:54 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 12:53:54 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 13:52:51 - 748
+2017-04-17 13:52:51 - 859
+2017-04-17 13:52:51 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 13:52:51 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 13:52:51 - 791
+2017-04-17 13:52:51 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 13:52:51 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 13:52:51 - 790
+2017-04-17 13:52:51 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 13:52:51 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 14:00:21 - 748
+2017-04-17 14:00:21 - 859
+2017-04-17 14:00:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-17 14:00:21 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-17 14:00:21 - 791
+2017-04-17 14:00:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-17 14:00:21 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-17 14:00:21 - 790
+2017-04-17 14:00:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-17 14:00:21 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-17 16:46:06 - product_id
+2017-04-17 16:46:06 - 50
+2017-04-17 16:46:06 - 1
+2017-04-17 16:46:06 - 499.0000
+2017-04-17 16:46:06 - 499
+2017-04-17 16:46:06 - doctor_id=20
+2017-04-17 16:46:06 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '777', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京soho ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-07', doctor_id = '20'
+2017-04-17 16:46:06 - enter products
+2017-04-17 16:46:06 - INSERT INTO ph_order_product SET order_id = '865', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 16:46:06 - 499
+2017-04-17 16:46:06 - 499
+2017-04-17 16:46:06 - INSERT INTO ph_order_total SET order_id = '865', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 16:46:06 - 0
+2017-04-17 16:46:06 - 0
+2017-04-17 16:46:06 - INSERT INTO ph_order_total SET order_id = '865', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 16:46:06 - 499
+2017-04-17 16:46:06 - 499
+2017-04-17 16:46:06 - INSERT INTO ph_order_total SET order_id = '865', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 16:46:06 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '865'
+2017-04-17 16:46:06 - SELECT * FROM ph_order_product WHERE order_id = '865'
+2017-04-17 17:05:45 - product_id
+2017-04-17 17:05:45 - 50
+2017-04-17 17:05:45 - 1
+2017-04-17 17:05:45 - 499.0000
+2017-04-17 17:05:45 - 499
+2017-04-17 17:05:45 - doctor_id=20
+2017-04-17 17:05:45 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '777', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京soho ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '499', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-05', doctor_id = '20'
+2017-04-17 17:05:45 - enter products
+2017-04-17 17:05:45 - INSERT INTO ph_order_product SET order_id = '866', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-17 17:05:45 - 499
+2017-04-17 17:05:45 - 499
+2017-04-17 17:05:45 - INSERT INTO ph_order_total SET order_id = '866', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-17 17:05:45 - 0
+2017-04-17 17:05:45 - 0
+2017-04-17 17:05:45 - INSERT INTO ph_order_total SET order_id = '866', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-17 17:05:45 - 499
+2017-04-17 17:05:45 - 499
+2017-04-17 17:05:45 - INSERT INTO ph_order_total SET order_id = '866', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-17 17:05:45 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '866'
+2017-04-17 17:05:45 - SELECT * FROM ph_order_product WHERE order_id = '866'
+2017-04-18 8:29:00 - 721
+2017-04-18 8:29:00 - 835
+2017-04-18 8:29:00 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '835'
+2017-04-18 8:29:00 - SELECT * FROM ph_order_product WHERE order_id = '835'
+2017-04-18 8:29:00 - 834
+2017-04-18 8:29:00 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '834'
+2017-04-18 8:29:00 - SELECT * FROM ph_order_product WHERE order_id = '834'
+2017-04-18 8:29:00 - 828
+2017-04-18 8:29:00 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '828'
+2017-04-18 8:29:00 - SELECT * FROM ph_order_product WHERE order_id = '828'
+2017-04-18 8:29:07 - 721
+2017-04-18 8:29:07 - 834
+2017-04-18 8:29:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '834'
+2017-04-18 8:29:07 - SELECT * FROM ph_order_product WHERE order_id = '834'
+2017-04-18 8:29:07 - 828
+2017-04-18 8:29:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '828'
+2017-04-18 8:29:07 - SELECT * FROM ph_order_product WHERE order_id = '828'
+2017-04-18 8:29:56 - product_id
+2017-04-18 8:29:56 - 59
+2017-04-18 8:29:56 - 1
+2017-04-18 8:29:56 - 8000.0000
+2017-04-18 8:29:56 - 8000
+2017-04-18 8:29:56 - doctor_id=11
+2017-04-18 8:29:56 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '752', customer_group_id = '1', realname = '任晓鹏', email = 'aa@test.com', telephone = '13716300292', fax = '', custom_field = '', payment_realname = '任晓鹏', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '任晓鹏', shipping_address_1 = '那你呢', shipping_address_2 = '1111111', shipping_city = '1,1,1', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-18', doctor_id = '11'
+2017-04-18 8:29:56 - enter products
+2017-04-18 8:29:56 - INSERT INTO ph_order_product SET order_id = '867', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-18 8:29:56 - 8000
+2017-04-18 8:29:56 - 8000
+2017-04-18 8:29:56 - INSERT INTO ph_order_total SET order_id = '867', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-18 8:29:56 - 0
+2017-04-18 8:29:56 - 0
+2017-04-18 8:29:56 - INSERT INTO ph_order_total SET order_id = '867', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-18 8:29:56 - 8000
+2017-04-18 8:29:56 - 8000
+2017-04-18 8:29:56 - INSERT INTO ph_order_total SET order_id = '867', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-18 8:29:56 - -6200
+2017-04-18 8:29:56 - -6200
+2017-04-18 8:29:56 - INSERT INTO ph_order_total SET order_id = '867', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-18 8:29:57 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '867'
+2017-04-18 8:29:57 - SELECT * FROM ph_order_product WHERE order_id = '867'
+2017-04-18 18:43:17 - product_id
+2017-04-18 18:43:17 - 59
+2017-04-18 18:43:17 - 1
+2017-04-18 18:43:17 - 8000.0000
+2017-04-18 18:43:17 - 8000
+2017-04-18 18:43:17 - doctor_id=
+2017-04-18 18:43:17 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '721', customer_group_id = '1', realname = '44', email = 'aa@test.com', telephone = '13641271607', fax = '', custom_field = '', payment_realname = '44', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '44', shipping_address_1 = '莲葩园', shipping_address_2 = '1111111', shipping_city = '1,1,1', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-19', doctor_id = ''
+2017-04-18 18:43:17 - enter products
+2017-04-18 18:43:17 - INSERT INTO ph_order_product SET order_id = '868', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-18 18:43:17 - 8000
+2017-04-18 18:43:17 - 8000
+2017-04-18 18:43:17 - INSERT INTO ph_order_total SET order_id = '868', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-18 18:43:17 - 0
+2017-04-18 18:43:17 - 0
+2017-04-18 18:43:17 - INSERT INTO ph_order_total SET order_id = '868', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-18 18:43:17 - 8000
+2017-04-18 18:43:17 - 8000
+2017-04-18 18:43:17 - INSERT INTO ph_order_total SET order_id = '868', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-18 18:43:17 - -6200
+2017-04-18 18:43:17 - -6200
+2017-04-18 18:43:17 - INSERT INTO ph_order_total SET order_id = '868', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-18 18:43:17 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '868'
+2017-04-18 18:43:17 - SELECT * FROM ph_order_product WHERE order_id = '868'
+2017-04-19 5:17:19 - 653
+2017-04-19 5:17:19 - 825
+2017-04-19 5:17:19 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '825'
+2017-04-19 5:17:19 - SELECT * FROM ph_order_product WHERE order_id = '825'
+2017-04-19 5:17:19 - 694
+2017-04-19 5:17:19 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '694'
+2017-04-19 5:17:19 - SELECT * FROM ph_order_product WHERE order_id = '694'
+2017-04-19 5:17:19 - 690
+2017-04-19 5:17:19 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '690'
+2017-04-19 5:17:19 - SELECT * FROM ph_order_product WHERE order_id = '690'
+2017-04-19 5:17:25 - 653
+2017-04-19 5:17:25 - 694
+2017-04-19 5:17:25 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '694'
+2017-04-19 5:17:25 - SELECT * FROM ph_order_product WHERE order_id = '694'
+2017-04-19 5:17:25 - 690
+2017-04-19 5:17:25 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '690'
+2017-04-19 5:17:25 - SELECT * FROM ph_order_product WHERE order_id = '690'
+2017-04-19 5:17:28 - 653
+2017-04-19 5:17:28 - 690
+2017-04-19 5:17:28 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '690'
+2017-04-19 5:17:28 - SELECT * FROM ph_order_product WHERE order_id = '690'
+2017-04-19 5:17:30 - 653
+2017-04-19 9:51:20 - 182
+2017-04-19 9:51:20 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '118'
+2017-04-19 9:51:20 - SELECT * FROM ph_order_product WHERE order_id = '118'
+2017-04-19 9:51:31 - 182
+2017-04-19 9:51:31 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '118'
+2017-04-19 9:51:31 - SELECT * FROM ph_order_product WHERE order_id = '118'
+2017-04-19 11:07:04 - product_id
+2017-04-19 11:07:04 - 59
+2017-04-19 11:07:04 - 1
+2017-04-19 11:07:04 - 8000.0000
+2017-04-19 11:07:04 - 8000
+2017-04-19 11:07:04 - doctor_id=
+2017-04-19 11:07:04 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '721', customer_group_id = '1', realname = '44', email = 'aa@test.com', telephone = '13641271607', fax = '', custom_field = '', payment_realname = '44', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '44', shipping_address_1 = '莲葩园', shipping_address_2 = '1111111', shipping_city = '1,1,1', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-19', doctor_id = ''
+2017-04-19 11:07:04 - enter products
+2017-04-19 11:07:04 - INSERT INTO ph_order_product SET order_id = '869', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-19 11:07:04 - 8000
+2017-04-19 11:07:04 - 8000
+2017-04-19 11:07:04 - INSERT INTO ph_order_total SET order_id = '869', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-19 11:07:04 - 0
+2017-04-19 11:07:04 - 0
+2017-04-19 11:07:04 - INSERT INTO ph_order_total SET order_id = '869', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-19 11:07:04 - 8000
+2017-04-19 11:07:04 - 8000
+2017-04-19 11:07:04 - INSERT INTO ph_order_total SET order_id = '869', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-19 11:07:04 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '869'
+2017-04-19 11:07:04 - SELECT * FROM ph_order_product WHERE order_id = '869'
+2017-04-19 11:14:15 - 653
+2017-04-20 12:56:58 - 748
+2017-04-20 12:57:01 - 748
+2017-04-20 12:57:01 - 859
+2017-04-20 12:57:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-20 12:57:01 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-20 12:57:01 - 791
+2017-04-20 12:57:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-20 12:57:01 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-20 12:57:01 - 790
+2017-04-20 12:57:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-20 12:57:01 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-20 12:57:08 - 748
+2017-04-20 12:57:08 - 859
+2017-04-20 12:57:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-20 12:57:08 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-20 12:57:08 - 791
+2017-04-20 12:57:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-20 12:57:08 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-20 12:57:08 - 790
+2017-04-20 12:57:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-20 12:57:08 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-20 13:00:40 - 748
+2017-04-20 13:00:40 - 859
+2017-04-20 13:00:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '859'
+2017-04-20 13:00:40 - SELECT * FROM ph_order_product WHERE order_id = '859'
+2017-04-20 13:00:40 - 791
+2017-04-20 13:00:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '791'
+2017-04-20 13:00:40 - SELECT * FROM ph_order_product WHERE order_id = '791'
+2017-04-20 13:00:40 - 790
+2017-04-20 13:00:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '790'
+2017-04-20 13:00:40 - SELECT * FROM ph_order_product WHERE order_id = '790'
+2017-04-20 13:51:28 - 790
+2017-04-20 14:15:07 - 777
+2017-04-20 14:15:07 - 866
+2017-04-20 14:15:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '866'
+2017-04-20 14:15:07 - SELECT * FROM ph_order_product WHERE order_id = '866'
+2017-04-20 14:15:07 - 865
+2017-04-20 14:15:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '865'
+2017-04-20 14:15:07 - SELECT * FROM ph_order_product WHERE order_id = '865'
+2017-04-20 14:23:41 - product_id
+2017-04-20 14:23:41 - 50
+2017-04-20 14:23:41 - 1
+2017-04-20 14:23:41 - 499.0000
+2017-04-20 14:23:41 - 499
+2017-04-20 14:23:41 - doctor_id=
+2017-04-20 14:23:41 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '777', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京soho ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '249', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-20', doctor_id = ''
+2017-04-20 14:23:41 - enter products
+2017-04-20 14:23:41 - INSERT INTO ph_order_product SET order_id = '870', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-20 14:23:41 - 499
+2017-04-20 14:23:41 - 499
+2017-04-20 14:23:41 - INSERT INTO ph_order_total SET order_id = '870', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-20 14:23:41 - 0
+2017-04-20 14:23:41 - 0
+2017-04-20 14:23:41 - INSERT INTO ph_order_total SET order_id = '870', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-20 14:23:41 - 499
+2017-04-20 14:23:41 - 499
+2017-04-20 14:23:41 - INSERT INTO ph_order_total SET order_id = '870', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-20 14:23:41 - -250
+2017-04-20 14:23:41 - -250
+2017-04-20 14:23:41 - INSERT INTO ph_order_total SET order_id = '870', code = 'coupon', title = '折扣券 (LIHAIYANG)', `value` = '-250', sort_order = '4'
+2017-04-20 14:23:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '870'
+2017-04-20 14:23:41 - SELECT * FROM ph_order_product WHERE order_id = '870'
+2017-04-20 14:23:47 - product_id
+2017-04-20 14:23:47 - 50
+2017-04-20 14:23:47 - 1
+2017-04-20 14:23:47 - 499.0000
+2017-04-20 14:23:47 - 499
+2017-04-20 14:23:47 - doctor_id=
+2017-04-20 14:23:47 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = '郑test', email = 'aa@test.com', telephone = '18601293201', fax = '', custom_field = '', payment_realname = '郑test', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '郑test', shipping_address_1 = 'test', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '400', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-04-20', doctor_id = ''
+2017-04-20 14:23:47 - enter products
+2017-04-20 14:23:47 - INSERT INTO ph_order_product SET order_id = '871', product_id = '50', name = '产后开奶', model = '1', quantity = '1', price = '499', total = '499', tax = '0', reward = '0'
+2017-04-20 14:23:47 - 499
+2017-04-20 14:23:47 - 499
+2017-04-20 14:23:47 - INSERT INTO ph_order_total SET order_id = '871', code = 'sub_total', title = '小计', `value` = '499', sort_order = '1'
+2017-04-20 14:23:47 - 0
+2017-04-20 14:23:47 - 0
+2017-04-20 14:23:47 - INSERT INTO ph_order_total SET order_id = '871', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-20 14:23:47 - 499
+2017-04-20 14:23:47 - 499
+2017-04-20 14:23:47 - INSERT INTO ph_order_total SET order_id = '871', code = 'total', title = '总计', `value` = '499', sort_order = '9'
+2017-04-20 14:23:47 - -99
+2017-04-20 14:23:47 - -99
+2017-04-20 14:23:47 - INSERT INTO ph_order_total SET order_id = '871', code = 'coupon', title = '折扣券 (11223344)', `value` = '-99', sort_order = '4'
+2017-04-20 14:23:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '871'
+2017-04-20 14:23:47 - SELECT * FROM ph_order_product WHERE order_id = '871'
+2017-04-20 14:28:13 - product_id
+2017-04-20 14:28:13 - 59
+2017-04-20 14:28:13 - 1
+2017-04-20 14:28:13 - 8000.0000
+2017-04-20 14:28:13 - 8000
+2017-04-20 14:28:13 - doctor_id=
+2017-04-20 14:28:13 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '748', customer_group_id = '1', realname = '郑test', email = 'aa@test.com', telephone = '18601293201', fax = '', custom_field = '', payment_realname = '郑test', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '郑test', shipping_address_1 = 'test', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-20 14:28:13 - enter products
+2017-04-20 14:28:13 - INSERT INTO ph_order_product SET order_id = '872', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-20 14:28:13 - 8000
+2017-04-20 14:28:13 - 8000
+2017-04-20 14:28:13 - INSERT INTO ph_order_total SET order_id = '872', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-20 14:28:13 - 0
+2017-04-20 14:28:13 - 0
+2017-04-20 14:28:13 - INSERT INTO ph_order_total SET order_id = '872', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-20 14:28:13 - 8000
+2017-04-20 14:28:13 - 8000
+2017-04-20 14:28:13 - INSERT INTO ph_order_total SET order_id = '872', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-20 14:28:13 - -6200
+2017-04-20 14:28:13 - -6200
+2017-04-20 14:28:13 - INSERT INTO ph_order_total SET order_id = '872', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-20 14:28:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '872'
+2017-04-20 14:28:14 - SELECT * FROM ph_order_product WHERE order_id = '872'
+2017-04-20 14:28:17 - product_id
+2017-04-20 14:28:17 - 59
+2017-04-20 14:28:17 - 1
+2017-04-20 14:28:17 - 8000.0000
+2017-04-20 14:28:17 - 8000
+2017-04-20 14:28:17 - doctor_id=
+2017-04-20 14:28:17 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '777', customer_group_id = '1', realname = '黄心语', email = 'aa@test.com', telephone = '13662112169', fax = '', custom_field = '', payment_realname = '黄心语', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '黄心语', shipping_address_1 = '望京soho ', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-20 14:28:17 - enter products
+2017-04-20 14:28:17 - INSERT INTO ph_order_product SET order_id = '873', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-20 14:28:17 - 8000
+2017-04-20 14:28:17 - 8000
+2017-04-20 14:28:17 - INSERT INTO ph_order_total SET order_id = '873', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-20 14:28:17 - 0
+2017-04-20 14:28:17 - 0
+2017-04-20 14:28:17 - INSERT INTO ph_order_total SET order_id = '873', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-20 14:28:17 - 8000
+2017-04-20 14:28:17 - 8000
+2017-04-20 14:28:17 - INSERT INTO ph_order_total SET order_id = '873', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-20 14:28:17 - -6200
+2017-04-20 14:28:17 - -6200
+2017-04-20 14:28:17 - INSERT INTO ph_order_total SET order_id = '873', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-20 14:28:18 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-20 14:28:18 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-20 14:28:32 - 748
+2017-04-20 14:28:32 - 872
+2017-04-20 14:28:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '872'
+2017-04-20 14:28:32 - SELECT * FROM ph_order_product WHERE order_id = '872'
+2017-04-20 14:28:32 - 871
+2017-04-20 14:28:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '871'
+2017-04-20 14:28:32 - SELECT * FROM ph_order_product WHERE order_id = '871'
+2017-04-20 14:28:32 - 843
+2017-04-20 14:28:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '843'
+2017-04-20 14:28:32 - SELECT * FROM ph_order_product WHERE order_id = '843'
+2017-04-20 14:28:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '872'
+2017-04-20 14:28:35 - SELECT * FROM ph_order_product WHERE order_id = '872'
+2017-04-20 18:11:39 - 789
+2017-04-20 18:11:44 - 789
+2017-04-21 0:20:02 - product_id
+2017-04-21 0:20:02 - 59
+2017-04-21 0:20:02 - 1
+2017-04-21 0:20:02 - 8000.0000
+2017-04-21 0:20:02 - 8000
+2017-04-21 0:20:02 - doctor_id=
+2017-04-21 0:20:02 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '790', customer_group_id = '1', realname = '佟俊双', email = 'aa@test.com', telephone = '18519221689', fax = '', custom_field = '', payment_realname = '佟俊双', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '佟俊双', shipping_address_1 = '亚运村', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 0:20:02 - enter products
+2017-04-21 0:20:02 - INSERT INTO ph_order_product SET order_id = '874', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 0:20:02 - 8000
+2017-04-21 0:20:02 - 8000
+2017-04-21 0:20:02 - INSERT INTO ph_order_total SET order_id = '874', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 0:20:03 - 0
+2017-04-21 0:20:03 - 0
+2017-04-21 0:20:03 - INSERT INTO ph_order_total SET order_id = '874', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 0:20:03 - 8000
+2017-04-21 0:20:03 - 8000
+2017-04-21 0:20:03 - INSERT INTO ph_order_total SET order_id = '874', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 0:20:03 - -6200
+2017-04-21 0:20:03 - -6200
+2017-04-21 0:20:03 - INSERT INTO ph_order_total SET order_id = '874', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-21 0:20:03 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '874'
+2017-04-21 0:20:03 - SELECT * FROM ph_order_product WHERE order_id = '874'
+2017-04-21 0:20:36 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '874'
+2017-04-21 0:20:36 - SELECT * FROM ph_order_product WHERE order_id = '874'
+2017-04-21 2:05:29 - product_id
+2017-04-21 2:05:29 - 59
+2017-04-21 2:05:29 - 1
+2017-04-21 2:05:29 - 8000.0000
+2017-04-21 2:05:29 - 8000
+2017-04-21 2:05:29 - doctor_id=
+2017-04-21 2:05:29 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '784', customer_group_id = '1', realname = '李艳芳', email = 'aa@test.com', telephone = '13426431375', fax = '', custom_field = '', payment_realname = '李艳芳', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '李艳芳', shipping_address_1 = '安慧里', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 2:05:29 - enter products
+2017-04-21 2:05:29 - INSERT INTO ph_order_product SET order_id = '875', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 2:05:29 - 8000
+2017-04-21 2:05:29 - 8000
+2017-04-21 2:05:29 - INSERT INTO ph_order_total SET order_id = '875', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 2:05:29 - 0
+2017-04-21 2:05:29 - 0
+2017-04-21 2:05:29 - INSERT INTO ph_order_total SET order_id = '875', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 2:05:29 - 8000
+2017-04-21 2:05:29 - 8000
+2017-04-21 2:05:29 - INSERT INTO ph_order_total SET order_id = '875', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 2:05:29 - -6200
+2017-04-21 2:05:29 - -6200
+2017-04-21 2:05:29 - INSERT INTO ph_order_total SET order_id = '875', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-21 2:05:29 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:05:29 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:05:57 - product_id
+2017-04-21 2:05:57 - 59
+2017-04-21 2:05:57 - 1
+2017-04-21 2:05:57 - 8000.0000
+2017-04-21 2:05:57 - 8000
+2017-04-21 2:05:57 - doctor_id=
+2017-04-21 2:05:57 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '784', customer_group_id = '1', realname = '李艳芳', email = 'aa@test.com', telephone = '13426431375', fax = '', custom_field = '', payment_realname = '李艳芳', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '李艳芳', shipping_address_1 = '安慧里', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 2:05:57 - enter products
+2017-04-21 2:05:57 - INSERT INTO ph_order_product SET order_id = '876', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 2:05:57 - 8000
+2017-04-21 2:05:57 - 8000
+2017-04-21 2:05:57 - INSERT INTO ph_order_total SET order_id = '876', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 2:05:57 - 0
+2017-04-21 2:05:57 - 0
+2017-04-21 2:05:57 - INSERT INTO ph_order_total SET order_id = '876', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 2:05:57 - 8000
+2017-04-21 2:05:57 - 8000
+2017-04-21 2:05:57 - INSERT INTO ph_order_total SET order_id = '876', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 2:05:58 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:05:58 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:06:36 - product_id
+2017-04-21 2:06:36 - 59
+2017-04-21 2:06:36 - 1
+2017-04-21 2:06:36 - 8000.0000
+2017-04-21 2:06:36 - 8000
+2017-04-21 2:06:36 - doctor_id=
+2017-04-21 2:06:36 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '784', customer_group_id = '1', realname = '李艳芳', email = 'aa@test.com', telephone = '13426431375', fax = '', custom_field = '', payment_realname = '李艳芳', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '李艳芳', shipping_address_1 = '安慧里', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 2:06:36 - enter products
+2017-04-21 2:06:36 - INSERT INTO ph_order_product SET order_id = '877', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 2:06:36 - 8000
+2017-04-21 2:06:36 - 8000
+2017-04-21 2:06:36 - INSERT INTO ph_order_total SET order_id = '877', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 2:06:36 - 0
+2017-04-21 2:06:36 - 0
+2017-04-21 2:06:36 - INSERT INTO ph_order_total SET order_id = '877', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 2:06:36 - 8000
+2017-04-21 2:06:36 - 8000
+2017-04-21 2:06:36 - INSERT INTO ph_order_total SET order_id = '877', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 2:06:36 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:06:36 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:10:24 - 784
+2017-04-21 2:10:24 - 877
+2017-04-21 2:10:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:10:24 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:10:24 - 876
+2017-04-21 2:10:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:10:24 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:10:24 - 875
+2017-04-21 2:10:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:10:24 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:11:41 - 784
+2017-04-21 2:11:41 - 877
+2017-04-21 2:11:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:11:41 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:11:41 - 876
+2017-04-21 2:11:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:11:41 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:11:41 - 875
+2017-04-21 2:11:41 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:11:41 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:11:43 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:11:43 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:11:56 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:11:56 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:12:12 - 784
+2017-04-21 2:12:12 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:12:12 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:12:12 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:12:12 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:12:12 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:12:12 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:12:24 - 784
+2017-04-21 2:12:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:12:24 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:12:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:12:24 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:12:24 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:12:24 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:12:27 - 784
+2017-04-21 2:12:27 - 877
+2017-04-21 2:12:27 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:12:27 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:12:27 - 876
+2017-04-21 2:12:27 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '876'
+2017-04-21 2:12:27 - SELECT * FROM ph_order_product WHERE order_id = '876'
+2017-04-21 2:12:30 - 784
+2017-04-21 2:12:30 - 877
+2017-04-21 2:12:30 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '877'
+2017-04-21 2:12:30 - SELECT * FROM ph_order_product WHERE order_id = '877'
+2017-04-21 2:12:32 - 784
+2017-04-21 2:12:34 - 784
+2017-04-21 2:12:34 - 875
+2017-04-21 2:12:34 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:12:34 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:12:51 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:12:51 - 784
+2017-04-21 2:12:55 - 784
+2017-04-21 2:12:57 - 784
+2017-04-21 2:12:59 - 784
+2017-04-21 2:13:01 - 784
+2017-04-21 2:13:01 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:13:01 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:13:14 - 784
+2017-04-21 2:13:14 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:13:14 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:13:32 - 784
+2017-04-21 2:13:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:13:32 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:13:45 - 784
+2017-04-21 2:13:54 - 784
+2017-04-21 2:13:57 - 784
+2017-04-21 2:13:59 - 784
+2017-04-21 2:13:59 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:13:59 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:15:13 - 784
+2017-04-21 2:15:15 - 784
+2017-04-21 2:15:18 - 784
+2017-04-21 2:15:18 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:15:18 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:15:31 - 784
+2017-04-21 2:15:34 - 784
+2017-04-21 2:15:34 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:15:34 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:16:40 - product_id
+2017-04-21 2:16:40 - 59
+2017-04-21 2:16:40 - 1
+2017-04-21 2:16:40 - 8000.0000
+2017-04-21 2:16:40 - 8000
+2017-04-21 2:16:40 - doctor_id=
+2017-04-21 2:16:40 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '789', customer_group_id = '1', realname = '孙丽斌', email = 'aa@test.com', telephone = '13581557051', fax = '', custom_field = '', payment_realname = '孙丽斌', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '孙丽斌', shipping_address_1 = '顺义区石园西区', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 2:16:40 - enter products
+2017-04-21 2:16:40 - INSERT INTO ph_order_product SET order_id = '878', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 2:16:40 - 8000
+2017-04-21 2:16:40 - 8000
+2017-04-21 2:16:40 - INSERT INTO ph_order_total SET order_id = '878', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 2:16:40 - 0
+2017-04-21 2:16:40 - 0
+2017-04-21 2:16:40 - INSERT INTO ph_order_total SET order_id = '878', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 2:16:40 - 8000
+2017-04-21 2:16:40 - 8000
+2017-04-21 2:16:40 - INSERT INTO ph_order_total SET order_id = '878', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 2:16:40 - -6200
+2017-04-21 2:16:40 - -6200
+2017-04-21 2:16:40 - INSERT INTO ph_order_total SET order_id = '878', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-21 2:16:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '878'
+2017-04-21 2:16:40 - SELECT * FROM ph_order_product WHERE order_id = '878'
+2017-04-21 2:17:13 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '878'
+2017-04-21 2:17:13 - SELECT * FROM ph_order_product WHERE order_id = '878'
+2017-04-21 2:17:21 - 784
+2017-04-21 2:17:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-21 2:17:21 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-21 2:17:37 - product_id
+2017-04-21 2:17:37 - 59
+2017-04-21 2:17:37 - 1
+2017-04-21 2:17:37 - 8000.0000
+2017-04-21 2:17:37 - 8000
+2017-04-21 2:17:37 - doctor_id=
+2017-04-21 2:17:37 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '784', customer_group_id = '1', realname = '李艳芳', email = 'aa@test.com', telephone = '13426431375', fax = '', custom_field = '', payment_realname = '李艳芳', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '李艳芳', shipping_address_1 = '安慧里', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 2:17:37 - enter products
+2017-04-21 2:17:37 - INSERT INTO ph_order_product SET order_id = '879', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 2:17:37 - 8000
+2017-04-21 2:17:37 - 8000
+2017-04-21 2:17:37 - INSERT INTO ph_order_total SET order_id = '879', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 2:17:37 - 0
+2017-04-21 2:17:37 - 0
+2017-04-21 2:17:37 - INSERT INTO ph_order_total SET order_id = '879', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 2:17:37 - 8000
+2017-04-21 2:17:37 - 8000
+2017-04-21 2:17:37 - INSERT INTO ph_order_total SET order_id = '879', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 2:17:38 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '879'
+2017-04-21 2:17:38 - SELECT * FROM ph_order_product WHERE order_id = '879'
+2017-04-21 2:17:50 - 784
+2017-04-21 2:17:50 - 879
+2017-04-21 2:17:50 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '879'
+2017-04-21 2:17:50 - SELECT * FROM ph_order_product WHERE order_id = '879'
+2017-04-21 12:20:15 - product_id
+2017-04-21 12:20:15 - 59
+2017-04-21 12:20:15 - 1
+2017-04-21 12:20:15 - 8000.0000
+2017-04-21 12:20:15 - 8000
+2017-04-21 12:20:15 - doctor_id=
+2017-04-21 12:20:15 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '792', customer_group_id = '1', realname = '张锦霞', email = 'aa@test.com', telephone = '13552547264', fax = '', custom_field = '', payment_realname = '张锦霞', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '张锦霞', shipping_address_1 = '安慧里一区21号楼1406', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 12:20:15 - enter products
+2017-04-21 12:20:15 - INSERT INTO ph_order_product SET order_id = '880', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 12:20:15 - 8000
+2017-04-21 12:20:15 - 8000
+2017-04-21 12:20:15 - INSERT INTO ph_order_total SET order_id = '880', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 12:20:15 - 0
+2017-04-21 12:20:15 - 0
+2017-04-21 12:20:15 - INSERT INTO ph_order_total SET order_id = '880', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 12:20:15 - 8000
+2017-04-21 12:20:15 - 8000
+2017-04-21 12:20:15 - INSERT INTO ph_order_total SET order_id = '880', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 12:20:15 - -6200
+2017-04-21 12:20:15 - -6200
+2017-04-21 12:20:15 - INSERT INTO ph_order_total SET order_id = '880', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-21 12:20:15 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '880'
+2017-04-21 12:20:15 - SELECT * FROM ph_order_product WHERE order_id = '880'
+2017-04-21 12:20:43 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '880'
+2017-04-21 12:20:43 - SELECT * FROM ph_order_product WHERE order_id = '880'
+2017-04-21 12:21:18 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '880'
+2017-04-21 12:21:18 - SELECT * FROM ph_order_product WHERE order_id = '880'
+2017-04-21 13:00:08 - 793
+2017-04-21 13:03:35 - 793
+2017-04-21 13:03:39 - 793
+2017-04-21 13:06:19 - product_id
+2017-04-21 13:06:19 - 59
+2017-04-21 13:06:19 - 1
+2017-04-21 13:06:19 - 8000.0000
+2017-04-21 13:06:19 - 8000
+2017-04-21 13:06:19 - doctor_id=
+2017-04-21 13:06:19 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '793', customer_group_id = '1', realname = '龙全红', email = 'aa@test.com', telephone = '17710461219', fax = '', custom_field = '', payment_realname = '龙全红', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '龙全红', shipping_address_1 = '亚运村安慧里一区17号楼', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-21 13:06:19 - enter products
+2017-04-21 13:06:19 - INSERT INTO ph_order_product SET order_id = '881', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-21 13:06:19 - 8000
+2017-04-21 13:06:19 - 8000
+2017-04-21 13:06:19 - INSERT INTO ph_order_total SET order_id = '881', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-21 13:06:19 - 0
+2017-04-21 13:06:19 - 0
+2017-04-21 13:06:19 - INSERT INTO ph_order_total SET order_id = '881', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-21 13:06:19 - 8000
+2017-04-21 13:06:19 - 8000
+2017-04-21 13:06:19 - INSERT INTO ph_order_total SET order_id = '881', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-21 13:06:19 - -6200
+2017-04-21 13:06:19 - -6200
+2017-04-21 13:06:19 - INSERT INTO ph_order_total SET order_id = '881', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-21 13:06:20 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '881'
+2017-04-21 13:06:20 - SELECT * FROM ph_order_product WHERE order_id = '881'
+2017-04-21 13:06:40 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '881'
+2017-04-21 13:06:40 - SELECT * FROM ph_order_product WHERE order_id = '881'
+2017-04-22 6:14:32 - 794
+2017-04-22 6:14:36 - 794
+2017-04-22 6:14:38 - 794
+2017-04-22 6:14:41 - 794
+2017-04-23 9:36:08 - 784
+2017-04-23 9:36:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '879'
+2017-04-23 9:36:08 - SELECT * FROM ph_order_product WHERE order_id = '879'
+2017-04-23 9:36:08 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '875'
+2017-04-23 9:36:08 - SELECT * FROM ph_order_product WHERE order_id = '875'
+2017-04-23 9:36:21 - 784
+2017-04-23 9:36:21 - 879
+2017-04-23 9:36:21 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '879'
+2017-04-23 9:36:21 - SELECT * FROM ph_order_product WHERE order_id = '879'
+2017-04-23 9:36:23 - 784
+2017-04-23 9:36:25 - 784
+2017-04-24 8:42:34 - 794
+2017-04-24 8:54:31 - 795
+2017-04-24 8:55:13 - product_id
+2017-04-24 8:55:13 - 59
+2017-04-24 8:55:13 - 1
+2017-04-24 8:55:13 - 8000.0000
+2017-04-24 8:55:13 - 8000
+2017-04-24 8:55:13 - doctor_id=
+2017-04-24 8:55:13 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '795', customer_group_id = '1', realname = '曲文玲', email = 'aa@test.com', telephone = '13910106652', fax = '', custom_field = '', payment_realname = '曲文玲', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '曲文玲', shipping_address_1 = '东坝', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-24 8:55:13 - enter products
+2017-04-24 8:55:13 - INSERT INTO ph_order_product SET order_id = '882', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-24 8:55:13 - 8000
+2017-04-24 8:55:13 - 8000
+2017-04-24 8:55:13 - INSERT INTO ph_order_total SET order_id = '882', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-24 8:55:13 - 0
+2017-04-24 8:55:13 - 0
+2017-04-24 8:55:13 - INSERT INTO ph_order_total SET order_id = '882', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-24 8:55:13 - 8000
+2017-04-24 8:55:13 - 8000
+2017-04-24 8:55:13 - INSERT INTO ph_order_total SET order_id = '882', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-24 8:55:13 - -6200
+2017-04-24 8:55:13 - -6200
+2017-04-24 8:55:13 - INSERT INTO ph_order_total SET order_id = '882', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-24 8:55:13 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '882'
+2017-04-24 8:55:13 - SELECT * FROM ph_order_product WHERE order_id = '882'
+2017-04-24 8:56:07 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '882'
+2017-04-24 8:56:07 - SELECT * FROM ph_order_product WHERE order_id = '882'
+2017-04-24 13:12:18 - product_id
+2017-04-24 13:12:18 - 59
+2017-04-24 13:12:18 - 1
+2017-04-24 13:12:18 - 8000.0000
+2017-04-24 13:12:18 - 8000
+2017-04-24 13:12:18 - doctor_id=
+2017-04-24 13:12:18 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '794', customer_group_id = '1', realname = '韩淑英', email = 'aa@test.com', telephone = '13552984991', fax = '', custom_field = '', payment_realname = '韩淑英', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '韩淑英', shipping_address_1 = '北苑路', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '1800', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-24 13:12:18 - enter products
+2017-04-24 13:12:18 - INSERT INTO ph_order_product SET order_id = '883', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-24 13:12:18 - 8000
+2017-04-24 13:12:18 - 8000
+2017-04-24 13:12:18 - INSERT INTO ph_order_total SET order_id = '883', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-24 13:12:18 - 0
+2017-04-24 13:12:18 - 0
+2017-04-24 13:12:18 - INSERT INTO ph_order_total SET order_id = '883', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-24 13:12:18 - 8000
+2017-04-24 13:12:18 - 8000
+2017-04-24 13:12:18 - INSERT INTO ph_order_total SET order_id = '883', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-24 13:12:18 - -6200
+2017-04-24 13:12:18 - -6200
+2017-04-24 13:12:18 - INSERT INTO ph_order_total SET order_id = '883', code = 'coupon', title = '折扣券 (123456781)', `value` = '-6200', sort_order = '4'
+2017-04-24 13:12:19 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-24 13:12:19 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-24 23:55:19 - product_id
+2017-04-24 23:55:19 - 59
+2017-04-24 23:55:19 - 1
+2017-04-24 23:55:19 - 8000.0000
+2017-04-24 23:55:19 - 8000
+2017-04-24 23:55:19 - doctor_id=
+2017-04-24 23:55:19 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '794', customer_group_id = '1', realname = '韩淑英', email = 'aa@test.com', telephone = '13552984991', fax = '', custom_field = '', payment_realname = '韩淑英', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '韩淑英', shipping_address_1 = '北苑路', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-24 23:55:19 - enter products
+2017-04-24 23:55:19 - INSERT INTO ph_order_product SET order_id = '884', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-24 23:55:19 - 8000
+2017-04-24 23:55:19 - 8000
+2017-04-24 23:55:19 - INSERT INTO ph_order_total SET order_id = '884', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-24 23:55:19 - 0
+2017-04-24 23:55:19 - 0
+2017-04-24 23:55:19 - INSERT INTO ph_order_total SET order_id = '884', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-24 23:55:19 - 8000
+2017-04-24 23:55:19 - 8000
+2017-04-24 23:55:19 - INSERT INTO ph_order_total SET order_id = '884', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-24 23:55:19 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '884'
+2017-04-24 23:55:19 - SELECT * FROM ph_order_product WHERE order_id = '884'
+2017-04-25 0:03:47 - product_id
+2017-04-25 0:03:47 - 59
+2017-04-25 0:03:47 - 1
+2017-04-25 0:03:47 - 8000.0000
+2017-04-25 0:03:47 - 8000
+2017-04-25 0:03:47 - doctor_id=
+2017-04-25 0:03:47 - INSERT INTO `ph_order` SET invoice_prefix = 'INV-2013-00', store_id = '0', store_name = '金杏健康', store_url = 'http://wechat.jinxingjk.com/', customer_id = '794', customer_group_id = '1', realname = '韩淑英', email = 'aa@test.com', telephone = '13552984991', fax = '', custom_field = '', payment_realname = '韩淑英', payment_company = '11111', payment_address_1 = '111111', payment_address_2 = '1111111', payment_city = '11111', payment_postcode = '1111111111', payment_country = 'China', payment_country_id = '44', payment_zone = 'Anhui', payment_zone_id = '684', payment_address_format = '', payment_custom_field = '\"[]\"', payment_method = '货到付款', payment_code = 'cod', shipping_realname = '韩淑英', shipping_address_1 = '北苑路', shipping_address_2 = '1111111', shipping_city = '1,1,4', shipping_postcode = '1111111111', shipping_country = 'China', shipping_country_id = '44', shipping_zone = '北京', shipping_zone_id = '684', shipping_address_format = '', shipping_custom_field = '\"[]\"', shipping_method = '固定运费率', shipping_code = 'flat.flat', comment = '', total = '8000', affiliate_id = '0', commission = '0', marketing_id = '0', tracking = '', language_id = '2', currency_id = '5', currency_code = 'CNY', currency_value = '1', ip = '123.112.87.158', forwarded_ip = '', user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0', accept_language = 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', date_added = NOW(), date_modified = NOW(), shipping_date = '2017-1-4', doctor_id = ''
+2017-04-25 0:03:47 - enter products
+2017-04-25 0:03:47 - INSERT INTO ph_order_product SET order_id = '885', product_id = '59', name = '乳腺健康管理师课程', model = '1', quantity = '1', price = '8000', total = '8000', tax = '0', reward = '0'
+2017-04-25 0:03:47 - 8000
+2017-04-25 0:03:47 - 8000
+2017-04-25 0:03:47 - INSERT INTO ph_order_total SET order_id = '885', code = 'sub_total', title = '小计', `value` = '8000', sort_order = '1'
+2017-04-25 0:03:47 - 0
+2017-04-25 0:03:47 - 0
+2017-04-25 0:03:47 - INSERT INTO ph_order_total SET order_id = '885', code = 'shipping', title = '固定运费率', `value` = '0', sort_order = '3'
+2017-04-25 0:03:47 - 8000
+2017-04-25 0:03:47 - 8000
+2017-04-25 0:03:47 - INSERT INTO ph_order_total SET order_id = '885', code = 'total', title = '总计', `value` = '8000', sort_order = '9'
+2017-04-25 0:03:47 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '885'
+2017-04-25 0:03:47 - SELECT * FROM ph_order_product WHERE order_id = '885'
+2017-04-25 1:01:35 - 777
+2017-04-25 1:01:35 - 873
+2017-04-25 1:01:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-25 1:01:35 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-25 1:01:35 - 870
+2017-04-25 1:01:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '870'
+2017-04-25 1:01:35 - SELECT * FROM ph_order_product WHERE order_id = '870'
+2017-04-25 1:01:35 - 866
+2017-04-25 1:01:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '866'
+2017-04-25 1:01:35 - SELECT * FROM ph_order_product WHERE order_id = '866'
+2017-04-25 1:01:35 - 865
+2017-04-25 1:01:35 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '865'
+2017-04-25 1:01:35 - SELECT * FROM ph_order_product WHERE order_id = '865'
+2017-04-25 1:01:49 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-25 1:01:50 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-25 1:01:52 - 777
+2017-04-25 1:01:52 - 873
+2017-04-25 1:01:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-25 1:01:52 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-25 1:01:52 - 870
+2017-04-25 1:01:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '870'
+2017-04-25 1:01:52 - SELECT * FROM ph_order_product WHERE order_id = '870'
+2017-04-25 1:01:52 - 866
+2017-04-25 1:01:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '866'
+2017-04-25 1:01:52 - SELECT * FROM ph_order_product WHERE order_id = '866'
+2017-04-25 1:01:52 - 865
+2017-04-25 1:01:52 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '865'
+2017-04-25 1:01:52 - SELECT * FROM ph_order_product WHERE order_id = '865'
+2017-04-25 1:02:04 - 653
+2017-04-25 1:02:09 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-25 1:02:09 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-25 1:02:15 - 777
+2017-04-25 1:02:15 - 873
+2017-04-25 1:02:15 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '873'
+2017-04-25 1:02:15 - SELECT * FROM ph_order_product WHERE order_id = '873'
+2017-04-25 1:02:15 - 870
+2017-04-25 1:02:15 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '870'
+2017-04-25 1:02:15 - SELECT * FROM ph_order_product WHERE order_id = '870'
+2017-04-25 1:02:15 - 866
+2017-04-25 1:02:15 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '866'
+2017-04-25 1:02:15 - SELECT * FROM ph_order_product WHERE order_id = '866'
+2017-04-25 1:02:15 - 865
+2017-04-25 1:02:15 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '865'
+2017-04-25 1:02:15 - SELECT * FROM ph_order_product WHERE order_id = '865'
+2017-04-25 1:04:13 - 794
+2017-04-25 1:04:13 - 885
+2017-04-25 1:04:13 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '885'
+2017-04-25 1:04:13 - SELECT * FROM ph_order_product WHERE order_id = '885'
+2017-04-25 1:04:13 - 884
+2017-04-25 1:04:13 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '884'
+2017-04-25 1:04:13 - SELECT * FROM ph_order_product WHERE order_id = '884'
+2017-04-25 1:04:13 - 883
+2017-04-25 1:04:13 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-25 1:04:13 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-25 1:04:18 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-25 1:04:18 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-25 1:05:02 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-25 1:05:02 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-25 1:05:04 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-25 1:05:04 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-25 1:05:05 - 794
+2017-04-25 1:05:05 - 885
+2017-04-25 1:05:05 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '885'
+2017-04-25 1:05:05 - SELECT * FROM ph_order_product WHERE order_id = '885'
+2017-04-25 1:05:05 - 884
+2017-04-25 1:05:05 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '884'
+2017-04-25 1:05:05 - SELECT * FROM ph_order_product WHERE order_id = '884'
+2017-04-25 1:24:32 - 794
+2017-04-25 1:24:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '883'
+2017-04-25 1:24:32 - SELECT * FROM ph_order_product WHERE order_id = '883'
+2017-04-25 1:24:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '885'
+2017-04-25 1:24:32 - SELECT * FROM ph_order_product WHERE order_id = '885'
+2017-04-25 1:24:32 - SELECT *, (SELECT CONCAT(c.realname) FROM ph_customer c WHERE c.customer_id = o.customer_id) AS customer, (SELECT os.name FROM ph_order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '2') AS order_status FROM `ph_order` o WHERE o.order_id = '884'
+2017-04-25 1:24:32 - SELECT * FROM ph_order_product WHERE order_id = '884'
+2017-04-25 12:01:30 - 798
+2017-04-25 12:01:33 - 798
+2017-04-25 12:01:36 - 798
