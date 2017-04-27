@@ -14,11 +14,25 @@ class ControllerDoctorIdentification extends Controller
 
         $log = new Log("wechat.log");
 
+        $jxsession = $this->load->controller('account/authentication');
+        if(empty($jxsession)) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        $customer_info = json_decode($this->cache->get($jxsession),true);
 
         $data['doctor_id'] = $this->request->json('doctor_id', '');
         $data['customer_id'] = $this->request->json('customer_id', '');
         $this->load->model('doctor/identification');
         $identification_info = $this->model_doctor_identification->getIdentification($data['doctor_id'],$data['customer_id']);
+        $identification_info['jxsession'] = $jxsession ;
 
         /*if(empty($doctor_info)){
             $response = array(
@@ -47,7 +61,22 @@ class ControllerDoctorIdentification extends Controller
     {
         $log = new Log("wechat.log");
 
+        $data["jxsession"] = $this->load->controller('account/authentication');
+        if(empty($data["jxsession"])) {
+            $response = array(
+                'code'  => 1002,
+                'message'  => "欢迎来到金杏健康，请您先登录",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+            return ;
+        }
+        $customer_info = json_decode($this->cache->get($data["jxsession"]),true);
+
         $data['doctor_id'] = $this->request->json('doctor_id', '');
+
         /*$this->load->model('doctor/doctor');
         $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
 
@@ -99,10 +128,116 @@ class ControllerDoctorIdentification extends Controller
     }
 
 
+    public function uploadphoto() {
+
+
+        $log = new Log("wechat.log");
+
+        $pic_width_max=120;
+        $pic_height_max=90;
+
+
+        //$doctor_id = $this->request->json('doctor_id', '');
+        /*$this->load->model('doctor/doctor');
+        $doctor_info = $this->model_doctor_doctor->getDoctor($data['doctor_id']);
+
+        if(empty($doctor_info)){
+            $response = array(
+                'code'  => 1011,
+                'message'  => "如需要使用本功能，请您注册",
+                'data' =>array(),
+            );
+
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode($response));
+        }*/
+
+        //$customer_id = $this->request->json("customer_id");
+
+
+        $img_base64 = $this->request->json('img_base64');
+        $log-> write("img= ".$img_base64);
+
+        $img_name = $this->request->json('img_name');
+        if(!empty($img_base64) && !empty($img_name)) {
+
+
+            $img = explode(',',$img_base64);
+
+            $fileurl = $this->createIdentificationUrl();
+            $date = date("Y-m-d");
+            $filename = $date.$img_name;
+            $filename = md5($filename);
+            $fileresizename = $date.$img_name."resize";
+            $filename = md5($filename).".png";
+            $fileresizename = md5($fileresizename).".png";
+            $uploadfile = $fileurl.$filename;
+            $uploadfile_resize = $fileurl.$fileresizename;
+            $filesize = file_put_contents($uploadfile, base64_decode($img[1]));
+
+            if($filesize > 81920) {
+
+                $im = imagecreatefrompng($uploadfile);
+
+                if($im)
+                {
+                    $this->ResizeImage($im,$pic_width_max,$pic_height_max,$uploadfile_resize);
+
+                    ImageDestroy ($im);
+                }
+            } else {
+
+                $uploadfile_resize =  $uploadfile;
+
+            }
+
+
+            $result = array(
+
+                'fileoriginname' => $img_name ,
+                'filename' => $filename,
+                'fileresizename' => $fileresizename,
+                'filesize' => ($filesize / 1024),
+                'fileurl' => $uploadfile,
+                'fileresizeurl' => $uploadfile_resize
+            );
+
+            $response = array(
+                'code'  => 0,
+                'message'  => "",
+                'data' =>array(),
+            );
+            $response["data"] = $result;
+
+
+        }else {
+
+            $response = array(
+                'code'  => 1061,
+                'message'  => "无效图片文件" ,
+                'data' =>array(),
+            );
+
+        }
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($response));
+
+    }
+
     public function uploadimg()
     {
 
+
+
         $log = new Log("wechat.log");
+
+        //$file = $this->request->json('file',998);
+        //$log->write("test==  ".$file);
+        //return;
+
+
+
 
         $pic_width_max=120;
         $pic_height_max=90;
@@ -124,12 +259,12 @@ class ControllerDoctorIdentification extends Controller
 
         //$customer_id = $this->request->json("customer_id");
 
+        $log->write("file==  ".$_FILES["file"]["name"]);
 
         $allowedExts = array("gif", "jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["file"]["name"]);
         $extension = end($temp);// 获取文件后缀名
 
-        $log-> write("文件后缀名".$extension ."     文件类型=".$_FILES["file"]["type"]);
 
         if ((($_FILES["file"]["type"] == "image/gif")
                 || ($_FILES["file"]["type"] == "image/jpeg")
@@ -137,7 +272,7 @@ class ControllerDoctorIdentification extends Controller
                 || ($_FILES["file"]["type"] == "image/pjpeg")
                 || ($_FILES["file"]["type"] == "image/x-png")
                 || ($_FILES["file"]["type"] == "image/png"))
-            && ($_FILES["file"]["size"] < 209715200)
+            && ($_FILES["file"]["size"] < 20971520)   // 小于 20Mb
             && in_array($extension, $allowedExts))
         {
             if ($_FILES["file"]["error"] > 0)

@@ -7234,3 +7234,734 @@
 2017-04-17 8:15:42 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
 2017-04-17 9:06:38 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
 2017-04-17 9:06:39 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 10:09:14 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 10:20:59 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 12:14:55 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 12:15:20 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 13:24:36 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-17 16:27:58 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:27:58 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:27:58 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:28 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:28 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:28 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:39 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:39 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:39 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:54 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:54 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:45:54 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:46:06 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/orderDetail.php on line 67
+2017-04-17 16:47:42 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:47:42 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:47:42 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:09 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:09 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:09 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:21 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:21 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:21 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:54 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:54 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:50:54 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:10 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:10 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:10 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:16 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:16 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:16 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:31 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:31 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:31 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:43 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:43 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:51:43 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:31 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:31 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:31 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:40 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:40 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:40 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:58 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:58 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:54:58 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:06 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:06 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:06 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:09 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:09 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:09 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:11 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:11 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:11 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:14 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:14 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:14 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:15 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:15 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:15 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:23 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:23 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:23 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:26 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:26 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:26 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 122
+2017-04-17 16:55:27 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:27 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:27 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:42 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:42 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:42 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:46 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:46 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:46 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:52 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:52 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:55:52 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:04 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:04 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:04 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:14 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:14 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:14 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:30 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:30 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:30 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:40 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:40 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:40 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:43 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:43 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:43 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:56 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:56 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:56:56 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:00 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:00 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:00 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:02 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:02 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:02 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:03 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:03 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:03 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:43 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:43 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 16:57:43 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:04 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:04 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:04 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:43 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:43 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:00:43 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:21 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:21 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:21 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:24 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:24 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:02:24 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:04:54 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:04:54 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:04:54 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:02 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:02 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:02 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:10 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:10 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:10 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:34 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:34 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 17:05:34 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:24:04 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:24:04 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:24:04 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:37:39 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:37:39 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-17 18:37:39 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 4:21:31 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 4:21:31 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 4:21:31 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 6:52:01 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-18 8:06:34 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:06:34 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:06:34 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:06:38 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:06:38 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:06:38 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:25:45 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:25:45 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:25:45 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:07 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:07 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:07 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:09 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:09 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:29:09 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:24 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:24 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:24 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:28 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:28 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:30:28 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:09 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:09 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:09 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:11 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:11 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 8:33:11 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:19 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:29 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:29 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-18 12:30:29 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 5:18:49 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 5:18:49 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 5:18:49 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 6:04:16 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 6:04:16 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 6:04:16 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 264
+2017-04-19 7:31:18 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-20 3:49:03 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-20 3:49:04 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-20 8:13:31 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-20 9:11:20 - PHP Notice:  Undefined index: customer_id in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 205
+2017-04-20 9:11:20 - PHP Notice:  Undefined index: customer_id in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 236
+2017-04-20 9:11:20 - PHP Notice:  Undefined index: customer_id in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 252
+2017-04-20 9:11:20 - PHP Notice:  Undefined index: realname in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 253
+2017-04-20 9:11:20 - PHP Notice:  Undefined index: telephone in /home/work/www/BeJinXingJK/www/catalog/controller/wechat/order.php on line 254
+2017-04-20 9:58:06 - PHP Notice:  Array to string conversion in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 188
+2017-04-20 10:01:55 - PHP Notice:  Array to string conversion in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 188
+2017-04-20 10:02:22 - PHP Notice:  Array to string conversion in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 188
+2017-04-22 4:55:25 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-24 7:12:49 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:23:19 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:23:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:29:07 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:32:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:32:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:32:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:41:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 8:42:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 9:31:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 9:34:06 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 9:38:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 9:39:13 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 9:39:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 10:09:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 10:16:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 10:22:26 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 10:22:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 11:41:31 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 11:48:08 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 11:59:51 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:00:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:07:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:08:20 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:36:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:40:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:47:10 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 12:48:27 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 13:23:42 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 14:13:03 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 14:57:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 15:07:35 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 15:07:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 15:11:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 15:13:53 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-24 15:14:40 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-25 3:29:22 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-25 6:46:21 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-25 8:24:29 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 129
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 132
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 134
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 135
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 136
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 137
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 138
+2017-04-25 8:24:39 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 139
+2017-04-25 9:34:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 9:34:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 9:34:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 9:40:19 - PHP Notice:  Array to string conversion in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 161
+2017-04-25 11:03:45 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:03:45 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:03:45 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:05:11 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:05:11 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:05:11 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 11:05:52 - PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 143
+2017-04-25 11:09:47 - PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 149
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:07 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:20:08 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 2 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 3 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 12:31:53 - PHP Warning:  Missing argument 4 for ModelExtensionTotalCoupon::getTotal() in /home/work/www/BeJinXingJK/www/catalog/model/extension/total/coupon.php on line 277
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 14:10:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 15:54:54 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 15:56:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 15:56:46 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:03:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:03:30 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:21:25 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:26:59 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:32:18 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:33:43 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:41:24 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:45:21 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:45:49 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 16:46:58 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-25 17:06:44 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-26 9:25:05 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 254
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 257
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 258
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 259
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 260
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 261
+2017-04-26 9:25:15 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:33:00 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 264
+2017-04-26 9:33:00 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 267
+2017-04-26 9:36:09 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:40:02 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:50:11 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:52:16 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 9:54:23 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 10:14:47 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 10:16:32 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 262
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 265
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 269
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 270
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 271
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 272
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 273
+2017-04-26 11:08:55 - PHP Notice:  Undefined index: file in /home/work/www/BeJinXingJK/www/catalog/controller/doctor/identification.php on line 274
+2017-04-26 11:53:11 - PHP Notice:  Undefined index: openid in /home/work/www/BeJinXingJK/www/catalog/controller/account/authentication.php on line 81

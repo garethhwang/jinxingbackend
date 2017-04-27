@@ -246,7 +246,7 @@ class ControllerDoctorEdit extends Controller
                 || ($_FILES["file"]["type"] == "image/pjpeg")
                 || ($_FILES["file"]["type"] == "image/x-png")
                 || ($_FILES["file"]["type"] == "image/png"))
-            && ($_FILES["file"]["size"] < 209715200)   // 小于 200 kb
+            && ($_FILES["file"]["size"] < 20971520)   // 小于 20Mb
             && in_array($extension, $allowedExts))
         {
             if ($_FILES["file"]["error"] > 0)
