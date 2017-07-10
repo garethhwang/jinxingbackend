@@ -64,7 +64,7 @@ class ControllerWechatOrderDetail extends Controller
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
 
-        $log->write("openid = ".$customer_info["openid"]);
+        //$log->write("openid = ".$customer_info["openid"]);
 
 
 
