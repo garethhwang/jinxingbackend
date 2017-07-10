@@ -50,6 +50,7 @@ class ControllerWechatOrderDetail extends Controller
         unset($this->session->data['guest']);*/
 
         $jxsession = $this->load->controller('account/authentication');
+
         if(empty($jxsession)) {
             $response = array(
                 'code'  => 1002,
@@ -64,7 +65,7 @@ class ControllerWechatOrderDetail extends Controller
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
 
-        //$log->write("openid = ".$customer_info["openid"]);
+        $log->write("openid = ".$customer_info["openid"]);
 
 
 
