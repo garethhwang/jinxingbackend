@@ -59,13 +59,14 @@ class ControllerWechatOrderDetail extends Controller
             $response = array(
                 'code'  => 1002,
                 'message'  => "欢迎来到金杏健康，请您先登录",
-                'data' =>array(),
+                'data' =>array()
             );
 
             $this->response->addHeader('Content-Type: application/json');
             $this->response->setOutput(json_encode($response));
             return ;
         }
+
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
         if($f  = file_put_contents($log_file, $customer_info, FILE_APPEND)){}
