@@ -327,7 +327,7 @@ class ModelAccountCustomer extends Model
 
     public function getCustomer($customer_id)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+        $query = $this->db->query("SELECT * FROM wechat_user," . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
 
         return $query->row;
     }
