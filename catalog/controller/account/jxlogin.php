@@ -105,10 +105,12 @@ class ControllerAccountJxlogin extends Controller
             }else {
                 if(!empty($code)) {
                     $code_info = $this->load->controller('account/authentication/getWechat');
+                    $log->write("wechat_id=".$code_info["wechat_id"]."  openid=".$code_info["openid"]);
                     $postdata["wechat_id"] = $code_info["wechat_id"] ;
                 }else {
                     $postdata["wechat_id"] = "" ;
                 }
+
                 $this->load->model('account/customer');
                 $customer_id = $this->model_account_customer->addNotWechatCustomer($postdata);
                 $log->write("customer_id=".$customer_id);
