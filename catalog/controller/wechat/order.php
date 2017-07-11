@@ -148,7 +148,7 @@ class ControllerWechatOrder extends Controller
 
         //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
 
-        $log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
+        //$log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
         $data["jxsession"] = $this->load->controller('account/authentication');
         if(empty($data["jxsession"])) {
             $response = array(
@@ -163,7 +163,7 @@ class ControllerWechatOrder extends Controller
         }
 
         $data['customer'] = json_decode($this->cache->get($data["jxsession"]),true);
-        if($f  = file_put_contents($log_file, $data['customer'], FILE_APPEND)){}
+        //if($f  = file_put_contents($log_file, $data['customer'], FILE_APPEND)){}
 
 
         /*if(isset($this->session->data['openid'])){
@@ -335,7 +335,7 @@ class ControllerWechatOrder extends Controller
 
         $doctor_id =  $this->request->json('doctor_id',"");
 
-        $log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
+        //$log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
         $jxsession = $this->load->controller('account/authentication');
         if(empty($jxsession)) {
             $response = array(
@@ -350,7 +350,7 @@ class ControllerWechatOrder extends Controller
         }
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
-        if($f  = file_put_contents($log_file, $customer_info, FILE_APPEND)){}
+        //if($f  = file_put_contents($log_file, $customer_info, FILE_APPEND)){}
 
         //$this->document->setTitle("金杏健康");
         /*$this->load->model('wechat/ordercenter');

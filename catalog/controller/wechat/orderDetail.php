@@ -52,7 +52,7 @@ class ControllerWechatOrderDetail extends Controller
         $jxsession = $this->load->controller('account/authentication');
 
 
-        $log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
+        //$log_file  = '/home/work/www/BeJinXingJK/www/system/storage/logs/test.txt';
 
 
         if(empty($jxsession)) {
@@ -69,7 +69,7 @@ class ControllerWechatOrderDetail extends Controller
 
         $customer_info = json_decode($this->cache->get($jxsession),true);
 
-        if($f  = file_put_contents($log_file, $customer_info, FILE_APPEND)){}
+        //if($f  = file_put_contents($log_file, $customer_info, FILE_APPEND)){}
         //$log->write("openid = ".$customer_info["openid"]);
 
 
