@@ -379,7 +379,17 @@ class ModelAccountCustomer extends Model
 
     public function getCustomerByTelephone($telephone)
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer, " . DB_PREFIX . "physical, " . DB_PREFIX . "address WHERE telephone = '" . $this->db->escape($telephone) . "' AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "address.customer_id ");
+        $result = $this->db->query("SELECT wechat_id FROM " . DB_PREFIX . "customer WHERE telephone = '" . $this->db->escape($telephone) . "'");
+        if(!empty($result->row)){
+
+            $query = $this->db->query("SELECT * FROM wechat_user, " . DB_PREFIX . "customer, " . DB_PREFIX . "physical, " . DB_PREFIX . "address WHERE telephone = '" . $this->db->escape($telephone) . "' AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "address.customer_id  AND " . DB_PREFIX . "customer.wechat_id = wechat_user.wechat_id");
+
+
+        }else {
+
+            $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer, " . DB_PREFIX . "physical, " . DB_PREFIX . "address WHERE telephone = '" . $this->db->escape($telephone) . "' AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "physical.customer_id AND " . DB_PREFIX . "customer.customer_id = " . DB_PREFIX . "address.customer_id ");
+
+        }
 
         return $query->row;
 
