@@ -11,4 +11,4 @@ define('WECHAT_GETUSERINFO','https://api.weixin.qq.com/sns/userinfo?access_token
 define('WECHAT_GETGROUP','https://api.weixin.qq.com/cgi-bin/groups/get?access_token=%s');
 define("WECHAT_UNIFIEDORDER","https://api.mch.weixin.qq.com/pay/unifiedorder");
 define("WECHAT_AUTHORIZE","https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect");
-define("WECHAT_SERVICE_TEL","18510997890");
+define("WECHAT_SERVICE_TEL","010-65724244");
