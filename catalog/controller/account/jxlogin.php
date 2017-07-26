@@ -114,7 +114,7 @@ class ControllerAccountJxlogin extends Controller
                 $this->load->model('account/customer');
                 $customer_id = $this->model_account_customer->addNotWechatCustomer($postdata);
                 $log->write("customer_id=".$customer_id);
-                $info = $this->model_account_customer->getCustomer($customer_id);
+                $info = $this->model_account_customer->getCustomerByTelephone($postdata["telephone"]);
                 $log->write("address_id=".$info["address_id"]);
                 $data["jxsession"] = md5($customer_id.$info["telephone"].$date);
                 $this->cache->set($data["jxsession"], json_encode($info));
