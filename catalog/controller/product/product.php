@@ -200,6 +200,7 @@ class ControllerProductProduct extends Controller
         $product_info['service_notes'] = html_entity_decode($product_info['service_notes'], ENT_QUOTES, 'UTF-8');
         $product_info['applicable_user'] = html_entity_decode($product_info['applicable_user'], ENT_QUOTES, 'UTF-8');
         $product_info['jxsession'] = $data["jxsession"];
+        $data['service_tel'] = WECHAT_SERVICE_TEL;
 
 
 
