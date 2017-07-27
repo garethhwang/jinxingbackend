@@ -296,7 +296,7 @@ class ControllerProductCategory extends Controller
             if($data['isnotregist'] == "1" && isset($code)){
                 $response = array(
                     'code'  => 1020,
-                    'message'  => "下单前需要绑定手机'",
+                    'message'  => "您需要绑定手机'",
                     'data' =>array(
                     ),
                 );
