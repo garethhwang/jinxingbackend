@@ -64,7 +64,7 @@ class ModelWechatOrdercenter extends Model
     }
 
     public function getAllCompletedOrderid($customer_id) {
-        $order_status_id_query = $this->db->query("SELECT order_status_id FROM " . DB_PREFIX . "order_status WHERE name = 'Complete' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
+        $order_status_id_query = $this->db->query("SELECT order_status_id FROM " . DB_PREFIX . "order_status WHERE name = 'Evaluate' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
         if($order_status_id_query->num_rows){
             $order_status_id = $order_status_id_query->row['order_status_id'];
