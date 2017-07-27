@@ -153,9 +153,9 @@ class ControllerWechatOrderStatusUpdate extends Controller
         if($result == 2) {
             $this->sendTemplateSMS("18610834247", array($data["realname"],$data["date_added"]), "162409");
         }
-        $results = $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162280");
+        $results = $this->sendTemplateSMS("13901280215", array($data["realname"],$data["date_added"]), "162280");
         if($results == 2) {
-            $this->sendTemplateSMS("13381211965", array($data["realname"],$data["date_added"]), "162409");
+            $this->sendTemplateSMS("13901280215", array($data["realname"],$data["date_added"]), "162409");
         }
 
         $response = array(
