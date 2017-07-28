@@ -111,7 +111,6 @@ class ControllerWechatEvaluate extends Controller
         $this->load->model('wechat/ordercenter');
         $this->model_wechat_ordercenter->UpdateOrderStatusToComplete($data["order_id"]);
 
-
         $response = array(
             'code'  => 0,
             'message'  => "",
