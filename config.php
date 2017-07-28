@@ -4,12 +4,13 @@
 define('HTTP_SERVER', 'http://be.jinxingjk.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://be.jinxingjk.com/');
+define('HTTPS_SERVER', 'http://be.jinxingjk.com/admin');
 
 // DIR
 define('DIR_APPLICATION', '/home/work/www/BeJinXingJK/www/catalog/');
 define('DIR_SYSTEM', '/home/work/www/BeJinXingJK/www/system/');
-define('DIR_IMAGE', '/home/work/www/BeJinXingJK/www/image/');
+//define('DIR_IMAGE', '/home/work/www/BeJinXingJK/www/image/');
+define('DIR_IMAGE', '/home/work/www/JinXingManager/www/catalog/image/');
 define('DIR_LANGUAGE', '/home/work/www/BeJinXingJK/www/catalog/language/');
 define('DIR_TEMPLATE', '/home/work/www/BeJinXingJK/www/catalog/view/theme/');
 define('DIR_CONFIG', '/home/work/www/BeJinXingJK/www/system/config/');
