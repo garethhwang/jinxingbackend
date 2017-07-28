@@ -13,7 +13,6 @@ class  ControllerWechatChecklist extends Controller
     public function index()
     {
 
-        //$this->session->data['openid']='oKe2EwWLwAU7EQu7rNof5dfG1U8g';
         $log = new Log("wechat.log");
 
         $data["jxsession"] = $this->load->controller('account/authentication');
