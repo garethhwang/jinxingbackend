@@ -166,9 +166,9 @@ class ControllerWechatOrderDetail extends Controller
                 $data['lastprice'] = $product_info['products'][0]['price'];
             }
 
-            if($product_info['products'][0]['product_id'] == 68) {
+            /*if($product_info['products'][0]['product_id'] == 68) {
                 $data['lastprice'] =0.01;
-            }
+            }*/
 
             $data["jxsession"] = $jxsession;
 
