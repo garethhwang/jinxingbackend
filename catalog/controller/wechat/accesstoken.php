@@ -59,6 +59,7 @@ class ControllerWechatAccesstoken extends Controller
 
 
     public function jsapisign() {
+
         $url = $this->request->json("url", "");
         $jsapiTicket = $this->getJsApiTicket();
 
