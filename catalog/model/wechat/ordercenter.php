@@ -57,9 +57,9 @@ class ModelWechatOrdercenter extends Model
         }
     }
 
-    public function UpdateOrderStatusToEvaluate($order_id){
+    public function UpdateOrderStatusToComplete($order_id){
         if(isset($order_id)){
-            $this->db->query("UPDATE " . DB_PREFIX . "order set order_status_id = '7' WHERE order_id = '" . $order_id . "'");
+            $this->db->query("UPDATE " . DB_PREFIX . "order set order_status_id = '5' WHERE order_id = '" . $order_id . "'");
         }
     }
 
