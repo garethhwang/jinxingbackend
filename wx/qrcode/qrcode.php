@@ -8,7 +8,7 @@ $jsoninfo = json_decode($output, true);
 $access_token = $jsoninfo["access_token"];
 
 //永久二维码
-for ($i = 3; $i<= 10; $i++) {
+for ($i = 11; $i<= 109; $i++) {
     $scene_id = $i;
     $qrcode = '{"action_name": "QR_LIMIT_SCENE", "action_info": {"scene": {"scene_id": '.$scene_id.'}}}';
 
